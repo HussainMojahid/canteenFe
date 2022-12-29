@@ -4,6 +4,8 @@ import { SharedModule } from '../shared/shared.module';
 import { AuthModalComponent } from './auth-modal/auth-modal.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 
 
@@ -11,7 +13,9 @@ import { RegisterComponent } from './register/register.component';
   declarations: [
     LoginComponent,
     RegisterComponent,
-    AuthModalComponent
+    AuthModalComponent,
+    ForgetPasswordComponent,
+    ChangePasswordComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +23,9 @@ import { RegisterComponent } from './register/register.component';
   ],
   exports : [
     AuthModalComponent,
-    LoginComponent
+    // LoginComponent
+    // ForgetPasswordComponent
+    ChangePasswordComponent
   ]
 })
 export class UserModule { }

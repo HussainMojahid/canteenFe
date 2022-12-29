@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TabComponent } from './tab/tab.component';
 import { TabsContainerComponent } from './tabs-container/tabs-container.component';
 import { ModalComponent } from './modal/modal.component';
+import { InputComponent } from './input/input.component';
 
 
 
@@ -10,7 +11,8 @@ import { ModalComponent } from './modal/modal.component';
   declarations: [
     TabComponent,
     TabsContainerComponent,
-    ModalComponent
+    ModalComponent,
+    InputComponent
   ],
   imports: [
     CommonModule
@@ -18,7 +20,8 @@ import { ModalComponent } from './modal/modal.component';
   exports:[
     TabComponent,
     TabsContainerComponent,
-    ModalComponent
+    ModalComponent,
+    InputComponent
   ]
 })
 export class SharedModule { }
