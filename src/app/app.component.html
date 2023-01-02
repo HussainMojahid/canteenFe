@@ -1,8 +1,8 @@
-<!-- <app-nav></app-nav> -->
-<!-- <app-login></app-login> -->
-<app-auth-modal></app-auth-modal>
-<!-- <h1>Hello</h1>      -->
+<app-nav></app-nav>
 
-<!-- <app-forget-password></app-forget-password> -->
+<app-dashboard-modal></app-dashboard-modal>
 
-<!-- <app-change-password></app-change-password> -->
+<!-- <app-food-card></app-food-card> ->
+<!-- <app-sidebar *ngIf="true"></app-sidebar>/ -->
+
+<app-auth-modal *ngIf="auth.isAuthenticated"></app-auth-modal>

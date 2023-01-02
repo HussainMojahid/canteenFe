@@ -1,31 +1,20 @@
 <!-- Header -->
-<header id="header" class="bg-secondary bg-cyan-400">
-  <nav class="container mx-auto flex justify-start items-center py-8 px-4">
+<header id="header"  class="w-full z-10 fixed shadow-lg">
+  <nav class="w-full fixed flex justify-start items-center  bg-cyan-400 py-4 px-4">
     <!-- App Name -->
-    <a class="text-3xl text-white font-bold uppercase mr-4">Canteen</a>
+    <!-- <a class="text-3xl text-white font-bold uppercase mr-4 justify-end">Canteen</a> -->
+    <fa-icon  class="fa-2xl text-gray-200" [icon]="userIcon"></fa-icon>
 
-    <div class="flex flex-grow items-center">
+    <div class="flex flex-grow justify-end items-end">
       <!-- Primary Navigation -->
       <ul class="flex flex-row mt-1">
         <!-- Navigation Links -->
-        <li>
-          <a class="px-2" href="#"> Login / Register </a>
-        </li>
-        <ng-template #authLinks>
-          <li>
-            <a class="px-2">Manage</a>
-          </li>
-          <li>
-            <a class="px-2">Upload</a>
-          </li>
-          <li>
-            <a class="px-2" href="#">LogOut</a>
-          </li>
-        </ng-template>
-        <li>
-          <a class="px-2">About</a>
-        </li>
       </ul>
+      <div class="p-2 space-y-2 bg-gray-600 rounded shadow">
+        <span class="block w-6 h-0.5 bg-gray-100 animate-pulse"></span>
+        <span class="block w-6 h-0.5 bg-gray-100 animate-pulse"></span>
+        <span class="block w-6 h-0.5 bg-gray-100 animate-pulse"></span>
+      </div>
     </div>
   </nav>
 </header>

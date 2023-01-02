@@ -1,8 +1,11 @@
 <!-- Auth Modal -->
-<div class="fixed z-50 inset-0 overflow-y-auto" id="modal">
+<div class="fixed z-20 inset-0 overflow-y-auto" id="modal">
   <div
     class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
   >
+    <div class="fixed inset-0 transition-opacity">
+      <div class="absolute inset-0 bg-gray-500 bg-opacity-95"></div>
+    </div>
     <!-- This element is to trick the browser into centering the modal contents. -->
     <span class="hidden sm:inline-block sm:align-middle sm:h-screen"
       >&#8203;</span
@@ -10,7 +13,7 @@
 
     <!-- rounded tab shadow -->
     <div
-      class="inline-block align-bottom bg-secondary rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+      class="inline-block align-bottom bg-secondary rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full bg-white "
     >
       <!-- Add margin if you want to see some of the overlay behind the modal-->
       <div class="py-4 text-left px-6">
