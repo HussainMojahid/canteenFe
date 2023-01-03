@@ -1,16 +1,26 @@
 import { Component } from '@angular/core';
-import { faHamburger, faMobileScreenButton, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import {
+  faHamburger,
+  faMobileScreenButton,
+  faUserCircle,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css']
+  styleUrls: ['./nav.component.css'],
 })
 export class NavComponent {
-togleactive() {
-throw new Error('Method not implemented.');
-}
+  togleactive() {
+    throw new Error('Method not implemented.');
+  }
 
-  userIcon = faUserCircle
+  userIcon = faUserCircle;
+  onHam = false;
 
+  toggleHam($event: Event) {
+    this.onHam = !this.onHam;
+
+    $event.preventDefault();
+  }
 }

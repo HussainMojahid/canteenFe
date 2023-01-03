@@ -9,28 +9,21 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-
-
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
     AuthModalComponent,
     ForgetPasswordComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
   ],
   imports: [
     CommonModule,
     SharedModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  exports : [
-    AuthModalComponent,
-    // LoginComponent
-    // ForgetPasswordComponent
-    ChangePasswordComponent
-  ]
+  exports: [AuthModalComponent],
 })
-export class UserModule { }
+export class UserModule {}

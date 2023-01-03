@@ -1,0 +1,40 @@
+header .ham{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    border: 2px solid white;
+  }
+ header .bar{
+    width: 15px;
+    height: 2px;
+    background-color: white;
+    position: relative;
+  }
+   header .bar::after,
+ header .bar::before{
+    content: '';
+    width: 15px;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+  }
+ header .bar::after{
+    top: -5px;
+  }
+ header .bar::before{
+    bottom: -5px;
+  }
+   header .on-ham .bar::before{
+    top: 0px;
+    transform: rotate(45deg);
+  }
+ header .on-ham .bar::after{
+    top: 0px;
+    transform: rotate(-45deg);
+  }
+ header .on-ham .bar{
+    background-color: transparent;
+  }

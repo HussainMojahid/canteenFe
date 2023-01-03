@@ -11,8 +11,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
-  login(username: string, password: string) {
-    console.log(username, password);
+   login(username: string, password: string) {
 
     return this.http
       .post<IUser>(`${environment.apiUrl}auth/local`, {

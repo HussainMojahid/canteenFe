@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-food-card',
@@ -7,5 +7,7 @@ import { Component } from '@angular/core';
 })
 export class FoodCardComponent {
 
-  imgUrl = 'https://cdn.britannica.com/98/235798-050-3C3BA15D/Hamburger-and-french-fries-paper-box.jpg'
+  name = "Burger"
+  category = "Evening"
+  @Input() imgUrl = 'https://cdn.britannica.com/98/235798-050-3C3BA15D/Hamburger-and-french-fries-paper-box.jpg'
 }

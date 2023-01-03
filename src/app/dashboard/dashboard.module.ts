@@ -20,9 +20,6 @@ import { DashboardModalComponent } from './dashboard-modal/dashboard-modal.compo
 
   ],
   exports : [
-    FoodCardComponent,
-    FoodSectionComponent,
-    ChartCardComponent,
     DashboardModalComponent
   ]
 })

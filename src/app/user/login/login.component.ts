@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { last } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -9,6 +10,10 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  AlertType = 'alert';
+  showAlert: boolean = false;
+  alertMsg = 'Please Wait! Under Process';
+
   constructor(private auth: AuthService, private http: HttpClient) {}
 
   email = new FormControl('', [Validators.required]);
@@ -21,15 +26,26 @@ export class LoginComponent {
 
   loginForm = new FormGroup(this.credentials);
 
-  async authenticate() {
-    
-
-   const f = this.auth.login(this.loginForm.value.email || '', this.loginForm.value.password || '').subscribe(
-    (response) => {console.log(response);
-    ; },
-    (error) => { console.log(error); });;
-   console.log(f);
-   
-
+  authenticate() {
+    this.AlertType = 'alert';
+    this.showAlert = true;
+    this.auth
+      .login(
+        this.loginForm.value.email || '',
+        this.loginForm.value.password || ''
+      )
+      .subscribe({
+        next: (v) => {
+          this.AlertType = 'success';
+          this.showAlert = true;
+          this.alertMsg = 'LogIn Successful';
+        },
+        error: (e) => {
+          this.AlertType = 'error';
+          this.showAlert = true;
+          this.alertMsg = e.error.error.message;
+        }
+      });
+    return;
   }
 }

@@ -1,15 +1,20 @@
+<app-alert *ngIf="showAlert"  [AlertType]="AlertType">
+ {{alertMsg}}
+</app-alert>
 <!-- Login Form -->
-<form [formGroup]="loginForm" (ngSubmit)="authenticate()" >
+<form [formGroup]="loginForm" (ngSubmit)="authenticate()">
   <!-- Email -->
   <div class="mb-3">
     <label class="inline-block mb-2">Email</label>
-    <app-input [control]="email" type="text" placeholder="Enter Email"> </app-input>
+    <app-input [control]="email" type="text" placeholder="Enter Email">
+    </app-input>
   </div>
   <!-- Password -->
   <div class="mb-3">
     <label class="inline-block mb-2">Password</label>
 
-    <app-input [control]="password"  type="password" placeholder="Password"> </app-input>
+    <app-input [control]="password" type="password" placeholder="Password">
+    </app-input>
   </div>
   <button
     type="submit"

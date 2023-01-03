@@ -1,17 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { faIceCream } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from './services/auth.service';
+import { ModalService } from './services/modal.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  constructor(public  auth: AuthService){
+  constructor(public  auth: AuthService,public modal : ModalService){
+    this.modal.toggleModal('auth');
 
+  }
+  ngOnInit(): void {
+    
   }
 
   title = 'canteen-fe';
+
+
+  
+
 }
