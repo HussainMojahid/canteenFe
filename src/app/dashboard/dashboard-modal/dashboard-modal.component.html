@@ -10,9 +10,38 @@
     </label>
   </div>
 
-  <app-food-section></app-food-section>
-  <app-food-section></app-food-section>
-
-  <app-food-section></app-food-section>
-
+  <app-food-section [category]="0">
+    <app-food-card
+      *ngFor="let item of foodItemBreakFast"
+      [cardId] = 'item.name'
+      [ngClass]="{ 'hidden': !card.isCardOpen(item.name,0)
+      
+     }"
+      [imgUrl]="item.imageUrl"
+      [category]="0"
+    >
+    </app-food-card>
+  </app-food-section>
+  <app-food-section [category]="1"> 
+    <app-food-card
+      *ngFor="let item of foodItemLunch"
+      [cardId] = 'item.name'
+      [ngClass]="{ 'hidden': !card.isCardOpen(item.name,1)
+     }"
+      [imgUrl]="item.imageUrl"
+      [category]="1"
+    >
+    </app-food-card>
+  </app-food-section>
+  <app-food-section [category]="2">
+    <app-food-card
+      *ngFor="let item of foodItemSnacks"
+      [cardId] = 'item.name'
+      [ngClass]="{ 'hidden': !card.isCardOpen(item.name,2)
+     }"
+      [imgUrl]="item.imageUrl"
+      [category]="2"
+    >
+    </app-food-card>
+  </app-food-section>
 </div>
