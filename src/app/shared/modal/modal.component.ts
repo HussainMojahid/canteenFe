@@ -12,10 +12,13 @@ export class ModalComponent {
   constructor(public modal: ModalService, public el: ElementRef) {}
 
   ngOnInit(): void {
+    console.log("On init Called");
     document.body.appendChild(this.el.nativeElement);
   }
 
   ngOnDestroy(): void {
+    console.log("On Destroyed Called");
+    
     document.body.removeChild(this.el.nativeElement)
   }
   closeModal() {

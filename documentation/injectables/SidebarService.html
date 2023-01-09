@@ -40,7 +40,7 @@
 
 <ol class="breadcrumb">
   <li>Injectables</li>
-  <li >AuthService</li>
+  <li >SidebarService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -58,7 +58,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/services/auth.service.ts</code>
+            <code>src/app/services/sidebar.service.ts</code>
         </p>
 
 
@@ -78,10 +78,10 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#isAuthenticated$" >isAuthenticated$</a>
+                                <a href="#isSidebarVisible$" >isSidebarVisible$</a>
                             </li>
                             <li>
-                                <a href="#isAuthenticatedWithDelay" >isAuthenticatedWithDelay</a>
+                                <a href="#onHam" >onHam</a>
                             </li>
                         </ul>
                     </td>
@@ -96,13 +96,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#isAuthenticated" >isAuthenticated</a>
-                            </li>
-                            <li>
-                                <a href="#login" >login</a>
-                            </li>
-                            <li>
-                                <a href="#logout" >logout</a>
+                                <a href="#toggleSidebar" >toggleSidebar</a>
                             </li>
                         </ul>
                     </td>
@@ -122,12 +116,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>)</code>
+<code>constructor(auth: <a href="../injectables/AuthService.html" target="_self">AuthService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/services/auth.service.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/services/sidebar.service.ts:8</a></div>
                             </td>
                         </tr>
 
@@ -145,10 +139,10 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>http</td>
+                                                        <td>auth</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                                        <code><a href="../injectables/AuthService.html" target="_self" >AuthService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -174,142 +168,24 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="isAuthenticated"></a>
+                    <a name="toggleSidebar"></a>
                     <span class="name">
-                        <span ><b>isAuthenticated</b></span>
-                        <a href="#isAuthenticated"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>toggleSidebar</b></span>
+                        <a href="#toggleSidebar"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>isAuthenticated()</code>
+<code>toggleSidebar()</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="18"
-                            class="link-to-prism">src/app/services/auth.service.ts:18</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="login"></a>
-                    <span class="name">
-                        <span ><b>login</b></span>
-                        <a href="#login"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>login(username: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, password: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="28"
-                            class="link-to-prism">src/app/services/auth.service.ts:28</a></div>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-
-                    <div class="io-description">
-                        <b>Parameters :</b>
-                        
-                        <table class="params">
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Type</td>
-                                    <td>Optional</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>username</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                                <tr>
-                                    <td>password</td>
-                                    <td>
-                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-                                    </td>
-
-                                    <td>
-                                        No
-                                    </td>
-
-
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div>
-                    </div>
-                    <div class="io-description">
-                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                    </div>
-                    <div class="io-description">
-                        
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <table class="table table-sm table-bordered">
-        <tbody>
-            <tr>
-                <td class="col-md-4">
-                    <a name="logout"></a>
-                    <span class="name">
-                        <span ><b>logout</b></span>
-                        <a href="#logout"><span class="icon ion-ios-link"></span></a>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td class="col-md-4">
-<code>logout()</code>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">src/app/services/auth.service.ts:44</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="14"
+                            class="link-to-prism">src/app/services/sidebar.service.ts:14</a></div>
                 </td>
             </tr>
 
@@ -335,21 +211,21 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="isAuthenticated$"></a>
+                    <a name="isSidebarVisible$"></a>
                     <span class="name">
-                        <span ><b>isAuthenticated$</b></span>
-                        <a href="#isAuthenticated$"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>isSidebarVisible$</b></span>
+                        <a href="#isSidebarVisible$"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new BehaviorSubject&lt;boolean&gt;(false)</code>
+                        <i>Default value : </i><code>false</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/services/auth.service.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/services/sidebar.service.ts:11</a></div>
                         </td>
                     </tr>
 
@@ -360,21 +236,21 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="isAuthenticatedWithDelay"></a>
+                    <a name="onHam"></a>
                     <span class="name">
-                        <span ><b>isAuthenticatedWithDelay</b></span>
-                        <a href="#isAuthenticatedWithDelay"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>onHam</b></span>
+                        <a href="#onHam"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Default value : </i><code>new Observable&lt;boolean&gt;</code>
+                        <i>Default value : </i><code>false</code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/services/auth.service.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/services/sidebar.service.ts:12</a></div>
                         </td>
                     </tr>
 
@@ -388,50 +264,21 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { BehaviorSubject, delay, map, Observable } from &#x27;rxjs&#x27;;
-import { environment } from &#x27;src/environments/environment&#x27;;
-import { HttpClient } from &#x27;@angular/common/http&#x27;;
-import IUser from &#x27;../models/user.model&#x27;;
-import { Router } from &#x27;@angular/router&#x27;;
+import { BehaviorSubject } from &#x27;rxjs&#x27;;
+import { AuthService } from &#x27;./auth.service&#x27;;
+
 @Injectable({
   providedIn: &#x27;root&#x27;,
 })
-export class AuthService {
-  isAuthenticated$ &#x3D; new BehaviorSubject&lt;boolean&gt;(false);
-  isAuthenticatedWithDelay &#x3D;new Observable&lt;boolean&gt;;
+export class SidebarService {
+  constructor(private auth: AuthService) {}
 
-  constructor(private http: HttpClient) {
-  
-  }
+  isSidebarVisible$ &#x3D; false;
+  onHam &#x3D; false;
 
-  isAuthenticated(){
-    if(null !&#x3D;&#x3D; localStorage.getItem(&#x27;_token_canteen_app&#x27;)){
-      this.isAuthenticated$.next(true);
-      this.isAuthenticatedWithDelay &#x3D; this.isAuthenticated$.pipe(delay(1000))
-    }
-    else{
-      this.isAuthenticated$.next(false)
-    }
-  }
-
-  login(username: string, password: string) {
-  
-    return this.http
-      .post&lt;IUser&gt;(&#x60;${environment.apiUrl}auth/local&#x60;, {
-        identifier: username,
-        password: password,
-      })
-
-      .pipe(
-        map((user: IUser) &#x3D;&gt; {
-          localStorage.setItem(&#x27;_token_canteen_app&#x27;, JSON.stringify(user.jwt));
-          return user;
-        })
-      );
-  }
-
-  logout() {
-    localStorage.removeItem(&#x27;user&#x27;);
+  toggleSidebar() {
+    this.isSidebarVisible$ &#x3D; !this.isSidebarVisible$;
+    this.onHam &#x3D; !this.onHam;
   }
 }
 </code></pre>
@@ -477,7 +324,7 @@ export class AuthService {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
-            var COMPODOC_CURRENT_PAGE_URL = 'AuthService.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'SidebarService.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

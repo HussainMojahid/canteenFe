@@ -1,8 +1,9 @@
-<div class="fixed  inset-0 " >
+<div class="fixed  inset-0 z-50" >
     <div
-      class="flex items-start justify-end min-h-screen" id="sidebar" 
+      class="flex items-start justify-end min-h-screen" id="sidebar"
+      (click)="toggle()"  
     >
- <div class=" w-52 overflow-y-auto mt-20 mr-2 py-4 px-3 bg-gray-200 rounded" >
+ <div class=" w-52 overflow-y-auto mt-20 mr-2 py-4 px-3 bg-gray-200   rounded" >
        <ul class="space-y-2">
           <li>
              <a href="#" class="flex items-center  p-2 text-base font-normal text-gray-900 rounded-lg  hover:bg-gray-100">
@@ -26,4 +27,4 @@
        </ul>
     </div>
 </div>
- <!-- </div> -->
+</div>

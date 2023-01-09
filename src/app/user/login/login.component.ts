@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { last } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -14,7 +15,7 @@ export class LoginComponent {
   showAlert: boolean = false;
   alertMsg = 'Please Wait! Under Process';
 
-  constructor(private auth: AuthService, private http: HttpClient) {}
+  constructor(private auth: AuthService, private http: HttpClient,private router : Router) {}
 
   email = new FormControl('', [Validators.required]);
   password = new FormControl('', [Validators.required]);
@@ -39,6 +40,7 @@ export class LoginComponent {
           this.AlertType = 'success';
           this.showAlert = true;
           this.alertMsg = 'LogIn Successful';
+          this.auth.isAuthenticated()
         },
         error: (e) => {
           this.AlertType = 'error';

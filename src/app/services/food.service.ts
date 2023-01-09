@@ -1,4 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import IFoodItem from '../models/food.model';
 
 interface IFoodCard {
   id: string;
@@ -9,9 +13,22 @@ interface IFoodCard {
   providedIn: 'root',
 })
 export class FoodService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  public CurrentIndex = 0;
+  getFood() {
+    return this.http
+      .get<any>(`${environment.apiUrl}food-inventories`)
+
+      .pipe(
+        map((foodItem) => {
+          return foodItem.data;
+        })
+      );
+  }
+
+  public BCurrentIndex = 0;
+  public LCurrentIndex = 0;
+  public HCurrentIndex = 0;
 
   public Bcards: IFoodCard[] = [];
   public Lcards: IFoodCard[] = [];
@@ -78,35 +95,53 @@ export class FoodService {
       if (action == 'next') {
         const nextCard = cards[currentCardIndex + 1];
         nextCard.visible = !nextCard.visible;
-        this.CurrentIndex = currentCardIndex + 1;
+
+        switch (category) {
+          case 0:
+            this.BCurrentIndex = currentCardIndex + 1;
+
+            break;
+          case 1:
+            this.LCurrentIndex = currentCardIndex + 1;
+
+            break;
+          case 2:
+            this.HCurrentIndex = currentCardIndex + 1;
+
+            break;
+        }
       }
       if (action === 'prev') {
         const prevCard = cards[currentCardIndex - 1];
         prevCard.visible = !prevCard.visible;
-        this.CurrentIndex = currentCardIndex - 1;
+        switch (category) {
+          case 0:
+            this.BCurrentIndex = currentCardIndex - 1;
+
+            break;
+          case 1:
+            this.LCurrentIndex = currentCardIndex - 1;
+
+            break;
+          case 2:
+            this.HCurrentIndex = currentCardIndex - 1;
+
+            break;
+        }
       }
     }
   }
-  toggleCard(action: string,category : number) {
-
-
+  toggleCard(action: string, category: number) {
     if (category === 0) {
       // Brekfast
-      this.toggleFood(action,category,this.Bcards)
-      
+      this.toggleFood(action, category, this.Bcards);
     } else if (category === 1) {
       // Lunch
 
-      this.toggleFood(action,category,this.Lcards)
-
+      this.toggleFood(action, category, this.Lcards);
     } else if (category === 2) {
       // High Tea
-      this.toggleFood(action,category,this.Hcards)
-      
+      this.toggleFood(action, category, this.Hcards);
     }
-
-    
-  
-}
-
+  }
 }

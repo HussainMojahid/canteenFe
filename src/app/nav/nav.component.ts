@@ -4,6 +4,8 @@ import {
   faMobileScreenButton,
   faUserCircle,
 } from '@fortawesome/free-solid-svg-icons';
+import { SidebarService } from '../services/sidebar.service';
+import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
   selector: 'app-nav',
@@ -11,15 +13,11 @@ import {
   styleUrls: ['./nav.component.css'],
 })
 export class NavComponent {
-  togleactive() {
-    throw new Error('Method not implemented.');
-  }
-
   userIcon = faUserCircle;
-  onHam = false;
 
+  constructor(public sidebar: SidebarService) {}
   toggleHam($event: Event) {
-    this.onHam = !this.onHam;
+    this.sidebar.toggleSidebar();
 
     $event.preventDefault();
   }

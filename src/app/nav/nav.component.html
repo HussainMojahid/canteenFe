@@ -13,7 +13,7 @@
         <!-- Navigation Links -->
       </ul>
       <div
-        [ngClass]="{ 'on-ham': onHam }"
+        [ngClass]="{ 'on-ham': sidebar.onHam}"
         class="ham"
         (click)="toggleHam($event)"
       >
@@ -22,3 +22,5 @@
     </div>
   </nav>
 </header>
+
+<app-sidebar *ngIf="sidebar.isSidebarVisible$"></app-sidebar>

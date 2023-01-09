@@ -362,7 +362,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/app.component.ts:21</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/app.component.ts:22</a></div>
                         </td>
                     </tr>
 
@@ -392,6 +392,7 @@ export class AppComponent implements OnInit {
 
   }
   ngOnInit(): void {
+    this.auth.isAuthenticated()
     
   }
 
@@ -407,12 +408,11 @@ export class AppComponent implements OnInit {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;app-nav&gt;&lt;/app-nav&gt;
 
-&lt;app-dashboard-modal&gt;&lt;/app-dashboard-modal&gt;
+&lt;router-outlet *ngIf&#x3D;&quot;auth.isAuthenticated$ | async&quot;&gt;&lt;/router-outlet&gt;
 
-&lt;!-- &lt;app-food-card&gt;&lt;/app-food-card&gt;--&gt;
-&lt;!-- &lt;app-sidebar *ngIf&#x3D;&quot;true&quot;&gt;&lt;/app-sidebar&gt; --&gt;
-
-&lt;app-auth-modal&gt;&lt;/app-auth-modal&gt;
+&lt;app-auth-modal
+  *ngIf&#x3D;&quot;!(auth.isAuthenticatedWithDelay | async)&quot;
+&gt;&lt;/app-auth-modal&gt;
 </code></pre>
     </div>
 
@@ -448,7 +448,7 @@ export class AppComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-nav></app-nav><app-dashboard-modal></app-dashboard-modal><!-- <app-food-card></app-food-card>--><!-- <app-sidebar *ngIf="true"></app-sidebar> --><app-auth-modal></app-auth-modal></div>'
+        var COMPONENT_TEMPLATE = '<div><app-nav></app-nav><router-outlet *ngIf="auth.isAuthenticated$ | async"></router-outlet><app-auth-modal  *ngIf="!(auth.isAuthenticatedWithDelay | async)"></app-auth-modal></div>'
     var COMPONENTS = [{'name': 'AlertComponent', 'selector': 'app-alert'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthModalComponent', 'selector': 'app-auth-modal'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChartCardComponent', 'selector': 'app-chart-card'},{'name': 'DashboardModalComponent', 'selector': 'app-dashboard-modal'},{'name': 'FoodCardComponent', 'selector': 'app-food-card'},{'name': 'FoodSectionComponent', 'selector': 'app-food-section'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'TabComponent', 'selector': 'app-tab'},{'name': 'TabsContainerComponent', 'selector': 'app-tabs-container'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};

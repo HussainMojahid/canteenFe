@@ -4,6 +4,7 @@ import { FoodSectionComponent } from './food-section/food-section.component';
 import { FoodCardComponent } from './food-card/food-card.component';
 import { ChartCardComponent } from './chart-card/chart-card.component';
 import { DashboardModalComponent } from './dashboard-modal/dashboard-modal.component';
+import { SidebarComponent } from '../sidebar/sidebar.component';
 
 
 
@@ -13,10 +14,10 @@ import { DashboardModalComponent } from './dashboard-modal/dashboard-modal.compo
     FoodSectionComponent,
     FoodCardComponent,
     ChartCardComponent,
-    DashboardModalComponent
+    DashboardModalComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
 
   ],
   exports : [
