@@ -8,6 +8,7 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { PleaseLoginComponent } from './please-login/please-login.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     AuthModalComponent,
     ForgetPasswordComponent,
     ChangePasswordComponent,
+    PleaseLoginComponent,
   ],
   imports: [
     CommonModule,
@@ -24,6 +26,6 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule,
   ],
-  exports: [AuthModalComponent],
+  exports: [AuthModalComponent,PleaseLoginComponent],
 })
 export class UserModule {}

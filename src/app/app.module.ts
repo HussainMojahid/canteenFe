@@ -9,12 +9,16 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { BookingComponent } from './booking/booking.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     SidebarComponent,
+    BookingComponent,
+    FeedbackComponent,
   ],
   imports: [
     BrowserModule,
