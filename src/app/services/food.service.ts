@@ -12,7 +12,16 @@ interface IFoodCard {
   providedIn: 'root',
 })
 export class FoodService {
+
+  selectedDay : boolean = true;
+  
+
   constructor(private http: HttpClient) {}
+  toggleDay(){
+    this.selectedDay = !this.selectedDay
+    console.log(this.selectedDay);
+    
+  }
 
   getFood() {
     return this.http
