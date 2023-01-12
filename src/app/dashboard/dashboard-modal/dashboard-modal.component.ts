@@ -1,6 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
-import IFoodItem from 'src/app/models/food.model';
 import { FoodService } from 'src/app/services/food.service';
 import { SidebarService } from 'src/app/services/sidebar.service';
 
@@ -51,7 +49,7 @@ export class DashboardModalComponent implements OnInit {
       imageUrl: 'https://thumbs.dreamstime.com/b/samosa-24578861.jpg',
     },
   ];
-  constructor(public card: FoodService,public sidebar : SidebarService,public food :FoodService) {
+  constructor(public sidebar : SidebarService,public food :FoodService) {
     food.getFood().subscribe(
       {
         next(value) {
