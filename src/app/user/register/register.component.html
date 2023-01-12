@@ -1,13 +1,16 @@
+<app-alert *ngIf="showAlert"  [AlertType]="AlertType">
+  {{alertMsg}}
+ </app-alert>
 <form>
   <!-- Name -->
   <div class="mb-3">
     <label class="inline-block mb-2">Name</label>
-    <app-input placeholder="Enter Name"> </app-input>
+    <app-input [control]="username" placeholder="Enter Name"> </app-input>
   </div>
   <!-- Email -->
   <div class="mb-3">
     <label class="inline-block mb-2">Email</label>
-    <app-input type="email" placeholder="Enter Email"> </app-input>
+    <app-input  [control]="email" placeholder="Enter Email"> </app-input>
   </div>
   <!-- Age -->
   <div class="mb-3">
@@ -28,21 +31,22 @@
   <!-- Employee Id -->
   <div class="mb-3">
     <label class="inline-block mb-2">Employee Id</label>
-    <app-input type="text" placeholder="Enter Employee Id"> </app-input>
+    <app-input  [control]="EmployeeId" type="text" placeholder="Enter Employee Id"> </app-input>
   </div>
   <!-- Password -->
   <div class="mb-3">
     <label class="inline-block mb-2">Password</label>
-    <app-input type="password" placeholder="Enter Password"> </app-input>
+    <app-input type="password" [control]="password" placeholder="Enter Password"> </app-input>
   </div>
   <!-- Confirm Password -->
   <div class="mb-3">
     <label class="inline-block mb-2">Confirm Password</label>
-    <app-input type="password" placeholder="Enter Confirm Password">
+    <app-input type="password" [control]="confirm_password" placeholder="Enter Confirm Password">
     </app-input>
   </div>
 
   <button
+  (click)="registeration()"
     type="submit"
     class="block w-full bg-cyan-400 text-white py-1.5 px-3 rounded transition hover:bg-cyan-500"
   >

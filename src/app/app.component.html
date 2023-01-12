@@ -1,7 +1,11 @@
-<app-nav ></app-nav>
+<app-nav   *ngIf="(auth.isAuthenticated$ | async)"></app-nav>
 
 <router-outlet *ngIf="auth.isAuthenticated$ | async"></router-outlet>
 
+<!-- <router-outlet ></router-outlet> -->
+<!-- <app-booking></app-booking> -->
 <app-auth-modal
   *ngIf="!(auth.isAuthenticatedWithDelay | async)"
 ></app-auth-modal>
+
+<app-please-login *ngIf="!(auth.isAuthenticated$ | async)" ></app-please-login> 
