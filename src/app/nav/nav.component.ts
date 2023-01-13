@@ -5,7 +5,6 @@ import {
   faUserCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import { SidebarService } from '../services/sidebar.service';
-import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
   selector: 'app-nav',

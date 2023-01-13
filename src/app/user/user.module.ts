@@ -9,6 +9,7 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PleaseLoginComponent } from './please-login/please-login.component';
+import { UserTabComponent } from './user-tab/user-tab.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { PleaseLoginComponent } from './please-login/please-login.component';
     ForgetPasswordComponent,
     ChangePasswordComponent,
     PleaseLoginComponent,
+    UserTabComponent,
   ],
   imports: [
     CommonModule,
@@ -26,6 +28,6 @@ import { PleaseLoginComponent } from './please-login/please-login.component';
     FormsModule,
     HttpClientModule,
   ],
-  exports: [AuthModalComponent,PleaseLoginComponent],
+  exports: [AuthModalComponent,PleaseLoginComponent,UserTabComponent],
 })
 export class UserModule {}

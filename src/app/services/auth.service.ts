@@ -3,8 +3,6 @@ import { BehaviorSubject, delay, map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import IUser from '../models/user.model';
-import { Router } from '@angular/router';
-import IRegister from '../models/register.model';
 import { FormGroup } from '@angular/forms';
 @Injectable({
   providedIn: 'root',
@@ -35,6 +33,15 @@ export class AuthService {
       .pipe(
         map((user: IUser) => {
           localStorage.setItem('_token_canteen_app', JSON.stringify(user.jwt));
+          localStorage.setItem(
+            '_username_canteen_app',
+            JSON.stringify(user.user.username)
+          );
+          localStorage.setItem(
+            '_email_canteen_app',
+            JSON.stringify(user.user.email)
+          );
+
           return user;
         })
       );
@@ -42,18 +49,25 @@ export class AuthService {
 
   registration(registerForm: FormGroup) {
     console.log(registerForm.value.username);
-    
+
     return this.http
       .post<IUser>(`${environment.apiUrl}auth/local/register`, {
-        username : registerForm.value.username,
-        email : registerForm.value.email,
-        password : registerForm.value.password
-
+        username: registerForm.value.username,
+        email: registerForm.value.email,
+        password: registerForm.value.password,
       })
 
       .pipe(
         map((user: IUser) => {
           localStorage.setItem('_token_canteen_app', JSON.stringify(user.jwt));
+          localStorage.setItem(
+            '_username_canteen_app',
+            JSON.stringify(user.user.username)
+          );
+          localStorage.setItem(
+            '_email_canteen_app',
+            JSON.stringify(user.user.email)
+          );
           return user;
         })
       );
