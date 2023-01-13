@@ -11,8 +11,13 @@
       <span class="ml-2 mr-2 text-sm font-medium text-gray-900">Tomorrow</span>
     </label>
   </div>
-
+ 
   <app-food-section [category]="0">
+    <div class="  md:block absolute text-center z-10 " style="font-family: 'Lobster', cursive;">
+      <h5 class="text-4xl">BreakFast</h5>
+      
+    </div>
+    
     <app-food-card
       *ngFor="let item of foodItemBreakFast"
       [cardId] = 'item.name'
@@ -23,8 +28,13 @@
       [category]="0"
     >
     </app-food-card>
+    
   </app-food-section>
   <app-food-section [category]="1"> 
+    <div class="  md:block absolute text-center z-10 " style="font-family: 'Lobster', cursive;">
+      <h5 class="text-4xl">Lunch</h5>
+      
+    </div>
     <app-food-card
       *ngFor="let item of foodItemLunch"
       [cardId] = 'item.name'
@@ -35,7 +45,12 @@
     >
     </app-food-card>
   </app-food-section>
+  
   <app-food-section [category]="2">
+    <div class="  md:block absolute text-center z-10 " style="font-family: 'Lobster', cursive;">
+      <h5 class="text-4xl">HighTea</h5>
+      
+    </div>
     <app-food-card
       *ngFor="let item of foodItemSnacks"
       [cardId] = 'item.name'

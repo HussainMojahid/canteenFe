@@ -1,6 +1,7 @@
 <div class="fixed inset-0 z-50">
   <div class="flex items-start justify-start min-h-screen" id="usercard" (click)="toggle()" >
-    <div
+    
+   <div
       class="w-64 px-4 mt-20 ml-2 max-w-sm bg-white border border-gray-200 rounded-lg shadow-md"
     >
       <div class="flex justify-end px-4 pt-4">
@@ -16,20 +17,28 @@
           <span class="text-sm text-gray-500"
             >{{email}}</span
           >
+          
           <div class="flex mt-4 space-x-3 md:mt-6">
-            <a
-              href="#"
+           
+             <a
+            
+             routerLink="/edit"
               class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
               >Edit Profile</a
             >
+            
+
+
+              
+            
             <a
-              href="#"
+             (click)="logout()"
               class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-gray-900 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200"
               >Log Out</a
             >
           </div>
         </div>
       </div>
-    </div>
+    </div >
   </div>
 </div>

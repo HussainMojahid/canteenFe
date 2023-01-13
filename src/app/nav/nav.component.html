@@ -1,9 +1,9 @@
 <!-- Header -->
-<header id="header" class="w-full z-10 fixed shadow-lg">
+<header id="header" class="w-full z-20 fixed shadow-lg">
   <nav
     class="w-full fixed flex justify-start items-center bg-cyan-400 py-4 px-4"
   >
-    <a href="#" (click)="sidebar.toggleUserTab()">
+    <a  (click)="sidebar.toggleUserTab()">
       <fa-icon class="fa-2xl text-gray-200" [icon]="userIcon"></fa-icon>
     </a>
 
@@ -13,7 +13,7 @@
         <li class="nav-item pr-4">
           <a
             class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
-            href=""
+            routerLink=""
             >Dashboard</a
           >
         </li>

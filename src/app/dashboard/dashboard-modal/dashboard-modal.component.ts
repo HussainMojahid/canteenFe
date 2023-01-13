@@ -22,6 +22,20 @@ export class DashboardModalComponent implements OnInit {
     },
   ];
 
+  foodItemBreakFastTom: any[] = [
+    {
+      id: 1,
+      name: 'poha',
+      imageUrl:
+        'https://www.shutterstock.com/image-photo/indian-breakfast-dish-poha-260nw-765020587.jpg',
+    },
+    {
+      id: 1,
+      name: 'Samosa',
+      imageUrl: 'https://thumbs.dreamstime.com/b/samosa-24578861.jpg',
+    },
+  ];
+
   foodItemLunch: any[] = [
     {
       id: 1,
@@ -37,19 +51,14 @@ export class DashboardModalComponent implements OnInit {
   ];
 
   foodItemSnacks: any[] = [
-    {
-      id: 1,
-      name: 'poha',
-      imageUrl:
-        'https://www.shutterstock.com/image-photo/indian-breakfast-dish-poha-260nw-765020587.jpg',
-    },
-    {
-      id: 1,
-      name: 'Samosa',
-      imageUrl: 'https://thumbs.dreamstime.com/b/samosa-24578861.jpg',
-    },
+  
   ];
   constructor(public sidebar : SidebarService,public food :FoodService) {
+
+
+    this.foodItemBreakFast = food.foodItemBreakFast;
+    this.foodItemLunch = food.foodItemLunch;
+    this.foodItemSnacks = food.foodItemSnacks;
     food.getFood().subscribe(
       {
         next(value) {
@@ -65,6 +74,6 @@ export class DashboardModalComponent implements OnInit {
     
   }
   ngOnInit(): void {
-    // const foodItems : IFoodItem[] = this.card.getFood().subscribe()
+    
   }
 }

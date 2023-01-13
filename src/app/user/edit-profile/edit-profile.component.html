@@ -1,0 +1,100 @@
+<app-alert *ngIf="showAlert" [AlertType]="AlertType">
+  {{ alertMsg }}
+</app-alert>
+
+<!-- Auth Modal -->
+
+<div class="fixed inset-0 overflow-y-auto" id="modal">
+  
+  <div
+    class="flex flex-col items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
+  >
+  <div  class="self-end m-1 mr-5">
+    <button type="button" class="text-cyan-700 border border-cyan-700 hover:bg-cyan-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-centerdark:text-blue-500 " (click)="auth.backbutton()">
+      <fa-icon class="fa-lg" [icon]="backArrow"></fa-icon>
+      <span class="sr-only">Icon description</span>
+    </button>
+  </div>
+    <ul class="flex flex-wrap">
+      <li class="flex-auto text-center">
+        <a
+          class="block rounded py-3 px-4 mx-2 transition hover:text-white text-white bg-cyan-400"
+         routerLink="/changePassword"
+          >Change Password</a
+        >
+      </li>
+      <li class="flex-auto text-center">
+        <a
+          class="block rounded py-3 px-4 transition hover:text-white text-white bg-cyan-400"
+          routerLink="/forgotPassword"
+          >Forgot Password</a
+        >
+      </li>
+    </ul>
+
+    <!-- rounded tab shadow -->
+    <div
+      class="inline-block align-bottom bg-secondary rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-4 sm:align-middle sm:max-w-lg sm:w-full bg-white"
+    >
+      <!-- Add margin if you want to see some of the overlay behind the modal-->
+      <div class="py-4 text-left px-12 bg-gray-100 mt-2">
+        <p class="text-2xl font-bold text-center">Edit Profile</p>
+        <!--Title-->
+        <div class="flex justify-between items-center pb-4">
+          <!-- Modal Close Button -->
+        </div>
+
+        <form>
+          <!-- Name -->
+          <div class="mb-3">
+            <label class="inline-block mb-2">Name</label>
+            <app-input [control]="username" placeholder="Enter Name">
+            </app-input>
+          </div>
+          <!-- Email -->
+          <div class="mb-3">
+            <label class="inline-block mb-2">Email</label>
+            <app-input [control]="email" placeholder="Enter Email"> </app-input>
+          </div>
+
+          <div class="mb-3">
+            <label class="inline-block mb-2">Organization</label>
+            <select
+              name="Organization"
+              id=""
+              class="form-select-lg mb-3 block w-full px-3 py-1.5 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-400 transition duration-500 focus:outline-none rounded bg-transparent focus:border-cyan-400 text-black"
+            >
+              <option disabled selected value="Select Organiztion">
+                Select Organiztion
+              </option>
+              <option *ngFor="let m of OrgList">{{ m.orgName }}</option>
+              <!-- <option value="New Vision">Core Card</option>
+            <option value="New Vision">GTS</option> -->
+            </select>
+          </div>
+          <!-- Employee Id -->
+          <div class="mb-3">
+            <label class="inline-block mb-2">Employee Id</label>
+            <app-input
+              [control]="EmployeeId"
+              type="text"
+              placeholder="Enter Employee Id"
+            >
+            </app-input>
+          </div>
+          <!-- Password -->
+
+          <!-- Confirm Password -->
+
+          <button
+            (click)="update()"
+            type="submit"
+            class="block w-full bg-cyan-400 text-white py-1.5 px-3 rounded transition hover:bg-cyan-500"
+          >
+            Update
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
