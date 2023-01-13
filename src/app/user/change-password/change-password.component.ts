@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-change-password',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./change-password.component.css']
 })
 export class ChangePasswordComponent {
+  backArrow = faArrowLeft;
+  constructor(public auth : AuthService){
+
+  }
+  
 
 }

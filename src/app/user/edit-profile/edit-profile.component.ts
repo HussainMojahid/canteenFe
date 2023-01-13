@@ -1,15 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
-import IRegister from 'src/app/models/register.model';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css'],
+  selector: 'app-edit-profile',
+  templateUrl: './edit-profile.component.html',
+  styleUrls: ['./edit-profile.component.css']
 })
-export class RegisterComponent {
+export class EditProfileComponent {
+
+  backArrow = faArrowLeft
+
   AlertType = 'success';
   showAlert: boolean = false;
   alertMsg = 'Please Wait! Under Process';
@@ -23,30 +26,29 @@ export class RegisterComponent {
     id : "3",
     orgName : "NewVision"
   }]
-  constructor(private auth: AuthService, private http: HttpClient) {}
+  constructor(public auth: AuthService, private http: HttpClient) {}
 
-  username = new FormControl('', [Validators.required, Validators.min(3)]);
+  username = new FormControl('', [Validators.required, Validators.minLength(3)]);
   email = new FormControl('', [Validators.required,Validators.email]);
-  password = new FormControl('', [Validators.required]);
-  confirm_password = new FormControl('', [Validators.required,this.matchValues('password')]);
+ 
   organization = new FormControl('', [Validators.required]);
   EmployeeId = new FormControl('', [Validators.required]);
 
   registerForm = new FormGroup({
     username: this.username,
     email: this.email,
-    password: this.password,
+    
     organization: this.organization,
     EmployeeId: this.EmployeeId,
-    confirm_password: this.confirm_password,
+    
   });
 
-  registeration() {
+  update() {
     this.AlertType = 'alert';
     this.showAlert = true;
 
     this.auth
-      .registration(this.registerForm)
+      .update(this.registerForm)
 
       .subscribe({
         next: () => {
@@ -60,15 +62,11 @@ export class RegisterComponent {
           this.AlertType = 'error';
           this.showAlert = true;
           this.alertMsg = e.error.error.message;
-        },
+        }
       });
 
     return;
   }
-  matchValues(matchTo:string): ValidatorFn{
-    return(control:AbstractControl)=>{
-      return control.value === control.parent?.get(matchTo)?.value ? null : {notMatching : true}
-    }
+  
 
-  }
 }

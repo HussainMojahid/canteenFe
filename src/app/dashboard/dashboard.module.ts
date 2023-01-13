@@ -5,6 +5,7 @@ import { FoodCardComponent } from './food-card/food-card.component';
 import { ChartCardComponent } from './chart-card/chart-card.component';
 import { DashboardModalComponent } from './dashboard-modal/dashboard-modal.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
+import { WelcomeCardComponent } from './welcome-card/welcome-card.component';
 
 
 
@@ -15,6 +16,7 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
     FoodCardComponent,
     ChartCardComponent,
     DashboardModalComponent,
+    WelcomeCardComponent,
   ],
   imports: [
     CommonModule,

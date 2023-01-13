@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import IUser from '../models/user.model';
 import { FormGroup } from '@angular/forms';
+import { Location } from '@angular/common';
 @Injectable({
   providedIn: 'root',
 })
@@ -12,7 +13,7 @@ export class AuthService {
   isAuthenticatedWithDelay = new Observable<boolean>();
   baseUrl = environment.apiUrl;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,public location : Location) {}
 
   isAuthenticated() {
     if (null !== localStorage.getItem('_token_canteen_app')) {
@@ -74,7 +75,9 @@ export class AuthService {
   }
 
   logout() {
-    localStorage.removeItem('user');
+    localStorage.removeItem('_token_canteen_app');
+    localStorage.removeItem('_email_canteen_app');
+    localStorage.removeItem('_username_canteen_app');
   }
 
   feedback(model: any) {
@@ -86,7 +89,42 @@ export class AuthService {
       })
     );
   }
-  setCurrentUser(user: IUser) {
-    localStorage.setItem('user', JSON.stringify(user));
+  // setCurrentUser(user: IUser) {
+  //   localStorage.setItem('user', JSON.stringify(user));
+  // }
+
+  update(registerForm: FormGroup){
+    console.log(registerForm.value.username);
+
+    return this.http
+      .post<IUser>(`${environment.apiUrl}auth/local/register`, {
+        username: registerForm.value.username,
+        email: registerForm.value.email,
+        password: registerForm.value.password,
+      })
+
+      .pipe(
+        map((user: IUser) => {
+          localStorage.setItem('_token_canteen_app', JSON.stringify(user.jwt));
+          localStorage.setItem(
+            '_username_canteen_app',
+            JSON.stringify(user.user.username)
+          );
+          localStorage.setItem(
+            '_email_canteen_app',
+            JSON.stringify(user.user.email)
+          );
+          return user;
+        })
+      );
+
+  }
+
+  backbutton(){
+    this.location.back();
+  }
+
+  getCurrentUserToken(){
+    return JSON.parse(localStorage.getItem('_token_canteen_app') || '');
   }
 }
