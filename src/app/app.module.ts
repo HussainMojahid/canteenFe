@@ -12,6 +12,7 @@ import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common
 import { BookingComponent } from './booking/booking.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { InterceptorInterceptor } from './interceptor.interceptor';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,8 @@ import { InterceptorInterceptor } from './interceptor.interceptor';
     FontAwesomeModule,
     DashboardModule,
     HttpClientModule,
+    
+   
   ],
   providers: [
     // { provide : HTTP_INTERCEPTORS, useClass : InterceptorInterceptor, multi : true}

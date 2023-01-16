@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs';
+import { filter, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 interface IFoodCard {
@@ -12,77 +12,39 @@ interface IFoodCard {
   providedIn: 'root',
 })
 export class FoodService {
+  selectedDay: boolean = true;
 
-  selectedDay : boolean = true;
-  
-  foodItemBreakFast: any[] = [
-    {
-      id: 1,
-      name: 'poha',
-      imageUrl:
-        'https://www.shutterstock.com/image-photo/indian-breakfast-dish-poha-260nw-765020587.jpg',
-    },
-    {
-      id: 1,
-      name: 'Samosa',
-      imageUrl: 'https://thumbs.dreamstime.com/b/samosa-24578861.jpg',
-    },
-  ];
+  foodItemBreakFast: any[] = [];
 
-  foodItemBreakFastTom: any[] = [
-    {
-      id: 1,
-      name: 'poha',
-      imageUrl:
-        'https://www.shutterstock.com/image-photo/indian-breakfast-dish-poha-260nw-765020587.jpg',
-    },
-    {
-      id: 1,
-      name: 'Samosa',
-      imageUrl: 'https://thumbs.dreamstime.com/b/samosa-24578861.jpg',
-    },
-  ];
+  foodItemLunch: any[] = [];
 
-  foodItemLunch: any[] = [
-    {
-      id: 1,
-      name: 'poha',
-      imageUrl:
-        'https://www.shutterstock.com/image-photo/indian-breakfast-dish-poha-260nw-765020587.jpg',
-    },
-    {
-      id: 1,
-      name: 'Samosa',
-      imageUrl: 'https://thumbs.dreamstime.com/b/samosa-24578861.jpg',
-    },
-  ];
+  foodItemSnacks: any[] = [];
 
-  foodItemSnacks: any[] = [
-    {
-      id: 1,
-      name: 'poha',
-      imageUrl:
-        'https://www.shutterstock.com/image-photo/indian-breakfast-dish-poha-260nw-765020587.jpg',
-    },
-    {
-      id: 1,
-      name: 'Samosa',
-      imageUrl: 'https://thumbs.dreamstime.com/b/samosa-24578861.jpg',
-    },
-  ];
+  formatDate(date: Date) {
+    var d = new Date(date),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
 
+    if (month.length < 2) month = '0' + month;
+    if (day.length < 2) day = '0' + day;
+
+    return [year, month, day].join('-');
+  }
   constructor(private http: HttpClient) {}
-  toggleDay(){
-    this.selectedDay = !this.selectedDay
-    console.log(this.selectedDay);
 
-    
+  toggleDay() {
+    this.selectedDay = !this.selectedDay;
+    if (this.selectedDay) {
+      this.todayFood();
+    } else {
+      this.tommorowFood();
+    }
   }
 
   getFood() {
     return this.http
-      .get<any>(`${environment.apiUrl}food-inventories`)
-
+      .get<any>(`${environment.apiUrl}food-mains?populate=*`)
       .pipe(
         map((foodItem) => {
           return foodItem.data;
@@ -130,8 +92,23 @@ export class FoodService {
     }
   }
 
-  // unregister(id: string) {
-  //   this.cards = this.cards.filter((element) => element.id !== id);
+  // unregister(id: string, category: number) {
+  //   // this.cards = this.cards.filter((element) => element.id !== id);
+  //   switch (category) {
+  //     case 0: // Brekfast
+  //       this.foodCardPush(id, this.Bcards);
+
+  //       break;
+
+  //     case 1: // Lunch
+  //       this.foodCardPush(id, this.Lcards);
+
+  //       break;
+  //     case 2: // High Tea
+  //       this.foodCardPush(id, this.Hcards);
+
+  //       break;
+  //   }
   // }
 
   isCardOpen(id: string, category: number): boolean {
@@ -207,5 +184,99 @@ export class FoodService {
       // High Tea
       this.toggleFood(action, category, this.Hcards);
     }
+  }
+
+  todayFood() {
+    if (this.foodItemBreakFast.length > 0) {
+      this.foodItemBreakFast = [];
+    } else if (this.foodItemLunch.length > 0) {
+      this.foodItemBreakFast = [];
+    } else if (this.foodItemSnacks.length > 0) {
+      this.foodItemBreakFast = [];
+    }
+    this.getFood().subscribe({
+      next: async (value) => {
+        value.forEach((element: any) => {
+          if (
+            element.attributes.food_catagory.data.attributes.catType ===
+              'BreakFast' &&
+            element.attributes.Date === this.formatDate(new Date())
+          ) {
+            this.foodItemBreakFast.push(
+              element.attributes.food_inventory.data.attributes
+            );
+            console.log(this.foodItemBreakFast);
+          } else if (
+            element.attributes.food_catagory.data.attributes.catType ===
+              'Lunch' &&
+            element.attributes.Date === this.formatDate(new Date())
+          ) {
+            this.foodItemLunch.push(
+              element.attributes.food_inventory.data.attributes
+            );
+            console.log(this.foodItemLunch);
+          } else if (
+            element.attributes.food_catagory.data.attributes.catType ===
+              'HighTea' &&
+            element.attributes.Date === this.formatDate(new Date())
+          ) {
+            this.foodItemSnacks.push(
+              element.attributes.food_inventory.data.attributes
+            );
+            console.log(this.foodItemSnacks);
+          }
+        });
+      },
+    });
+  }
+
+  tommorowFood() {
+    if (this.foodItemBreakFast.length > 0) {
+      this.foodItemBreakFast = [];
+    } else if (this.foodItemLunch.length > 0) {
+      this.foodItemBreakFast = [];
+    } else if (this.foodItemSnacks.length > 0) {
+      this.foodItemBreakFast = [];
+    }
+    var day = new Date();
+    var nextDay = new Date(day);
+    nextDay.setDate(day.getDate() + 1);
+
+    console.log(this.formatDate(nextDay));
+
+    this.getFood().subscribe({
+      next: async (value) => {
+        value.forEach((element: any) => {
+          if (
+            element.attributes.food_catagory.data.attributes.catType ===
+              'BreakFast' &&
+            element.attributes.Date === this.formatDate(nextDay)
+          ) {
+            this.foodItemBreakFast.push(
+              element.attributes.food_inventory.data.attributes
+            );
+            console.log(this.foodItemBreakFast);
+          } else if (
+            element.attributes.food_catagory.data.attributes.catType ===
+              'Lunch' &&
+            element.attributes.Date === this.formatDate(nextDay)
+          ) {
+            this.foodItemLunch.push(
+              element.attributes.food_inventory.data.attributes
+            );
+            console.log(this.foodItemLunch);
+          } else if (
+            element.attributes.food_catagory.data.attributes.catType ===
+              'HighTea' &&
+            element.attributes.Date === this.formatDate(nextDay)
+          ) {
+            this.foodItemSnacks.push(
+              element.attributes.food_inventory.data.attributes
+            );
+            console.log(this.foodItemSnacks);
+          }
+        });
+      },
+    });
   }
 }
