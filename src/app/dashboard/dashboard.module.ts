@@ -6,24 +6,40 @@ import { ChartCardComponent } from './chart-card/chart-card.component';
 import { DashboardModalComponent } from './dashboard-modal/dashboard-modal.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { WelcomeCardComponent } from './welcome-card/welcome-card.component';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FoodPostComponent } from './food-post/food-post.component';
+import { SharedModule } from "../shared/shared.module";
+import { DashboardRoutingModule } from './dashboard.routing.module';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { FormsModule } from '@angular/forms';
 
 
 
 @NgModule({
-  declarations: [
-    FoodSectionComponent,
-    FoodCardComponent,
-    ChartCardComponent,
-    DashboardModalComponent,
-    WelcomeCardComponent,
-  ],
-  imports: [
-    CommonModule,
-
-  ],
-  exports : [
-    DashboardModalComponent
-  ]
+    declarations: [
+        FoodSectionComponent,
+        FoodCardComponent,
+        ChartCardComponent,
+        DashboardModalComponent,
+        WelcomeCardComponent,
+        FoodPostComponent,
+    ],
+    exports: [
+        DashboardModalComponent
+    ],
+    imports: [
+        CommonModule,
+        NgMultiSelectDropDownModule,
+        DashboardRoutingModule,
+        SharedModule,
+        FontAwesomeModule,
+        NgSelectModule,
+        FormsModule
+        
+    
+        
+        
+    ]
 })
 export class DashboardModule { }
