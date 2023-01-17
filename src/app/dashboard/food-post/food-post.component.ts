@@ -3,49 +3,39 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from 'src/app/services/auth.service';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
+import { FoodService } from 'src/app/services/food.service';
 
 @Component({
   selector: 'app-food-post',
   templateUrl: './food-post.component.html',
-  styleUrls: ['./food-post.component.css']
+  styleUrls: ['./food-post.component.css'],
 })
 export class FoodPostComponent {
-
-  constructor(public auth : AuthService){}
+  constructor(public auth: AuthService, public food: FoodService) {}
 
   @Input() category = 'lunch';
   backArrow = faArrowLeft;
 
-  foodname = new FormControl('', [Validators.required, Validators.min(3)]);
-  date = new FormControl(new Date, [Validators.required]);
+  foodname = new FormControl([''], [Validators.required, Validators.min(3)]);
+  date = new FormControl(new Date(), [Validators.required]);
   price = new FormControl('', [Validators.required]);
-  
- 
-  
 
   foodForm = new FormGroup({
     foodname: this.foodname,
     date: this.date,
     price: this.price,
-    
   });
-  addFood(){
-
+  addFood() {
+    console.log(this.foodForm.value.foodname);
+    console.log(this.foodForm.value.date);
+    console.log(this.foodForm.value.price);
   }
 
+  cities: any[] = this.food.foodItemBreakFast;
 
-  cities = [
-    {id: 1, name: 'Vilnius'},
-    {id: 2, name: 'Kaunas'},
-    {id: 3, name: 'Pavilnys', disabled: true},
-    {id: 4, name: 'Pabradė'},
-    {id: 5, name: 'Klaipėda'}
-];
-selectedCity: any;
-    selectedCityIds: string[] | undefined;
-    selectedCityName = 'Vilnius';
-    selectedCityId: number | undefined;
-    selectedUserIds: number[] | undefined;
-
-
+  selectedCity: any;
+  selectedCityIds: string[] | undefined;
+  // selectedCityName = 'Vilnius';
+  selectedCityId: number | undefined;
+  selectedUserIds: string[] | undefined;
 }

@@ -3,11 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { FoodPostComponent } from './food-post/food-post.component';
 
 const routes: Routes = [
-    {
-        path: 'addfood/:id',
-        component: FoodPostComponent,
-      },
-      
+  {
+    path: 'addfood/:id',
+    component: FoodPostComponent,
+  },
 ];
 
 @NgModule({

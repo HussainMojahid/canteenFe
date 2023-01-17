@@ -13,7 +13,7 @@ export class AuthService {
   isAuthenticatedWithDelay = new Observable<boolean>();
   baseUrl = environment.apiUrl;
 
-  constructor(private http: HttpClient,public location : Location) {}
+  constructor(private http: HttpClient, public location: Location) {}
 
   isAuthenticated() {
     if (null !== localStorage.getItem('_token_canteen_app')) {
@@ -93,7 +93,7 @@ export class AuthService {
   //   localStorage.setItem('user', JSON.stringify(user));
   // }
 
-  update(registerForm: FormGroup){
+  update(registerForm: FormGroup) {
     console.log(registerForm.value.username);
 
     return this.http
@@ -117,14 +117,13 @@ export class AuthService {
           return user;
         })
       );
-
   }
 
-  backbutton(){
+  backbutton() {
     this.location.back();
   }
 
-  getCurrentUserToken(){
+  getCurrentUserToken() {
     return JSON.parse(localStorage.getItem('_token_canteen_app') || '');
   }
 }

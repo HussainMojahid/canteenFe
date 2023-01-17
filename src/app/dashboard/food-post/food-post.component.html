@@ -27,7 +27,7 @@
 
         <div class="flex justify-between items-center pb-4"></div>
         <h1 class="">{{ category }}</h1>
-        <form>
+        <form [formGroup]="foodForm" (ngSubmit)="addFood()">
           <div class="mb-3">
             <label class="inline-block mb-2">Date</label>
             <app-input [control]="date" placeholder="Enter Name" type="date">
@@ -36,14 +36,17 @@
 
           <div class="mb-3">
             <label class="inline-block mb-2">Food-Items</label>
-            <ng-select class="block w-full px-3 py-1.5 bg-gray-100 bg-clip-padding bg-no-repeat border border-solid border-gray-400 ransition duration-500 focus:outline-none rounded bg-transparent focus:border-cyan-400 text-black" [items]="cities"
-                   bindLabel="name"
-                   bindValue="id"
-                   [multiple]="true"
-                   placeholder="Select cities"
-                   [(ngModel)]="selectedCityIds">
-        </ng-select>
-        
+            <ng-select
+              class="block w-full px-3 py-1.5 bg-gray-100 bg-clip-padding bg-no-repeat border border-solid border-gray-400 ransition duration-500 focus:outline-none rounded bg-transparent focus:border-cyan-400 text-black"
+              [items]="cities"
+              bindLabel="FoodName"
+              bindValue="FoodName"
+              [multiple]="true"
+              placeholder="Select items"
+              [(ngModel)]="selectedCityIds"
+              [formControl]="foodname" 
+            >
+            </ng-select>
           </div>
           <div class="mb-3">
             <label class="inline-block mb-2">Price</label>
@@ -51,7 +54,7 @@
           </div>
 
           <button
-            (click)="addFood()"
+            
             type="submit"
             class="block w-full bg-cyan-400 text-white py-1.5 px-3 rounded transition hover:bg-cyan-500"
           >

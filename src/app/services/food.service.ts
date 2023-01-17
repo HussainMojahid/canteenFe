@@ -74,6 +74,10 @@ export class FoodService {
     }
   }
 
+  foodCardPop(id: string, cards: IFoodCard[]) {
+    cards = cards.filter((element) => element.id !== id);
+  }
+
   register(id: string, category: number) {
     switch (category) {
       case 0: // Brekfast
@@ -92,24 +96,24 @@ export class FoodService {
     }
   }
 
-  // unregister(id: string, category: number) {
-  //   // this.cards = this.cards.filter((element) => element.id !== id);
-  //   switch (category) {
-  //     case 0: // Brekfast
-  //       this.foodCardPush(id, this.Bcards);
+  unregister(id: string, category: number) {
+    // this.cards = this.cards.filter((element) => element.id !== id);
+    switch (category) {
+      case 0: // Brekfast
+        this.foodCardPop(id, this.Bcards);
 
-  //       break;
+        break;
 
-  //     case 1: // Lunch
-  //       this.foodCardPush(id, this.Lcards);
+      case 1: // Lunch
+        this.foodCardPop(id, this.Lcards);
 
-  //       break;
-  //     case 2: // High Tea
-  //       this.foodCardPush(id, this.Hcards);
+        break;
+      case 2: // High Tea
+        this.foodCardPop(id, this.Hcards);
 
-  //       break;
-  //   }
-  // }
+        break;
+    }
+  }
 
   isCardOpen(id: string, category: number): boolean {
     if (category === 0) {
@@ -187,12 +191,22 @@ export class FoodService {
   }
 
   todayFood() {
+    console.log(
+      this.foodItemBreakFast.length,
+      this.foodItemLunch.length,
+      this.foodItemSnacks.length
+    );
     if (this.foodItemBreakFast.length > 0) {
       this.foodItemBreakFast = [];
-    } else if (this.foodItemLunch.length > 0) {
-      this.foodItemBreakFast = [];
-    } else if (this.foodItemSnacks.length > 0) {
-      this.foodItemBreakFast = [];
+      this.Bcards = [];
+    }
+    if (this.foodItemLunch.length > 0) {
+      this.foodItemLunch = [];
+      this.Lcards = [];
+    }
+    if (this.foodItemSnacks.length > 0) {
+      this.foodItemSnacks = [];
+      this.Hcards = [];
     }
     this.getFood().subscribe({
       next: async (value) => {
@@ -206,7 +220,8 @@ export class FoodService {
               element.attributes.food_inventory.data.attributes
             );
             console.log(this.foodItemBreakFast);
-          } else if (
+          }
+          if (
             element.attributes.food_catagory.data.attributes.catType ===
               'Lunch' &&
             element.attributes.Date === this.formatDate(new Date())
@@ -215,7 +230,8 @@ export class FoodService {
               element.attributes.food_inventory.data.attributes
             );
             console.log(this.foodItemLunch);
-          } else if (
+          }
+          if (
             element.attributes.food_catagory.data.attributes.catType ===
               'HighTea' &&
             element.attributes.Date === this.formatDate(new Date())
@@ -231,12 +247,22 @@ export class FoodService {
   }
 
   tommorowFood() {
+    console.log(
+      this.foodItemBreakFast.length,
+      this.foodItemLunch.length,
+      this.foodItemSnacks.length
+    );
     if (this.foodItemBreakFast.length > 0) {
       this.foodItemBreakFast = [];
-    } else if (this.foodItemLunch.length > 0) {
-      this.foodItemBreakFast = [];
-    } else if (this.foodItemSnacks.length > 0) {
-      this.foodItemBreakFast = [];
+      this.Bcards = [];
+    }
+    if (this.foodItemLunch.length > 0) {
+      this.foodItemLunch = [];
+      this.Lcards = [];
+    }
+    if (this.foodItemSnacks.length > 0) {
+      this.foodItemSnacks = [];
+      this.Hcards = [];
     }
     var day = new Date();
     var nextDay = new Date(day);
@@ -256,7 +282,8 @@ export class FoodService {
               element.attributes.food_inventory.data.attributes
             );
             console.log(this.foodItemBreakFast);
-          } else if (
+          }
+          if (
             element.attributes.food_catagory.data.attributes.catType ===
               'Lunch' &&
             element.attributes.Date === this.formatDate(nextDay)
@@ -265,7 +292,8 @@ export class FoodService {
               element.attributes.food_inventory.data.attributes
             );
             console.log(this.foodItemLunch);
-          } else if (
+          }
+          if (
             element.attributes.food_catagory.data.attributes.catType ===
               'HighTea' &&
             element.attributes.Date === this.formatDate(nextDay)

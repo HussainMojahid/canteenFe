@@ -1,11 +1,14 @@
 <!-- Auth Modal -->
 
-<div class="fixed z-20 inset-0 overflow-y-auto" id="modal"
- [ngClass]="{hidden: modal.isModalOpen() }">
+<div
+  class="fixed z-20 inset-0 overflow-y-auto"
+  id="modal"
+  [ngClass]="{ hidden: modal.isModalOpen() }"
+>
   <div
     class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
   >
-    <div class="fixed inset-0 transition-opacity"  (click)="closeModal()">
+    <div class="fixed inset-0 transition-opacity" (click)="closeModal()">
       <div class="absolute inset-0 bg-gray-500 bg-opacity-95"></div>
     </div>
     <!-- This element is to trick the browser into centering the modal contents. -->
@@ -24,7 +27,9 @@
           <ng-content select="[heading]"> </ng-content>
 
           <!-- Modal Close Button -->
-          <div class="modal-close cursor-pointer z-50" (click)="closeModal()" >&#x2715;</div>
+          <div class="modal-close cursor-pointer z-50" (click)="closeModal()">
+            &#x2715;
+          </div>
         </div>
 
         <ng-content> </ng-content>

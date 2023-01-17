@@ -1,6 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormControl,
+  FormGroup,
+  ValidatorFn,
+  Validators,
+} from '@angular/forms';
 import IRegister from 'src/app/models/register.model';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -13,22 +19,29 @@ export class RegisterComponent {
   AlertType = 'success';
   showAlert: boolean = false;
   alertMsg = 'Please Wait! Under Process';
-  OrgList :any[] = [{
-    id : "1",
-    orgName : "GTS"
-  },{
-    id : "2",
-    orgName : "CoreCard"
-  },{
-    id : "3",
-    orgName : "NewVision"
-  }]
+  OrgList: any[] = [
+    {
+      id: '1',
+      orgName: 'GTS',
+    },
+    {
+      id: '2',
+      orgName: 'CoreCard',
+    },
+    {
+      id: '3',
+      orgName: 'NewVision',
+    },
+  ];
   constructor(private auth: AuthService, private http: HttpClient) {}
 
   username = new FormControl('', [Validators.required, Validators.min(3)]);
-  email = new FormControl('', [Validators.required,Validators.email]);
+  email = new FormControl('', [Validators.required, Validators.email]);
   password = new FormControl('', [Validators.required]);
-  confirm_password = new FormControl('', [Validators.required,this.matchValues('password')]);
+  confirm_password = new FormControl('', [
+    Validators.required,
+    this.matchValues('password'),
+  ]);
   organization = new FormControl('', [Validators.required]);
   EmployeeId = new FormControl('', [Validators.required]);
 
@@ -65,10 +78,11 @@ export class RegisterComponent {
 
     return;
   }
-  matchValues(matchTo:string): ValidatorFn{
-    return(control:AbstractControl)=>{
-      return control.value === control.parent?.get(matchTo)?.value ? null : {notMatching : true}
-    }
-
+  matchValues(matchTo: string): ValidatorFn {
+    return (control: AbstractControl) => {
+      return control.value === control.parent?.get(matchTo)?.value
+        ? null
+        : { notMatching: true };
+    };
   }
 }

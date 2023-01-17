@@ -23,7 +23,7 @@
      </div>
     
     <app-food-card
-      *ngFor="let item of foodItemBreakFast"
+      *ngFor="let item of food.foodItemBreakFast"
       [cardId] = 'item.FoodName'
       [ngClass]="{ 'hidden': !food.isCardOpen(item.FoodName,0)
       
@@ -45,7 +45,7 @@
      </div>
    
     <app-food-card
-      *ngFor="let item of foodItemLunch"
+      *ngFor="let item of food.foodItemLunch"
       [cardId] = 'item.FoodName'
       [ngClass]="{ 'hidden': !food.isCardOpen(item.FoodName,1)
      }"
@@ -66,7 +66,7 @@
       
      </div>
     <app-food-card
-      *ngFor="let item of foodItemSnacks"
+      *ngFor="let item of food.foodItemSnacks"
       [cardId] = 'item.FoodName'
       [ngClass]="{ 'hidden': !food.isCardOpen(item.FoodName,2)
      }"

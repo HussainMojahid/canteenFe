@@ -15,9 +15,13 @@ export class FoodCardComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.card.register(this.cardId,this.category);
+    // document.body.appendChild(this.el.nativeElement);
+
   }
 
   ngOnDestroy(): void {
-    // this.card.unregister(this.cardId);
+    this.card.unregister(this.cardId,this.category);
+  //   document.body.removeChild(this.el.nativeElement);
+
   }
 }
