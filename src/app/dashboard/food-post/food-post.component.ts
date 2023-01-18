@@ -17,7 +17,7 @@ export class FoodPostComponent {
   backArrow = faArrowLeft;
 
   foodname = new FormControl([''], [Validators.required, Validators.min(3)]);
-  date = new FormControl(new Date(), [Validators.required]);
+  date = new FormControl(new Date(`${new Date().getDay}` ), [Validators.required]);
   price = new FormControl('', [Validators.required]);
 
   foodForm = new FormGroup({
