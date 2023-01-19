@@ -13,6 +13,7 @@ import { BookingComponent } from './booking/booking.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { InterceptorInterceptor } from './interceptor.interceptor';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +22,16 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
     SidebarComponent,
     BookingComponent,
     FeedbackComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     UserModule,
     FontAwesomeModule,
     DashboardModule,
     HttpClientModule,
+    AppRoutingModule,
+
     
    
   ],
