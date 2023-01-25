@@ -27,7 +27,7 @@
     >
       <!-- Add margin if you want to see some of the overlay behind the modal-->
       <div class="py-4 text-left px-12 bg-gray-100 mt-2">
-        <p class="text-2xl font-bold text-center">Change Password</p>
+        <p class="text-2xl font-bold text-center">Add Food</p>
         <!--Title-->
         <div class="flex justify-between items-center pb-4">
           <!-- Modal Close Button -->
@@ -35,26 +35,23 @@
 
         <form>
           <div class="mb-3">
-            <label class="inline-block mb-2">Current Password</label>
+            <label class="inline-block mb-2">Foodame</label>
 
-            <app-input type="password" placeholder="Enter Current Password">
-            </app-input>
+            <input type="text" placeholder="Enter Foodame " />
           </div>
           <div class="mb-3">
-            <label class="inline-block mb-2">New Password</label>
-            <app-input type="password" placeholder="Enter Current Password">
-            </app-input>
+            <label class="inline-block mb-2">Food price</label>
+            <input type="text" placeholder="Enter price " />
           </div>
           <div class="mb-3">
-            <label class="inline-block mb-2">Confirm New Password</label>
-            <app-input type="password" placeholder="Enter Current Password">
-            </app-input>
+            <label class="inline-block mb-2">Food Image</label>
+            <input type="media" placeholder="Enter Food Image" />
           </div>
           <button
             type="submit"
             class="block w-full bg-cyan-400 text-white py-1.5 px-3 rounded transition hover:bg-cyan-500 disabled:opacity-50 disabled:bg-cyan-400"
           >
-            Send Reset Link
+            Add Food
           </button>
         </form>
       </div>

@@ -15,10 +15,10 @@
   <app-food-section [category]="0">
     <div class="md:block absolute text-center z-10  flex w-full justify-between p-1" style="font-family: 'Lobster', cursive;">
       <div>
-        <h5 class="text-4xl">BreakFast</h5>
+        <h5 class="text-4xl drop-shadow-md">BreakFast</h5>
       </div>
      <div  class="self-end m-1 mr-5">
-      <a class="text-cyan-700 border border-cyan-700 hover:bg-cyan-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-centerdark:text-blue-500 " routerLink="/addfood/0"><fa-icon class="fa-sm" [icon]="plusbutton">   </fa-icon></a>
+      <a class="text-cyan-700 border border-cyan-700 hover:bg-cyan-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-centerdark:text-blue-500 " routerLink="/addfood/0"[state]="{ selectedDay:food.selectedDay , category:'BreakFast'}"><fa-icon class="fa-sm" [icon]="plusbutton">   </fa-icon></a>
       </div>
      </div>
     
@@ -37,10 +37,10 @@
   <app-food-section [category]="1"> 
     <div class="md:block absolute text-center z-10  flex w-full justify-between p-1" style="font-family: 'Lobster', cursive;">
       <div>
-        <h5 class="text-4xl">Lunch</h5>
+        <h5 class="text-4xl drop-shadow-md">Lunch</h5>
       </div>
      <div  class="self-end m-1 mr-5">
-        <a class="text-cyan-700 border border-cyan-700 hover:bg-cyan-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-centerdark:text-blue-500 " routerLink="/addfood/1"><fa-icon class="fa-sm" [icon]="plusbutton">   </fa-icon></a>
+        <a class="text-cyan-700 border border-cyan-700 hover:bg-cyan-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-centerdark:text-blue-500 " routerLink="/addfood/1" [state]="{ selectedDay:food.selectedDay , category:'Lunch'}"><fa-icon class="fa-sm" [icon]="plusbutton">   </fa-icon></a>
       </div>
      </div>
    
@@ -58,10 +58,10 @@
   <app-food-section [category]="2">
     <div class="md:block absolute text-center z-10  flex w-full justify-between p-1" style="font-family: 'Lobster', cursive;">
       <div>
-        <h5 class="text-4xl">High-Tea</h5>
+        <h5 class="text-4xl drop-shadow-md">High-Tea</h5>
       </div>
      <div  class="self-end m-1 mr-5">
-      <a class="text-cyan-700 border border-cyan-700 hover:bg-cyan-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-centerdark:text-blue-500 " routerLink="/addfood/2"><fa-icon class="fa-sm" [icon]="plusbutton">   </fa-icon></a>
+      <a class="text-cyan-700 border border-cyan-700 hover:bg-cyan-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-centerdark:text-blue-500 " routerLink="/addfood/2" [state]="{ selectedDay:food.selectedDay , category:'High-Tea'}"><fa-icon class="fa-sm" [icon]="plusbutton">   </fa-icon></a>
       </div>
       
      </div>
