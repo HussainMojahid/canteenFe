@@ -3,17 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavComponent } from './nav/nav.component';
+import { NavComponent } from './dashboard/nav/nav.component';
 import { UserModule } from './user/user.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { DashboardModule } from './dashboard/dashboard.module';
-import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BookingComponent } from './booking/booking.component';
 import { FeedbackComponent } from './feedback/feedback.component';
-import { InterceptorInterceptor } from './interceptor.interceptor';
-import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { InterceptorInterceptor } from './interceptor/interceptor.interceptor';
+import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
 
 @NgModule({
   declarations: [
@@ -30,14 +29,15 @@ import { NotFoundComponent } from './not-found/not-found.component';
     FontAwesomeModule,
     DashboardModule,
     HttpClientModule,
-    AppRoutingModule,
-
-    
-   
+    AdminDashboardModule
   ],
   providers: [
-    // { provide : HTTP_INTERCEPTORS, useClass : InterceptorInterceptor, multi : true}
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorInterceptor,
+      multi: true,
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

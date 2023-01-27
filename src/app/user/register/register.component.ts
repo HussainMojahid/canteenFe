@@ -7,7 +7,6 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
-import IRegister from 'src/app/models/register.model';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({

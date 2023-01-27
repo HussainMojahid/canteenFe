@@ -1,46 +1,72 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { map } from 'rxjs';
+import ICurrentUser from 'src/app/models/currentUser.modal';
 import { AuthService } from 'src/app/services/auth.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './edit-profile.component.html',
-  styleUrls: ['./edit-profile.component.css']
+  styleUrls: ['./edit-profile.component.css'],
 })
-export class EditProfileComponent {
-
-  backArrow = faArrowLeft
-
+export class EditProfileComponent implements OnInit {
+  user: ICurrentUser | null = null;
+  backArrow = faArrowLeft;
   AlertType = 'success';
   showAlert: boolean = false;
   alertMsg = 'Please Wait! Under Process';
-  OrgList :any[] = [{
-    id : "1",
-    orgName : "GTS"
-  },{
-    id : "2",
-    orgName : "CoreCard"
-  },{
-    id : "3",
-    orgName : "NewVision"
-  }]
-  constructor(public auth: AuthService, private http: HttpClient) {}
+  id: number | undefined = -1;
 
-  username = new FormControl('', [Validators.required, Validators.minLength(3)]);
-  email = new FormControl('', [Validators.required,Validators.email]);
- 
+  OrgList: any[] = [];
+  constructor(
+    public auth: AuthService,
+    private http: HttpClient,
+    private userService: UserService
+  ) {}
+  ngOnInit(): void {
+    this.auth.user$
+      .pipe(
+        map((val: any) => {
+          console.log(val.id);
+
+          this.id = val.id;
+        })
+      )
+      .subscribe();
+    this.auth.getCurrentUser().subscribe((val) => {
+      this.auth.user$.next(val);
+      this.username.setValue(this.auth.user$.getValue()?.username);
+      this.email.setValue(this.auth.user$.getValue()?.email);
+
+      this.EmployeeId.setValue(this.auth.user$.getValue()?.EmpId);
+    });
+    this.userService.getOrganization();
+    console.log(this.userService.Organization);
+    this.OrgList = this.userService.Organization;
+  }
+
+  username = new FormControl(this.auth.user$.getValue()?.username, [
+    Validators.required,
+    Validators.minLength(3),
+  ]);
+  email = new FormControl(this.auth.user$.getValue()?.email, [
+    Validators.required,
+    Validators.email,
+  ]);
+
   organization = new FormControl('', [Validators.required]);
-  EmployeeId = new FormControl('', [Validators.required]);
+  EmployeeId = new FormControl(this.auth.user$.getValue()?.EmpId, [
+    Validators.required,
+  ]);
 
-  registerForm = new FormGroup({
+  EditForm = new FormGroup({
     username: this.username,
     email: this.email,
-    
     organization: this.organization,
     EmployeeId: this.EmployeeId,
-    
   });
 
   update() {
@@ -48,7 +74,7 @@ export class EditProfileComponent {
     this.showAlert = true;
 
     this.auth
-      .update(this.registerForm)
+      .update(this.EditForm, this.id!)
 
       .subscribe({
         next: () => {
@@ -62,11 +88,9 @@ export class EditProfileComponent {
           this.AlertType = 'error';
           this.showAlert = true;
           this.alertMsg = e.error.error.message;
-        }
+        },
       });
 
     return;
   }
-  
-
 }

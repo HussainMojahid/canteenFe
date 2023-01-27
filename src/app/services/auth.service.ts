@@ -5,12 +5,14 @@ import { HttpClient } from '@angular/common/http';
 import IUser from '../models/user.model';
 import { FormGroup } from '@angular/forms';
 import { Location } from '@angular/common';
+import ICurrentUser from '../models/currentUser.modal';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   isAuthenticated$ = new BehaviorSubject<boolean>(false);
   isAuthenticatedWithDelay = new Observable<boolean>();
+  user$ = new BehaviorSubject<ICurrentUser | null>(null);
   baseUrl = environment.apiUrl;
 
   constructor(private http: HttpClient, public location: Location) {}
@@ -42,7 +44,7 @@ export class AuthService {
             '_email_canteen_app',
             JSON.stringify(user.user.email)
           );
-
+          this.user$.next(user.user);
           return user;
         })
       );
@@ -89,15 +91,15 @@ export class AuthService {
       })
     );
   }
-  // setCurrentUser(user: IUser) {
-  //   localStorage.setItem('user', JSON.stringify(user));
-  // }
+  setCurrentUser(user: IUser) {
+    localStorage.setItem('user', JSON.stringify(user));
+  }
 
-  update(registerForm: FormGroup) {
+  update(registerForm: FormGroup, id: number) {
     console.log(registerForm.value.username);
 
     return this.http
-      .post<IUser>(`${environment.apiUrl}auth/local/register`, {
+      .put<IUser>(`${environment.apiUrl}users/${id}`, {
         username: registerForm.value.username,
         email: registerForm.value.email,
         password: registerForm.value.password,
@@ -119,11 +121,23 @@ export class AuthService {
       );
   }
 
+  // getUser(username: string) {
+  //   return this.http.get<IUser>(`${environment.apiUrl}user/` + username);
+  // }
+
   backbutton() {
     this.location.back();
   }
 
-  getCurrentUserToken() {
-    return JSON.parse(localStorage.getItem('_token_canteen_app') || '');
+  getCurrentUserToken(): string | null {
+    const token = localStorage.getItem('_token_canteen_app');
+    if (token) {
+      return JSON.parse(token);
+    }
+    return null;
+  }
+
+  getCurrentUser() {
+    return this.http.get<any>(`${environment.apiUrl}users/me`);
   }
 }

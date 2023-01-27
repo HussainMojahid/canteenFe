@@ -21,10 +21,7 @@ const routes: Routes = [
     path: 'feedback',
     component: FeedbackComponent,
   },
-  {
-    path: '**',
-    component: NotFoundComponent,
-  }
+
 ];
 
 @NgModule({

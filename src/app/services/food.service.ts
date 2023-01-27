@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { filter, map } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import IFoodItem from '../models/food.model';
 
 interface IFoodCard {
   id: string;
@@ -19,6 +20,7 @@ export class FoodService {
   foodItemLunch: any[] = [];
 
   foodItemSnacks: any[] = [];
+  fooditem: any[] = [];
 
   formatDate(date: Date) {
     var d = new Date(date),
@@ -31,7 +33,16 @@ export class FoodService {
 
     return [year, month, day].join('-');
   }
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.getFoodInventory().subscribe({
+      next: (response) => {
+        response.forEach((e: any) => {
+          this.fooditem.push(e.attributes);
+          console.log(e.attributes);
+        });
+      },
+    });
+  }
 
   toggleDay() {
     this.selectedDay = !this.selectedDay;
@@ -50,6 +61,31 @@ export class FoodService {
           return foodItem.data;
         })
       );
+  }
+
+  postFood(food: IFoodItem): Observable<IFoodItem> {
+    return this.http.post<IFoodItem>(
+      `${environment.apiUrl}food-mains?populate=*`,
+      food
+    );
+  }
+
+  getFoodInventory() {
+    return this.http.get<any>(`${environment.apiUrl}food-inventories`).pipe(
+      map((item) => {
+        return item.data;
+      })
+    );
+  }
+
+  getDemo() {
+    this.getFoodInventory().subscribe({
+      next: (response) => {
+        response.forEach((e: any) => {
+          this.fooditem.push(e.attributes);
+        });
+      },
+    });
   }
 
   public BCurrentIndex = 0;

@@ -1,10 +1,6 @@
 import { Component } from '@angular/core';
-import {
-  faHamburger,
-  faMobileScreenButton,
-  faUserCircle,
-} from '@fortawesome/free-solid-svg-icons';
-import { SidebarService } from '../services/sidebar.service';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { SidebarService } from '../../services/sidebar.service';
 
 @Component({
   selector: 'app-nav',
