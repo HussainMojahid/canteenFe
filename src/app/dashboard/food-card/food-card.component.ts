@@ -11,13 +11,17 @@ export class FoodCardComponent implements OnInit, OnDestroy {
 
   @Input() cardId = '';
   @Input() imgUrl = 'https://ionicframework.com/docs/img/demos/thumbnail.svg';
-  @Input() category: number = -1;
+  @Input() category : number = -1;
 
   ngOnInit(): void {
-    this.card.register(this.cardId, this.category);
+    this.card.register(this.cardId,this.category);
+    // document.body.appendChild(this.el.nativeElement);
+
   }
 
   ngOnDestroy(): void {
-    this.card.unregister(this.cardId, this.category);
+    this.card.unregister(this.cardId,this.category);
+  //   document.body.removeChild(this.el.nativeElement);
+
   }
 }

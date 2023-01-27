@@ -5,9 +5,13 @@ import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-change-password',
   templateUrl: './change-password.component.html',
-  styleUrls: ['./change-password.component.css'],
+  styleUrls: ['./change-password.component.css']
 })
 export class ChangePasswordComponent {
   backArrow = faArrowLeft;
-  constructor(public auth: AuthService) {}
+  constructor(public auth : AuthService){
+
+  }
+  
+
 }

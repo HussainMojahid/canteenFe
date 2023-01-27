@@ -13,7 +13,7 @@ import { UserTabComponent } from './user-tab/user-tab.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { UserRoutingModule } from './user.routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { InterceptorInterceptor } from '../interceptor/interceptor.interceptor';
+import { InterceptorInterceptor } from '../interceptor.interceptor';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,7 @@ import { InterceptorInterceptor } from '../interceptor/interceptor.interceptor';
   exports: [AuthModalComponent,PleaseLoginComponent,UserTabComponent],
   providers : [
 
-    //  { provide : HTTP_INTERCEPTORS, useClass : InterceptorInterceptor, multi : true}
+    // { provide : HTTP_INTERCEPTORS, useClass : InterceptorInterceptor, multi : true}
   ]
 })
 export class UserModule {}

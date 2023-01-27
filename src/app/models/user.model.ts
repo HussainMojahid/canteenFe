@@ -9,6 +9,5 @@ export default interface IUser {
     blocked: boolean;
     createdAt: Date;
     updatedAt: Date;
-    EmpId: string;
   };
 }

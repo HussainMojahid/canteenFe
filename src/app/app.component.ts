@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faIceCream } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from './services/auth.service';
 import { ModalService } from './services/modal.service';
 

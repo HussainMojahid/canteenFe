@@ -9,7 +9,8 @@ import { ModalService } from 'src/app/services/modal.service';
 export class PleaseLoginComponent {
   constructor(public modal: ModalService) {}
 
-  openLogin($event: Event) {
+
+  openLogin($event : Event){
     this.modal.toggleModal('auth');
     $event.preventDefault;
   }
