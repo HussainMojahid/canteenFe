@@ -46,7 +46,7 @@
    
     <app-food-card
       *ngFor="let item of food.foodItemLunch"
-      [cardId] = 'item.FoodName'
+      [cardId] = 'item.FoodName' 
       [ngClass]="{ 'hidden': !food.isCardOpen(item.FoodName,1)
      }"
       [imgUrl]="item.ImgUrl"

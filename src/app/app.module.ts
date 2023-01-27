@@ -21,10 +21,10 @@ import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
     SidebarComponent,
     BookingComponent,
     FeedbackComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     UserModule,
     FontAwesomeModule,
     DashboardModule,
