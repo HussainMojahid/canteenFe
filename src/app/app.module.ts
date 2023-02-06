@@ -21,7 +21,6 @@ import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
     SidebarComponent,
     BookingComponent,
     FeedbackComponent,
-    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +28,8 @@ import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
     FontAwesomeModule,
     DashboardModule,
     HttpClientModule,
-    AdminDashboardModule
+    AdminDashboardModule,
+    AppRoutingModule
   ],
   providers: [
     {
