@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faWarehouse } from '@fortawesome/free-solid-svg-icons';
 import { SidebarService } from '../services/sidebar.service';
 
 @Component({
@@ -8,8 +9,8 @@ import { SidebarService } from '../services/sidebar.service';
 })
 export class SidebarComponent {
   constructor(public sidebar: SidebarService) {}
-
-  toggle(){
-    this.sidebar.toggleSidebar()
+  InventoryIco = faWarehouse;
+  toggle() {
+    this.sidebar.toggleSidebar();
   }
 }
