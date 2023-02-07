@@ -6,6 +6,8 @@ import { DeleteFoodComponent } from './delete-food/delete-food.component';
 import { FoodInventoryComponent } from './food-inventory/food-inventory.component';
 import { AdminDashboardRoutingModule } from './admin-dashboard.routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SharedModule } from '../shared/shared.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     DeleteFoodComponent,
     FoodInventoryComponent,
   ],
-  imports: [CommonModule, FontAwesomeModule, AdminDashboardRoutingModule],
+  imports: [
+    CommonModule,
+    FontAwesomeModule,
+    AdminDashboardRoutingModule,
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   exports: [],
 })
 export class AdminDashboardModule {}
