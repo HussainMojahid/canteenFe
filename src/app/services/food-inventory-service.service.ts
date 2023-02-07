@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { map } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
@@ -20,5 +21,21 @@ export class FoodInventoryServiceService implements OnInit {
 
   deleteFood(id: number) {
     return this.http.delete<any>(`${this.apiUrl}food-inventories/${id}`);
+  }
+
+  addFood(addFoodForm: FormGroup) {
+    return this.http
+      .post<any>(`${this.apiUrl}food-inventories`, {
+        data: {
+          FoodName: addFoodForm.value.FoodName,
+          Price: addFoodForm.value.Price,
+          ImgUrl: addFoodForm.value.ImageUrl,
+        },
+      })
+      .pipe(
+        map((res: any) => {
+          return res;
+        })
+      );
   }
 }

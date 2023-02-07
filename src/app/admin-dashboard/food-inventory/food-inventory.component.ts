@@ -61,7 +61,7 @@ export class FoodInventoryComponent implements OnInit {
 
     swalWithBootstrapButtons
       .fire({
-        title: 'Are you sure?',
+        title: 'Are you sure want to delete?',
         text: "You won't be able to revert this!",
         icon: 'warning',
         showCancelButton: true,
@@ -71,17 +71,14 @@ export class FoodInventoryComponent implements OnInit {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+          Swal.fire('Deleted!', 'Food deleted.', 'success');
 
-          this.foodInvetory.deleteFood(id).subscribe();
-          this.allFood = [];
-          this.getFood();
-        } else if (result.dismiss === Swal.DismissReason.cancel) {
-          swalWithBootstrapButtons.fire(
-            'Cancelled',
-            'Your imaginary file is safe :)',
-            'error'
-          );
+          this.foodInvetory.deleteFood(id).subscribe({
+            next: () => {
+              this.allFood = [];
+              this.getFood();
+            },
+          });
         }
       });
   }
