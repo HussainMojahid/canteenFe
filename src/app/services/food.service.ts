@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import IFoodItem from '../models/food.model';
@@ -12,13 +13,10 @@ interface IFoodCard {
 @Injectable({
   providedIn: 'root',
 })
-export class FoodService {
+export class FoodService implements OnInit {
   selectedDay: boolean = true;
-
   foodItemBreakFast: any[] = [];
-
   foodItemLunch: any[] = [];
-
   foodItemSnacks: any[] = [];
   fooditem: any[] = [];
 
@@ -37,13 +35,15 @@ export class FoodService {
     this.getFoodInventory().subscribe({
       next: (response) => {
         response.forEach((e: any) => {
-          this.fooditem.push(e.attributes);
-          console.log(e.attributes);
+          this.fooditem.push(e);
         });
       },
     });
   }
 
+  ngOnInit(): void {
+
+  }
   toggleDay() {
     this.selectedDay = !this.selectedDay;
     if (this.selectedDay) {
@@ -63,10 +63,10 @@ export class FoodService {
       );
   }
 
-  postFood(food: IFoodItem): Observable<IFoodItem> {
-    return this.http.post<IFoodItem>(
-      `${environment.apiUrl}food-mains?populate=*`,
-      food
+  postFood(food : any): Observable<any> {
+    return this.http.post<any>(
+      `${environment.apiUrl}food-mains`,
+      {data : food}
     );
   }
 

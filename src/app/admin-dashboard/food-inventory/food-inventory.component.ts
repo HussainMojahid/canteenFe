@@ -13,7 +13,7 @@ export class FoodInventoryComponent implements OnInit {
   deletebutton = faTrash;
   editbutton = faEdit;
   allFood: any[] = [];
-
+  
   constructor(private foodInvetory: FoodInventoryServiceService) {}
   ngOnInit(): void {
     this.getFood();
