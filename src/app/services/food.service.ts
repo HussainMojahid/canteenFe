@@ -279,6 +279,29 @@ export class FoodService implements OnInit {
           }
         });
       },
+      complete: () => {
+        if (this.foodItemBreakFast.length === 0) {
+          this.foodItemBreakFast.push({
+            FoodName: 'No Data',
+            ImgUrl:
+              'https://www.reinforcedesigns.com/onlinemin/default-img/empty1.png',
+          });
+        }
+        if (this.foodItemLunch.length === 0) {
+          this.foodItemLunch.push({
+            FoodName: 'No Data',
+            ImgUrl:
+              'https://www.reinforcedesigns.com/onlinemin/default-img/empty1.png',
+          });
+        }
+        if (this.foodItemSnacks.length === 0) {
+          this.foodItemSnacks.push({
+            FoodName: 'No Data',
+            ImgUrl:
+              'https://www.reinforcedesigns.com/onlinemin/default-img/empty1.png',
+          });
+        }
+      },
     });
   }
 
@@ -340,6 +363,29 @@ export class FoodService implements OnInit {
             console.log(this.foodItemSnacks);
           }
         });
+      },
+      complete: () => {
+        if (this.foodItemBreakFast.length === 0) {
+          this.foodItemBreakFast.push({
+            FoodName: 'No Data',
+            ImgUrl:
+              'https://www.reinforcedesigns.com/onlinemin/default-img/empty1.png',
+          });
+        }
+        if (this.foodItemLunch.length === 0) {
+          this.foodItemLunch.push({
+            FoodName: 'No Data',
+            ImgUrl:
+              'https://www.reinforcedesigns.com/onlinemin/default-img/empty1.png',
+          });
+        }
+        if (this.foodItemSnacks.length === 0) {
+          this.foodItemSnacks.push({
+            FoodName: 'No Data',
+            ImgUrl:
+              'https://www.reinforcedesigns.com/onlinemin/default-img/empty1.png',
+          });
+        }
       },
     });
   }
