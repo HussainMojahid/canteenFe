@@ -1,76 +1,89 @@
 <div>
   <app-chart-card></app-chart-card>
-  <div class="flex justify-end mx-1 my-1">
-    <span class="mr-2 text-sm font-medium text-gray-900">Today</span>
-
-    <label class="inline-flex relative items-center cursor-pointer">
-      <input type="checkbox" value="" class="sr-only peer" (click)="food.toggleDay()" unchecked />
-      <div
-        class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"
-      ></div>
-      <span class="ml-2 mr-2 text-sm font-medium text-gray-900">Tomorrow</span>
-    </label>
-  </div>
- 
+  <app-day-toggle-button></app-day-toggle-button>
   <app-food-section [category]="0">
-    <div class="md:block absolute text-center z-10  flex w-full justify-between p-1" style="font-family: 'Lobster', cursive;">
+    <div
+      class="md:block absolute text-center z-10 flex w-full justify-between p-1"
+      style="font-family: 'Lobster', cursive"
+    >
       <div>
         <h5 class="text-4xl drop-shadow-md">BreakFast</h5>
       </div>
-     <div  class="self-end m-1 mr-5" *ngIf="auth.isAdmin()">
-      <a class="text-cyan-700 border border-cyan-700 hover:bg-cyan-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-centerdark:text-blue-500 " routerLink="/addfood/0"[state]="{ selectedDay:food.selectedDay , category:1,catName:'BreakFast'}"><fa-icon class="fa-sm" [icon]="plusbutton">   </fa-icon></a>
+      <div class="self-end m-1 mr-5" *ngIf="auth.isAdmin()">
+        <app-add-item-button
+          link="/addfood/0"
+          [state]="{
+            selectedDay: food.selectedDay,
+            category: 1,
+            catName: 'BreakFast'
+          }"
+        ></app-add-item-button>
       </div>
-     </div>
-    
+    </div>
+
     <app-food-card
       *ngFor="let item of food.foodItemBreakFast"
-      [cardId] = 'item.FoodName'
-      [ngClass]="{ 'hidden': !food.isCardOpen(item.FoodName,0)
-      
-     }"
-      [imgUrl]="item.ImgUrl"
+      [cardId]="item.attributes.FoodName"
+      [ngClass]="{ hidden: !food.isCardOpen(item.attributes.FoodName, 0) }"
+      [imgUrl]="item.attributes.ImgUrl"
       [category]="0"
     >
     </app-food-card>
-    
   </app-food-section>
-  <app-food-section [category]="1"> 
-    <div class="md:block absolute text-center z-10  flex w-full justify-between p-1" style="font-family: 'Lobster', cursive;">
+  <app-food-section [category]="1">
+    <div
+      class="md:block absolute text-center z-10 flex w-full justify-between p-1"
+      style="font-family: 'Lobster', cursive"
+    >
       <div>
         <h5 class="text-4xl drop-shadow-md">Lunch</h5>
       </div>
-     <div  class="self-end m-1 mr-5" *ngIf="auth.isAdmin()">
-        <a class="text-cyan-700 border border-cyan-700 hover:bg-cyan-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-centerdark:text-blue-500 " routerLink="/addfood/1" [state]="{ selectedDay:food.selectedDay , category:2,catName:'Lunch'}"><fa-icon class="fa-sm" [icon]="plusbutton">   </fa-icon></a>
+      <div class="self-end m-1 mr-5" *ngIf="auth.isAdmin()">
+        <app-add-item-button
+          link="/addfood/1"
+          [state]="{
+            selectedDay: food.selectedDay,
+            category: 2,
+            catName: 'Lunch'
+          }"
+        ></app-add-item-button>
       </div>
-     </div>
-   
+    </div>
+
     <app-food-card
       *ngFor="let item of food.foodItemLunch"
-      [cardId] = 'item.FoodName' 
-      [ngClass]="{ 'hidden': !food.isCardOpen(item.FoodName,1)
-     }"
-      [imgUrl]="item.ImgUrl"
+      [cardId]="item.attributes.FoodName"
+      [ngClass]="{ hidden: !food.isCardOpen(item.attributes.FoodName, 1) }"
+      [imgUrl]="item.attributes.ImgUrl"
       [category]="1"
     >
     </app-food-card>
   </app-food-section>
-  
+
   <app-food-section [category]="2">
-    <div class="md:block absolute text-center z-10  flex w-full justify-between p-1" style="font-family: 'Lobster', cursive;">
+    <div
+      class="md:block absolute text-center z-10 flex w-full justify-between p-1"
+      style="font-family: 'Lobster', cursive"
+    >
       <div>
         <h5 class="text-4xl drop-shadow-md">High-Tea</h5>
       </div>
-     <div  class="self-end m-1 mr-5" *ngIf="auth.isAdmin()">
-      <a class="text-cyan-700 border border-cyan-700 hover:bg-cyan-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-centerdark:text-blue-500 " routerLink="/addfood/2" [state]="{ selectedDay:food.selectedDay , category:3,catName:'HighTea'}"><fa-icon class="fa-sm" [icon]="plusbutton">   </fa-icon></a>
+      <div class="self-end m-1 mr-5" *ngIf="auth.isAdmin()">
+        <app-add-item-button
+          link="/addfood/2"
+          [state]="{
+            selectedDay: food.selectedDay,
+            category: 2,
+            catName: 'HighTea'
+          }"
+        ></app-add-item-button>
       </div>
-      
-     </div>
+    </div>
     <app-food-card
       *ngFor="let item of food.foodItemSnacks"
-      [cardId] = 'item.FoodName'
-      [ngClass]="{ 'hidden': !food.isCardOpen(item.FoodName,2)
-     }"
-      [imgUrl]="item.ImgUrl"
+      [cardId]="item.attributes.FoodName"
+      [ngClass]="{ hidden: !food.isCardOpen(item.attributes.FoodName, 2) }"
+      [imgUrl]="item.attributes.ImgUrl"
       [category]="2"
     >
     </app-food-card>

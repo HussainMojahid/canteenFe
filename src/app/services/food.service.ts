@@ -41,9 +41,7 @@ export class FoodService implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
   toggleDay() {
     this.selectedDay = !this.selectedDay;
     if (this.selectedDay) {
@@ -63,11 +61,10 @@ export class FoodService implements OnInit {
       );
   }
 
-  postFood(food : any): Observable<any> {
-    return this.http.post<any>(
-      `${environment.apiUrl}food-mains`,
-      {data : food}
-    );
+  postFood(food: any): Observable<any> {
+    return this.http.post<any>(`${environment.apiUrl}food-mains`, {
+      data: food,
+    });
   }
 
   getFoodInventory() {
@@ -252,9 +249,7 @@ export class FoodService implements OnInit {
               'BreakFast' &&
             element.attributes.Date === this.formatDate(new Date())
           ) {
-            this.foodItemBreakFast.push(
-              element.attributes.food_inventory.data.attributes
-            );
+            this.foodItemBreakFast.push(element.attributes.food_inventory.data);
             console.log(this.foodItemBreakFast);
           }
           if (
@@ -262,9 +257,7 @@ export class FoodService implements OnInit {
               'Lunch' &&
             element.attributes.Date === this.formatDate(new Date())
           ) {
-            this.foodItemLunch.push(
-              element.attributes.food_inventory.data.attributes
-            );
+            this.foodItemLunch.push(element.attributes.food_inventory.data);
             console.log(this.foodItemLunch);
           }
           if (
@@ -272,9 +265,7 @@ export class FoodService implements OnInit {
               'HighTea' &&
             element.attributes.Date === this.formatDate(new Date())
           ) {
-            this.foodItemSnacks.push(
-              element.attributes.food_inventory.data.attributes
-            );
+            this.foodItemSnacks.push(element.attributes.food_inventory.data);
             console.log(this.foodItemSnacks);
           }
         });
@@ -337,9 +328,7 @@ export class FoodService implements OnInit {
               'BreakFast' &&
             element.attributes.Date === this.formatDate(nextDay)
           ) {
-            this.foodItemBreakFast.push(
-              element.attributes.food_inventory.data.attributes
-            );
+            this.foodItemBreakFast.push(element.attributes.food_inventory.data);
             console.log(this.foodItemBreakFast);
           }
           if (
@@ -347,9 +336,7 @@ export class FoodService implements OnInit {
               'Lunch' &&
             element.attributes.Date === this.formatDate(nextDay)
           ) {
-            this.foodItemLunch.push(
-              element.attributes.food_inventory.data.attributes
-            );
+            this.foodItemLunch.push(element.attributes.food_inventory.data);
             console.log(this.foodItemLunch);
           }
           if (
@@ -357,9 +344,7 @@ export class FoodService implements OnInit {
               'HighTea' &&
             element.attributes.Date === this.formatDate(nextDay)
           ) {
-            this.foodItemSnacks.push(
-              element.attributes.food_inventory.data.attributes
-            );
+            this.foodItemSnacks.push(element.attributes.food_inventory.data);
             console.log(this.foodItemSnacks);
           }
         });

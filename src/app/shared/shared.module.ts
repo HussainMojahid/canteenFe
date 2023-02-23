@@ -8,8 +8,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AlertComponent } from './alert/alert.component';
 import { BackButtonComponent } from './back-button/back-button.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
-
+import { DayToggleButtonComponent } from './day-toggle-button/day-toggle-button.component';
+import { AddItemButtonComponent } from './add-item-button/add-item-button.component';
+import { DashboardRoutingModule } from '../dashboard/dashboard.routing.module';
 
 @NgModule({
   declarations: [
@@ -18,20 +19,25 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ModalComponent,
     InputComponent,
     AlertComponent,
-    BackButtonComponent
+    BackButtonComponent,
+    DayToggleButtonComponent,
+    AddItemButtonComponent,
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    DashboardRoutingModule,
   ],
-  exports:[
+  exports: [
     TabComponent,
     TabsContainerComponent,
     ModalComponent,
     InputComponent,
     AlertComponent,
-    BackButtonComponent
-  ]
+    BackButtonComponent,
+    DayToggleButtonComponent,
+    AddItemButtonComponent,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}
