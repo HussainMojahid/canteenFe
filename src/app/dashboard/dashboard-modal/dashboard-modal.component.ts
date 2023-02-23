@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from 'src/app/services/auth.service';
 import { FoodService } from 'src/app/services/food.service';
 import { SidebarService } from 'src/app/services/sidebar.service';
 
@@ -15,7 +16,8 @@ export class DashboardModalComponent implements OnInit {
   constructor(
     public sidebar: SidebarService,
     public food: FoodService,
-    public activatedroute: ActivatedRoute
+    public activatedroute: ActivatedRoute,
+    public auth : AuthService
   ) {}
   ngOnInit(): void {
     if (this.food.selectedDay) {

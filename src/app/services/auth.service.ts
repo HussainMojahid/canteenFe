@@ -14,13 +14,23 @@ export class AuthService {
   isAuthenticatedWithDelay = new Observable<boolean>();
   user$ = new BehaviorSubject<ICurrentUser | null>(null);
   baseUrl = environment.apiUrl;
+  UserID = -1;
 
   constructor(private http: HttpClient, public location: Location) {}
+
+  isAdmin(): boolean {
+    const temp = localStorage.getItem('_role_canteen_app');
+    if (temp != null) {
+      if ('canteenAdmin' === JSON.parse(temp)) return true;
+    }
+    return false;
+  }
 
   isAuthenticated() {
     if (null !== localStorage.getItem('_token_canteen_app')) {
       this.isAuthenticated$.next(true);
       this.isAuthenticatedWithDelay = this.isAuthenticated$.pipe(delay(1000));
+      this.getCurrentRole();
     } else {
       this.isAuthenticated$.next(false);
     }
@@ -35,6 +45,7 @@ export class AuthService {
 
       .pipe(
         map((user: IUser) => {
+          this.UserID = user.user.id;
           localStorage.setItem('_token_canteen_app', JSON.stringify(user.jwt));
           localStorage.setItem(
             '_username_canteen_app',
@@ -77,16 +88,14 @@ export class AuthService {
   }
 
   logout() {
-    localStorage.removeItem('_token_canteen_app');
-    localStorage.removeItem('_email_canteen_app');
-    localStorage.removeItem('_username_canteen_app');
+    localStorage.clear();
   }
 
   feedback(model: any) {
     return this.http.post(this.baseUrl + '/feedback', model).pipe(
       map((user) => {
         if (user) {
-        
+          
         }
       })
     );
@@ -139,5 +148,27 @@ export class AuthService {
 
   getCurrentUser() {
     return this.http.get<any>(`${environment.apiUrl}users/me`);
+  }
+
+  getCurrentRole() {
+    this.getRole(this.UserID)
+      .pipe(
+        map((val) => {
+          localStorage.setItem('_role_canteen_app', JSON.stringify(val));
+
+          return val;
+        })
+      )
+      .subscribe();
+  }
+
+  getRole(id: number) {
+    return this.http
+      .get<any>(`${environment.apiUrl}users/${id}?populate=*`)
+      .pipe(
+        map((data) => {
+          return data.role.name;
+        })
+      );
   }
 }
