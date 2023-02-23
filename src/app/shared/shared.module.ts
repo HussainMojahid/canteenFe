@@ -6,6 +6,8 @@ import { ModalComponent } from './modal/modal.component';
 import { InputComponent } from './input/input.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AlertComponent } from './alert/alert.component';
+import { BackButtonComponent } from './back-button/back-button.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -15,18 +17,21 @@ import { AlertComponent } from './alert/alert.component';
     TabsContainerComponent,
     ModalComponent,
     InputComponent,
-    AlertComponent
+    AlertComponent,
+    BackButtonComponent
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   exports:[
     TabComponent,
     TabsContainerComponent,
     ModalComponent,
     InputComponent,
-    AlertComponent
+    AlertComponent,
+    BackButtonComponent
   ]
 })
 export class SharedModule { }

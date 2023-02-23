@@ -6,14 +6,7 @@
   class="flex flex-col items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
 >
   <div class="self-end m-1 mr-5">
-    <button
-      type="button"
-      class="text-cyan-700 border border-cyan-700 hover:bg-cyan-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-centerdark:text-blue-500"
-      (click)="auth.backbutton()"
-    >
-      <fa-icon class="fa-lg" [icon]="backArrow"></fa-icon>
-      <span class="sr-only">Icon description</span>
-    </button>
+    <app-back-button></app-back-button>
   </div>
 
   <div
