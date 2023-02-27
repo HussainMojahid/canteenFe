@@ -3,7 +3,6 @@ import { Injectable, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import IFoodItem from '../models/food.model';
 
 interface IFoodCard {
   id: string;
@@ -250,7 +249,6 @@ export class FoodService implements OnInit {
             element.attributes.Date === this.formatDate(new Date())
           ) {
             this.foodItemBreakFast.push(element.attributes.food_inventory.data);
-            console.log(this.foodItemBreakFast);
           }
           if (
             element.attributes.food_catagory.data.attributes.catType ===
@@ -258,7 +256,6 @@ export class FoodService implements OnInit {
             element.attributes.Date === this.formatDate(new Date())
           ) {
             this.foodItemLunch.push(element.attributes.food_inventory.data);
-            console.log(this.foodItemLunch);
           }
           if (
             element.attributes.food_catagory.data.attributes.catType ===
@@ -266,30 +263,35 @@ export class FoodService implements OnInit {
             element.attributes.Date === this.formatDate(new Date())
           ) {
             this.foodItemSnacks.push(element.attributes.food_inventory.data);
-            console.log(this.foodItemSnacks);
           }
         });
       },
       complete: () => {
         if (this.foodItemBreakFast.length === 0) {
           this.foodItemBreakFast.push({
-            FoodName: 'No Data',
-            ImgUrl:
-              'https://www.reinforcedesigns.com/onlinemin/default-img/empty1.png',
+            attributes: {
+              FoodName: 'No Data',
+              ImgUrl:
+                'https://www.reinforcedesigns.com/onlinemin/default-img/empty1.png',
+            },
           });
         }
         if (this.foodItemLunch.length === 0) {
           this.foodItemLunch.push({
-            FoodName: 'No Data',
-            ImgUrl:
-              'https://www.reinforcedesigns.com/onlinemin/default-img/empty1.png',
+            attributes: {
+              FoodName: 'No Data',
+              ImgUrl:
+                'https://www.reinforcedesigns.com/onlinemin/default-img/empty1.png',
+            },
           });
         }
         if (this.foodItemSnacks.length === 0) {
           this.foodItemSnacks.push({
-            FoodName: 'No Data',
-            ImgUrl:
-              'https://www.reinforcedesigns.com/onlinemin/default-img/empty1.png',
+            attributes: {
+              FoodName: 'No Data',
+              ImgUrl:
+                'https://www.reinforcedesigns.com/onlinemin/default-img/empty1.png',
+            },
           });
         }
       },
@@ -352,23 +354,29 @@ export class FoodService implements OnInit {
       complete: () => {
         if (this.foodItemBreakFast.length === 0) {
           this.foodItemBreakFast.push({
-            FoodName: 'No Data',
-            ImgUrl:
-              'https://www.reinforcedesigns.com/onlinemin/default-img/empty1.png',
+            attributes: {
+              FoodName: 'No Data',
+              ImgUrl:
+                'https://www.reinforcedesigns.com/onlinemin/default-img/empty1.png',
+            },
           });
         }
         if (this.foodItemLunch.length === 0) {
           this.foodItemLunch.push({
-            FoodName: 'No Data',
-            ImgUrl:
-              'https://www.reinforcedesigns.com/onlinemin/default-img/empty1.png',
+            attributes: {
+              FoodName: 'No Data',
+              ImgUrl:
+                'https://www.reinforcedesigns.com/onlinemin/default-img/empty1.png',
+            },
           });
         }
         if (this.foodItemSnacks.length === 0) {
           this.foodItemSnacks.push({
-            FoodName: 'No Data',
-            ImgUrl:
-              'https://www.reinforcedesigns.com/onlinemin/default-img/empty1.png',
+            attributes: {
+              FoodName: 'No Data',
+              ImgUrl:
+                'https://www.reinforcedesigns.com/onlinemin/default-img/empty1.png',
+            },
           });
         }
       },
