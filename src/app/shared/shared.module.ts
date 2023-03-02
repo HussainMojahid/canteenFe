@@ -11,6 +11,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DayToggleButtonComponent } from './day-toggle-button/day-toggle-button.component';
 import { AddItemButtonComponent } from './add-item-button/add-item-button.component';
 import { DashboardRoutingModule } from '../dashboard/dashboard.routing.module';
+import { LeftArrowButtonComponent } from './arrowButtons/left-arrow-button/left-arrow-button.component';
+import { RightArrowButtonComponent } from './arrowButtons/right-arrow-button/right-arrow-button.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { DashboardRoutingModule } from '../dashboard/dashboard.routing.module';
     BackButtonComponent,
     DayToggleButtonComponent,
     AddItemButtonComponent,
+    LeftArrowButtonComponent,
+    RightArrowButtonComponent,
   ],
   imports: [
     CommonModule,
@@ -38,6 +42,8 @@ import { DashboardRoutingModule } from '../dashboard/dashboard.routing.module';
     BackButtonComponent,
     DayToggleButtonComponent,
     AddItemButtonComponent,
+    LeftArrowButtonComponent,
+    RightArrowButtonComponent,
   ],
 })
 export class SharedModule {}

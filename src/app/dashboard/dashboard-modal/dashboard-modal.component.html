@@ -1,7 +1,7 @@
 <div>
   <app-chart-card></app-chart-card>
   <app-day-toggle-button></app-day-toggle-button>
-  <app-food-section [category]="0">
+  <app-food-section [category]="0" [slider]="Bslider" [currentSlide]="BcurrentSlide" class="bg-indigo-400" >
     <div
       class="md:block absolute text-center z-10 flex w-full justify-between p-1"
       style="font-family: 'Lobster', cursive"
@@ -20,17 +20,22 @@
         ></app-add-item-button>
       </div>
     </div>
-
-    <app-food-card
-      *ngFor="let item of food.foodItemBreakFast"
-      [cardId]="item.attributes.FoodName"
-      [ngClass]="{ hidden: !food.isCardOpen(item.attributes.FoodName, 0) }"
-      [imgUrl]="item.attributes.ImgUrl"
-      [category]="0"
-    >
-    </app-food-card>
+    <div class="fader" #breakfastSection>
+      <div
+        class="fader__slide"
+        [ngStyle]="{ opacity: Bopacities[idx] }"
+        *ngFor="let item of food.foodItemBreakFast; let idx = index"
+      >
+        <app-food-card
+          [cardId]="item.attributes.FoodName"
+          [imgUrl]="item.attributes.ImgUrl"
+          [category]="2"
+        >
+        </app-food-card>
+      </div>
+    </div>
   </app-food-section>
-  <app-food-section [category]="1">
+  <app-food-section [category]="1" [slider]="Lslider" [currentSlide]="LcurrentSlide" >
     <div
       class="md:block absolute text-center z-10 flex w-full justify-between p-1"
       style="font-family: 'Lobster', cursive"
@@ -50,17 +55,22 @@
       </div>
     </div>
 
-    <app-food-card
-      *ngFor="let item of food.foodItemLunch"
-      [cardId]="item.attributes.FoodName"
-      [ngClass]="{ hidden: !food.isCardOpen(item.attributes.FoodName, 1) }"
-      [imgUrl]="item.attributes.ImgUrl"
-      [category]="1"
-    >
-    </app-food-card>
+    <div class="fader bg-slate-500" #lunchSection>
+      <div
+        [ngStyle]="{ opacity: Lopacities[idx] }"
+        class="fader__slide"
+        *ngFor="let item of food.foodItemLunch; let idx = index"
+      >
+        <app-food-card 
+          [cardId]="item.attributes.FoodName"
+          [imgUrl]="item.attributes.ImgUrl"
+          [category]="2"
+        >
+        </app-food-card>
+      </div>
+    </div>
   </app-food-section>
-
-  <app-food-section [category]="2">
+  <app-food-section [category]="2" [slider]="Hslider" [currentSlide]="HcurrentSlide">
     <div
       class="md:block absolute text-center z-10 flex w-full justify-between p-1"
       style="font-family: 'Lobster', cursive"
@@ -79,13 +89,19 @@
         ></app-add-item-button>
       </div>
     </div>
-    <app-food-card
-      *ngFor="let item of food.foodItemSnacks"
-      [cardId]="item.attributes.FoodName"
-      [ngClass]="{ hidden: !food.isCardOpen(item.attributes.FoodName, 2) }"
-      [imgUrl]="item.attributes.ImgUrl"
-      [category]="2"
-    >
-    </app-food-card>
+    <div class="fader" #highTeaSection>
+      <div
+        [ngStyle]="{ opacity: Hopacities[idx] }"
+        class="fader__slide"
+        *ngFor="let item of food.foodItemSnacks; let idx = index"
+      >
+        <app-food-card
+          [cardId]="item.attributes.FoodName"
+          [imgUrl]="item.attributes.ImgUrl"
+          [category]="3"
+        >
+        </app-food-card>
+      </div>
+    </div>
   </app-food-section>
 </div>

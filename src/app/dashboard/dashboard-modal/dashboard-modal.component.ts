@@ -1,6 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component, ElementRef,
+  OnInit,
+  ViewChild
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import KeenSlider, { KeenSliderInstance } from 'keen-slider';
 import { AuthService } from 'src/app/services/auth.service';
 import { FoodService } from 'src/app/services/food.service';
 import { SidebarService } from 'src/app/services/sidebar.service';
@@ -17,7 +22,7 @@ export class DashboardModalComponent implements OnInit {
     public sidebar: SidebarService,
     public food: FoodService,
     public activatedroute: ActivatedRoute,
-    public auth : AuthService
+    public auth: AuthService
   ) {}
   ngOnInit(): void {
     if (this.food.selectedDay) {
@@ -25,5 +30,83 @@ export class DashboardModalComponent implements OnInit {
     } else {
       this.food.tommorowFood();
     }
+  }
+
+  @ViewChild('breakfastSection')
+  breakfastSection!: ElementRef<HTMLElement>;
+  @ViewChild('lunchSection')
+  lunchSection!: ElementRef<HTMLElement>;
+  @ViewChild('highTeaSection')
+  highTeaSection!: ElementRef<HTMLElement>;
+
+  Bopacities: number[] = [];
+  Lopacities: number[] = [];
+  Hopacities: number[] = [];
+
+  Bslider!: KeenSliderInstance;
+  Lslider!: KeenSliderInstance;
+  Hslider!: KeenSliderInstance;
+
+  BcurrentSlide: number = 1;
+  LcurrentSlide: number = 1;
+  HcurrentSlide: number = 1;
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.Bslider = new KeenSlider(this.breakfastSection.nativeElement, {
+        initial: this.BcurrentSlide,
+        slides: 4,
+        loop: true,
+        defaultAnimation: {
+          duration: 1000,
+        },
+        slideChanged: (s) => {
+          this.BcurrentSlide = s.track.details.rel;
+        },
+        detailsChanged: (s) => {
+          this.Bopacities = s.track.details.slides.map(
+            (slide) => slide.portion
+          );
+        },
+      });
+      this.Hslider = new KeenSlider(this.highTeaSection.nativeElement, {
+        initial: this.HcurrentSlide,
+        slides: 4,
+        loop: true,
+        defaultAnimation: {
+          duration: 1000,
+        },
+        slideChanged: (s) => {
+          this.HcurrentSlide = s.track.details.rel;
+        },
+        detailsChanged: (s) => {
+          this.Hopacities = s.track.details.slides.map(
+            (slide) => slide.portion
+          );
+        },
+      });
+      this.Lslider = new KeenSlider(this.lunchSection.nativeElement, {
+        initial: this.LcurrentSlide,
+        slides: 2,
+        loop: true,
+        defaultAnimation: {
+          duration: 1000,
+        },
+        slideChanged: (s) => {
+          this.LcurrentSlide = s.track.details.rel;
+        },
+        detailsChanged: (s) => {
+          this.Lopacities = s.track.details.slides.map(
+            (slide) => slide.portion
+          );
+        },
+      });
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.Bslider) this.Bslider.destroy();
+    if (this.Lslider) this.Lslider.destroy();
+    if (this.Hslider) this.Hslider.destroy();
   }
 }
