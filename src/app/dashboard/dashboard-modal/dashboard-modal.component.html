@@ -1,7 +1,11 @@
 <div>
   <app-chart-card></app-chart-card>
-  <app-day-toggle-button></app-day-toggle-button>
-  <app-food-section [category]="0" [slider]="Bslider" [currentSlide]="BcurrentSlide" class="bg-indigo-400" >
+  <app-day-toggle-button (click)="setSlider()"></app-day-toggle-button>
+  <app-food-section
+    [category]="0"
+    [slider]="Bslider"
+    [currentSlide]="BcurrentSlide"
+  >
     <div
       class="md:block absolute text-center z-10 flex w-full justify-between p-1"
       style="font-family: 'Lobster', cursive"
@@ -35,7 +39,11 @@
       </div>
     </div>
   </app-food-section>
-  <app-food-section [category]="1" [slider]="Lslider" [currentSlide]="LcurrentSlide" >
+  <app-food-section
+    [category]="1"
+    [slider]="Lslider"
+    [currentSlide]="LcurrentSlide"
+  >
     <div
       class="md:block absolute text-center z-10 flex w-full justify-between p-1"
       style="font-family: 'Lobster', cursive"
@@ -55,13 +63,13 @@
       </div>
     </div>
 
-    <div class="fader bg-slate-500" #lunchSection>
+    <div class="fader" #lunchSection>
       <div
         [ngStyle]="{ opacity: Lopacities[idx] }"
         class="fader__slide"
         *ngFor="let item of food.foodItemLunch; let idx = index"
       >
-        <app-food-card 
+        <app-food-card
           [cardId]="item.attributes.FoodName"
           [imgUrl]="item.attributes.ImgUrl"
           [category]="2"
@@ -70,7 +78,11 @@
       </div>
     </div>
   </app-food-section>
-  <app-food-section [category]="2" [slider]="Hslider" [currentSlide]="HcurrentSlide">
+  <app-food-section
+    [category]="2"
+    [slider]="Hslider"
+    [currentSlide]="HcurrentSlide"
+  >
     <div
       class="md:block absolute text-center z-10 flex w-full justify-between p-1"
       style="font-family: 'Lobster', cursive"

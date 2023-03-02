@@ -1,7 +1,14 @@
+<!-- [ngClass]="
+'arrow arrow--left ' + (currentSlide === 0 ? 'arrow--disabled' : '')
+" -->
+
 <button
-  [ngClass]="
-    'arrow arrow--left ' + (currentSlide === 0 ? 'arrow--disabled' : '')
-  "
+  *ngIf="slider"
+  [ngClass]="{
+    hidden:
+      slider.track.details.slides.length - 2 === currentSlide ||
+      slider.track.details.slides.length === 1
+  }"
   (click)="slider.prev()"
   type="button"
   class="carousel-control-prev absolute top-0 left-0 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"

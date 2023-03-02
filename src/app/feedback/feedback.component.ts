@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
+  FormBuilder, FormGroup,
+  Validators
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
@@ -39,9 +37,7 @@ export class FeedbackComponent implements OnInit {
       next: () => {
         this.router.navigateByUrl('/members');
       },
-      error: () => {
-        console.log('error');
-      },
+      error: () => {},
     });
   }
 }

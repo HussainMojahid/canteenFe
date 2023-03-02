@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from 'src/app/services/auth.service';
-import { FoodService } from 'src/app/services/food.service';
-import { Router } from '@angular/router';
 import { FoodInventoryServiceService } from 'src/app/services/food-inventory-service.service';
-import Swal from 'sweetalert2';
+import { FoodService } from 'src/app/services/food.service';
 
 @Component({
   selector: 'app-food-post',
@@ -30,7 +29,6 @@ export class FoodPostComponent implements OnInit {
   ) {
     if (this.router.getCurrentNavigation()?.extras.state) {
       this.routeState = this.router.getCurrentNavigation()?.extras.state;
-      console.log(this.routeState.category);
     }
 
     if (this.routeState.selectedDay) {
@@ -39,7 +37,7 @@ export class FoodPostComponent implements OnInit {
       var day = new Date();
       var nextDay = new Date(day);
       nextDay.setDate(day.getDate() + 1);
-      this.date1 = nextDay;
+      this.date1 = nextDay;      
     }
   }
 
@@ -54,16 +52,21 @@ export class FoodPostComponent implements OnInit {
     foodList: this.foodList,
     date: this.date,
   });
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.date.setValue(this.foodservice.formatDate(this.date1))
+
+  }
 
   saveFood() {
     if (this.foodForm.valid) {
       this.foodForm.value.foodList?.forEach((item) => {
-        this.foodservice.postFood({
-          Date: this.foodForm.value.date,
-          food_inventory: item,
-          food_catagory: this.routeState.category,
-        }).subscribe()
+        this.foodservice
+          .postFood({
+            Date: this.foodForm.value.date,
+            food_inventory: item,
+            food_catagory: this.routeState.category,
+          })
+          .subscribe();
       });
     }
   }

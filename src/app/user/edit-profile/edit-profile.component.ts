@@ -30,8 +30,6 @@ export class EditProfileComponent implements OnInit {
     this.auth.user$
       .pipe(
         map((val: any) => {
-          console.log(val.id);
-
           this.id = val.id;
         })
       )
@@ -44,7 +42,6 @@ export class EditProfileComponent implements OnInit {
       this.EmployeeId.setValue(this.auth.user$.getValue()?.EmpId);
     });
     this.userService.getOrganization();
-    console.log(this.userService.Organization);
     this.OrgList = this.userService.Organization;
   }
 

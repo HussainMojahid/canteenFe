@@ -1,8 +1,4 @@
-import {
-  Component, ElementRef,
-  OnInit,
-  ViewChild
-} from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import KeenSlider, { KeenSliderInstance } from 'keen-slider';
@@ -27,8 +23,10 @@ export class DashboardModalComponent implements OnInit {
   ngOnInit(): void {
     if (this.food.selectedDay) {
       this.food.todayFood();
+      this.setSlider();
     } else {
       this.food.tommorowFood();
+      this.setSlider();
     }
   }
 
@@ -51,12 +49,11 @@ export class DashboardModalComponent implements OnInit {
   LcurrentSlide: number = 1;
   HcurrentSlide: number = 1;
 
-  ngAfterViewInit() {
+  setSlider() {
     setTimeout(() => {
       this.Bslider = new KeenSlider(this.breakfastSection.nativeElement, {
         initial: this.BcurrentSlide,
-        slides: 4,
-        loop: true,
+        slides: this.food.foodItemBreakFast.length,
         defaultAnimation: {
           duration: 1000,
         },
@@ -71,8 +68,7 @@ export class DashboardModalComponent implements OnInit {
       });
       this.Hslider = new KeenSlider(this.highTeaSection.nativeElement, {
         initial: this.HcurrentSlide,
-        slides: 4,
-        loop: true,
+        slides: this.food.foodItemSnacks.length,
         defaultAnimation: {
           duration: 1000,
         },
@@ -87,8 +83,7 @@ export class DashboardModalComponent implements OnInit {
       });
       this.Lslider = new KeenSlider(this.lunchSection.nativeElement, {
         initial: this.LcurrentSlide,
-        slides: 2,
-        loop: true,
+        slides: this.food.foodItemLunch.length,
         defaultAnimation: {
           duration: 1000,
         },
@@ -101,7 +96,7 @@ export class DashboardModalComponent implements OnInit {
           );
         },
       });
-    });
+    }, 300);
   }
 
   ngOnDestroy() {

@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { map } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -7,20 +7,15 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root',
 })
-export class FoodInventoryServiceService implements OnInit {
+export class FoodInventoryServiceService {
   apiUrl = environment.apiUrl;
   itemList: any[] = [];
   constructor(private http: HttpClient) {
     this.getAllFood().subscribe((res: any) => {
       res.forEach((element: any) => {
-        this.itemList.push(element)
-        console.log(element.attributes);
-        
+        this.itemList.push(element);
       });
     });
-  }
-  ngOnInit(): void {
-   
   }
   getAllFood() {
     return this.http.get<any>(`${this.apiUrl}food-inventories`).pipe(
@@ -51,8 +46,6 @@ export class FoodInventoryServiceService implements OnInit {
   }
 
   getFoodById(id: number) {
-    console.log(id);
-
     return this.http.get<any>(`${this.apiUrl}food-inventories/${id}`).pipe(
       map((res: any) => {
         return res.data.attributes;

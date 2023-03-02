@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
-import { BehaviorSubject, map, Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -12,9 +12,6 @@ export class FoodService implements OnInit {
   foodItemLunch: any[] = [];
   foodItemSnacks: any[] = [];
   fooditem: any[] = [];
-  lenght$: number = -1;
-  private countSource = new BehaviorSubject(-1);
-  currentCount = this.countSource.asObservable();
 
   formatDate(date: Date) {
     var d = new Date(date),
@@ -72,11 +69,6 @@ export class FoodService implements OnInit {
   }
 
   todayFood() {
-    console.log(
-      this.foodItemBreakFast.length,
-      this.foodItemLunch.length,
-      this.foodItemSnacks.length
-    );
     if (this.foodItemBreakFast.length > 0) {
       this.foodItemBreakFast = [];
     }
@@ -111,7 +103,6 @@ export class FoodService implements OnInit {
             this.foodItemSnacks.push(element.attributes.food_inventory.data);
           }
         });
-        this.changeCount(5);
       },
       complete: () => {
         if (this.foodItemBreakFast.length === 0) {
@@ -141,20 +132,11 @@ export class FoodService implements OnInit {
             },
           });
         }
-        this.lenght$ = this.foodItemBreakFast.length;
       },
     });
   }
 
-  changeCount(count: number) {
-    this.countSource.next(count);
-  }
   tommorowFood() {
-    console.log(
-      this.foodItemBreakFast.length,
-      this.foodItemLunch.length,
-      this.foodItemSnacks.length
-    );
     if (this.foodItemBreakFast.length > 0) {
       this.foodItemBreakFast = [];
     }
@@ -168,8 +150,6 @@ export class FoodService implements OnInit {
     var nextDay = new Date(day);
     nextDay.setDate(day.getDate() + 1);
 
-    console.log(this.formatDate(nextDay));
-
     this.getFood().subscribe({
       next: async (value) => {
         value.forEach((element: any) => {
@@ -179,7 +159,6 @@ export class FoodService implements OnInit {
             element.attributes.Date === this.formatDate(nextDay)
           ) {
             this.foodItemBreakFast.push(element.attributes.food_inventory.data);
-            console.log(this.foodItemBreakFast);
           }
           if (
             element.attributes.food_catagory.data.attributes.catType ===
@@ -187,7 +166,6 @@ export class FoodService implements OnInit {
             element.attributes.Date === this.formatDate(nextDay)
           ) {
             this.foodItemLunch.push(element.attributes.food_inventory.data);
-            console.log(this.foodItemLunch);
           }
           if (
             element.attributes.food_catagory.data.attributes.catType ===
@@ -195,14 +173,10 @@ export class FoodService implements OnInit {
             element.attributes.Date === this.formatDate(nextDay)
           ) {
             this.foodItemSnacks.push(element.attributes.food_inventory.data);
-            console.log(this.foodItemSnacks);
           }
         });
       },
       complete: () => {
-        if (this.foodItemBreakFast.length >= 0) {
-          console.log('grater than');
-        }
         if (this.foodItemBreakFast.length === 0) {
           this.foodItemBreakFast.push({
             attributes: {

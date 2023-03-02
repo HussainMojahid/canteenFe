@@ -25,7 +25,6 @@ export class UpdateFoodComponent implements OnInit {
     this.route.params.subscribe((p) => {
       this.id = p['id'];
       this.foodInventory.getFoodById(p['id']).subscribe((res: any) => {
-        console.log(res);
         this.setValue(res);
       });
     });
@@ -47,8 +46,6 @@ export class UpdateFoodComponent implements OnInit {
   });
 
   setValue(res: any) {
-    console.log(res);
-
     this.FoodName.setValue(res.FoodName),
       this.Price.setValue(res.Price),
       this.ImageUrl.setValue(res.ImgUrl);
