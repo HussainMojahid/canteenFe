@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { map } from 'rxjs';
 import ICurrentUser from 'src/app/models/currentUser.modal';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
@@ -19,7 +18,6 @@ export class EditProfileComponent implements OnInit {
   showAlert: boolean = false;
   alertMsg = 'Please Wait! Under Process';
   id: number | undefined = -1;
-
   OrgList: any[] = [];
   constructor(
     public auth: AuthService,
@@ -27,13 +25,7 @@ export class EditProfileComponent implements OnInit {
     private userService: UserService
   ) {}
   ngOnInit(): void {
-    this.auth.user$
-      .pipe(
-        map((val: any) => {
-          this.id = val.id;
-        })
-      )
-      .subscribe();
+    this.id = this.auth.getID();
     this.auth.getCurrentUser().subscribe((val) => {
       this.auth.user$.next(val);
       this.username.setValue(this.auth.user$.getValue()?.username);

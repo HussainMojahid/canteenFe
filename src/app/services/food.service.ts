@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class FoodService implements OnInit {
   selectedDay: boolean = true;
+  selectedDay$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
   foodItemBreakFast: any[] = [];
   foodItemLunch: any[] = [];
   foodItemSnacks: any[] = [];
@@ -36,6 +37,7 @@ export class FoodService implements OnInit {
 
   ngOnInit(): void {}
   toggleDay() {
+    this.selectedDay$.next(!this.selectedDay$.getValue());
     this.selectedDay = !this.selectedDay;
     if (this.selectedDay) {
       this.todayFood();

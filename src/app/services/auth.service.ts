@@ -112,7 +112,7 @@ export class AuthService {
 
       .pipe(
         map((user: IUser) => {
-          localStorage.setItem('_token_canteen_app', JSON.stringify(user.jwt));
+          // localStorage.setItem('_token_canteen_app', JSON.stringify(user.jwt));
           localStorage.setItem(
             '_username_canteen_app',
             JSON.stringify(user.user.username)
@@ -154,6 +154,14 @@ export class AuthService {
       .subscribe();
   }
 
+  getID(): number {
+    const token = this.getCurrentUserToken();
+    if (token !== null) {
+      let a: any = jwt_decode(token);
+      return a.id as number;
+    }
+    return -1;
+  }
   getRole() {
     const token = this.getCurrentUserToken();
     if (token !== null) {

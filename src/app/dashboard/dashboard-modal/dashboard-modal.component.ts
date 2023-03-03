@@ -21,7 +21,7 @@ export class DashboardModalComponent implements OnInit {
     public auth: AuthService
   ) {}
   ngOnInit(): void {
-    if (this.food.selectedDay) {
+    if (this.food.selectedDay$.getValue()) {
       this.food.todayFood();
       this.setSlider();
     } else {

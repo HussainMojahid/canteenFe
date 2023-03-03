@@ -7,7 +7,7 @@ import { FoodService } from 'src/app/services/food.service';
   styleUrls: ['./day-toggle-button.component.css'],
 })
 export class DayToggleButtonComponent {
-  constructor(private foodService: FoodService) {}
+  constructor(public foodService: FoodService) {}
 
   toggleDay() {
     this.foodService.toggleDay();
