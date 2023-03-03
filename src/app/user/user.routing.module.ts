@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 const routes: Routes = [
     {
@@ -16,10 +17,12 @@ const routes: Routes = [
       {
         path: 'forgotPassword',
         component: ForgetPasswordComponent,
-      },
-  
+      }, 
+      {
+        path : 'resetPassword',
+        component: ResetPasswordComponent,
+      }
 ];
-
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],

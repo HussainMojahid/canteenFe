@@ -1,4 +1,8 @@
 <div>
+  <br />
+  <br />
+  <br />
+  <app-welcome-card></app-welcome-card>
   <app-chart-card></app-chart-card>
   <app-day-toggle-button (click)="setSlider()"></app-day-toggle-button>
   <app-food-section
@@ -11,7 +15,9 @@
       style="font-family: 'Lobster', cursive"
     >
       <div>
-        <h5 class="text-4xl drop-shadow-md">BreakFast</h5>
+        <h5 class="text-gray-100 text-4xl" style="text-shadow: 2px 2px black">
+          BreakFast
+        </h5>
       </div>
       <div class="self-end m-1 mr-5" *ngIf="auth.isAdmin()">
         <app-add-item-button
@@ -49,7 +55,9 @@
       style="font-family: 'Lobster', cursive"
     >
       <div>
-        <h5 class="text-4xl drop-shadow-md">Lunch</h5>
+        <h5 class="text-gray-100 text-4xl" style="text-shadow: 2px 2px black">
+          Lunch
+        </h5>
       </div>
       <div class="self-end m-1 mr-5" *ngIf="auth.isAdmin()">
         <app-add-item-button
@@ -88,7 +96,9 @@
       style="font-family: 'Lobster', cursive"
     >
       <div>
-        <h5 class="text-4xl drop-shadow-md">High-Tea</h5>
+        <h5 class="text-gray-100 text-4xl" style="text-shadow: 3px 3px black">
+          High-Tea
+        </h5>
       </div>
       <div class="self-end m-1 mr-5" *ngIf="auth.isAdmin()">
         <app-add-item-button
