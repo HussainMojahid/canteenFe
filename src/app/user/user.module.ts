@@ -7,13 +7,13 @@ import { RegisterComponent } from './register/register.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { PleaseLoginComponent } from './please-login/please-login.component';
 import { UserTabComponent } from './user-tab/user-tab.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { UserRoutingModule } from './user.routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { InterceptorInterceptor } from '../interceptor/interceptor.interceptor';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +25,7 @@ import { InterceptorInterceptor } from '../interceptor/interceptor.interceptor';
     PleaseLoginComponent,
     UserTabComponent,
     EditProfileComponent,
+    ResetPasswordComponent
   ],
   imports: [
     CommonModule,
@@ -35,10 +36,8 @@ import { InterceptorInterceptor } from '../interceptor/interceptor.interceptor';
     UserRoutingModule,
     FontAwesomeModule,
   ],
-  exports: [AuthModalComponent,PleaseLoginComponent,UserTabComponent],
+  exports: [AuthModalComponent,PleaseLoginComponent,UserTabComponent,ForgetPasswordComponent],
   providers : [
-
-    //  { provide : HTTP_INTERCEPTORS, useClass : InterceptorInterceptor, multi : true}
   ]
 })
 export class UserModule {}
