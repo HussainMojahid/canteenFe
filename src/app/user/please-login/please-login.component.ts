@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ModalService } from 'src/app/services/modal.service';
-
 @Component({
   selector: 'app-please-login',
   templateUrl: './please-login.component.html',
@@ -13,4 +12,5 @@ export class PleaseLoginComponent {
     this.modal.toggleModal('auth');
     $event.preventDefault;
   }
+  
 }

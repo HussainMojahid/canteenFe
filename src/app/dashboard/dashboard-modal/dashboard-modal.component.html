@@ -12,14 +12,13 @@
   >
     <div
       class="md:block absolute text-center z-10 flex w-full justify-between p-1"
-      style="font-family: 'Lobster', cursive"
-    >
+      style="font-family: 'Lobster', cursive">
       <div>
-        <h5 class="text-gray-100 text-4xl" style="text-shadow: 2px 2px black">
+        <h5 class="text-gray-100 text-4xl lg:mr-[85%] md:mr-[85%] drop-shadow-md" style="text-shadow: 2px 2px black">
           BreakFast
         </h5>
       </div>
-      <div class="self-end m-1 mr-5" *ngIf="auth.isAdmin()">
+      <div class="self-end m-1 mr-5 lg:ml-[90%] lg:mt-[-3%] md:ml-[90%] md:mt-[-3%]" *ngIf="auth.isAdmin()">
         <app-add-item-button
           link="/addfood/0"
           [state]="{
@@ -52,14 +51,13 @@
   >
     <div
       class="md:block absolute text-center z-10 flex w-full justify-between p-1"
-      style="font-family: 'Lobster', cursive"
-    >
+      style="font-family: 'Lobster', cursive">
       <div>
-        <h5 class="text-gray-100 text-4xl" style="text-shadow: 2px 2px black">
+        <h5 class="text-gray-100 text-4xl lg:mr-[85%] md:mr-[85%] drop-shadow-md" style="text-shadow: 2px 2px black">
           Lunch
         </h5>
       </div>
-      <div class="self-end m-1 mr-5" *ngIf="auth.isAdmin()">
+      <div class="self-end m-1 mr-5 lg:ml-[90%] lg:mt-[-3%] md:ml-[90%] md:mt-[-3%]" *ngIf="auth.isAdmin()">
         <app-add-item-button
           link="/addfood/1"
           [state]="{
@@ -96,11 +94,11 @@
       style="font-family: 'Lobster', cursive"
     >
       <div>
-        <h5 class="text-gray-100 text-4xl" style="text-shadow: 3px 3px black">
+        <h5 class="text-gray-100 text-4xl lg:mr-[85%] md:mr-[85%] drop-shadow-md" style="text-shadow: 3px 3px black">
           High-Tea
         </h5>
       </div>
-      <div class="self-end m-1 mr-5" *ngIf="auth.isAdmin()">
+      <div class="self-end m-1 mr-5 lg:ml-[90%] lg:mt-[-3%] md:ml-[90%] md:mt-[-3%]" *ngIf="auth.isAdmin()">
         <app-add-item-button
           link="/addfood/2"
           [state]="{
