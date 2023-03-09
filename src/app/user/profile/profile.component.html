@@ -1,0 +1,64 @@
+<div class="fixed inset-0 overflow-y-auto" id="modal">
+    <div class="flex flex-col items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+      <div class="pt-16 lg:mr-[95%] md:pt-16  md:mr-[95%] self-end m-1 mr-5">
+        <app-back-button></app-back-button>
+      </div>
+    
+      <div class="inline-block align-bottom bg-secondary rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-4 sm:align-middle sm:max-w-lg sm:w-full ">
+        <div class="py-4 text-left pr-42 pl-42 bg-gray-100 rounded-lg mt-2">
+            <div >
+              <label class="hoverable ml-[30%]" for="fileInput">
+                <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'"> 
+                <div class="hover-text">Choose file</div>
+                <div class="background"></div>
+              </label>
+              <input id="fileInput" type='file' (change)="onSelectFile($event)">
+              <button *ngIf="url" (click)="delete()" class="ml-[45%] " >
+                <a class=" text-cyan-700 border border-cyan-700 hover:bg-cyan-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-centerdark:text-blue-500 "> <fa-icon class="fa-sm"  [icon]="deletebutton">   </fa-icon></a>
+              </button>
+            <!-- </div> -->
+          <div class=" text-center text-lg text-gray-500 font-semibold ">
+            Name: {{ userName }}<br>
+            </div>
+          <div class=" text-center text-lg text-gray-500 font-semibold ">
+            Email:{{ email }}
+          </div>
+          <div class="profile   ">
+            <ul class=" justify-items-center ">
+              <li class="rounded-lg hover:bg-slate-300">
+                <a 
+                class="flex"
+                routerLink="/edit">
+                <img class="img "
+                src="https://cdn-icons-png.flaticon.com/512/565/565451.png?w=740&t=st=1676352949~exp=1676353549~hmac=ddf7dd7b919fdb8cf387cdf2a76cee672f3f11a6416481ce643ad2dfde0b9a8e"
+                alt=""/>
+                <div  class="text ">Edit Profile </div>
+                </a>
+              </li>
+              <li class="rounded-lg hover:bg-slate-300">
+                <a 
+                class="flex"
+                routerLink="/changePassword">
+                <img class="img "
+                src="https://cdn-icons-png.flaticon.com/512/53/53047.png?w=740&t=st=1676280591~exp=1676281191~hmac=9bfb281da26617d40e2ff8c38b3fdf6b92c64ee8ce5d46dd974537f3aa54803d"
+                alt=""/>
+                  <div class="text">Change Password</div>
+                </a>
+              </li>
+              <li class="rounded-lg hover:bg-slate-300">
+                <a class="flex "
+                 routerLink="/setting">
+                  <img class="img"
+                  src="https://cdn-icons-png.flaticon.com/512/61/61134.png?w=740&t=st=1676287377~exp=1676287977~hmac=8f0bece08e96282bee6bba785fc868942b5c840d5d2ebf694731d66fe8408e78"
+                  alt=""/>
+                    <div  class="text ">Settings</div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        </div>
+      </div>
+    </div>
+    </div>
