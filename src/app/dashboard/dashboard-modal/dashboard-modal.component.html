@@ -3,76 +3,139 @@
   <div class="flex justify-end mx-1 my-1">
     <span class="mr-2 text-sm font-medium text-gray-900">Today</span>
 
-    <label class="inline-flex relative items-center cursor-pointer">
-      <input type="checkbox" value="" class="sr-only peer" (click)="food.toggleDay()" unchecked />
-      <div
-        class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"
-      ></div>
-      <span class="ml-2 mr-2 text-sm font-medium text-gray-900">Tomorrow</span>
-    </label>
-  </div>
- 
-  <app-food-section [category]="0">
-    <div class="md:block absolute text-center z-10  flex w-full justify-between p-1" style="font-family: 'Lobster', cursive;">
+  <!-- <app-day-toggle-button (click)="setSlider()"></app-day-toggle-button> -->
+
+<div class="flex w-[369pt] justify-between mt-[1rem] p-[1.2rem]">
+  <button (click)="displayBreakFast()"  id="breakfast" [ngClass]="{'grey' : toggleBreakfast, 'orange': !toggleBreakfast}" class=" text-[16pt] p-[1rem,1rem] text-white text-center w-[105pt] h-[28pt] rounded-[5pt]">BreakFast</button>
+  <button (click)="displayLunch()" id="lunch" [ngClass]="{'grey' : toggleLunch, 'orange': !toggleLunch}" class=" text-[16pt] text-white text-center w-[105pt] h-[28pt] rounded-[5pt]">Lunch</button>
+  <button (click)="displayHightea()" id="hightea" [ngClass]="{'grey' : toggleHightea, 'orange': !toggleHightea}" class=" text-[16pt] text-white text-center w-[105pt] h-[28pt] rounded-[5pt]"> High-Tea</button>
+</div>
+
+  <!-- <app-food-section
+    [category]="0"
+    [slider]="Bslider"
+    [currentSlide]="BcurrentSlide"
+  >
+    <div
+      class="md:block absolute text-center z-10 flex w-full justify-between p-1"
+      style="font-family: 'Lobster', cursive">
       <div>
         <h5 class="text-4xl drop-shadow-md">BreakFast</h5>
       </div>
      <div  class="self-end m-1 mr-5">
       <a class="text-cyan-700 border border-cyan-700 hover:bg-cyan-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-centerdark:text-blue-500 " routerLink="/addfood/0"[state]="{ selectedDay:food.selectedDay , category:'BreakFast'}"><fa-icon class="fa-sm" [icon]="plusbutton">   </fa-icon></a>
       </div>
-     </div>
-    
-    <app-food-card
-      *ngFor="let item of food.foodItemBreakFast"
-      [cardId] = 'item.FoodName'
-      [ngClass]="{ 'hidden': !food.isCardOpen(item.FoodName,0)
-      
-     }"
-      [imgUrl]="item.ImgUrl"
-      [category]="0"
-    >
-    </app-food-card>
-    
-  </app-food-section>
-  <app-food-section [category]="1"> 
-    <div class="md:block absolute text-center z-10  flex w-full justify-between p-1" style="font-family: 'Lobster', cursive;">
+    </div>
+    <div class="fader" #breakfastSection>
+      <div
+        class="fader__slide"
+        [ngStyle]="{ opacity: Bopacities[idx] }"
+        *ngFor="let item of food.foodItemBreakFast; let idx = index"
+      >
+        <app-food-card
+          [cardId]="item.attributes.FoodName"
+          [imgUrl]="item.attributes.ImgUrl"
+          [category]="2"
+        >
+        </app-food-card>
+      </div>
+    </div>
+  </app-food-section> -->
+
+  <!-- <app-food-section
+    [category]="1"
+    [slider]="Lslider"
+    [currentSlide]="LcurrentSlide"
+  >
+    <div
+      class="md:block absolute text-center z-10 flex w-full justify-between p-1"
+      style="font-family: 'Lobster', cursive">
       <div>
         <h5 class="text-4xl drop-shadow-md">Lunch</h5>
       </div>
      <div  class="self-end m-1 mr-5">
         <a class="text-cyan-700 border border-cyan-700 hover:bg-cyan-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-centerdark:text-blue-500 " routerLink="/addfood/1" [state]="{ selectedDay:food.selectedDay , category:'Lunch'}"><fa-icon class="fa-sm" [icon]="plusbutton">   </fa-icon></a>
       </div>
-     </div>
-   
-    <app-food-card
-      *ngFor="let item of food.foodItemLunch"
-      [cardId] = 'item.FoodName' 
-      [ngClass]="{ 'hidden': !food.isCardOpen(item.FoodName,1)
-     }"
-      [imgUrl]="item.ImgUrl"
-      [category]="1"
-    >
-    </app-food-card>
-  </app-food-section>
+    </div>
+
+    <div class="fader" #lunchSection>
+      <div
+        [ngStyle]="{ opacity: Lopacities[idx] }"
+        class="fader__slide"
+        *ngFor="let item of food.foodItemLunch; let idx = index"
+      >
+        <app-food-card
+          [cardId]="item.attributes.FoodName"
+          [imgUrl]="item.attributes.ImgUrl"
+          [category]="2"
+        >
+        </app-food-card>
+      </div>
+    </div>
+  </app-food-section> -->
+  <div class="w-[100%] h-[500pt] flex justify-between flex-col p-[25px] mt-[-1rem] ml-[10px]">
+
+    <div id="box-1" class="flex justify-between mt-[0.5rem] w-[100%]">
+        <div id="box-1-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem]"><img src="../../../assets/img/fullMeal.png" height="100%" width="100%"></div>
+        <div class="w-[190pt] h-[45pt]"><p class="font-bold text-[16pt]">Full Plate Meal</p> <p class="text-[14pt] text-mediumGreys">₹ 80</p></div>
+    </div>
+    <div id="box-2" class="flex justify-between mt-[0.5rem]">
+      <div id="box-2-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem]"><img src="../../../assets/img/Group 3121.png" height="100%" width="100%"></div>
+      <div class="w-[190pt] h-[45pt]"><p class="font-bold text-[16pt]">Half Plate Meal</p> <p class="text-[14pt] text-mediumGreys">₹ 60</p></div>
+    </div>
+    <div id="box-3" class="flex justify-between mt-[0.5rem]">
+      <div id="box-3-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem]"><img src="../../../assets/img/Group 3129.png" height="100%" width="100%"></div>
+      <div class="w-[190pt] h-[45pt]"><p class="font-bold text-[16pt]">Chapati</p> <p class="text-[14pt] text-mediumGreys">₹ 20</p></div>
+    </div>
+    <div id="box-4" class="flex justify-between mt-[0.5rem]">
+      <div id="box-4-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem]"><img src="../../../assets/img/Group 3121.png"  height="100%" width="100%"></div>
+      <div class="w-[190pt] h-[45pt]"><p class="font-bold text-[16pt]">Rice</p> <p class="text-[14pt] text-mediumGreys">₹ 30</p></div>
+    </div>
+    <div id="box-5" class="flex justify-between mt-[0.5rem]">
+      <div id="box-5-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem]"><img src="../../../assets/img/Group 3145.png" height="100%" width="100%"></div>
+      <div class="w-[190pt] h-[45pt]"><p class="font-bold text-[16pt]">Riata</p> <p class="text-[14pt] text-mediumGreys">₹ 10</p></div>
+    </div>
+    <div id="box-6" class="flex justify-between mt-[0.5rem]">
+      <div id="box-6-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem]"><img src="../../../assets/img/Group 3154.png" height="100%" width="100%"></div>
+      <div class="w-[190pt] h-[45pt]"><p class="font-bold text-[16pt]">Aloo Gobhi Sabji</p> <p class="text-[14pt] text-mediumGreys">₹ 10</p></div>
+    </div>
+    <div id="box-7" class="flex justify-between mt-[0.5rem]">
+      <div id="box-7-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem]"><img src="../../../assets/img/Group 3152.png" height="90%" width="90%"></div>
+      <div class="w-[190pt] h-[45pt]"><p class="font-bold text-[16pt]">Salad</p> <p class="text-[14pt] text-mediumGreys">₹ 10</p></div>
+    </div>
   
-  <app-food-section [category]="2">
-    <div class="md:block absolute text-center z-10  flex w-full justify-between p-1" style="font-family: 'Lobster', cursive;">
+  </div>
+
+  <!-- <app-food-section
+    [category]="2"
+    [slider]="Hslider"
+    [currentSlide]="HcurrentSlide"
+  >
+    <div
+      class="md:block absolute text-center z-10 flex w-full justify-between p-1"
+      style="font-family: 'Lobster', cursive"
+    >
       <div>
         <h5 class="text-4xl drop-shadow-md">High-Tea</h5>
       </div>
      <div  class="self-end m-1 mr-5">
       <a class="text-cyan-700 border border-cyan-700 hover:bg-cyan-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-centerdark:text-blue-500 " routerLink="/addfood/2" [state]="{ selectedDay:food.selectedDay , category:'High-Tea'}"><fa-icon class="fa-sm" [icon]="plusbutton">   </fa-icon></a>
       </div>
-      
-     </div>
-    <app-food-card
-      *ngFor="let item of food.foodItemSnacks"
-      [cardId] = 'item.FoodName'
-      [ngClass]="{ 'hidden': !food.isCardOpen(item.FoodName,2)
-     }"
-      [imgUrl]="item.ImgUrl"
-      [category]="2"
-    >
-    </app-food-card>
-  </app-food-section>
+    </div>
+    <div class="fader" #highTeaSection>
+      <div
+        [ngStyle]="{ opacity: Hopacities[idx] }"
+        class="fader__slide"
+        *ngFor="let item of food.foodItemSnacks; let idx = index"
+      >
+        <app-food-card
+          [cardId]="item.attributes.FoodName"
+          [imgUrl]="item.attributes.ImgUrl"
+          [category]="3"
+        >
+        </app-food-card>
+      </div>
+    </div>
+  </app-food-section> -->
+
 </div>

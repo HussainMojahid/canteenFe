@@ -16,13 +16,13 @@ export class ChartCardComponent implements OnInit {
       this.count.counts = val.data[0].attributes.rcounting;
             
       const dataDoughnut = {
-        labels: ['Vacant', 'Occupied'],
+        // labels: ['Vacant', 'Occupied'],
         datasets: [
           {
             label: 'Canteen Space',
-            data: [(150-this.count.counts),(this.count.counts)],
-            backgroundColor: ['rgb(54, 162, 235)', 'rgb(255, 99, 132)'],
-            hoverOffset: 4,
+            data: [150 - this.count.counts, this.count.counts],
+            backgroundColor: ['rgb(	55,182,18)', 'rgb(226,25,25)'],
+            hoverOffset: 10,
           },
         ],
       };

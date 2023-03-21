@@ -3,5 +3,5 @@
 <app-auth-modal
   *ngIf="!(auth.isAuthenticatedWithDelay | async)"
 ></app-auth-modal>
-
+<app-footer></app-footer>
 <app-please-login *ngIf="!(auth.isAuthenticated$ | async)"></app-please-login>
