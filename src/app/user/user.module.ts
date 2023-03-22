@@ -8,7 +8,14 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+import { PleaseLoginComponent } from './please-login/please-login.component';
+import { UserTabComponent } from './user-tab/user-tab.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { UserRoutingModule } from './user.routing.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+// import { ResetPasswordComponent } from './reset-password/reset-password.component';
+// import { ProfileComponent } from './profile/profile.component';
+// import {FooterComponent } from '../footer/footer.component';
 @NgModule({
   declarations: [
     LoginComponent,
@@ -16,6 +23,11 @@ import { HttpClientModule } from '@angular/common/http';
     AuthModalComponent,
     ForgetPasswordComponent,
     ChangePasswordComponent,
+    PleaseLoginComponent,
+    UserTabComponent,
+    EditProfileComponent,
+    // ResetPasswordComponent,
+    // FooterComponent,
   ],
   imports: [
     CommonModule,

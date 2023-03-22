@@ -1,47 +1,172 @@
 <div>
+  <br />
+  <br />
+  <br />
+  <app-day-toggle-button></app-day-toggle-button>
   <app-chart-card></app-chart-card>
-  <div class="flex justify-end mx-1 my-1">
-    <label class="inline-flex relative items-center cursor-pointer">
-      <input type="checkbox" value="" class="sr-only peer" checked />
+  <div class="flex flex-col justify-end mx-1 my-1">
+    <!-- <span class=" text-sm font-medium text-gray-900">Today</span> -->
+
+  <!-- <app-day-toggle-button (click)="setSlider()"></app-day-toggle-button> -->
+
+<div class="flex w-[369pt] justify-between p-[1.2rem]">
+  <button   id="breakfast" [ngClass]="{'grey' : toggleBreakfast, 'orange': !toggleBreakfast}" class=" text-[16pt] p-[1rem,1rem] text-white text-center w-[105pt] h-[28pt] rounded-[5pt]">BreakFast</button>
+  <button  id="lunch" [ngClass]="{'grey' : toggleLunch, 'orange': !toggleLunch}" class=" text-[16pt] text-white text-center w-[105pt] h-[28pt] rounded-[5pt]">Lunch</button>
+  <button id="hightea" [ngClass]="{'grey' : toggleHightea, 'orange': !toggleHightea}" class=" text-[16pt] text-white text-center w-[105pt] h-[28pt] rounded-[5pt]"> High-Tea</button>
+</div>
+
+  <!-- <app-food-section
+    [category]="0"
+    [slider]="Bslider"
+    [currentSlide]="BcurrentSlide"
+  >
+    <div
+      class="md:block absolute text-center z-10 flex w-full justify-between p-1"
+      style="font-family: 'Lobster', cursive">
+      <div>
+        <h5 class="text-gray-100 text-4xl lg:mr-[85%] md:mr-[85%] drop-shadow-md" style="text-shadow: 2px 2px black">
+          BreakFast
+        </h5>
+      </div>
+      <div class="self-end m-1 mr-5 lg:ml-[90%] lg:mt-[-3%] md:ml-[90%] md:mt-[-3%]" *ngIf="auth.isAdmin()">
+        <app-add-item-button
+          link="/addfood/0"
+          [state]="{
+            selectedDay: food.selectedDay,
+            category: 1,
+            catName: 'BreakFast'
+          }"
+        ></app-add-item-button>
+      </div>
+    </div>
+    <div class="fader" #breakfastSection>
       <div
-        class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"
-      ></div>
-      <span class="ml-3 text-sm font-medium text-gray-900"></span>
-    </label>
+        class="fader__slide"
+        [ngStyle]="{ opacity: Bopacities[idx] }"
+        *ngFor="let item of food.foodItemBreakFast; let idx = index"
+      >
+        <app-food-card
+          [cardId]="item.attributes.FoodName"
+          [imgUrl]="item.attributes.ImgUrl"
+          [category]="2"
+        >
+        </app-food-card>
+      </div>
+    </div>
+  </app-food-section> -->
+
+  <!-- <app-food-section
+    [category]="1"
+    [slider]="Lslider"
+    [currentSlide]="LcurrentSlide"
+  >
+    <div
+      class="md:block absolute text-center z-10 flex w-full justify-between p-1"
+      style="font-family: 'Lobster', cursive">
+      <div>
+        <h5 class="text-gray-100 text-4xl lg:mr-[85%] md:mr-[85%] drop-shadow-md" style="text-shadow: 2px 2px black">
+          Lunch
+        </h5>
+      </div>
+      <div class="self-end m-1 mr-5 lg:ml-[90%] lg:mt-[-3%] md:ml-[90%] md:mt-[-3%]" *ngIf="auth.isAdmin()">
+        <app-add-item-button
+          link="/addfood/1"
+          [state]="{
+            selectedDay: food.selectedDay,
+            category: 2,
+            catName: 'Lunch'
+          }"
+        ></app-add-item-button>
+      </div>
+    </div>
+
+    <div class="fader" #lunchSection>
+      <div
+        [ngStyle]="{ opacity: Lopacities[idx] }"
+        class="fader__slide"
+        *ngFor="let item of food.foodItemLunch; let idx = index"
+      >
+        <app-food-card
+          [cardId]="item.attributes.FoodName"
+          [imgUrl]="item.attributes.ImgUrl"
+          [category]="2"
+        >
+        </app-food-card>
+      </div>
+    </div>
+  </app-food-section> -->
+  <div class="w-[105%] h-[500pt] flex justify-between flex-col p-[25px] mt-[-1rem] mb-[5rem] ml-[10px]">
+
+    <div id="box-1" class="flex justify-between mt-[0.5rem] w-[100%]">
+        <div id="box-1-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem]"><img src="../../../assets/img/fullMeal.png" height="100%" width="100%"></div>
+        <div class="w-[190pt] h-[45pt]"><p class="font-bold text-[16pt]">Full Plate Meal</p> <p class="text-[14pt] text-mediumGreys">₹ 80</p></div>
+    </div>
+    <div id="box-2" class="flex justify-between mt-[0.5rem]">
+      <div id="box-2-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem]"><img src="../../../assets/img/Group 3121.png" height="100%" width="100%"></div>
+      <div class="w-[190pt] h-[45pt]"><p class="font-bold text-[16pt]">Half Plate Meal</p> <p class="text-[14pt] text-mediumGreys">₹ 60</p></div>
+    </div>
+    <div id="box-3" class="flex justify-between mt-[0.5rem]">
+      <div id="box-3-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem]"><img src="../../../assets/img/Group 3129.png" height="100%" width="100%"></div>
+      <div class="w-[190pt] h-[45pt]"><p class="font-bold text-[16pt]">Chapati</p> <p class="text-[14pt] text-mediumGreys">₹ 20</p></div>
+    </div>
+    <div id="box-4" class="flex justify-between mt-[0.5rem]">
+      <div id="box-4-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem]"><img src="../../../assets/img/Group 3121.png"  height="100%" width="100%"></div>
+      <div class="w-[190pt] h-[45pt]"><p class="font-bold text-[16pt]">Rice</p> <p class="text-[14pt] text-mediumGreys">₹ 30</p></div>
+    </div>
+    <div id="box-5" class="flex justify-between mt-[0.5rem]">
+      <div id="box-5-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem]"><img src="../../../assets/img/Group 3145.png" height="100%" width="100%"></div>
+      <div class="w-[190pt] h-[45pt]"><p class="font-bold text-[16pt]">Riata</p> <p class="text-[14pt] text-mediumGreys">₹ 10</p></div>
+    </div>
+    <div id="box-6" class="flex justify-between mt-[0.5rem]">
+      <div id="box-6-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem]"><img src="../../../assets/img/Group 3154.png" height="100%" width="100%"></div>
+      <div class="w-[190pt] h-[45pt]"><p class="font-bold text-[16pt]">Aloo Gobhi Sabji</p> <p class="text-[14pt] text-mediumGreys">₹ 10</p></div>
+    </div>
+    <div id="box-7" class="flex justify-between mt-[0.5rem]">
+      <div id="box-7-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem]"><img src="../../../assets/img/Group 3152.png" height="90%" width="90%"></div>
+      <div class="w-[190pt] h-[45pt]"><p class="font-bold text-[16pt]">Salad</p> <p class="text-[14pt] text-mediumGreys">₹ 10</p></div>
+    </div>
+  
   </div>
 
-  <app-food-section [category]="0">
-    <app-food-card
-      *ngFor="let item of foodItemBreakFast"
-      [cardId] = 'item.name'
-      [ngClass]="{ 'hidden': !card.isCardOpen(item.name,0)
-      
-     }"
-      [imgUrl]="item.imageUrl"
-      [category]="0"
+  <!-- <app-food-section
+    [category]="2"
+    [slider]="Hslider"
+    [currentSlide]="HcurrentSlide"
+  >
+    <div
+      class="md:block absolute text-center z-10 flex w-full justify-between p-1"
+      style="font-family: 'Lobster', cursive"
     >
-    </app-food-card>
-  </app-food-section>
-  <app-food-section [category]="1"> 
-    <app-food-card
-      *ngFor="let item of foodItemLunch"
-      [cardId] = 'item.name'
-      [ngClass]="{ 'hidden': !card.isCardOpen(item.name,1)
-     }"
-      [imgUrl]="item.imageUrl"
-      [category]="1"
-    >
-    </app-food-card>
-  </app-food-section>
-  <app-food-section [category]="2">
-    <app-food-card
-      *ngFor="let item of foodItemSnacks"
-      [cardId] = 'item.name'
-      [ngClass]="{ 'hidden': !card.isCardOpen(item.name,2)
-     }"
-      [imgUrl]="item.imageUrl"
-      [category]="2"
-    >
-    </app-food-card>
-  </app-food-section>
+      <div>
+        <h5 class="text-gray-100 text-4xl lg:mr-[85%] md:mr-[85%] drop-shadow-md" style="text-shadow: 3px 3px black">
+          High-Tea
+        </h5>
+      </div>
+      <div class="self-end m-1 mr-5 lg:ml-[90%] lg:mt-[-3%] md:ml-[90%] md:mt-[-3%]" *ngIf="auth.isAdmin()">
+        <app-add-item-button
+          link="/addfood/2"
+          [state]="{
+            selectedDay: food.selectedDay,
+            category: 3,
+            catName: 'HighTea'
+          }"
+        ></app-add-item-button>
+      </div>
+    </div>
+    <div class="fader" #highTeaSection>
+      <div
+        [ngStyle]="{ opacity: Hopacities[idx] }"
+        class="fader__slide"
+        *ngFor="let item of food.foodItemSnacks; let idx = index"
+      >
+        <app-food-card
+          [cardId]="item.attributes.FoodName"
+          [imgUrl]="item.attributes.ImgUrl"
+          [category]="3"
+        >
+        </app-food-card>
+      </div>
+    </div>
+  </app-food-section> -->
+
 </div>

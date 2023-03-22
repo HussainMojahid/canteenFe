@@ -1,0 +1,25 @@
+<!-- Header --><!-- <header id="header" class="w-full z-20 fixed shadow-lg"> -->
+<nav class="w-full fixed flex justify-start items-center py-4 px-4 bg-white">
+  <div class="flex items-center space-x-4">
+    <img
+      class="w-14 h-14 rounded-full"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRuRdeXSJ1OhBp7RqQq2SJqjB9Axq9iavyHw&usqp=CAU"
+      alt=""
+    />
+    <div class="font-medium dark:text-white">
+      <div
+        class="text-lg font-light text-gray-900 md:text-xl dark:text-gray-900"
+      >
+        Jese Leos
+      </div>
+
+      <div class="text-sm text-gray-600 dark:text-gray-600">
+        Joined in August 2014
+      </div>
+    </div>
+  </div>
+
+  <!-- <a>      <fa-icon class="fa-2xl text-gray-#707070" [icon]="userIcon"></fa-icon>    </a> -->
+</nav>
+<!-- </header> --><app-sidebar *ngIf="sidebar.isSidebarVisible$"></app-sidebar
+><app-user-tab *ngIf="sidebar.isUserTabVisible"></app-user-tab>

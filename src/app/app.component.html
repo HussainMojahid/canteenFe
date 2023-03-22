@@ -1,8 +1,7 @@
-<app-nav></app-nav>
-
-<app-dashboard-modal></app-dashboard-modal>
-
-<!-- <app-food-card></app-food-card>-->
-<!-- <app-sidebar *ngIf="true"></app-sidebar> -->
-
-<app-auth-modal></app-auth-modal>
+<app-nav *ngIf="auth.isAuthenticated$ | async"></app-nav>
+<router-outlet *ngIf="auth.isAuthenticated$ | async"></router-outlet>
+<app-auth-modal
+  *ngIf="!(auth.isAuthenticatedWithDelay | async)"
+></app-auth-modal>
+<app-footer></app-footer>
+<app-please-login *ngIf="!(auth.isAuthenticated$ | async)"></app-please-login>

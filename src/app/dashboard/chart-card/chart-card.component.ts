@@ -10,35 +10,33 @@ export class ChartCardComponent implements OnInit {
 
   ngOnInit(){
 
-    const dataDoughnut = {
-      labels: ["Vacant", "Occupied"],
-      datasets: [
-        {
-          label: "Canteen Space",
-          data: [300, 50,],
-          backgroundColor: [
-            'rgb(54, 162, 235)',
+      const dataDoughnut = {
+        // labels: ['Vacant', 'Occupied'],
+        datasets: [
+          {
+            label: 'Canteen Space',
+            data: [150 - this.count.counts, this.count.counts],
+            backgroundColor: ['rgb(	55,182,18)', 'rgb(226,25,25)'],
+            hoverOffset: 10,
+            borderWidth:30,
+            borderHeight:10,
+            borderPadding:10,
+            borderColor:"rgb(245,245,245)",
+          },
+        ],
+      };
 
-            'rgb(255, 99, 132)',
-          ],
-          hoverOffset: 4,
-        },
-      ],
-    };
-  
-    const configDoughnut = {
-      type: "doughnut",
-      data: dataDoughnut,
-      options: {},
-    };
-  
-    const chartBar = new Chart(
-      document.getElementById("chartDoughnut") as HTMLCanvasElement,
-      // el.nativeElement.chartDoughnut,
-      configDoughnut
+      const configDoughnut = {
+        type: 'doughnut',
+        data: dataDoughnut,
+        options: {}
+      };
 
-    );
-
+      const chartBar = new Chart(
+        document.getElementById('chartDoughnut') as HTMLCanvasElement,
+        configDoughnut
+      );
+    });
   }
     
 }
