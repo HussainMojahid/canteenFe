@@ -1,51 +1,25 @@
-<!-- Header -->
-<header id="header" class="w-full z-20 fixed shadow-lg">
-  <nav
-    class="w-full fixed flex justify-start items-center bg-cyan-400 py-4 px-4"
-  >
-    <a (click)="sidebar.toggleUserTab()">
-      <fa-icon class="fa-2xl text-gray-200" [icon]="userIcon"></fa-icon>
-    </a>
+<!-- Header --><!-- <header id="header" class="w-full z-20 fixed shadow-lg"> -->
+<nav class="w-full fixed flex justify-start items-center py-4 px-4 bg-white">
+  <div class="flex items-center space-x-4">
+    <img
+      class="w-14 h-14 rounded-full"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRuRdeXSJ1OhBp7RqQq2SJqjB9Axq9iavyHw&usqp=CAU"
+      alt=""
+    />
+    <div class="font-medium dark:text-white">
+      <div
+        class="text-lg font-light text-gray-900 md:text-xl dark:text-gray-900"
+      >
+        Jese Leos
+      </div>
 
-    <div class="flex flex-grow justify-end items-end">
-      <!-- Primary Navigation -->
-      <ul class="flex flex-row mt-1 max-sm:hidden">
-        <li class="nav-item pr-4">
-          <a
-            class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
-            routerLink=""
-            >Dashboard</a
-          >
-        </li>
-        <li class="nav-item pr-4">
-          <a
-            class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
-            routerLink="/booking"
-            >Booking</a
-          >
-        </li>
-        <li class="nav-item pr-4">
-          <a
-            class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
-            routerLink="/feedback"
-            >Feedback</a
-          >
-        </li>
-        <!-- Navigation Links -->
-      </ul>
-      <div class="md:hidden">
-        <div
-          [ngClass]="{ 'on-ham': sidebar.onHam }"
-          class="ham"
-          id="ham"
-          (click)="toggleHam($event)"
-        >
-          <div class="bar"></div>
-        </div>
+      <div class="text-sm text-gray-600 dark:text-gray-600">
+        Joined in August 2014
       </div>
     </div>
-  </nav>
-</header>
+  </div>
 
-<app-sidebar *ngIf="sidebar.isSidebarVisible$"></app-sidebar>
-<app-user-tab *ngIf="sidebar.isUserTabVisible"></app-user-tab>
+  <!-- <a>      <fa-icon class="fa-2xl text-gray-#707070" [icon]="userIcon"></fa-icon>    </a> -->
+</nav>
+<!-- </header> --><app-sidebar *ngIf="sidebar.isSidebarVisible$"></app-sidebar
+><app-user-tab *ngIf="sidebar.isUserTabVisible"></app-user-tab>

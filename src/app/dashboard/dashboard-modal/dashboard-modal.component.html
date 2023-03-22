@@ -1,14 +1,18 @@
 <div>
+  <br />
+  <br />
+  <br />
+  <app-day-toggle-button></app-day-toggle-button>
   <app-chart-card></app-chart-card>
-  <div class="flex justify-end mx-1 my-1">
-    <span class="mr-2 text-sm font-medium text-gray-900">Today</span>
+  <div class="flex flex-col justify-end mx-1 my-1">
+    <!-- <span class=" text-sm font-medium text-gray-900">Today</span> -->
 
   <!-- <app-day-toggle-button (click)="setSlider()"></app-day-toggle-button> -->
 
-<div class="flex w-[369pt] justify-between mt-[1rem] p-[1.2rem]">
-  <button (click)="displayBreakFast()"  id="breakfast" [ngClass]="{'grey' : toggleBreakfast, 'orange': !toggleBreakfast}" class=" text-[16pt] p-[1rem,1rem] text-white text-center w-[105pt] h-[28pt] rounded-[5pt]">BreakFast</button>
-  <button (click)="displayLunch()" id="lunch" [ngClass]="{'grey' : toggleLunch, 'orange': !toggleLunch}" class=" text-[16pt] text-white text-center w-[105pt] h-[28pt] rounded-[5pt]">Lunch</button>
-  <button (click)="displayHightea()" id="hightea" [ngClass]="{'grey' : toggleHightea, 'orange': !toggleHightea}" class=" text-[16pt] text-white text-center w-[105pt] h-[28pt] rounded-[5pt]"> High-Tea</button>
+<div class="flex w-[369pt] justify-between p-[1.2rem]">
+  <button   id="breakfast" [ngClass]="{'grey' : toggleBreakfast, 'orange': !toggleBreakfast}" class=" text-[16pt] p-[1rem,1rem] text-white text-center w-[105pt] h-[28pt] rounded-[5pt]">BreakFast</button>
+  <button  id="lunch" [ngClass]="{'grey' : toggleLunch, 'orange': !toggleLunch}" class=" text-[16pt] text-white text-center w-[105pt] h-[28pt] rounded-[5pt]">Lunch</button>
+  <button id="hightea" [ngClass]="{'grey' : toggleHightea, 'orange': !toggleHightea}" class=" text-[16pt] text-white text-center w-[105pt] h-[28pt] rounded-[5pt]"> High-Tea</button>
 </div>
 
   <!-- <app-food-section
@@ -73,7 +77,7 @@
       </div>
     </div>
   </app-food-section> -->
-  <div class="w-[100%] h-[500pt] flex justify-between flex-col p-[25px] mt-[-1rem] ml-[10px]">
+  <div class="w-[105%] h-[500pt] flex justify-between flex-col p-[25px] mt-[-1rem] mb-[5rem] ml-[10px]">
 
     <div id="box-1" class="flex justify-between mt-[0.5rem] w-[100%]">
         <div id="box-1-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem]"><img src="../../../assets/img/fullMeal.png" height="100%" width="100%"></div>

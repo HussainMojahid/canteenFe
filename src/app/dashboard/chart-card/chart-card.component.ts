@@ -23,6 +23,10 @@ export class ChartCardComponent implements OnInit {
             data: [150 - this.count.counts, this.count.counts],
             backgroundColor: ['rgb(	55,182,18)', 'rgb(226,25,25)'],
             hoverOffset: 10,
+            borderWidth:30,
+            borderHeight:10,
+            borderPadding:10,
+            borderColor:"rgb(245,245,245)",
           },
         ],
       };
@@ -30,7 +34,7 @@ export class ChartCardComponent implements OnInit {
       const configDoughnut = {
         type: 'doughnut',
         data: dataDoughnut,
-        options: {},
+        options: {}
       };
   
       const chartBar = new Chart(

@@ -13,8 +13,8 @@ import { UserTabComponent } from './user-tab/user-tab.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { UserRoutingModule } from './user.routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ResetPasswordComponent } from './reset-password/reset-password.component';
-import { ProfileComponent } from './profile/profile.component';
+// import { ResetPasswordComponent } from './reset-password/reset-password.component';
+// import { ProfileComponent } from './profile/profile.component';
 // import {FooterComponent } from '../footer/footer.component';
 @NgModule({
   declarations: [
@@ -26,7 +26,7 @@ import { ProfileComponent } from './profile/profile.component';
     PleaseLoginComponent,
     UserTabComponent,
     EditProfileComponent,
-    ResetPasswordComponent,
+    // ResetPasswordComponent,
     // FooterComponent,
   ],
   imports: [

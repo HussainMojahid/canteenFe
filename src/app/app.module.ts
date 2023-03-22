@@ -13,7 +13,7 @@ import { BookingComponent } from './booking/booking.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { InterceptorInterceptor } from './interceptor/interceptor.interceptor';
 import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
-import { ProfileComponent } from './user/profile/profile.component';
+// import { ProfileComponent } from './user/profile/profile.component';
 import { SharedModule } from "./shared/shared.module";
 import { FooterComponent } from './footer/footer.component';
 
@@ -24,7 +24,7 @@ import { FooterComponent } from './footer/footer.component';
         SidebarComponent,
         BookingComponent,
         FeedbackComponent,
-        ProfileComponent,
+        // ProfileComponent,
         FooterComponent,
     ],
     imports: [

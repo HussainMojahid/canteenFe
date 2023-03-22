@@ -13,7 +13,7 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FoodInventoryComponent } from '../admin-dashboard/food-inventory/food-inventory.component';
-import { NavComponent } from './nav/nav.component';
+import { DayToggleButtonComponent } from '../shared/day-toggle-button/day-toggle-button.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +23,7 @@ import { NavComponent } from './nav/nav.component';
     DashboardModalComponent,
     WelcomeCardComponent,
     FoodPostComponent,
+    DayToggleButtonComponent    
   ],
   exports: [DashboardModalComponent],
   imports: [
