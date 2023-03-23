@@ -41,11 +41,16 @@ export class FoodPostComponent implements OnInit {
       this.date1 = nextDay;
     }
   }
-
-  foodList = new FormControl([], [Validators.required, Validators.min(10)]);
+  
+  
+  
+  foodList = new FormControl([], [Validators.required]);
   date = new FormControl(this.foodservice.formatDate(this.date1), [
     Validators.required,
   ]);
+
+  
+  
 
   foodForm = new FormGroup({
     foodList: this.foodList,
