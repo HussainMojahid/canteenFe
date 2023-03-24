@@ -11,10 +11,12 @@ import { SidebarService } from 'src/app/services/sidebar.service';
 })
 export class DashboardModalComponent implements OnInit {
   plusbutton = faPlus;
-  toggleBreakfast = true;
-  toggleLunch=true;
-  toggleHightea=true;
-  id:any;
+  toggleBreakfast = false;
+  toggleLunch = true;
+  toggleHightea = false;
+  id: any;
+  
+  // tabName: string | undefined;
 
   constructor(
     public sidebar: SidebarService,
@@ -27,16 +29,52 @@ export class DashboardModalComponent implements OnInit {
     } else {
       this.food.tommorowFood();
     }
- }
-//  ngOnDisplay():void{
-//   if(this.id=1){
-//     this.displayBreakFast()
-//   }
-//  }
+  }
 
-//  buttons = document.getElementById('breakfast') as HTMLButtonElement | null;
-//  buttons?.setAttribute(disabled:any);
+  changeTab(tabName: string) {
+    if (tabName === 'BreakFast') {
+      this.toggleBreakfast = true;
+      this.toggleLunch = false;
+      this.toggleHightea = false;
+    }
+    if (tabName === 'Lunch') {
+      this.toggleLunch;
+      this.toggleBreakfast = false;
+      this.toggleHightea = false;
+    }
+    if (tabName === 'HighTea') {
+      this.toggleHightea = true;
+      this.toggleBreakfast = false;
+      this.toggleLunch = false;
+    }
 
+    if (tabName === 'Lunch') {
+      this.toggleLunch = true;
+    }
+  }
+
+  displayBreakFast() {
+    if (this.toggleBreakfast == true) {
+      !this.toggleLunch;
+    }
+  }
+
+  //  displayLunch(){
+  //   this.toggleLunch = !this.toggleLunch
+  //  }
+
+  displayHighTea() {
+    this.toggleHightea = !this.toggleHightea;
+  }
+
+  //  ngOnDisplay():void{
+  //   if(this.id=1){
+  //     this.displayBreakFast()
+  //   }
+  //  }
+
+  //  buttons = document.getElementById('breakfast') as HTMLButtonElement | null;
+  //  buttons?.setAttribute(disabled:any);
 
   // displayBreakFast(){
   //   this.toggleBreakfast = !this.toggleBreakfast;
@@ -99,13 +137,12 @@ export class DashboardModalComponent implements OnInit {
   //  }
   //  ngIfThen(condition=2){
   //   this.displayLunch();
-   
+
   //  }
   //  ngIfElse(condition=3){
   //   this.displayHightea();
-   
-  //  }
 
+  //  }
 
   @ViewChild('breakfastSection')
   breakfastSection!: ElementRef<HTMLElement>;
@@ -143,7 +180,6 @@ export class DashboardModalComponent implements OnInit {
       //     );
       //   },
       // });
-
       // this.Hslider = new KeenSlider(this.highTeaSection.nativeElement, {
       //   initial: this.HcurrentSlide,
       //   slides: this.food.foodItemSnacks.length,
