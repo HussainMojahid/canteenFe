@@ -15,6 +15,8 @@ import { InterceptorInterceptor } from './interceptor/interceptor.interceptor';
 import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
 import { ProfileComponent } from './user/profile/profile.component';
 import { SharedModule } from "./shared/shared.module";
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
     declarations: [
@@ -33,7 +35,8 @@ import { SharedModule } from "./shared/shared.module";
         HttpClientModule,
         AdminDashboardModule,
         AppRoutingModule,
-        SharedModule
+        SharedModule,
+        ReactiveFormsModule
     ],
     providers: [
         {

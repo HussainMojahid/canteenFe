@@ -13,8 +13,8 @@
     >
       If you have any issue regarding Foods and Canteen management, Let us know.
     </p>
-    <form action="#" class="space-y-8">
-      <div>
+    <form [formGroup]="issueRegisterForm" (ngSubmit)="submitIssue()" class="space-y-8">
+      <!-- <div>
         <label
           for="email"
           class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
@@ -27,7 +27,7 @@
           placeholder="name@flowbite.com"
           required
         />
-      </div>
+      </div> -->
       <div>
         <label
           for="subject"
@@ -40,7 +40,9 @@
           class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
           placeholder="Let us know how we can help you"
           required
+          formControlName="subject"
         />
+        <p class="text-red-500" *ngIf="(subject && subject.touched && subject.pristine) || !isFormValid">Please enter a valid issue</p>
       </div>
       <div class="sm:col-span-2">
         <label
@@ -53,9 +55,11 @@
           rows="6"
           class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
           placeholder="Leave a comment..."
+          formControlName="message"
         ></textarea>
       </div>
       <button
+        type="submit"
         class="hover:shadow-form rounded-md bg-cyan-500 py-3 px-8 text-center text-base font-semibold text-white outline-none"
       >
         Send Feedback

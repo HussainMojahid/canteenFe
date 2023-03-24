@@ -101,10 +101,13 @@ export class AuthService {
   }
 
   feedback(model: any) {
-    return this.http.post(this.baseUrl + '/feedback', model).pipe(
+    let feedback = {data : {
+      "users_permissions_user": this.getID(),
+      "message": model.message,
+      "Issue": model.subject
+    }}
+    return this.http.post(this.baseUrl + 'feedbacks', feedback).pipe(
       map((user) => {
-        if (user) {
-        }
       })
     );
   }
