@@ -16,7 +16,10 @@ module.exports = {
         greyss:"#E4E4E4",
         mediumGreys:"#888888",
         darkgreyss:"#666666"
-      }
+      },
+         fontFamily: {
+      'roboto': ['Roboto black']
+    }
     },
   },
   plugins: [

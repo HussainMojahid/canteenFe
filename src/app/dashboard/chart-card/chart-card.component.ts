@@ -9,12 +9,11 @@ import { PeopleCountService } from 'src/app/services/people-count.service';
   styleUrls: ['./chart-card.component.css'],
 })
 export class ChartCardComponent implements OnInit {
-  constructor(private count: PeopleCountService) {}
-
+  constructor(public count: PeopleCountService) {}
+  data:any;
   ngOnInit() {
     this.count.getPeopleCount().subscribe((val) => {
-      this.count.counts = val.data[0].attributes.rcounting;
-            
+      this.count.counts = val.data[0].attributes.rcounting;     
       const dataDoughnut = {
         // labels: ['Vacant', 'Occupied'],
         datasets: [
@@ -22,19 +21,19 @@ export class ChartCardComponent implements OnInit {
             label: 'Canteen Space',
             data: [150 - this.count.counts, this.count.counts],
             backgroundColor: ['rgb(	55,182,18)', 'rgb(226,25,25)'],
-            hoverOffset: 10,
+            hoverOffset: 40,
             borderWidth:30,
             borderHeight:10,
             borderPadding:10,
             borderColor:"rgb(245,245,245)",
           },
+         
         ],
       };
-  
       const configDoughnut = {
         type: 'doughnut',
         data: dataDoughnut,
-        options: {}
+        options: {},
       };
   
       const chartBar = new Chart(
