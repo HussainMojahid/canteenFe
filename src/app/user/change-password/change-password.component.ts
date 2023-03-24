@@ -23,7 +23,11 @@ export class ChangePasswordComponent implements OnInit {
   showAlert: boolean = false;
   alertMsg = 'Please Wait! Under Process';
 
-  constructor(public auth: AuthService, public userService: UserService,private route : Router) {}
+  constructor(
+    public auth: AuthService,
+    public userService: UserService,
+    private route: Router
+  ) {}
   ngOnInit(): void {}
 
   password = new FormControl('', [Validators.required]);
@@ -57,12 +61,12 @@ export class ChangePasswordComponent implements OnInit {
       },
       buttonsStyling: false,
     });
-    if(this.changePasswordForm){
+    if (this.changePasswordForm) {
       this.userService
-      .changePasswordRequest(this.changePasswordForm)
-      .subscribe((res) => {
-        console.log('response', res);
-      });
+        .changePasswordRequest(this.changePasswordForm)
+        .subscribe((res) => {
+          console.log('response', res);
+        });
       swalWithBootstrapButtons
         .fire({
           title: 'Added !',
@@ -73,22 +77,11 @@ export class ChangePasswordComponent implements OnInit {
           reverseButtons: false,
           imageHeight: 200,
         })
-        .then((res)=>{
-          if(res.isConfirmed){
-            this.route.navigateByUrl('/')
+        .then((res) => {
+          if (res.isConfirmed) {
+            this.route.navigateByUrl('/');
           }
-        })
-        // .then((result) => {
-        //   if (result.isConfirmed) {
-        //     this.route.navigateByUrl('/');
-        //   } else if (result.dismiss === Swal.DismissReason.cancel) {
-        //     this.changePasswordForm.reset();
-        //   }
-        // });
+        });
     }
-    // this.AlertType = 'alert';
-    // this.showAlert = true;
-   // console.log('chnage password called');
-    
   }
 }

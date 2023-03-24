@@ -67,6 +67,7 @@ export class AuthService {
       .post<IUser>(`${environment.apiUrl}auth/local/register`, {
         username: registerForm.value.username,
         email: registerForm.value.email,
+        EmpId: registerForm.value.EmployeeId,
         password: registerForm.value.password,
       })
 
@@ -91,9 +92,10 @@ export class AuthService {
   }
 
   feedback(model: any) {
-    return this.http.post(this.baseUrl + '/feedback', model).pipe(
+    return this.http.post(this.baseUrl + '/feedbacks', model).pipe(
       map((user) => {
         if (user) {
+          console.log();
         }
       })
     );
@@ -112,7 +114,6 @@ export class AuthService {
 
       .pipe(
         map((user: IUser) => {
-          // localStorage.setItem('_token_canteen_app', JSON.stringify(user.jwt));
           localStorage.setItem(
             '_username_canteen_app',
             JSON.stringify(user.user.username)
@@ -124,6 +125,21 @@ export class AuthService {
           return user;
         })
       );
+  }
+
+  emgBooking(bookingForm: FormGroup) {
+    return this.http.post(`${environment.apiUrl}emg-bookings`, {
+      data: {
+        users_permissions_user: this.getID(),
+        Date: bookingForm.value.Date,
+        Time: `${bookingForm.value.Time}:01`,
+      },
+    });
+  }
+
+  getListOfBooking(){
+    return this.http.get(`${environment.apiUrl}emg-bookings`)
+
   }
 
   backbutton() {

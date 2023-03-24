@@ -13,6 +13,9 @@ import { BookingComponent } from './booking/booking.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { InterceptorInterceptor } from './interceptor/interceptor.interceptor';
 import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { TimePipe } from './admin-dashboard/time-pipe';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,7 @@ import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
     SidebarComponent,
     BookingComponent,
     FeedbackComponent,
+    TimePipe
   ],
   imports: [
     BrowserModule,
@@ -29,7 +33,10 @@ import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
     DashboardModule,
     HttpClientModule,
     AdminDashboardModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    CommonModule,
+    
   ],
   providers: [
     {
