@@ -1,4 +1,4 @@
-<!-- searchbar -->
+
 <br />
 <br />
 <br />
@@ -27,15 +27,17 @@
   </div>
 </div>
 
-<!-- card -->
+
 <div class="sm:flex sm:flex-col lg:grid lg:grid-cols-3 md:grid md:grid-cols-3">
   <div
     class="rounded-lg shadow-lg bg-white max-w-sm m-2"
     *ngFor="let data of allFood"
   >
-    <a href="#!">
+    <div class="w-full h-60 object-contain overflow-hidden">
       <img class="rounded-t-lg object-fill w-[100%] lg:h-[80%] " [src]="data.attributes.ImgUrl" alt="" />
-    </a>
+    </div>
+     
+    
     <div class="flex justify-between p-6">
       <div>
         <h5 class="text-gray-900 text-xl font-medium mb-2">

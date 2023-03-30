@@ -15,6 +15,7 @@ import { UserRoutingModule } from './user.routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ProfileComponent } from './profile/profile.component';
+import { BackButtonComponent } from '../shared/back-button/back-button.component';
 @NgModule({
   declarations: [
     LoginComponent,
@@ -25,7 +26,9 @@ import { ProfileComponent } from './profile/profile.component';
     PleaseLoginComponent,
     UserTabComponent,
     EditProfileComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    ProfileComponent
+    
   ],
   imports: [
     CommonModule,
@@ -35,6 +38,7 @@ import { ProfileComponent } from './profile/profile.component';
     HttpClientModule,
     UserRoutingModule,
     FontAwesomeModule,
+    
   ],
   exports: [AuthModalComponent,PleaseLoginComponent,UserTabComponent,ForgetPasswordComponent],
   providers : [
