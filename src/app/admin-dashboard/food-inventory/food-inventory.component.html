@@ -2,7 +2,7 @@
 <br />
 <br />
 <br />
-<div class="flex justify-center">
+<div class="flex justify-center items-center">
   <div class="mb-3 xl:w-96">
     <div
       class="input-group relative flex flex-wrap items-stretch w-full mb-4 rounded"
@@ -28,20 +28,20 @@
 </div>
 
 <!-- card -->
-<div class="flex justify-center flex-col">
+<div class="sm:flex sm:flex-col lg:grid lg:grid-cols-3 md:grid md:grid-cols-3">
   <div
     class="rounded-lg shadow-lg bg-white max-w-sm m-2"
     *ngFor="let data of allFood"
   >
     <a href="#!">
-      <img class="rounded-t-lg" [src]="data.attributes.ImgUrl" alt="" />
+      <img class="rounded-t-lg object-fill w-[100%] lg:h-[80%] " [src]="data.attributes.ImgUrl" alt="" />
     </a>
     <div class="flex justify-between p-6">
       <div>
         <h5 class="text-gray-900 text-xl font-medium mb-2">
           {{ data.attributes.FoodName }}
-          {{data.attributes.Price}}
         </h5>
+        <h5><i class="bi bi-currency-rupee"></i>{{data.attributes.Price}}</h5>
       </div>
       <div>
         <a routerLink="/updatefood/{{data.id}}"

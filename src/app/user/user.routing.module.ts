@@ -4,7 +4,7 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
-
+import { ProfileComponent } from './profile/profile.component';
 const routes: Routes = [
     {
         path: 'edit',
@@ -21,7 +21,13 @@ const routes: Routes = [
       {
         path : 'resetPassword',
         component: ResetPasswordComponent,
+      },
+      {
+        path:'profile',
+        component:ProfileComponent 
+        
       }
+     
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],

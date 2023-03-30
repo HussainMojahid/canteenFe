@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
 import { PeopleCountService } from 'src/app/services/people-count.service';
 
@@ -8,9 +8,10 @@ import { PeopleCountService } from 'src/app/services/people-count.service';
   templateUrl: './chart-card.component.html',
   styleUrls: ['./chart-card.component.css'],
 })
-export class ChartCardComponent implements OnInit {
+export class ChartCardComponent implements OnInit, OnDestroy {
+  interval: NodeJS.Timer;
   constructor(public count: PeopleCountService, private http: HttpClient) {
-    setInterval(() => {
+    this.interval = setInterval(() => {
       this.ngOnInit();
     }, 10000);
   }
@@ -42,5 +43,8 @@ export class ChartCardComponent implements OnInit {
         configDoughnut
       );
     });
+  }
+  ngOnDestroy(): void {
+    clearInterval(this.interval);
   }
 }

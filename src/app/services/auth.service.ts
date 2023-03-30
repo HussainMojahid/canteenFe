@@ -7,6 +7,11 @@ import { BehaviorSubject, delay, map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import ICurrentUser from '../models/currentUser.modal';
 import IUser from '../models/user.model';
+const sign = require('jwt-encode');
+
+interface Role {
+  role: string;
+}
 @Injectable({
   providedIn: 'root',
 })
@@ -20,9 +25,13 @@ export class AuthService {
   constructor(private http: HttpClient, public location: Location) {}
 
   isAdmin(): boolean {
-    const temp = localStorage.getItem('_role_canteen_app');
+    let temp : any;
+    const role_token = localStorage.getItem('_role_canteen_app');
+    if (role_token != null) {
+       temp = jwt_decode<Role>(role_token);
+    }
     if (temp != null) {
-      if ('canteenAdmin' === JSON.parse(temp)) return true;
+      if ('canteenAdmin' === temp.role) return true;
     }
     return false;
   }
@@ -89,14 +98,17 @@ export class AuthService {
 
   logout() {
     localStorage.clear();
+    window.location.reload();
   }
 
   feedback(model: any) {
-    return this.http.post(this.baseUrl + '/feedbacks', model).pipe(
+    let feedback = {data : {
+      "users_permissions_user": this.getID(),
+      "message": model.message,
+      "Issue": model.subject
+    }}
+    return this.http.post(this.baseUrl + 'feedbacks', feedback).pipe(
       map((user) => {
-        if (user) {
-          console.log();
-        }
       })
     );
   }
@@ -159,10 +171,14 @@ export class AuthService {
   }
 
   getCurrentRole() {
+    const secret = environment.JWT_SEC;
     this.getRole()!
       .pipe(
         map((val) => {
-          localStorage.setItem('_role_canteen_app', JSON.stringify(val));
+          localStorage.setItem(
+            '_role_canteen_app',
+            JSON.stringify(sign({ role: val }, secret))
+          );
 
           return val;
         })
