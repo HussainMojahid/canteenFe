@@ -16,6 +16,7 @@ import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { TimePipe } from './admin-dashboard/time-pipe';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { TimePipe } from './admin-dashboard/time-pipe';
     AppRoutingModule,
     ReactiveFormsModule,
     CommonModule,
+    SharedModule
     
   ],
   providers: [

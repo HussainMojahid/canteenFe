@@ -2,6 +2,10 @@
   <div
     class="flex flex-col items-center justify-center min-h-screen pt-4 px-4 pb-25 sm:block sm:p-0 box-border"
   >
+  <div class="pt-16 lg:mr-[95%] md:pt-16 md:mr-[95%] self-end m-1 mr-5">
+    <app-back-button> </app-back-button>
+  </div>
+  
     <h2 class="text-center text-3xl pb-4">Emergency Booking</h2>
 
     <form [formGroup]="bookingForm" (ngSubmit)="postBooking(bookingForm)">
