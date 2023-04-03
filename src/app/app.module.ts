@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './dashboard/nav/nav.component';
@@ -16,6 +15,9 @@ import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
 // import { ProfileComponent } from './user/profile/profile.component';
 import { SharedModule } from "./shared/shared.module";
 import { FooterComponent } from './footer/footer.component';
+// import { AccountComponent } from './user/account/account.component';
+import {DatePipe} from '@angular/common'
+
 
 @NgModule({
     declarations: [
@@ -26,6 +28,7 @@ import { FooterComponent } from './footer/footer.component';
         FeedbackComponent,
         // ProfileComponent,
         FooterComponent,
+        // AccountComponent
     ],
     imports: [
         BrowserModule,
@@ -42,7 +45,8 @@ import { FooterComponent } from './footer/footer.component';
             provide: HTTP_INTERCEPTORS,
             useClass: InterceptorInterceptor,
             multi: true,
-        },
+            
+        },DatePipe
     ],
     bootstrap: [AppComponent],
 })

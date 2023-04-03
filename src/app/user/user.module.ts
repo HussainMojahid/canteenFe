@@ -13,9 +13,11 @@ import { UserTabComponent } from './user-tab/user-tab.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { UserRoutingModule } from './user.routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AccountComponent } from './account/account.component';
 // import { ResetPasswordComponent } from './reset-password/reset-password.component';
 // import { ProfileComponent } from './profile/profile.component';
 // import {FooterComponent } from '../footer/footer.component';
+
 @NgModule({
   declarations: [
     LoginComponent,
@@ -26,6 +28,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     PleaseLoginComponent,
     UserTabComponent,
     EditProfileComponent,
+    AccountComponent
     // ResetPasswordComponent,
     // FooterComponent,
   ],

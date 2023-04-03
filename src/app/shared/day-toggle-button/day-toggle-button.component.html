@@ -1,8 +1,7 @@
-<div class="flex w-[375pt] justify-evenly items-center h-[40pt] p-[3.8rem]">
-  <button (click)="toggleDay()" class="bg-orangess text-[16pt] text-white text-center w-[105pt] items-center justify-center h-[28pt] rounded-[5pt]">Today</button>
-  <button (click)="toggleDay()" class="bg-orangess text-[16pt] text-white text-center w-[105pt] h-[28pt] rounded-[5pt]">Tomorrow</button>
+<div class="flex w-[100%] justify-evenly items-center h-[40pt] p-[2rem] mt-[2rem] mb-[2rem]">
+  <button (click)="toggleDay('Today')" [ngClass]="{'orange' : toggleToday}" class="bg-greyss text-[16pt] text-white text-center w-[105pt] items-center justify-center h-[28pt] rounded-[5pt]">Today</button>
+  <button (click)="toggleDay('Tomorrow')" [ngClass]="{'orange' : toggleTomorrow}" class="bg-greyss text-[16pt] text-white text-center w-[105pt] h-[28pt] rounded-[5pt]">Tomorrow</button>
 </div>
-
 
 <!-- <div class="flex justify-end mt-[5rem] mx-1 my-1 border-2 border-red-600">
   <span class="mr-2 text-sm font-medium text-gray-900">Today</span>

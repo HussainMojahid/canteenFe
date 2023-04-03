@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import IFoodItem from '../models/food.model';
+import { DatePipe } from '@angular/common';
 
 interface IFoodCard {
   id: string;
@@ -244,6 +245,12 @@ export class FoodService {
       this.foodItemSnacks = [];
       this.Hcards = [];
     }
+
+    var day = new Date();
+    // var nextDay = new Date(day);
+    // day.setDate(day.getDate());
+    console.log(this.formatDate(day));
+
     this.getFood().subscribe({
       next: async (value) => {
         value.forEach((element: any) => {

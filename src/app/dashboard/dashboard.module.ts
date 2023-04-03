@@ -14,7 +14,6 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FoodInventoryComponent } from '../admin-dashboard/food-inventory/food-inventory.component';
 import { DayToggleButtonComponent } from '../shared/day-toggle-button/day-toggle-button.component';
-
 @NgModule({
   declarations: [
     FoodSectionComponent,
@@ -23,7 +22,7 @@ import { DayToggleButtonComponent } from '../shared/day-toggle-button/day-toggle
     DashboardModalComponent,
     WelcomeCardComponent,
     FoodPostComponent,
-    DayToggleButtonComponent    
+    DayToggleButtonComponent,    
   ],
   exports: [DashboardModalComponent],
   imports: [

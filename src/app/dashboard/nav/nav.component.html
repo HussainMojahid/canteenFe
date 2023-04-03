@@ -1,6 +1,6 @@
 <!-- Header --><!-- <header id="header" class="w-full z-20 fixed shadow-lg"> -->
-<nav class="w-full fixed flex justify-start items-center py-4 px-4 bg-white">
-  <div class="flex items-center space-x-4">
+<nav class="w-[100%] fixed top-[0rem] flex items-center py-4 px-4 bg-white z-[999] h-[6rem]">
+  <!-- <div class="flex items-center space-x-4">
     <img
       class="w-14 h-14 rounded-full"
       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRuRdeXSJ1OhBp7RqQq2SJqjB9Axq9iavyHw&usqp=CAU"
@@ -14,12 +14,19 @@
       </div>
 
       <div class="text-sm text-gray-600 dark:text-gray-600">
-        Joined in August 2014
+        Joined in August 2014{{username}}
       </div>
     </div>
+  </div> -->
+
+  <div class="flex items-center justify-between w-[180pt] p-[7px] h-[67pt]">
+    <div class="h-[100%] w-[64pt] flex items-center "><fa-icon class="fa-2xl text-gray-#707070 " [icon]="userIcon"></fa-icon></div>
+    <div><p class="text-[18pt]  font-roboto">Hii, {{username}}</p> <p class="text-[16pt]">Welcome back</p></div>
   </div>
 
   <!-- <a>      <fa-icon class="fa-2xl text-gray-#707070" [icon]="userIcon"></fa-icon>    </a> -->
 </nav>
-<!-- </header> --><app-sidebar *ngIf="sidebar.isSidebarVisible$"></app-sidebar
-><app-user-tab *ngIf="sidebar.isUserTabVisible"></app-user-tab>
+<!-- </header> -->
+
+<app-sidebar *ngIf="sidebar.isSidebarVisible$"></app-sidebar>
+<app-user-tab *ngIf="sidebar.isUserTabVisible"></app-user-tab>

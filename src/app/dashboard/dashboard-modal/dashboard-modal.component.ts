@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FoodService } from 'src/app/services/food.service';
 import { SidebarService } from 'src/app/services/sidebar.service';
+import { AuthService } from 'src/app/services/auth.service';
+import {DayToggleButtonComponent} from 'src/app/shared/day-toggle-button/day-toggle-button.component'
 
 @Component({
   selector: 'app-dashboard-modal',
@@ -14,11 +16,13 @@ export class DashboardModalComponent implements OnInit {
   toggleBreakfast = false;
   toggleLunch = true;
   toggleHightea = false;
+  toggleToday= true;
+  toggleTomorrow= false;
   id: any;
-  
   // tabName: string | undefined;
 
   constructor(
+    public  auth: AuthService,
     public sidebar: SidebarService,
     public food: FoodService,
     public activatedroute: ActivatedRoute

@@ -6,8 +6,22 @@ import { FoodService } from 'src/app/services/food.service';
   styleUrls: ['./day-toggle-button.component.css'],
 })
 export class DayToggleButtonComponent {
+  
+  toggleToday= true;
+  toggleTomorrow=false;
+
   constructor(public foodService: FoodService) {}
-  toggleDay() {
-    this.foodService.toggleDay();
+  toggleDay(tabname:string) {
+    // this.foodService.toggleDay();
+    if(tabname==="Today"){
+      this.toggleToday=true;
+      this.toggleTomorrow=false;
+      this.foodService.todayFood();
+    }
+    if(tabname==="Tomorrow"){
+      this.toggleToday=false;
+      this.toggleTomorrow=true;
+      this.foodService.tommorowFood();
+    }
   }
 }

@@ -18,7 +18,12 @@ module.exports = {
         darkgreyss:"#666666"
       },
          fontFamily: {
-      'roboto': ['Roboto black']
+      'roboto-light': ['Roboto Light'],
+      'roboto-black': ['Roboto Black'],
+      'roboto-regular': ['Roboto'],
+      'roboto-medium': ['Roboto Medium'],
+      'roboto-thin': ['Roboto Thin'],
+      // 'roboto-bold': ['Roboto Light']
     }
     },
   },

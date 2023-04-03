@@ -1,22 +1,22 @@
-<div class="ml-[8%] w-[328pt] h-[220pt] bg-lightGreys font-Roboto">
+<div class="w-[90%] h-[238pt] bg-lightGreys font-roboto ml-[15pt]">
 
   <div class="flex justify-between">
 
-    <div class="rounded-lg w-[180pt] h-[170pt] p-[10px] relative flex flex-col items-center justify-center font-roboto">
-      <canvas style="height:40vh; width:55vw" class="" id="chartDoughnut"></canvas>
-      <p class="absolute text-darkgreyss text-[14pt] font-roboto top-[35%]  font-light flex flex-col p-[8px] items-center">Total Capacity: <span class="text-black text-[24pt]">150</span></p>
+    <div class="rounded-lg w-[180pt] h-[190pt] relative flex flex-col items-center justify-center font-roboto">
+      <canvas style="height:50vh; width:55vw;" class="flex justify-center items-center" id="chartDoughnut"></canvas>
+      <p class="absolute text-darkgreyss text-[11pt] font-roboto top-[25%] font-light flex flex-col justify-center p-[2.7rem] items-center">Total Capacity: <span class="text-black text-[20pt]">150</span></p>
     </div>
     
     <div class="w-[50%] h-[170pt] font-roboto flex flex-col justify-around items-center font-roboto">
-      <div class="h-[60pt] w-[72pt] bg-lightgreeness text-greeness text-center rounded"> <p class="text-[14pt] font-Roboto">Vacant </p> <span class="font-extrabold text-[25pt]">{{150 - count.counts}}</span></div>
-      <div class="h-[60pt] w-[72pt] bg-lightRedes flex flex-col items-center  text-red-600 font-medium text-center rounded"> <p class="text-[14pt] text-red-700">Occupied</p> <span class="font-extrabold text-[25pt]">{{this.count.counts}}</span> </div>
+      <div class="h-[60pt] w-[72pt] bg-lightgreeness text-greeness text-center rounded"> <p class="text-[14pt] font-Roboto">Vacant </p> <span class="font-extrabold text-[22pt]">{{150 - count.counts}}</span></div>
+      <div class="h-[60pt] w-[72pt] bg-lightRedes flex flex-col items-center  text-red-600 font-medium text-center rounded"> <p class="text-[14pt] text-red-700">Occupied</p> <span class="font-extrabold text-[22pt]">{{this.count.counts}}</span> </div>
     </div>
   
   </div>
     
-    <div class="flex justify-between items-center w-[95%] p-[1rem] mt-[0.5rem] h-[20%]">
-      <div> <p class="text-[14pt]"><span class="font-roboto"> Last updated: </span> 13 min ago</p> </div>
-      <div class="font-semibold text-[14pt] flex text-orangess flex justify-between items-center w-[30%] p-[4px] h-[140%] font-roboto"> <img src="../../../assets/img/refresh.png" height="20pt" width="20pt" alt=""> <p>REFRESH</p> </div>
+    <div class="flex justify-between items-center w-[100%] p-[3rem] pl-[4px] mt-[-0.5rem] h-[20%]">
+      <div> <p class="text-[12pt]"><span class="font-roboto"> Last updated: </span> 13 min ago</p> </div>
+      <div class="font-semibold text-[12pt] flex text-orangess flex justify-between items-center w-[30%] p-[4px] h-[140%] font-roboto"> <img src="../../../assets/img/refresh.png" height="20pt" width="20pt" alt=""> <p>REFRESH</p> </div>
     </div>
      
 </div>
