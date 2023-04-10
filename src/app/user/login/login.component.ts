@@ -48,7 +48,7 @@ export class LoginComponent {
         error: (e) => {
           this.AlertType = 'error';
           this.showAlert = true;
-          // this.alertMsg = e.error.error.message;
+          this.alertMsg = e.error.error.message;
         },
       });
     return;

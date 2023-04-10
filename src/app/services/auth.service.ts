@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import jwt_decode from 'jwt-decode';
 import { BehaviorSubject, delay, map, Observable } from 'rxjs';
@@ -21,6 +21,7 @@ export class AuthService {
   user$ = new BehaviorSubject<ICurrentUser | null>(null);
   baseUrl = environment.apiUrl;
   UserID = -1;
+  userRole = new EventEmitter<string>();
 
   constructor(private http: HttpClient, public location: Location) {}
 
@@ -121,18 +122,22 @@ export class AuthService {
       .put<IUser>(`${environment.apiUrl}users/${id}`, {
         username: registerForm.value.username,
         email: registerForm.value.email,
-        password: registerForm.value.password,
+        //password: registerForm.value.password,
+    
+    EmpId:registerForm.value.EmployeeId
       })
 
       .pipe(
-        map((user: IUser) => {
+        map((user: any) => {
+          console.log("user",user);
+          
           localStorage.setItem(
             '_username_canteen_app',
-            JSON.stringify(user.user.username)
+            JSON.stringify(user.username)
           );
           localStorage.setItem(
             '_email_canteen_app',
-            JSON.stringify(user.user.email)
+            JSON.stringify(user.email)
           );
           return user;
         })
@@ -202,6 +207,7 @@ export class AuthService {
         .get<any>(`${environment.apiUrl}users/${a.id}?populate=*`)
         .pipe(
           map((data) => {
+            this.userRole.emit(data.role.name)
             return data.role.name;
           })
         );

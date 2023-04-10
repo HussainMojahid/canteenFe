@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import ICurrentUser from 'src/app/models/currentUser.modal';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-profile',
@@ -22,7 +24,8 @@ export class EditProfileComponent implements OnInit {
   constructor(
     public auth: AuthService,
     private http: HttpClient,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) {}
   ngOnInit(): void {
     this.id = this.auth.getID();
@@ -49,6 +52,8 @@ export class EditProfileComponent implements OnInit {
   organization = new FormControl('', [Validators.required]);
   EmployeeId = new FormControl(this.auth.user$.getValue()?.EmpId, [
     Validators.required,
+    Validators.maxLength(11),
+    Validators.min(1),
   ]);
 
   EditForm = new FormGroup({
@@ -59,27 +64,39 @@ export class EditProfileComponent implements OnInit {
   });
 
   update() {
-    this.AlertType = 'alert';
-    this.showAlert = true;
-
-    this.auth
-      .update(this.EditForm, this.id!)
-
-      .subscribe({
-        next: () => {
-          this.AlertType = 'success';
-          this.showAlert = true;
-          this.alertMsg = 'Account Created';
-          this.auth.isAuthenticated();
-        },
-
-        error: (e) => {
-          this.AlertType = 'error';
-          this.showAlert = true;
-          this.alertMsg = e.error.error.message;
-        },
-      });
+    this.auth.update(this.EditForm, this.id!).subscribe({
+      next: (val) => {
+        this.showSwal();
+      },
+    });
 
     return;
+  }
+  showSwal() {
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton:
+          'text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800',
+        cancelButton:
+          'text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900',
+      },
+      buttonsStyling: false,
+    });
+    swalWithBootstrapButtons
+      .fire({
+        title: 'Are you sure want to Update?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, Update it!',
+        cancelButtonText: 'No, cancel!',
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          this.router.navigateByUrl('/profile');
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+        }
+      });
   }
 }

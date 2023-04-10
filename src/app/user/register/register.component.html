@@ -58,6 +58,13 @@
     >
     </app-input>
   </div>
+  <div class="row" *ngIf="validationError">
+    <ul class="text-danger">
+      <li *ngFor="let error of validationError">
+        {{ error }}
+      </li>
+    </ul>
+  </div>
 
   <button
     

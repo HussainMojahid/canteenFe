@@ -12,6 +12,7 @@ import { FoodService } from '../services/food.service';
 })
 export class BookingComponent implements OnInit {
   allBooking: any[] = [];
+  role: any[] = [];
   constructor(
     private auth: AuthService,
     private router: Router,
@@ -56,8 +57,19 @@ export class BookingComponent implements OnInit {
   }
 
   getAllBooking() {
+    let currentUserId = this.auth.getID();     
+    this.auth.getRole()?.subscribe((result:any) => {
+      this.role.push(result);
+    })
+    // console.log("role", this.role.at(0));
+    
+    // console.log(currentUserId);
+    
     this.auth.getListOfBooking().subscribe((val: any) => {
-      this.allBooking = val.data;
+      this.allBooking = val.data;   
+      // this.allBooking = this.allBooking.filter(booking => booking.id === currentUserId);
+      // console.log(this.allBooking);
+            
     });
   }
 

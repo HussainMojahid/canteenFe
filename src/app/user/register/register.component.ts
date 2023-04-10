@@ -18,6 +18,7 @@ export class RegisterComponent {
   AlertType = 'success';
   showAlert: boolean = false;
   alertMsg = 'Please Wait! Under Process';
+  validationError : string[] |undefined
   OrgList: any[] = [
     {
       id: '1',
@@ -72,6 +73,7 @@ export class RegisterComponent {
           this.AlertType = 'error';
           this.showAlert = true;
           this.alertMsg = e.error.error.message;
+          this.validationError = e;
         },
       });
 
