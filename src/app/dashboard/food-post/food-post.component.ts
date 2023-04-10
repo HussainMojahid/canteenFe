@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { map } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 import { FoodInventoryServiceService } from 'src/app/services/food-inventory-service.service';
 import { FoodService } from 'src/app/services/food.service';
@@ -61,16 +62,7 @@ export class FoodPostComponent implements OnInit {
   }
 
   saveFood() {
-    let flag = false;
-    const swalWithBootstrapButtons = Swal.mixin({
-      customClass: {
-        confirmButton:
-          'text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800',
-        cancelButton:
-          'text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900',
-      },
-      buttonsStyling: false,
-    });
+
 
     if (this.foodForm.valid) {
       this.foodForm.value.foodList?.forEach((item) => {
@@ -81,26 +73,44 @@ export class FoodPostComponent implements OnInit {
             food_catagory: this.routeState.category,
           })
           .subscribe({
-            complete: () => {},
+            next:(value) => {
+              this.showSwal()
+              
+            },
+            
           });
       });
-      swalWithBootstrapButtons
-        .fire({
-          title: 'Added !',
-          showCancelButton: true,
-          imageWidth: 400,
-          confirmButtonText: 'Done!',
-          cancelButtonText: 'Add More!',
-          reverseButtons: false,
-          imageHeight: 200,
-        })
-        .then((result) => {
-          if (result.isConfirmed) {
-            this.router.navigateByUrl('/');
-          } else if (result.dismiss === Swal.DismissReason.cancel) {
-            this.foodForm.get('foodList')?.reset();
-          }
-        });
+
     }
+  }
+
+  showSwal(){
+    let flag = false;
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton:
+          'text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800',
+        cancelButton:
+          'text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900',
+      },
+      buttonsStyling: false,
+    });
+    swalWithBootstrapButtons
+    .fire({
+      title: 'Added !',
+      showCancelButton: true,
+      imageWidth: 400,
+      confirmButtonText: 'Done!',
+      cancelButtonText: 'Add More!',
+      reverseButtons: false,
+      imageHeight: 200,
+    })
+    .then((result) => {
+      if (result.isConfirmed) {
+        this.router.navigateByUrl('/');
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        this.foodForm.get('foodList')?.reset();
+      }
+    });
   }
 }

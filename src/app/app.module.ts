@@ -17,7 +17,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { TimePipe } from './admin-dashboard/time-pipe';
 import { SharedModule } from './shared/shared.module';
+import { ServerErrorComponent } from './errors/server-error/server-error.component';
+import { TestErrorComponent } from './errors/test-error/test-error.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
+import { ErrorInterceptor } from './interceptor/error.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +30,9 @@ import { SharedModule } from './shared/shared.module';
     SidebarComponent,
     BookingComponent,
     FeedbackComponent,
-    TimePipe
+    TimePipe,
+    ServerErrorComponent,
+    TestErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -37,13 +44,19 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     ReactiveFormsModule,
     CommonModule,
-    SharedModule
+    SharedModule,
+    
     
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: InterceptorInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
       multi: true,
     },
   ],

@@ -52,6 +52,17 @@ export class ChangePasswordComponent implements OnInit {
   }
 
   changePassword() {
+    if (this.changePasswordForm) {
+      this.userService
+        .changePasswordRequest(this.changePasswordForm)
+        .subscribe({
+          next: (val) => {
+            this.showSwal();
+          },
+        });
+    }
+  }
+  showSwal() {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
         confirmButton:
@@ -61,27 +72,21 @@ export class ChangePasswordComponent implements OnInit {
       },
       buttonsStyling: false,
     });
-    if (this.changePasswordForm) {
-      this.userService
-        .changePasswordRequest(this.changePasswordForm)
-        .subscribe((res) => {
-          console.log('response', res);
-        });
-      swalWithBootstrapButtons
-        .fire({
-          title: 'Added !',
-          showCancelButton: true,
-          imageWidth: 400,
-          confirmButtonText: 'Done!',
-          cancelButtonText: 'Cancel!',
-          reverseButtons: false,
-          imageHeight: 200,
-        })
-        .then((res) => {
-          if (res.isConfirmed) {
-            this.route.navigateByUrl('/');
-          }
-        });
-    }
+    swalWithBootstrapButtons
+      .fire({
+        title: 'Are you sure want to change?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, Update password!',
+        cancelButtonText: 'No, cancel!',
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          this.route.navigateByUrl('/');
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+        }
+      });
   }
 }
