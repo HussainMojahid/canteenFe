@@ -1,7 +1,7 @@
+<!-- <br />
 <br />
-<br />
-<br />
-<section class="bg-white dark:bg-gray-900">
+<br /> -->
+<!-- <section class="bg-white dark:bg-gray-900">
   <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md pt-10">
     <h2
       class="md:mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white"
@@ -62,4 +62,36 @@
       </button>
     </form>
   </div>
-</section>
+</section> -->
+
+
+
+<div class="w-[100%] flex flex-col items-center bg-[#3D484B]">
+
+  <nav class="w-[100%] h-[40pt] p-[1.8rem] flex items-center justify-between border-b-2 border-greyss bg-[#3D484B]">
+    <div class="text-blackes h-[18pt] w-[18pt]">
+      <button type="button" (click)="auth.backbutton()">
+        <fa-icon class="fa-lg" [icon]="backArrow"></fa-icon>
+      </button>
+    </div>
+    <div class="w-[194pt]"><h3 class="text-[18pt] text-[#FFFFFF] font-roboto-black">Feedback</h3></div>
+  </nav> 
+
+  <form action="#" class="w-[95%] flex flex-col items-center mt-[3rem]">
+    <div class="w-[95%]">
+      <label for="subject" class="text-[14pt] text-[#D4D4D4] font-roboto-regular">Subject</label>
+      <input type="text" id="subject" class="p-3 w-[100%] text-[16pt] text-Greyess outline-none rounded-[4pt] h-[40pt] border-2 border-greyss " required/>
+    </div>
+    <div class="w-[95%] mt-[0.5rem]">
+      <label for="message" class="mb-2 text-[14pt] font-roboto-regular text-[#D4D4D4] ">Message</label>
+      <textarea id="message" rows="10"
+        class="block outline-none  p-[1rem] w-[100%] text-Greyess text-[16pt] rounded-[4pt] shadow-sm border-2 border-greyss    focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+        placeholder="Leave a comment...">
+      </textarea>
+    </div>
+    <button class="mt-[13%] mb-[5rem] h-[44pt] w-[80%] rounded-[4pt] bg-orangess  flex justify-center items-center font-roboto-regular text-white outline-none">
+      Send Feedback
+    </button>
+  </form>
+
+</div>

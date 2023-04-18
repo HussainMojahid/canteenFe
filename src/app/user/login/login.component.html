@@ -2,24 +2,65 @@
   {{ alertMsg }}
 </app-alert>
 <!-- Login Form -->
-<form [formGroup]="loginForm" (ngSubmit)="authenticate()">
-  <!-- Email -->
-  <div class="mb-3">
+<!-- <form [formGroup]="loginForm" (ngSubmit)="authenticate()">
+
+  <div class="mb-3" id="email">
     <label class="inline-block mb-2">Email</label>
     <app-input [control]="email" type="text" placeholder="Enter Email">
     </app-input>
   </div>
-  <!-- Password -->
+  
   <div class="mb-3">
     <label class="inline-block mb-2">Password</label>
-
     <app-input [control]="password" type="password" placeholder="Password">
     </app-input>
   </div>
-  <button
-    type="submit"
-    class="block w-full bg-cyan-400 text-white py-1.5 px-3 rounded transition hover:bg-cyan-500 disabled:opacity-50 disabled:bg-cyan-400"
-  >
+
+  <button type="submit" 
+    class="block w-full bg-cyan-400 text-white py-1.5 px-3 rounded transition hover:bg-cyan-500 disabled:opacity-50 disabled:bg-cyan-400">
     Submit
   </button>
-</form>
+
+</form> -->
+
+
+
+
+<!-- new updated design of loginForm -->
+<div class="w-[100%] flex flex-col items-center h-[80%] bg-[107%,100%] bg-no-repeat bg-center bg-[url('C:\Users\nv\Desktop\canteenFe-dev\canteen\canteenFe\src\assets\img\login_background.svg')]">
+  <div class="h-[100pt] w-[100%] mt-[0rem] overflow-hidden relative flex flex-col items-center justify-center object-cover">
+    <!-- <img src="../../../assets/img/navbarBg.svg" height="100%" width="100%" alt=""> -->
+    <div class="absolute h-[70pt] w-[80%] top-[1rem] flex p-[0.5rem] items-center justify-center">
+      <img src="../../../assets/img/canteenApp.png"  height="100%" width="100%" alt="">
+    </div>
+</div>
+
+  <div id="heading part" class="w-[100%] mb-[1rem] p-[2rem]">
+    <p class="text-[22pt] font-roboto-black text-[#FFFFFF]">Login</p>
+    <p class="text-[14pt] text-[#D4D4D4] font-roboto-regular">Enter your Credentials to Continue.</p>
+  </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="authenticate()" class="flex flex-col items-center w-[100%] p-[2rem]">
+      
+      <div class="mb-3 w-[100%]" id="email">
+          <label class="inline-block mb-2 text-[14pt] text-[#D4D4D4] font-roboto-regular">Email</label>
+          <app-input [control]="email" type="text" placeholder="Enter Email " class="h-[40pt] w-[100%]"></app-input>
+      </div>
+    
+    <div class="mb-3 w-[100%]">
+      <label class="inline-block mb-2 text-[14pt] text-[#D4D4D4] font-roboto-regular">Password</label>
+      <app-input [control]="password" type="password" placeholder="Password" class="h-[40pt] w-[100%] bg-white"></app-input>
+      <p class="text-left text-[16pt] text-orangess font-roboto-regular">Forgot Your Password?</p>
+    </div>
+    <!-- [routerLink]="['/forgotPassword']" -->
+    <button type="submit" 
+      class="block mt-[8.2rem] w-[95%] bg-orangess text-white py-1.5 px-3 rounded transition hover:bg-orange-500 font-roboto-regular text-[16pt]">
+      Login
+    </button>
+    
+  </form>
+
+  <div class="mt-[-1.2rem]">
+    <p class="text-[14pt] font-roboto-regular text-darkgreyss">Haven't Registered? <span class="text-orangess" routerLink="/registerComponent">Register Here</span></p>
+  </div>
+</div>

@@ -13,7 +13,6 @@ export class NavComponent {
   constructor(public sidebar: SidebarService ) {}
   toggleHam($event: Event) {
     this.sidebar.toggleSidebar();
-    
     $event.preventDefault();
   }
 }

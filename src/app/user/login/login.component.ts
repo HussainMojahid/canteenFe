@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import IUser from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-login',
@@ -39,7 +40,7 @@ export class LoginComponent {
         this.loginForm.value.password || ''
       )
       .subscribe({
-        next: (v) => {
+        next: (v) => {          
           this.AlertType = 'success';
           this.showAlert = true;
           this.alertMsg = 'LogIn Successful';
@@ -53,4 +54,28 @@ export class LoginComponent {
       });
     return;
   }
+
+  ngOnInit(): void {
+    let token:any;
+    let email:any;
+    token = localStorage.getItem('_token_canteen_app');
+    email = localStorage.getItem('_email_canteen_app');
+    let currUser = localStorage.getItem('_username_canteen_app');
+
+    if(token === localStorage.getItem('_token_canteen_app') || email === localStorage.getItem('_email_canteen_app') || currUser === localStorage.getItem('_username_canteen_app')){
+      let user: IUser = currUser && JSON.parse(currUser) && JSON.parse(email) && JSON.parse(token);
+      this.auth.setCurrentUser(user);
+    } else if (token === null && currUser === null && email === null){
+      return;
+    }
+
+    // if(currUser === null || token === null || email === null){
+    
+    // } else if(currUser === localStorage.getItem('_username_canteen_app') || token=== localStorage.getItem('_token_canteen_app') || email === localStorage.getItem('_email_canteen_app')){
+    //   let user: IUser = currUser && JSON.parse(currUser) && JSON.parse(email) && JSON.parse(token);
+    //   this.auth.setCurrentUser(user);
+    // }
+      
+  }
+  
 }

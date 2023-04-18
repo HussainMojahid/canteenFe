@@ -1,19 +1,19 @@
 <app-alert *ngIf="showAlert" [AlertType]="AlertType">
   {{ alertMsg }}
 </app-alert>
-<form [formGroup]="registerForm" (ngSubmit)="registeration()">
-  <!-- Name -->
-  <div class="mb-3">
+<!-- <form [formGroup]="registerForm" (ngSubmit)="registeration()">
+  
+  <div class="mb-3"  id="Name">
     <label class="inline-block mb-2">Name</label>
     <app-input [control]="username" placeholder="Enter Name"> </app-input>
   </div>
-  <!-- Email -->
-  <div class="mb-3">
+
+  <div class="mb-3"  id="Email">
     <label class="inline-block mb-2">Email</label>
     <app-input [control]="email" placeholder="Enter Email"> </app-input>
   </div>
 
-  <div class="mb-3">
+  <div class="mb-3" id="Selecting Organization">
     <label class="inline-block mb-2">Organization</label>
     <select
       name="Organization"
@@ -24,22 +24,15 @@
         Select Organiztion
       </option>
       <option *ngFor="let m of OrgList">{{ m.orgName }}</option>
-      <!-- <option value="New Vision">Core Card</option>
-      <option value="New Vision">GTS</option> -->
     </select>
   </div>
-  <!-- Employee Id -->
-  <div class="mb-3">
+
+  <div class="mb-3" id="EmployeeId">
     <label class="inline-block mb-2">Employee Id</label>
-    <app-input
-      [control]="EmployeeId"
-      type="text"
-      placeholder="Enter Employee Id"
-    >
-    </app-input>
+    <app-input [control]="EmployeeId" type="text" placeholder="Enter Employee Id"></app-input>
   </div>
-  <!-- Password -->
-  <div class="mb-3">
+
+  <div class="mb-3" id="Password">
     <label class="inline-block mb-2">Password</label>
     <app-input
       type="password"
@@ -48,22 +41,72 @@
     >
     </app-input>
   </div>
-  <!-- Confirm Password -->
-  <div class="mb-3">
+
+  <div class="mb-3" id="Confirm Password">
     <label class="inline-block mb-2">Confirm Password</label>
-    <app-input
-      type="password"
-      [control]="confirm_password"
-      placeholder="Enter Confirm Password"
-    >
-    </app-input>
+    <app-input type="password" [control]="confirm_password" placeholder="Enter Confirm Password"></app-input>
   </div>
 
-  <button
-    
-    type="submit"
-    class="block w-full bg-cyan-400 text-white py-1.5 px-3 rounded transition hover:bg-cyan-500"
-  >
+  <button type="submit" class="block w-full bg-cyan-400 text-white py-1.5 px-3 rounded transition hover:bg-cyan-500">
     Register
   </button>
+</form> -->
+
+
+
+
+
+<!-- new updated design of register form or signup form -->
+
+
+<div class="w-[100%] flex flex-col items-center z-[9999]">
+
+  <div class="h-[100pt] w-[100%] mt-[0rem] overflow-hidden relative flex flex-col items-center justify-center object-cover">
+    <img src="../../../assets/img/navbarBg.svg" height="100%" width="100%" alt="">
+    <div class="absolute h-[70pt] w-[80%] top-[1rem] flex p-[0.5rem] items-center justify-center">
+      <img src="../../../assets/img/canteenApp.png"  height="100%" width="100%" alt="">
+    </div>
+</div>
+
+  <div id="heading part" class="w-[100%] p-[2rem]">
+    <p class="text-[20pt] font-roboto-black text-blackes">Sign Up</p>
+    <p class="text-[14pt] text-Greyess">Please provide the details below to register</p>
+  </div>
+
+<form [formGroup]="registerForm" (ngSubmit)="registeration()" class="w-[100%] flex flex-col items-center p-[2rem] mt-[-2.5rem]">
+
+  <div class="w-[100%] mb-3" id="EmployeeId">
+    <label class="inline-block mb-2 text-[14pt] font-roboto-regular text-darkgreyss">Employee Id <span class="text-[#FF2F2F]">*</span></label>
+    <app-input [control]="EmployeeId" type="text" placeholder="Enter Employee Id" class="h-[40pt] w-[95%] rounded-[4pt] outline-none"></app-input>
+  </div>
+  
+  <div class="w-[100%] mb-3"  id="Name">
+    <label class="inline-block mb-2 text-[14pt] font-roboto-regular text-darkgreyss">Name</label>
+    <app-input [control]="username" placeholder="Enter Name" class="h-[40pt] w-[95%] rounded-[4pt] font-roboto-regular outline-none text-[14pt] text-Greyess"> </app-input>
+  </div>
+
+  <div class="w-[100%] mb-3"  id="Email">
+    <label class="inline-block mb-2 text-[14pt] font-roboto-regular text-darkgreyss">Email</label>
+    <app-input [control]="email" placeholder="Enter Email" class="h-[40pt] w-[95%] rounded-[4pt] font-roboto-regular outline-none text-[14pt] text-Greyess"> </app-input>
+  </div>
+
+  <div class="w-[100%] mb-3" id="Password">
+    <label class="inline-block mb-2 text-[14pt] font-roboto-regular text-darkgreyss">Password</label>
+    <app-input type="password" [control]="password" placeholder="Enter Password" class="h-[40pt] w-[95%] rounded-[4pt] font-roboto-regular outline-none text-[14pt] text-Greyess"></app-input>
+  </div>
+
+  <div class="w-[100%] mb-3" id="Confirm Password">
+    <label class="inline-block mb-2 text-[14pt] font-roboto-regular text-darkgreyss">Confirm Password</label>
+    <app-input type="password" [control]="confirm_password" placeholder="Enter Confirm Password" class="h-[40pt] w-[95%] rounded-[4pt] font-roboto-regular outline-none text-[14pt] text-Greyess"></app-input>
+  </div>
+
+  <button type="submit" class="block w-full bg-orangess text-white text-[16pt] font-roboto-regular py-1.5 px-3 rounded transition mt-[2rem]">
+    Sign up
+  </button>
+  
+  <div class="mt-[2rem]">
+    <p class="text-[14pt] font-roboto-regular text-darkgreyss">Already have an account? <span class="text-orangess">Log in</span></p>
+  </div>
 </form>
+
+</div>

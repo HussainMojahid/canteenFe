@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-feedback',
@@ -15,9 +16,9 @@ import { AuthService } from '../services/auth.service';
 })
 export class FeedbackComponent implements OnInit {
   registerForm: FormGroup = new FormGroup({});
-
+  backArrow = faArrowLeft;
   constructor(
-    private auth: AuthService,
+    public auth: AuthService,
     private fb: FormBuilder,
     private router: Router
   ) {}

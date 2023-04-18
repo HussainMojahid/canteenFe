@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
+import { Route } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -7,4 +10,7 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
+  // getDiv(){
+  //   this.router.navigate(['/Account'])
+  // }
 }

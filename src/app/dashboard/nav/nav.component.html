@@ -1,5 +1,5 @@
 <!-- Header --><!-- <header id="header" class="w-full z-20 fixed shadow-lg"> -->
-<nav class="w-[100%] fixed top-[0rem] flex items-center py-4 px-4 bg-white z-[999] h-[6rem]">
+<nav class="sm:w-[100%] sm:fixed sm:top-[0rem] sm:flex sm:bg-darkesgreys sm:z-[999] sm:h-[7rem]  md:h-[10rem]">
   <!-- <div class="flex items-center space-x-4">
     <img
       class="w-14 h-14 rounded-full"
@@ -19,14 +19,16 @@
     </div>
   </div> -->
 
-  <div class="flex items-center justify-between w-[180pt] p-[7px] h-[67pt]">
-    <div class="h-[100%] w-[64pt] flex items-center "><fa-icon class="fa-2xl text-gray-#707070 " [icon]="userIcon"></fa-icon></div>
-    <div><p class="text-[18pt]  font-roboto">Hii, {{username}}</p> <p class="text-[16pt]">Welcome back</p></div>
+  <div class="flex items-center justify-around w-[100%] p-[0.9rem] h-[100%]">
+    <div class="h-[64pt] w-[64pt] flex items-center justify-center rounded-[32pt]"><img src="../../../assets/img/Male User.png" height="100%" width="100%" alt="" ></div>
+    <div class="leading-[17pt] w-[180pt]"><p class="text-[18pt] font-roboto-black text-[#FFFFFF]">Hii, {{username}}</p> <p class="text-[14pt] text-[#D4D4D4] font-roboto-regular">Welcome back</p></div>
   </div>
 
-  <!-- <a>      <fa-icon class="fa-2xl text-gray-#707070" [icon]="userIcon"></fa-icon>    </a> -->
+  <!-- <a>      <fa-icon class="fa-2xl text-gray-#707070" [icon]="userIcon"></fa-icon> 
+      <fa-icon class="fa-2xl text-gray-#707070 " [icon]="userIcon"></fa-icon>
+    </a> -->
 </nav>
 <!-- </header> -->
 
-<app-sidebar *ngIf="sidebar.isSidebarVisible$"></app-sidebar>
-<app-user-tab *ngIf="sidebar.isUserTabVisible"></app-user-tab>
+<!-- <app-sidebar *ngIf="sidebar.isSidebarVisible$"></app-sidebar>
+<app-user-tab *ngIf="sidebar.isUserTabVisible"></app-user-tab> -->

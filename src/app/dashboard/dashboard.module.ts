@@ -12,8 +12,10 @@ import { DashboardRoutingModule } from './dashboard.routing.module';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FoodInventoryComponent } from '../admin-dashboard/food-inventory/food-inventory.component';
 import { DayToggleButtonComponent } from '../shared/day-toggle-button/day-toggle-button.component';
+import {NavComponent} from '../dashboard/nav/nav.component'
+// import { FooterComponent } from '../footer/footer.component';
+
 @NgModule({
   declarations: [
     FoodSectionComponent,
@@ -21,10 +23,12 @@ import { DayToggleButtonComponent } from '../shared/day-toggle-button/day-toggle
     ChartCardComponent,
     DashboardModalComponent,
     WelcomeCardComponent,
+    NavComponent,
     FoodPostComponent,
-    DayToggleButtonComponent,    
+    DayToggleButtonComponent, 
+    // FooterComponent
   ],
-  exports: [DashboardModalComponent],
+  exports: [DashboardModalComponent,NavComponent],
   imports: [
     CommonModule,
     NgMultiSelectDropDownModule,
@@ -34,6 +38,7 @@ import { DayToggleButtonComponent } from '../shared/day-toggle-button/day-toggle
     NgSelectModule,
     FormsModule,
     ReactiveFormsModule,
+    // FootersModule
   ],
 })
 export class DashboardModule {}

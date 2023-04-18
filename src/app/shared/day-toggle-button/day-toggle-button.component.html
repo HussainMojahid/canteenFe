@@ -1,8 +1,18 @@
-<div class="flex w-[100%] justify-evenly items-center h-[40pt] p-[2rem] mt-[2rem] mb-[2rem]">
+<!-- <div class="flex w-[100%] justify-evenly items-center h-[40pt] p-[2rem] mt-[2rem] mb-[2rem]">
   <button (click)="toggleDay('Today')" [ngClass]="{'orange' : toggleToday}" class="bg-greyss text-[16pt] text-white text-center w-[105pt] items-center justify-center h-[28pt] rounded-[5pt]">Today</button>
   <button (click)="toggleDay('Tomorrow')" [ngClass]="{'orange' : toggleTomorrow}" class="bg-greyss text-[16pt] text-white text-center w-[105pt] h-[28pt] rounded-[5pt]">Tomorrow</button>
-</div>
+</div> -->
+<div class="w-[100%] flex flex-col items-center">
 
+  <div class="h-[40pt] w-[85%] flex items-center justify-between mt-[1rem]">
+    <p class="text-[16pt] font-roboto-regular text-[#FFFFFF]"><span class="font-roboto-black text-[#FFFFFF]"> Today's Menu, </span> 4 April 2023</p>
+    <div class="w-[65pt] h-[30pt] flex justify-between">
+      <div class="h-[30pt] w-[30pt] border-2 border-greyss flex justify-center items-center p-[4pt] rounded-[4pt]" id="today-icon" (click)="toggleDay('Today')" [ngClass]="{'orange' : toggleToday}"><svg style="height: 100%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></div>
+      <div class="h-[30pt] w-[30pt] border-2 border-greyss flex justify-center items-center p-[4pt] rounded-[4pt]" id="tomorrow-icon" (click)="toggleDay('Tomorrow')" [ngClass]="{'orange' : toggleTomorrow}" ><svg style="height: 100%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></div>
+    </div>
+  </div>
+  
+</div>
 <!-- <div class="flex justify-end mt-[5rem] mx-1 my-1 border-2 border-red-600">
   <span class="mr-2 text-sm font-medium text-gray-900">Today</span>
 

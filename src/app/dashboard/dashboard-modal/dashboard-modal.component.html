@@ -1,51 +1,68 @@
 <!-- <div class="h-[100%] w-[100%] border-2 border-red-700 flex flex-col justify-between"> -->
- 
+  
   <br />
   <br />
   <br />
   <!-- <app-day-toggle-button></app-day-toggle-button>
   <app-chart-card></app-chart-card> -->
-  <div class="flex flex-col justify-end overflow-hidden w-[100%]">
+  <app-nav *ngIf="auth.isAuthenticated$ | async"></app-nav>
+  <div class="flex flex-col overflow-hidden w-[100%] h-[100%] bg-darkesgreys mt-[2.5rem] border-2 border-gray-300">
+    <div class="w-[100%] flex justify-center">
+      <app-chart-card></app-chart-card>
+    </div>
     <app-day-toggle-button></app-day-toggle-button>
-    <app-chart-card></app-chart-card>
-
-<div class="flex w-[100%] justify-between mt-[2rem] p-[8px]">
-  <button  (click)="changeTab('BreakFast')" id="breakfast" [ngClass]="{'orange' : toggleBreakfast}" class="bg-gray-400 text-[15pt] p-[1rem,1rem] text-white text-center w-[80pt] h-[25pt] rounded-[5pt]">BreakFast</button>
-  <button   (click)="changeTab('Lunch')" id="lunch" [ngClass]="{'orange' : toggleLunch}" class="bg-gray-400 text-[15pt] text-white text-center p-[1rem,1rem] w-[80pt] h-[25pt] rounded-[5pt]">Lunch</button>
-  <button (click)="changeTab('HighTea')" id="hightea" [ngClass]="{'orange' : toggleHightea}" class="bg-gray-400 text-[15pt] p-[1rem,1rem] text-white text-center w-[80pt] h-[25pt] rounded-[5pt]"> High-Tea</button>
+<div class="flex w-[100%] justify-between mt-[1rem] p-[8px]">
+  <button (click)="changeTab('BreakFast')" id="breakfast" [ngClass]="{'orange' : toggleBreakfast}" class="bg-transparent border-2 border-[#D4D4D4] text-[16pt] p-[1rem,1rem] text-[#D4D4D4] text-center w-[102pt] h-[30pt] rounded-[5pt]">BreakFast</button>
+  <button (click)="changeTab('Lunch')" id="lunch" [ngClass]="{'orange' : toggleLunch}" class="bg-transparent border-2 border-[#D4D4D4] text-[16pt] text-[#D4D4D4] text-center p-[1rem,1rem] w-[102pt] h-[30pt] rounded-[5pt]">Lunch</button>
+  <button (click)="changeTab('HighTea')" id="hightea" [ngClass]="{'orange' : toggleHightea}" class="bg-transparent border-2 border-[#D4D4D4] text-[16pt] p-[1rem,1rem] text-[#D4D4D4] text-center w-[102pt] h-[30pt] rounded-[5pt]"> High-Tea</button>
 </div>
 
 <div *ngIf="toggleToday">
-<div *ngIf="toggleLunch" class="w-[100%] h-[500pt] flex justify-between flex-col p-[25px] mt-[-1rem] mb-[5rem]">
-  <div id="box-1" class="flex justify-between mt-[0.5rem]">
-    <div id="box-1-img" class="rounded-[10pt] h-[45pt] w-[45pt] p-[0.7rem]"><img src="../../../assets/img/fullMeal.png" height="100%" width="100%"></div>
-    <div class="w-[190pt] h-[50pt]"><p class="font-bold text-[14pt]">Full Plate Meal</p> <p class="text-[14pt] text-mediumGreys">₹ 80</p></div>
-    <!-- <div class="h-[50pt] w-[17pt] flex items-center justify-center"><i class="fa-solid fa-ellipsis-vertical fa-2xl h-[100%] w-[100%] text-[50pt] text-black flex items-center justify-center" style="color: black;"></i></div> -->
+<div *ngIf="toggleLunch" class="h-[500pt] flex justify-between flex-col w-[80%] mt-[-1rem] mb-[5rem]">
+
+  <div class="w-[100%] mt-[1.5rem] mb-[2rem]">
+    <p class="text-[14pt] text-[#D4D4D4] font-roboto-regular">Lunch timing: 12:30 PM to 3:00 PM</p>
   </div>
-  <div id="box-2" class="flex justify-between mt-[0.5rem]">
-    <div id="box-2-img" class="rounded-[10pt] h-[45pt] w-[45pt] p-[0.7rem]"><img src="../../../assets/img/Group 3121.png" height="100%" width="100%"></div>
-    <div class="w-[190pt] h-[45pt]"><p class="font-bold text-[14pt]">Half Plate Meal</p> <p class="text-[14pt] text-mediumGreys">₹ 60</p></div>
-  </div>
-    <div id="box-3" class="flex justify-between mt-[0.5rem]">
-      <div id="box-3-img" class="rounded-[10pt] h-[45pt] w-[45pt] p-[0.7rem]"><img src="../../../assets/img/Group 3129.png" height="100%" width="100%"></div>
-      <div class="w-[190pt] h-[45pt]"><p class="font-bold text-[14pt]">Chapati</p> <p class="text-[14pt] text-mediumGreys">₹ 20</p></div>
+
+    <div id="box-3" class="flex justify-between items-center mt-[0.5rem]">
+      <div id="box-3-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem] flex justify-center items-center"><img src="../../../assets/img/Group 3129.png" height="100%" width="100%"></div>
+      <div class="w-[170pt] h-[35pt] leading-[16pt]"><p class="font-roboto-black text-[#FFFFFF] text-[16pt]">Chapati</p> <p class="text-[14pt] font-roboto-regular text-[#D4D4D4]">₹20</p></div>
+      <div class="h-[4pt] w-[5pt]"><img src="../../../assets/img/ellipsisLatest.svg" height="100%" width="100%"></div>
     </div>
-    <div id="box-4" class="flex justify-between mt-[0.5rem]">
-      <div id="box-4-img" class="rounded-[10pt] h-[45pt] w-[45pt] p-[0.7rem]"><img src="../../../assets/img/Group 3121.png"  height="100%" width="100%"></div>
-      <div class="w-[190pt] h-[45pt]"><p class="font-bold text-[14pt]">Rice</p> <p class="text-[14pt] text-mediumGreys">₹ 30</p></div>
+    <div id="box-4" class="flex justify-between items-center mt-[0.5rem]">
+      <div id="box-4-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem] flex justify-center items-center"><img src="../../../assets/img/Group 3121.png"  height="100%" width="100%"></div>
+      <div class="w-[170pt] h-[35pt] leading-[16pt]"><p class="font-roboto-black text-[#FFFFFF] text-[16pt]">Rice</p> <p class="text-[14pt] font-roboto-regular text-[#D4D4D4]">₹30</p></div>
+      <div class="h-[4pt] w-[5pt]"><img src="../../../assets/img/ellipsisLatest.svg" height="100%" width="100%"></div>
     </div>
-    <div id="box-5" class="flex justify-between mt-[0.5rem]">
-      <div id="box-5-img" class="rounded-[10pt] h-[45pt] w-[45pt] p-[0.7rem]"><img src="../../../assets/img/Group 3145.png" height="100%" width="100%"></div>
-      <div class="w-[190pt] h-[45pt]"><p class="font-bold text-[14pt]">Riata</p> <p class="text-[14pt] text-mediumGreys">₹ 10</p></div>
+    <div id="box-5" class="flex justify-between items-center mt-[0.5rem]">
+      <div id="box-5-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem] flex justify-center items-center"><img src="../../../assets/img/Group 3145.png" height="100%" width="100%"></div>
+      <div class="w-[170pt] h-[35pt] leading-[16pt]"><p class="font-roboto-black text-[#FFFFFF] text-[16pt]">Riata</p> <p class="text-[14pt] font-roboto-regular text-[#D4D4D4]">₹10</p></div>
+      <div class="h-[4pt] w-[5pt]"><img src="../../../assets/img/ellipsisLatest.svg" height="100%" width="100%"></div>
     </div>
-    <div id="box-6" class="flex justify-between mt-[0.5rem]">
-      <div id="box-6-img" class="rounded-[10pt] h-[45pt] w-[45pt] p-[0.7rem]"><img src="../../../assets/img/Group 3154.png" height="100%" width="100%"></div>
-      <div class="w-[190pt] h-[45pt]"><p class="font-bold text-[14pt]">Aloo Gobhi Sabji</p> <p class="text-[14pt] text-mediumGreys">₹ 10</p></div>
+    <div id="box-6" class="flex justify-between items-center mt-[0.5rem]">
+      <div id="box-6-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem] flex justify-center items-center"><img src="../../../assets/img/Group 3154.png" height="100%" width="100%"></div>
+      <div class="w-[170pt] h-[35pt] leading-[16pt]"><p class="font-roboto-black text-[#FFFFFF] text-[16pt]">Aloo Gobhi Sabji</p> <p class="text-[14pt] font-roboto-regular text-[#D4D4D4]">₹10</p></div>
+      <div class="h-[4pt] w-[5pt]"><img src="../../../assets/img/ellipsisLatest.svg" height="100%" width="100%"></div>
     </div>
-    <div id="box-7" class="flex justify-between mt-[0.5rem]">
-      <div id="box-7-img" class="rounded-[10pt] h-[45pt] w-[45pt] p-[0.7rem]"><img src="../../../assets/img/Group 3152.png" height="90%" width="90%"></div>
-      <div class="w-[190pt] h-[45pt]"><p class="font-bold text-[14pt]">Salad</p> <p class="text-[14pt] text-mediumGreys">₹ 10</p></div>
+    <div id="box-7" class="flex justify-between items-center mt-[0.5rem]">
+      <div id="box-7-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem] flex justify-center items-center"><img src="../../../assets/img/Group 3152.png" height="90%" width="90%"></div>
+      <div class="w-[170pt] h-[35pt] leading-[16pt]"><p class="font-roboto-black text-[#FFFFFF] text-[16pt]">Salad</p> <p class="text-[14pt] font-roboto-regular text-[#D4D4D4]">₹10</p></div>
+      <div class="h-[4pt] w-[5pt]"><img src="../../../assets/img/ellipsisLatest.svg" height="100%" width="100%"></div>
     </div>
+    
+    <div class="flex w-[100%] justify-between">
+      <div id="box-1" class="flex justify-between items-center mt-[0.5rem] w-[44%]">
+        <div id="box-1-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem] flex justify-center items-center"><img src="../../../assets/img/fullMeal.png" height="100%" width="100%"></div>
+        <div class="w-[170pt] h-[35pt] leading-[16pt]"><p class="font-roboto-black text-[#FFFFFF] text-[16pt]">Full Plate Meal</p> <p class="text-[14pt] font-roboto-regular text-[#D4D4D4]">₹80</p></div>
+        <div class="h-[4pt] w-[5pt] "><img src="../../../assets/img/ellipsisLatest.svg" height="100%" width="100%"></div>
+      </div>
+      <div id="box-2" class="flex justify-between items-center mt-[0.5rem] w-[44%]">
+        <div id="box-2-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem] flex justify-center items-center"><img src="../../../assets/img/Group 3121.png" height="100%" width="100%"></div>
+        <div class="w-[170pt] h-[35pt] leading-[16pt]"><p class="font-roboto-black text-[#FFFFFF] text-[16pt]">Half Plate Meal</p> <p class="text-[14pt] font-roboto-regular text-[#D4D4D4]">₹60</p></div>
+        <div class="h-[4pt] w-[5pt]"><img src="../../../assets/img/ellipsisLatest.svg" height="100%" width="100%"></div>
+      </div>
+    </div>
+
   </div>
   <div *ngIf="toggleBreakfast" class="w-[100%] h-[200pt] border-2 border-red-700 flex justify-between flex-col p-[25px] mt-[1rem] mb-[8rem]">
         <p>BreakFast Meals</p>
@@ -57,13 +74,13 @@
 
 <div *ngIf="toggleTomorrow">
   <div *ngIf="toggleLunch"  class="w-[90%] h-[100pt] border-2 border-red-700 flex justify-between flex-col p-[25px] mt-[-1rem] mb-[5rem]">
-    <p class="text-[18pt] font-roboto"> There is no food for today </p>
+    <p class="text-[16pt] font-roboto"> There is no food for today </p>
   </div>
   <div *ngIf="toggleBreakfast" class="w-[90%] h-[100pt] border-2 border-red-700 flex justify-between flex-col p-[25px] mt-[1rem] mb-[5rem]">
-    <p class="text-[18pt] font-roboto"> There is no food for today </p>
+    <p class="text-[16pt] font-roboto"> There is no food for today </p>
   </div>
   <div *ngIf="toggleHightea" class="w-[90%] h-[100pt] border-2 border-red-700 flex justify-between flex-col p-[25px] mt-[1rem] mb-[5rem]">
-    <p class="text-[18pt] font-roboto"> There is no food for today </p>
+    <p class="text-[16pt] font-roboto"> There is no food for today </p>
   </div>
 </div>
   <!-- <app-food-section
@@ -160,5 +177,7 @@
       </div>
     </div>
   </app-food-section> -->
+
+  <!-- <app-footer></app-footer> -->
 
 </div>

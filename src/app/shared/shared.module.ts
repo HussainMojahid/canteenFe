@@ -6,6 +6,7 @@ import { ModalComponent } from './modal/modal.component';
 import { InputComponent } from './input/input.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AlertComponent } from './alert/alert.component';
+// import {FooterComponent} from './footer/footer.component'
 
 
 
@@ -15,7 +16,8 @@ import { AlertComponent } from './alert/alert.component';
     TabsContainerComponent,
     ModalComponent,
     InputComponent,
-    AlertComponent
+    AlertComponent,
+    // FooterComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +28,8 @@ import { AlertComponent } from './alert/alert.component';
     TabsContainerComponent,
     ModalComponent,
     InputComponent,
-    AlertComponent
+    AlertComponent,
+    // FooterComponent
   ]
 })
 export class SharedModule { }

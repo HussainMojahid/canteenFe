@@ -4,11 +4,10 @@
 
 <!-- Auth Modal -->
 
-<div class="fixed inset-0 overflow-y-auto" id="modal">
-  <div
-    class="flex flex-col items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
-  >
-    <div class="self-end m-1 mr-5">
+
+
+    <!-- <div class="self-end m-1 mr-5">
+      2nd div class class="flex flex-col items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
       <button
         type="button"
         class="text-cyan-700 border border-cyan-700 hover:bg-cyan-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-centerdark:text-blue-500"
@@ -17,8 +16,8 @@
         <fa-icon class="fa-lg" [icon]="backArrow"></fa-icon>
         <span class="sr-only">Icon description</span>
       </button>
-    </div>
-    <ul class="flex flex-wrap">
+    </div> -->
+    <!-- <ul class="flex flex-wrap">
       <li class="flex-auto text-center">
         <a
           class="block rounded py-3 px-4 mx-2 transition hover:text-white text-white bg-cyan-400"
@@ -33,29 +32,28 @@
           >Forgot Password</a
         >
       </li>
-    </ul>
+    </ul> -->
 
     <!-- rounded tab shadow -->
-    <div
+    <!-- <div
       class="inline-block align-bottom bg-secondary rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-4 sm:align-middle sm:max-w-lg sm:w-full bg-white"
     >
-      <!-- Add margin if you want to see some of the overlay behind the modal-->
+      Add margin if you want to see some of the overlay behind the modal
       <div class="py-4 text-left px-12 bg-gray-100 mt-2">
         <p class="text-2xl font-bold text-center">Edit Profile</p>
-        <!--Title-->
+        Title
         <div class="flex justify-between items-center pb-4">
-          <!-- Modal Close Button -->
+          Modal Close Button
         </div>
 
         <form [formGroup]="EditForm">
-          <!-- Name -->
+          Name
           <div class="mb-3">
             <label class="inline-block mb-2">Name</label>
             <app-input [control]="username" placeholder="Enter Name">
-            
             </app-input>
           </div>
-          <!-- Email -->
+          Email
           <div class="mb-3">
             <label class="inline-block mb-2">Email</label>
             <app-input [control]="email" placeholder="Enter Email"> </app-input>
@@ -74,11 +72,11 @@
               <option *ngFor="let m of OrgList">
                 {{ m.attributes.OrgName }}
               </option>
-              <!-- <option value="New Vision">Core Card</option>
-            <option value="New Vision">GTS</option> -->
+              <option value="New Vision">Core Card</option>
+            <option value="New Vision">GTS</option>
             </select>
           </div>
-          <!-- Employee Id -->
+          Employee Id
           <div class="mb-3">
             <label class="inline-block mb-2">Employee Id</label>
             <app-input
@@ -88,9 +86,6 @@
             >
             </app-input>
           </div>
-          <!-- Password -->
-
-          <!-- Confirm Password -->
 
           <button
             (click)="update()"
@@ -101,6 +96,60 @@
           </button>
         </form>
       </div>
+    </div> -->
+
+    <div class="w-[100%] h-[100%] flex flex-col items-center bg-[#3D484B]"> 
+
+         <nav class="w-[100%] h-[40pt] p-[1.8rem] flex items-center justify-between border-b-2 border-greyss bg-[#3D484B]">
+          <div class="text-blackes h-[18pt] w-[18pt]">
+            <button type="button" (click)="auth.backbutton()">
+              <fa-icon class="fa-lg" [icon]="backArrow"></fa-icon>
+            </button>
+          </div>
+          <div class="w-[194pt]"><h3 class="text-[18pt] text-[#FFFFFF] font-roboto-black">Edit Profile</h3></div>
+        </nav>  
+
+        <div class=" h-[90pt] w-[90pt] mt-[2rem] flex relative">
+          <img src="../../../assets/img/userEditprofile.svg" alt="user" height="100%" width="100%">
+          <img src="../../../assets/img/editProfil icon.svg" alt="" height="27pt" width="27pt" class="absolute bottom-[0.2rem] right-[0.3rem]">
+        </div>
+
+        <form [formGroup]="EditForm" class="mt-[3rem] mb-[3rem] w-[100%] flex flex-col items-center">
+          <!-- Employee Id -->
+          <div class="mt-[1rem] w-[94%]">
+            <label class=" text-[14pt] text-[#D4D4D4] font-roboto-regular  mb-[2rem]">Employee Id</label>
+            <app-input [control]="EmployeeId" class="text-Greyess text-[14pt] bg-lightGreys w-[100%] h-[40pt] rounded-[4pt]" type="text" placeholder="Enter Employee Id"></app-input>
+          </div>
+          <!-- Name -->
+          <div class="mt-[1rem] w-[94%]">
+            <label class="text-[14pt] text-[#D4D4D4] font-roboto-regular mb-2">Name</label>
+            <app-input [control]="username" class="text-Greyess text-[14pt] bg-lightGreys w-[307pt] h-[40pt] rounded-[4pt]" placeholder="Enter Name">
+            </app-input>
+          </div>
+          <!-- Email -->
+          <div class="mt-[1rem] w-[94%]">
+            <label class="text-[14pt] text-[#D4D4D4] font-roboto-regular mb-2">Email</label>
+            <app-input [control]="email" class="text-Greyess text-[14pt] bg-lightGreys w-[307pt] h-[40pt] rounded-[4pt]" placeholder="Enter Email"> </app-input>
+          </div>
+
+          <div class="flex flex-col mt-[1rem] w-[94%]">
+            <label class="text-[14pt] text-[#D4D4D4] font-roboto-regular">Organization</label>
+            <select name="Organization" class="w-[100%] h-[40pt] text-darkgreyss border-2 border-greyss  rounded-[4pt] bg-[#3D484B]">
+              <option disabled selected value="Select Organiztion" class="text-[14pt] text-[#D4D4D4] rounded-[4pt] bg-[#3D484B]">
+                Select Organiztion
+              </option>
+              <option *ngFor="let m of OrgList" class="text-Greyess text-[14pt] bg-[#3D484B]">
+                {{ m.attributes.OrgName }}
+              </option>
+              <option value="New Vision" class="text-Greyess text-[14pt]">Core Card</option>
+            <option value="New Vision" class="text-Greyess text-[14pt]">GTS</option>
+            </select>
+          </div>
+          
+
+          <button (click)="update()" type="submit" class="h-[44pt] w-[95%] bg-orangess rounded-[4pt] text-[16pt] font-roboto-black text-white mt-[4rem]">
+             Save
+          </button>
+        </form>
     </div>
-  </div>
-</div>
+

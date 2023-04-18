@@ -24,8 +24,7 @@ export class ChartCardComponent implements OnInit {
             hoverOffset: 40,
             borderWidth:30,
             borderHeight:166,
-            borderPadding:-50,
-            borderColor:"rgb(245,245,245)",
+            borderColor:"rgb(61, 72, 75)",
             // borderRadius:"innerEnd",
             // spacing:50
           },
@@ -35,7 +34,9 @@ export class ChartCardComponent implements OnInit {
       const configDoughnut = {
         type: 'doughnut',
         data: dataDoughnut,
-        options: {},
+        options: {
+          responsive: false, aspectRatio: 1
+        },
       };
   
       const chartBar = new Chart(

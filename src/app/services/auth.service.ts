@@ -26,7 +26,7 @@ export class AuthService {
     }
   }
 
-  login(username: string, password: string) {
+  login(username: string, password: string) {    
     return this.http
       .post<IUser>(`${environment.apiUrl}auth/local`, {
         identifier: username,

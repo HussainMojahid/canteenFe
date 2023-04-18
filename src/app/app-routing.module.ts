@@ -7,11 +7,25 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ChangePasswordComponent } from './user/change-password/change-password.component';
 import { EditProfileComponent } from './user/edit-profile/edit-profile.component';
 import { ForgetPasswordComponent } from './user/forget-password/forget-password.component';
+import {RegisterComponent } from './user/register/register.component'
+// import { FooterComponent } from './footer/footer.component';
+import { AccountComponent } from './user/account/account.component';
 
 const routes: Routes = [
   {
     path: '',
     component: DashboardModalComponent,
+  },
+  {
+    path: 'registerComponent',
+    component: RegisterComponent
+  },{
+    path: 'Account',
+    component: AccountComponent,
+  },
+  {
+    path: 'dashbord-modal',
+    component: DashboardModalComponent
   },
   {
     path: 'booking',
@@ -21,7 +35,6 @@ const routes: Routes = [
     path: 'feedback',
     component: FeedbackComponent,
   },
-
 ];
 
 @NgModule({

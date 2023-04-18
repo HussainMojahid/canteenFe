@@ -14,9 +14,12 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { UserRoutingModule } from './user.routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AccountComponent } from './account/account.component';
+import { AppModule } from '../app.module';
+import { InviteFriendComponent } from './invite-friend/invite-friend.component';
+import { AboutComponent } from './about/about.component';
 // import { ResetPasswordComponent } from './reset-password/reset-password.component';
 // import { ProfileComponent } from './profile/profile.component';
-// import {FooterComponent } from '../footer/footer.component';
+// import {FooterComponent} from 'src/app/footer/footer.component'
 
 @NgModule({
   declarations: [
@@ -28,9 +31,11 @@ import { AccountComponent } from './account/account.component';
     PleaseLoginComponent,
     UserTabComponent,
     EditProfileComponent,
-    AccountComponent
+    AccountComponent,
+    InviteFriendComponent,
+    AboutComponent
     // ResetPasswordComponent,
-    // FooterComponent,
+    // FooterComponent
   ],
   imports: [
     CommonModule,
@@ -40,8 +45,9 @@ import { AccountComponent } from './account/account.component';
     HttpClientModule,
     UserRoutingModule,
     FontAwesomeModule,
+    // AppModule
   ],
-  exports: [AuthModalComponent,PleaseLoginComponent,UserTabComponent],
+  exports: [AuthModalComponent,PleaseLoginComponent,UserTabComponent, LoginComponent,RegisterComponent],
   providers : [
 
     //  { provide : HTTP_INTERCEPTORS, useClass : InterceptorInterceptor, multi : true}
