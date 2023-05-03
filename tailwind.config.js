@@ -37,6 +37,7 @@ module.exports = {
         // 'roboto-bold': ['Roboto Light']
     },
     screens:{
+      'xsm': '150px',
       'sm': '350px',
       'md': '700px',
       'lg': '1030px',

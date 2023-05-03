@@ -1,88 +1,1548 @@
 <!-- <div class="h-[100%] w-[100%] border-2 border-red-700 flex flex-col justify-between"> -->
-  
-  <br />
-  <br />
-  <br />
-  <!-- <app-day-toggle-button></app-day-toggle-button>
+
+<br />
+<br />
+<br />
+<!-- <app-day-toggle-button></app-day-toggle-button>
   <app-chart-card></app-chart-card> -->
-  <app-nav *ngIf="auth.isAuthenticated$ | async"></app-nav>
-  <div class="flex flex-col overflow-hidden w-[100%] h-[100%] bg-darkesgreys mt-[2.5rem] border-2 border-gray-300">
-    <div class="w-[100%] flex justify-center">
-      <app-chart-card></app-chart-card>
-    </div>
-    <app-day-toggle-button></app-day-toggle-button>
-<div class="flex w-[100%] justify-between mt-[1rem] p-[8px]">
-  <button (click)="changeTab('BreakFast')" id="breakfast" [ngClass]="{'orange' : toggleBreakfast}" class="bg-transparent border-2 border-[#D4D4D4] text-[16pt] p-[1rem,1rem] text-[#D4D4D4] text-center w-[102pt] h-[30pt] rounded-[5pt]">BreakFast</button>
-  <button (click)="changeTab('Lunch')" id="lunch" [ngClass]="{'orange' : toggleLunch}" class="bg-transparent border-2 border-[#D4D4D4] text-[16pt] text-[#D4D4D4] text-center p-[1rem,1rem] w-[102pt] h-[30pt] rounded-[5pt]">Lunch</button>
-  <button (click)="changeTab('HighTea')" id="hightea" [ngClass]="{'orange' : toggleHightea}" class="bg-transparent border-2 border-[#D4D4D4] text-[16pt] p-[1rem,1rem] text-[#D4D4D4] text-center w-[102pt] h-[30pt] rounded-[5pt]"> High-Tea</button>
-</div>
-
-<div *ngIf="toggleToday">
-<div *ngIf="toggleLunch" class="h-[500pt] flex justify-between flex-col w-[80%] mt-[-1rem] mb-[5rem]">
-
-  <div class="w-[100%] mt-[1.5rem] mb-[2rem]">
-    <p class="text-[14pt] text-[#D4D4D4] font-roboto-regular">Lunch timing: 12:30 PM to 3:00 PM</p>
+<!-- <app-nav *ngIf="auth.isAuthenticated$ | async"></app-nav>
+<div
+  class="flex flex-col overflow-hidden w-[100%] h-[100%] bg-darkesgreys mt-[2.5rem] border-2 border-gray-300"
+>
+  <div class="w-[100%] flex justify-center">
+    <app-chart-card></app-chart-card>
+  </div>
+  <app-day-toggle-button></app-day-toggle-button>
+  <div class="flex w-[100%] justify-between mt-[1rem] p-[8px]">
+    <button
+      (click)="changeTab('BreakFast')"
+      id="breakfast"
+      [ngClass]="{ orange: toggleBreakfast }"
+      class="bg-transparent border-2 border-[#D4D4D4] text-[16pt] p-[1rem,1rem] text-[#D4D4D4] text-center w-[102pt] h-[30pt] rounded-[5pt]"
+    >
+      BreakFast
+    </button>
+    <button
+      (click)="changeTab('Lunch')"
+      id="lunch"
+      [ngClass]="{ orange: toggleLunch }"
+      class="bg-transparent border-2 border-[#D4D4D4] text-[16pt] text-[#D4D4D4] text-center p-[1rem,1rem] w-[102pt] h-[30pt] rounded-[5pt]"
+    >
+      Lunch
+    </button>
+    <button
+      (click)="changeTab('HighTea')"
+      id="hightea"
+      [ngClass]="{ orange: toggleHightea }"
+      class="bg-transparent border-2 border-[#D4D4D4] text-[16pt] p-[1rem,1rem] text-[#D4D4D4] text-center w-[102pt] h-[30pt] rounded-[5pt]"
+    >
+      High-Tea
+    </button>
   </div>
 
-    <div id="box-3" class="flex justify-between items-center mt-[0.5rem]">
-      <div id="box-3-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem] flex justify-center items-center"><img src="../../../assets/img/Group 3129.png" height="100%" width="100%"></div>
-      <div class="w-[170pt] h-[35pt] leading-[16pt]"><p class="font-roboto-black text-[#FFFFFF] text-[16pt]">Chapati</p> <p class="text-[14pt] font-roboto-regular text-[#D4D4D4]">₹20</p></div>
-      <div class="h-[4pt] w-[5pt]"><img src="../../../assets/img/ellipsisLatest.svg" height="100%" width="100%"></div>
-    </div>
-    <div id="box-4" class="flex justify-between items-center mt-[0.5rem]">
-      <div id="box-4-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem] flex justify-center items-center"><img src="../../../assets/img/Group 3121.png"  height="100%" width="100%"></div>
-      <div class="w-[170pt] h-[35pt] leading-[16pt]"><p class="font-roboto-black text-[#FFFFFF] text-[16pt]">Rice</p> <p class="text-[14pt] font-roboto-regular text-[#D4D4D4]">₹30</p></div>
-      <div class="h-[4pt] w-[5pt]"><img src="../../../assets/img/ellipsisLatest.svg" height="100%" width="100%"></div>
-    </div>
-    <div id="box-5" class="flex justify-between items-center mt-[0.5rem]">
-      <div id="box-5-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem] flex justify-center items-center"><img src="../../../assets/img/Group 3145.png" height="100%" width="100%"></div>
-      <div class="w-[170pt] h-[35pt] leading-[16pt]"><p class="font-roboto-black text-[#FFFFFF] text-[16pt]">Riata</p> <p class="text-[14pt] font-roboto-regular text-[#D4D4D4]">₹10</p></div>
-      <div class="h-[4pt] w-[5pt]"><img src="../../../assets/img/ellipsisLatest.svg" height="100%" width="100%"></div>
-    </div>
-    <div id="box-6" class="flex justify-between items-center mt-[0.5rem]">
-      <div id="box-6-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem] flex justify-center items-center"><img src="../../../assets/img/Group 3154.png" height="100%" width="100%"></div>
-      <div class="w-[170pt] h-[35pt] leading-[16pt]"><p class="font-roboto-black text-[#FFFFFF] text-[16pt]">Aloo Gobhi Sabji</p> <p class="text-[14pt] font-roboto-regular text-[#D4D4D4]">₹10</p></div>
-      <div class="h-[4pt] w-[5pt]"><img src="../../../assets/img/ellipsisLatest.svg" height="100%" width="100%"></div>
-    </div>
-    <div id="box-7" class="flex justify-between items-center mt-[0.5rem]">
-      <div id="box-7-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem] flex justify-center items-center"><img src="../../../assets/img/Group 3152.png" height="90%" width="90%"></div>
-      <div class="w-[170pt] h-[35pt] leading-[16pt]"><p class="font-roboto-black text-[#FFFFFF] text-[16pt]">Salad</p> <p class="text-[14pt] font-roboto-regular text-[#D4D4D4]">₹10</p></div>
-      <div class="h-[4pt] w-[5pt]"><img src="../../../assets/img/ellipsisLatest.svg" height="100%" width="100%"></div>
-    </div>
-    
-    <div class="flex w-[100%] justify-between">
-      <div id="box-1" class="flex justify-between items-center mt-[0.5rem] w-[44%]">
-        <div id="box-1-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem] flex justify-center items-center"><img src="../../../assets/img/fullMeal.png" height="100%" width="100%"></div>
-        <div class="w-[170pt] h-[35pt] leading-[16pt]"><p class="font-roboto-black text-[#FFFFFF] text-[16pt]">Full Plate Meal</p> <p class="text-[14pt] font-roboto-regular text-[#D4D4D4]">₹80</p></div>
-        <div class="h-[4pt] w-[5pt] "><img src="../../../assets/img/ellipsisLatest.svg" height="100%" width="100%"></div>
+  <div *ngIf="toggleToday">
+    <div
+      *ngIf="toggleLunch"
+      class="h-[500pt] flex justify-between flex-col w-[80%] mt-[-1rem] mb-[5rem]"
+    >
+      <div class="w-[100%] mt-[1.5rem] mb-[2rem]">
+        <p class="text-[14pt] text-[#D4D4D4] font-roboto-regular">
+          Lunch timing: 12:30 PM to 3:00 PM
+        </p>
       </div>
-      <div id="box-2" class="flex justify-between items-center mt-[0.5rem] w-[44%]">
-        <div id="box-2-img" class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem] flex justify-center items-center"><img src="../../../assets/img/Group 3121.png" height="100%" width="100%"></div>
-        <div class="w-[170pt] h-[35pt] leading-[16pt]"><p class="font-roboto-black text-[#FFFFFF] text-[16pt]">Half Plate Meal</p> <p class="text-[14pt] font-roboto-regular text-[#D4D4D4]">₹60</p></div>
-        <div class="h-[4pt] w-[5pt]"><img src="../../../assets/img/ellipsisLatest.svg" height="100%" width="100%"></div>
+
+      <div id="box-3" class="flex justify-between items-center mt-[0.5rem]">
+        <div
+          id="box-3-img"
+          class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem] flex justify-center items-center"
+        >
+          <img
+            src="../../../assets/img/Group 3129.png"
+            height="100%"
+            width="100%"
+          />
+        </div>
+        <div class="w-[170pt] h-[35pt] leading-[16pt]">
+          <p class="font-roboto-black text-[#FFFFFF] text-[16pt]">Chapati</p>
+          <p class="text-[14pt] font-roboto-regular text-[#D4D4D4]">₹20</p>
+        </div>
+        <div class="h-[4pt] w-[5pt]">
+          <img
+            src="../../../assets/img/ellipsisLatest.svg"
+            height="100%"
+            width="100%"
+          />
+        </div>
+      </div>
+      <div id="box-4" class="flex justify-between items-center mt-[0.5rem]">
+        <div
+          id="box-4-img"
+          class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem] flex justify-center items-center"
+        >
+          <img
+            src="../../../assets/img/Group 3121.png"
+            height="100%"
+            width="100%"
+          />
+        </div>
+        <div class="w-[170pt] h-[35pt] leading-[16pt]">
+          <p class="font-roboto-black text-[#FFFFFF] text-[16pt]">Rice</p>
+          <p class="text-[14pt] font-roboto-regular text-[#D4D4D4]">₹30</p>
+        </div>
+        <div class="h-[4pt] w-[5pt]">
+          <img
+            src="../../../assets/img/ellipsisLatest.svg"
+            height="100%"
+            width="100%"
+          />
+        </div>
+      </div>
+      <div id="box-5" class="flex justify-between items-center mt-[0.5rem]">
+        <div
+          id="box-5-img"
+          class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem] flex justify-center items-center"
+        >
+          <img
+            src="../../../assets/img/Group 3145.png"
+            height="100%"
+            width="100%"
+          />
+        </div>
+        <div class="w-[170pt] h-[35pt] leading-[16pt]">
+          <p class="font-roboto-black text-[#FFFFFF] text-[16pt]">Riata</p>
+          <p class="text-[14pt] font-roboto-regular text-[#D4D4D4]">₹10</p>
+        </div>
+        <div class="h-[4pt] w-[5pt]">
+          <img
+            src="../../../assets/img/ellipsisLatest.svg"
+            height="100%"
+            width="100%"
+          />
+        </div>
+      </div>
+      <div id="box-6" class="flex justify-between items-center mt-[0.5rem]">
+        <div
+          id="box-6-img"
+          class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem] flex justify-center items-center"
+        >
+          <img
+            src="../../../assets/img/Group 3154.png"
+            height="100%"
+            width="100%"
+          />
+        </div>
+        <div class="w-[170pt] h-[35pt] leading-[16pt]">
+          <p class="font-roboto-black text-[#FFFFFF] text-[16pt]">
+            Aloo Gobhi Sabji
+          </p>
+          <p class="text-[14pt] font-roboto-regular text-[#D4D4D4]">₹10</p>
+        </div>
+        <div class="h-[4pt] w-[5pt]">
+          <img
+            src="../../../assets/img/ellipsisLatest.svg"
+            height="100%"
+            width="100%"
+          />
+        </div>
+      </div>
+      <div id="box-7" class="flex justify-between items-center mt-[0.5rem]">
+        <div
+          id="box-7-img"
+          class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem] flex justify-center items-center"
+        >
+          <img
+            src="../../../assets/img/Group 3152.png"
+            height="90%"
+            width="90%"
+          />
+        </div>
+        <div class="w-[170pt] h-[35pt] leading-[16pt]">
+          <p class="font-roboto-black text-[#FFFFFF] text-[16pt]">Salad</p>
+          <p class="text-[14pt] font-roboto-regular text-[#D4D4D4]">₹10</p>
+        </div>
+        <div class="h-[4pt] w-[5pt]">
+          <img
+            src="../../../assets/img/ellipsisLatest.svg"
+            height="100%"
+            width="100%"
+          />
+        </div>
+      </div>
+
+      <div class="flex w-[100%] justify-between">
+        <div
+          id="box-1"
+          class="flex justify-between items-center mt-[0.5rem] w-[44%]"
+        >
+          <div
+            id="box-1-img"
+            class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem] flex justify-center items-center"
+          >
+            <img
+              src="../../../assets/img/fullMeal.png"
+              height="100%"
+              width="100%"
+            />
+          </div>
+          <div class="w-[170pt] h-[35pt] leading-[16pt]">
+            <p class="font-roboto-black text-[#FFFFFF] text-[16pt]">
+              Full Plate Meal
+            </p>
+            <p class="text-[14pt] font-roboto-regular text-[#D4D4D4]">₹80</p>
+          </div>
+          <div class="h-[4pt] w-[5pt]">
+            <img
+              src="../../../assets/img/ellipsisLatest.svg"
+              height="100%"
+              width="100%"
+            />
+          </div>
+        </div>
+        <div
+          id="box-2"
+          class="flex justify-between items-center mt-[0.5rem] w-[44%]"
+        >
+          <div
+            id="box-2-img"
+            class="rounded-[10pt] h-[50pt] w-[50pt] p-[0.7rem] flex justify-center items-center"
+          >
+            <img
+              src="../../../assets/img/Group 3121.png"
+              height="100%"
+              width="100%"
+            />
+          </div>
+          <div class="w-[170pt] h-[35pt] leading-[16pt]">
+            <p class="font-roboto-black text-[#FFFFFF] text-[16pt]">
+              Half Plate Meal
+            </p>
+            <p class="text-[14pt] font-roboto-regular text-[#D4D4D4]">₹60</p>
+          </div>
+          <div class="h-[4pt] w-[5pt]">
+            <img
+              src="../../../assets/img/ellipsisLatest.svg"
+              height="100%"
+              width="100%"
+            />
+          </div>
+        </div>
       </div>
     </div>
-
-  </div>
-  <div *ngIf="toggleBreakfast" class="w-[100%] h-[200pt] border-2 border-red-700 flex justify-between flex-col p-[25px] mt-[1rem] mb-[8rem]">
-        <p>BreakFast Meals</p>
-  </div>
-  <div *ngIf="toggleHightea" class="w-[100%] h-[200pt] border-2 border-red-700 flex justify-between flex-col p-[25px] mt-[1rem] mb-[8rem]">
+    <div
+      *ngIf="toggleBreakfast"
+      class="w-[100%] h-[200pt] border-2 border-red-700 flex justify-between flex-col p-[25px] mt-[1rem] mb-[8rem]"
+    >
+      <p>BreakFast Meals</p>
+    </div>
+    <div
+      *ngIf="toggleHightea"
+      class="w-[100%] h-[200pt] border-2 border-red-700 flex justify-between flex-col p-[25px] mt-[1rem] mb-[8rem]"
+    >
       <p>High-Tea Snacks</p>
+    </div>
   </div>
-</div>
 
-<div *ngIf="toggleTomorrow">
-  <div *ngIf="toggleLunch"  class="w-[90%] h-[100pt] border-2 border-red-700 flex justify-between flex-col p-[25px] mt-[-1rem] mb-[5rem]">
-    <p class="text-[16pt] font-roboto"> There is no food for today </p>
+  <div *ngIf="toggleTomorrow">
+    <div
+      *ngIf="toggleLunch"
+      class="w-[90%] h-[100pt] border-2 border-red-700 flex justify-between flex-col p-[25px] mt-[-1rem] mb-[5rem]"
+    >
+      <p class="text-[16pt] font-roboto">There is no food for today</p>
+    </div>
+    <div
+      *ngIf="toggleBreakfast"
+      class="w-[90%] h-[100pt] border-2 border-red-700 flex justify-between flex-col p-[25px] mt-[1rem] mb-[5rem]"
+    >
+      <p class="text-[16pt] font-roboto">There is no food for today</p>
+    </div>
+    <div
+      *ngIf="toggleHightea"
+      class="w-[90%] h-[100pt] border-2 border-red-700 flex justify-between flex-col p-[25px] mt-[1rem] mb-[5rem]"
+    >
+      <p class="text-[16pt] font-roboto">There is no food for today</p>
+    </div>
+  </div> -->
+
+<app-nav *ngIf="auth.isAuthenticated$ | async"></app-nav>
+
+<div
+  class="flex flex-col items-center overflow-hidden w-[100%] h-[100%] bg-darkesgreys mt-[2.5rem] xsm:z-[99]"
+>
+   
+  <div class="w-[100%] flex justify-center">
+        <app-chart-card></app-chart-card>
+
+     
   </div>
-  <div *ngIf="toggleBreakfast" class="w-[90%] h-[100pt] border-2 border-red-700 flex justify-between flex-col p-[25px] mt-[1rem] mb-[5rem]">
-    <p class="text-[16pt] font-roboto"> There is no food for today </p>
+
+    <app-day-toggle-button></app-day-toggle-button>
+
+   
+  <div
+    class="flex w-[100%] md:w-[43rem] sm:w-[22.5rem] xxs:w-[18rem] justify-evenly mt-[1rem] p-[8px]"
+  >
+       
+    <button
+      (click)="changeTab('BreakFast')"
+      id="breakfast"
+      [ngClass]="{ orange: toggleBreakfast }"
+      class="bg-transparent border-2 border-[#D4D4D4] sm:text-[11pt] xxs:text-[9.5pt] md:text-[18pt] p-[1rem,1rem] text-[#D4D4D4] text-center xxs:w-[60pt] sm:w-[80pt] md:w-[150pt] sm:h-[25pt] md:h-[40pt] rounded-[5pt]"
+    >
+      BreakFast
+    </button>
+
+       
+    <button
+      (click)="changeTab('Lunch')"
+      id="lunch"
+      [ngClass]="{ orange: toggleLunch }"
+      class="bg-transparent border-2 border-[#D4D4D4] sm:text-[11pt] xxs:text-[10pt] xxs:w-[60pt] md:text-[18pt] md:w-[150pt] md:h-[40pt] text-[#D4D4D4] text-center p-[1rem,1rem] sm:w-[80pt] sm:h-[25pt] rounded-[5pt]"
+    >
+      Lunch
+    </button>
+
+       
+    <button
+      (click)="changeTab('HighTea')"
+      id="hightea"
+      [ngClass]="{ orange: toggleHightea }"
+      class="bg-transparent border-2 border-[#D4D4D4] xxs:w-[60pt] xxs:text-[10pt] md:w-[150pt] md:h-[40pt] sm:text-[11pt] md:text-[18pt] p-[1rem,1rem] text-[#D4D4D4] text-center sm:w-[80pt] sm:h-[25pt] rounded-[5pt]"
+    >
+            High-Tea
+    </button>
+
+     
   </div>
-  <div *ngIf="toggleHightea" class="w-[90%] h-[100pt] border-2 border-red-700 flex justify-between flex-col p-[25px] mt-[1rem] mb-[5rem]">
-    <p class="text-[16pt] font-roboto"> There is no food for today </p>
+
+     
+  <div *ngIf="toggleToday">
+       
+    <div
+      *ngIf="toggleLunch"
+      class="h-[450pt] sm:h-[400pt] xxs:h-[360pt] md:h-[500pt] sm:ml-[10pt] md:w-[85%] sm:w-[90%] xxs:w-[80%] flex justify-between flex-col w-[90%] ml-[0.5rem] mt-[-1rem] mb-[5rem]"
+    >
+           
+      <div
+        class="w-[90%] md:ml-[1.8rem] md:w-[90%] sm:ml-[9.5rem] xxs:ml-[13.8rem] sm:w-[90%] xxs:w-[75%] md:mb-[3rem] md:mt-[2.5rem] ml-[0.7rem] mt-[1.9rem] mb-[-0.8rem]"
+      >
+               
+        <p
+          class="text-[13pt] sm:text-[13pt] md:text-[19pt] xxs:text-[10pt] text-[#D4D4D4] font-roboto-regular"
+        >
+                    Lunch           timing: 12:30 PM to 3:00 PM
+        </p>
+
+             
+      </div>
+
+                         
+      <div
+        id="box-3"
+        class="flex justify-center items-center sm:p-[0.8rem] sm:w-[100%] sm:mt-[-24rem] sm:ml-[0pt] xxs:ml-[79pt]"
+      >
+               
+        <div
+          id="box-3-img"
+          class="rounded-[10pt] md:ml-[1.5rem] sm:h-[45pt] sm:w-[45pt] xxs:h-[32pt] xxs:w-[32pt] xxs:p-[2pt] md:h-[55pt] md:w-[55pt] flex justify-center items-center"
+        >
+                   
+          <img
+            src="../../../assets/img/Group 3129.png"
+            height="100%"
+            width="100%"
+          />
+
+                 
+        </div>
+
+               
+        <div
+          class="sm:w-[170pt] xxs:w-[130pt] md:w-[330pt] sm:h-[35pt] sm:leading-[16pt] md:leading-[22pt] sm:ml-[0.8rem] xxs:ml-[0.6rem]"
+        >
+                   
+          <p
+            class="font-roboto-black text-[#FFFFFF] sm:text-[13pt] md:text-[20pt] xxs:text-[10pt]"
+          >
+            Chapati
+          </p>
+
+                   
+          <p
+            class="sm:text-[12pt] xxs:text-[10pt] md:text-[16pt] font-roboto-regular text-[#D4D4D4]"
+          >
+            ₹20
+          </p>
+
+                 
+        </div>
+
+               
+        <div class="sm:h-[3pt] sm:w-[4pt] xxs:h-[2pt] xxs:w-[3pt]">
+          <img
+            src="../../../assets/img/ellipsisLatest.svg"
+            height="90%"
+            width="90%"
+          />
+        </div>
+
+             
+      </div>
+
+           
+      <div
+        id="box-4"
+        class="flex justify-center items-center sm:p-[0.8rem] sm:w-[100%] xxs:w-[94%] sm:mt-[-26rem] md:mt-[-23rem] xxs:mt-[-1.9rem]"
+      >
+               
+        <div
+          id="box-4-img"
+          class="rounded-[10pt] md:ml-[1.5rem] sm:h-[45pt] sm:w-[45pt] md:h-[55pt] md:w-[55pt] sm:p-[0.5rem] xxs:h-[32pt] xxs:w-[32pt] xxs:p-[2pt] flex justify-center items-center sm:ml-[0pt] xxs:ml-[103.5pt]"
+        >
+                   
+          <img
+            src="../../../assets/img/Group 3121.png"
+            height="100%"
+            width="100%"
+          />
+        </div>
+
+               
+        <div
+          class="sm:w-[170pt] xxs:w-[140pt] md:w-[330pt] sm:h-[35pt] leading-[16pt] md:leading-[22pt] sm:ml-[0.8rem] xxs:ml-[0.8rem]"
+        >
+                   
+          <p
+            class="font-roboto-black text-[#FFFFFF] sm:text-[13pt] xxs:text-[10pt] md:text-[20pt]"
+          >
+            Rice
+          </p>
+
+                   
+          <p
+            class="sm:text-[12pt] md:text-[16pt] xxs:text-[10pt] font-roboto-regular text-[#D4D4D4]"
+          >
+            ₹30
+          </p>
+
+                 
+        </div>
+
+               
+        <div
+          class="sm:h-[3pt] sm:w-[4pt] xxs:h-[2.4pt] xxs:w-[2.8pt] sm:ml-[0pt] xxs:ml-[-13pt]"
+        >
+          <img
+            src="../../../assets/img/ellipsisLatest.svg"
+            height="88%"
+            width="88%"
+          />
+        </div>
+
+             
+      </div>
+
+           
+      <div
+        id="box-5"
+        class="flex justify-center items-center sm:p-[0.8rem] sm:w-[100%] xxs:w-[90%] sm:mt-[-26rem] md:mt-[-23rem] md:ml-[0pt] sm:ml-[6.5pt] xxs:mt-[-1.9rem] xxs:ml-[4.9rem]"
+      >
+                         
+        <div
+          id="box-5-img"
+          class="rounded-[10pt] md:ml-[1.5rem] sm:h-[45pt] md:h-[55pt] md:w-[55pt] sm:w-[45pt] sm:p-[0.5rem] xxs:p-[0.25rem] flex justify-center sm:ml-[-12pt] sm:ml-[0pt] items-center"
+        >
+                   
+          <img
+            src="../../../assets/img/Group 3145.png"
+            height="100%"
+            width="100%"
+          />
+
+                   
+        </div>
+
+                         
+        <div
+          class="sm:w-[170pt] md:w-[330pt] sm:h-[35pt] leading-[16pt] md:leading-[22pt] sm:ml-[0.8rem] xxs:ml-[0.8rem]"
+        >
+                   
+          <p
+            class="font-roboto-black text-[#FFFFFF] sm:text-[13pt] md:text-[20pt] xxs:text-[10pt]"
+          >
+            Raita
+          </p>
+
+                   
+          <p
+            class="sm:text-[12pt] md:text-[16pt] xxs:text-[10pt] font-roboto-regular text-[#D4D4D4]"
+          >
+            ₹10
+          </p>
+
+                   
+        </div>
+
+                         
+        <div
+          class="sm:h-[3pt] sm:w-[4pt] sm:ml-[1.5pt] xxs:ml-[60pt] xxs:h-[2.8pt] xxs:w-[2.8pt] xxs:ml-[100pt]"
+        >
+          <img
+            src="../../../assets/img/ellipsisLatest.svg"
+            height="90%"
+            width="90%"
+          />
+
+                   
+        </div>
+
+                     
+      </div>
+
+                       
+      <div
+        id="box-6"
+        class="flex justify-center items-center sm:p-[0.8rem] sm:w-[100%] xxs:w-[100%] sm:mt-[-26rem] md:mt-[-23rem] xxs:mt-[-1.9rem] xxs:ml-[3.4rem] sm:ml-[0pt]"
+      >
+               
+        <div
+          id="box-6-img"
+          class="flex justify-center items-center xxs:p-[3pt] rounded-[10pt] md:ml-[1.5rem] sm:h-[45pt] sm:w-[45pt] sm:p-[0.5rem] md:h-[55pt] md:w-[55pt] xxs:h-[32pt] xxs:w-[32pt]"
+        >
+                   
+          <img
+            src="../../../assets/img/Group 3154.png"
+            class="xxs:mb-[2.5pt]"
+            height="100%"
+            width="100%"
+          />
+
+                 
+        </div>
+
+               
+        <div
+          class="sm:w-[170pt] md:w-[330pt] sm:h-[35pt] leading-[16pt] md:leading-[22pt] sm:ml-[0.8rem] xxs:ml-[0.8rem]"
+        >
+                   
+          <p
+            class="font-roboto-black text-[#FFFFFF] sm:text-[13pt] md:text-[20pt] xxs:text-[10pt]"
+          >
+            Aloo Gobhi Sabji
+          </p>
+
+                   
+          <p
+            class="text-[12pt] md:text-[16pt] font-roboto-regular text-[#D4D4D4] xxs:text-[10pt]"
+          >
+            ₹10
+          </p>
+
+                 
+        </div>
+
+               
+        <div
+          class="sm:h-[3pt] sm:w-[4pt] xxs:h-[2.4pt] xxs:w-[2.8pt] xxs:ml-[50pt] sm:ml-[0pt]"
+        >
+          <img
+            src="../../../assets/img/ellipsisLatest.svg"
+            height="90%"
+            width="90%"
+          />
+
+                 
+        </div>
+
+             
+      </div>
+
+         
+      <div
+        id="box-7"
+        class="flex justify-center items-center sm:p-[0.8rem] sm:width[100%] sm:mt-[-26rem] md:mt-[-23rem] xxs:mt-[-1.9rem] sm:ml-[0pt] xxs:ml-[7rem]"
+      >
+               
+        <div
+          id="box-7-img"
+          class="rounded-[10pt] md:ml-[1.5rem] sm:h-[45pt] sm:w-[45pt] md:h-[55pt] md:w-[55pt] sm:p-[0.5rem] xxs:h-[32pt] xxs:w-[32pt] xxs:p-[4pt] flex justify-center items-center"
+        >
+                   
+          <img
+            src="../../../assets/img/Group 3152.png"
+            height="90%"
+            width="90%"
+          />
+        </div>
+
+               
+        <div
+          class="sm:w-[170pt] md:w-[330pt] sm:h-[35pt] leading-[16pt] md:leading-[22pt] sm:ml-[0.8rem] xxs:ml-[0.8rem]"
+        >
+                   
+          <p
+            class="font-roboto-black text-[#FFFFFF] sm:text-[13pt] xxs:text-[10pt] md:text-[20pt]"
+          >
+            Salad
+          </p>
+
+                   
+          <p
+            class="text-[12pt] md:text-[16pt] xxs:text-[10pt] font-roboto-regular text-[#D4D4D4]"
+          >
+            ₹10
+          </p>
+
+                 
+        </div>
+
+               
+        <div
+          class="sm:h-[3pt] sm:w-[4pt] xxs:h-[2.4pt] xxs:w-[2.8pt] sm:ml-[0pt] xxs:ml-[100pt]"
+        >
+          <img
+            src="../../../assets/img/ellipsisLatest.svg"
+            height="90%"
+            width="90%"
+          />
+
+                 
+        </div>
+
+             
+      </div>
+
+                   
+      <div
+        class="flex sm:w-[100%] sm:p-[3pt] xxs:w-[85%] sm:justify-center md:justify-between xxs:justify-center sm:ml-[55pt] sm:items-center md:w-[120%] md:ml-[22pt] sm:mb-[25pt] sm:mt-[-25rem] md:mt-[-22rem] xxs:ml-[8.5rem] xxs:p-[5pt]"
+      >
+               
+        <div
+          id="box-1"
+          class="flex justify-center items-center sm:mt-[1rem] sm:w-[45%] xxs:w-[35%]"
+        >
+                   
+          <div
+            id="box-1-img"
+            class="rounded-[10pt] md:h-[48pt] md:w-[55pt] sm:h-[40pt] sm:w-[50pt] p-[3pt] sm:p-[4pt] md:p-[7pt] p-[0.7rem] xxs:w-[25pt] xxs:h-[30pt] flex justify-center items-center"
+          >
+                       
+            <img
+              src="../../../assets/img/fullMeal.png"
+              height="108%"
+              width="108%"
+            />
+          </div>
+
+                   
+          <div
+            class="w-[170pt] h-[25pt] leading-[16pt] md:leading-[19pt] ml-[0.8rem]"
+          >
+                       
+            <p
+              class="font-roboto-black text-[#FFFFFF] text-[14pt] sm:text-[13pt] xxs:text-[10pt] md:text-[18pt]"
+            >
+              Full Thali
+            </p>
+
+                       
+            <p
+              class="text-[14pt] sm:text-[13pt] xxs:text-[10pt] md:text-[15pt] font-roboto-regular text-[#D4D4D4]"
+            >
+              ₹80
+            </p>
+
+                     
+          </div>
+
+                 
+        </div>
+
+               
+        <div
+          id="box-2"
+          class="flex justify-center items-center sm:mt-[1rem] sm:w-[45%] sm:ml-[-42pt] xxs:w-[35%]"
+        >
+                   
+          <div
+            id="box-2-img"
+            class="rounded-[10pt] h-[40pt] w-[110pt] md:h-[48pt] md:w-[55pt] sm:h-[40pt] sm:w-[50pt] xxs:w-[25pt] xxs:h-[30pt] p-[3pt] sm:p-[4pt] md:p-[7pt] p-[0.7rem] flex justify-center items-center"
+          >
+                       
+            <img
+              src="../../../assets/img/Group 3121.png"
+              height="98%"
+              width="98%"
+            />
+
+                     
+          </div>
+
+                   
+          <div
+            class="w-[170pt] h-[25pt] leading-[16pt] md:leading-[19pt] ml-[0.8rem]"
+          >
+                       
+            <p
+              class="font-roboto-black text-[#FFFFFF] sm:text-[13pt] md:text-[18pt] xxs:text-[10pt] text-[14pt]"
+            >
+              Half Thali
+            </p>
+
+                       
+            <p
+              class="text-[14pt] sm:text-[13pt] md:text-[15pt] xxs:text-[10pt] font-roboto-regular text-[#D4D4D4]"
+            >
+              ₹60
+            </p>
+
+                     
+          </div>
+
+                 
+        </div>
+
+             
+      </div>
+
+         
+    </div>
+
+       
+    <!-- <div *ngIf="toggleBreakfast"
+
+      class="w-[100%] h-[200pt] border-2 border-red-700 flex justify-between flex-col p-[25px] mt-[1rem] mb-[8rem]">
+
+      <p>BreakFast Meals</p>
+
+    </div> -->
+
+       
+    <div
+      *ngIf="toggleBreakfast"
+      class="h-[450pt] sm:h-[400pt] xxs:h-[360pt] md:h-[500pt] sm:ml-[10pt] md:w-[85%] sm:w-[90%] xxs:w-[80%] flex justify-between flex-col w-[90%] ml-[0.5rem] mt-[-1rem] mb-[5rem]"
+    >
+         
+      <div
+        class="w-[90%] md:ml-[1.8rem] md:w-[90%] sm:ml-[9.5rem] xxs:ml-[13.8rem] sm:w-[90%] xxs:w-[75%] md:mb-[3rem] md:mt-[2.5rem] ml-[0.7rem] mt-[1.9rem] mb-[-0.8rem]"
+      >
+             
+        <p
+          class="text-[13pt] sm:text-[13pt] md:text-[19pt] xxs:text-[10pt] text-[#D4D4D4] font-roboto-regular"
+        >
+                  Breakfast         timing:- 10:30 AM to 11:30 AM
+        </p>
+
+           
+      </div>
+      <div
+        id="box-3"
+        class="flex justify-center items-center sm:p-[0.8rem] sm:w-[100%] sm:mt-[-24rem] sm:ml-[0pt] xxs:ml-[79pt]"
+      >
+             
+        <div
+          id="box-3-img"
+          class="rounded-[10pt] md:ml-[1.5rem] sm:h-[45pt] sm:w-[45pt] xxs:h-[32pt] xxs:w-[32pt] xxs:p-[2pt] md:h-[55pt] md:w-[55pt] flex justify-center items-center"
+        >
+                 
+          <img
+            src="../../../assets/img/Group 3129.png"
+            height="100%"
+            width="100%"
+          />
+
+               
+        </div>
+
+             
+        <div
+          class="sm:w-[170pt] xxs:w-[130pt] md:w-[330pt] sm:h-[35pt] sm:leading-[16pt] md:leading-[22pt] sm:ml-[0.8rem] xxs:ml-[0.6rem]"
+        >
+                 
+          <p
+            class="font-roboto-black text-[#FFFFFF] sm:text-[13pt] md:text-[20pt] xxs:text-[10pt]"
+          >
+            Chapati
+          </p>
+
+                 
+          <p
+            class="sm:text-[12pt] xxs:text-[10pt] md:text-[16pt] font-roboto-regular text-[#D4D4D4]"
+          >
+            ₹20
+          </p>
+
+               
+        </div>
+
+             
+        <div class="sm:h-[3pt] sm:w-[4pt] xxs:h-[2pt] xxs:w-[3pt]">
+          <img
+            src="../../../assets/img/ellipsisLatest.svg"
+            height="90%"
+            width="90%"
+          />
+        </div>
+
+           
+      </div>
+
+         
+      <div
+        id="box-4"
+        class="flex justify-center items-center sm:p-[0.8rem] sm:w-[100%] xxs:w-[94%] sm:mt-[-26rem] md:mt-[-23rem] xxs:mt-[-1.9rem]"
+      >
+             
+        <div
+          id="box-4-img"
+          class="rounded-[10pt] md:ml-[1.5rem] sm:h-[45pt] sm:w-[45pt] md:h-[55pt] md:w-[55pt] sm:p-[0.5rem] xxs:h-[32pt] xxs:w-[32pt] xxs:p-[2pt] flex justify-center items-center sm:ml-[0pt] xxs:ml-[103.5pt]"
+        >
+                 
+          <img
+            src="../../../assets/img/Group 3121.png"
+            height="100%"
+            width="100%"
+          />
+        </div>
+
+             
+        <div
+          class="sm:w-[170pt] xxs:w-[140pt] md:w-[330pt] sm:h-[35pt] leading-[16pt] md:leading-[22pt] sm:ml-[0.8rem] xxs:ml-[0.8rem]"
+        >
+                 
+          <p
+            class="font-roboto-black text-[#FFFFFF] sm:text-[13pt] xxs:text-[10pt] md:text-[20pt]"
+          >
+            Rice
+          </p>
+
+                 
+          <p
+            class="sm:text-[12pt] md:text-[16pt] xxs:text-[10pt] font-roboto-regular text-[#D4D4D4]"
+          >
+            ₹30
+          </p>
+
+               
+        </div>
+
+             
+        <div
+          class="sm:h-[3pt] sm:w-[4pt] xxs:h-[2.4pt] xxs:w-[2.8pt] sm:ml-[0pt] xxs:ml-[-13pt]"
+        >
+          <img
+            src="../../../assets/img/ellipsisLatest.svg"
+            height="88%"
+            width="88%"
+          />
+        </div>
+
+           
+      </div>
+
+         
+      <div
+        id="box-5"
+        class="flex justify-center items-center sm:p-[0.8rem] sm:w-[100%] xxs:w-[90%] sm:mt-[-26rem] md:mt-[-23rem] md:ml-[0pt] sm:ml-[6.5pt] xxs:mt-[-1.9rem] xxs:ml-[4.9rem]"
+      >
+                     
+        <div
+          id="box-5-img"
+          class="rounded-[10pt] md:ml-[1.5rem] sm:h-[45pt] md:h-[55pt] md:w-[55pt] sm:w-[45pt] sm:p-[0.5rem] xxs:p-[0.25rem] flex justify-center sm:ml-[-12pt] sm:ml-[0pt] items-center"
+        >
+                 
+          <img
+            src="../../../assets/img/Group 3145.png"
+            height="100%"
+            width="100%"
+          />
+
+                 
+        </div>
+
+                     
+        <div
+          class="sm:w-[170pt] md:w-[330pt] sm:h-[35pt] leading-[16pt] md:leading-[22pt] sm:ml-[0.8rem] xxs:ml-[0.8rem]"
+        >
+                 
+          <p
+            class="font-roboto-black text-[#FFFFFF] sm:text-[13pt] md:text-[20pt] xxs:text-[10pt]"
+          >
+            Raita
+          </p>
+
+                 
+          <p
+            class="sm:text-[12pt] md:text-[16pt] xxs:text-[10pt] font-roboto-regular text-[#D4D4D4]"
+          >
+            ₹10
+          </p>
+
+                 
+        </div>
+
+                     
+        <div
+          class="sm:h-[3pt] sm:w-[4pt] sm:ml-[1.5pt] xxs:ml-[60pt] xxs:h-[2.8pt] xxs:w-[2.8pt] xxs:ml-[100pt]"
+        >
+          <img
+            src="../../../assets/img/ellipsisLatest.svg"
+            height="90%"
+            width="90%"
+          />
+
+                 
+        </div>
+
+                 
+      </div>
+
+                 
+      <div
+        id="box-6"
+        class="flex justify-center items-center sm:p-[0.8rem] sm:w-[100%] xxs:w-[100%] sm:mt-[-26rem] md:mt-[-23rem] xxs:mt-[-1.9rem] xxs:ml-[3.4rem] sm:ml-[0pt]"
+      >
+             
+        <div
+          id="box-6-img"
+          class="flex justify-center items-center xxs:p-[3pt] rounded-[10pt] md:ml-[1.5rem] sm:h-[45pt] sm:w-[45pt] sm:p-[0.5rem] md:h-[55pt] md:w-[55pt] xxs:h-[32pt] xxs:w-[32pt]"
+        >
+                 
+          <img
+            src="../../../assets/img/Group 3154.png"
+            class="xxs:mb-[2.5pt]"
+            height="100%"
+            width="100%"
+          />
+
+               
+        </div>
+
+             
+        <div
+          class="sm:w-[170pt] md:w-[330pt] sm:h-[35pt] leading-[16pt] md:leading-[22pt] sm:ml-[0.8rem] xxs:ml-[0.8rem]"
+        >
+                 
+          <p
+            class="font-roboto-black text-[#FFFFFF] sm:text-[13pt] md:text-[20pt] xxs:text-[10pt]"
+          >
+            Aloo Gobhi Sabji
+          </p>
+
+                 
+          <p
+            class="text-[12pt] md:text-[16pt] font-roboto-regular text-[#D4D4D4] xxs:text-[10pt]"
+          >
+            ₹10
+          </p>
+
+               
+        </div>
+
+             
+        <div
+          class="sm:h-[3pt] sm:w-[4pt] xxs:h-[2.4pt] xxs:w-[2.8pt] xxs:ml-[50pt] sm:ml-[0pt]"
+        >
+          <img
+            src="../../../assets/img/ellipsisLatest.svg"
+            height="90%"
+            width="90%"
+          />
+
+               
+        </div>
+
+           
+      </div>
+
+         
+      <div
+        id="box-7"
+        class="flex justify-center items-center sm:p-[0.8rem] sm:width[100%] sm:mt-[-26rem] md:mt-[-23rem] xxs:mt-[-1.9rem] sm:ml-[0pt] xxs:ml-[7rem]"
+      >
+             
+        <div
+          id="box-7-img"
+          class="rounded-[10pt] md:ml-[1.5rem] sm:h-[45pt] sm:w-[45pt] md:h-[55pt] md:w-[55pt] sm:p-[0.5rem] xxs:h-[32pt] xxs:w-[32pt] xxs:p-[4pt] flex justify-center items-center"
+        >
+                 
+          <img
+            src="../../../assets/img/Group 3152.png"
+            height="90%"
+            width="90%"
+          />
+        </div>
+
+             
+        <div
+          class="sm:w-[170pt] md:w-[330pt] sm:h-[35pt] leading-[16pt] md:leading-[22pt] sm:ml-[0.8rem] xxs:ml-[0.8rem]"
+        >
+                 
+          <p
+            class="font-roboto-black text-[#FFFFFF] sm:text-[13pt] xxs:text-[10pt] md:text-[20pt]"
+          >
+            Salad
+          </p>
+
+                 
+          <p
+            class="text-[12pt] md:text-[16pt] xxs:text-[10pt] font-roboto-regular text-[#D4D4D4]"
+          >
+            ₹10
+          </p>
+
+               
+        </div>
+
+             
+        <div
+          class="sm:h-[3pt] sm:w-[4pt] xxs:h-[2.4pt] xxs:w-[2.8pt] sm:ml-[0pt] xxs:ml-[100pt]"
+        >
+          <img
+            src="../../../assets/img/ellipsisLatest.svg"
+            height="90%"
+            width="90%"
+          />
+
+               
+        </div>
+
+           
+      </div>
+
+             
+      <div
+        class="flex sm:w-[100%] sm:p-[3pt] xxs:w-[85%] sm:justify-center md:justify-between xxs:justify-center sm:ml-[55pt] sm:items-center md:w-[120%] md:ml-[22pt] sm:mb-[25pt] sm:mt-[-25rem] md:mt-[-22rem] xxs:ml-[8.5rem] xxs:p-[5pt]"
+      >
+             
+        <div
+          id="box-1"
+          class="flex justify-center items-center sm:mt-[1rem] sm:w-[45%] xxs:w-[35%]"
+        >
+                 
+          <div
+            id="box-1-img"
+            class="rounded-[10pt] md:h-[48pt] md:w-[55pt] sm:h-[40pt] sm:w-[50pt] p-[3pt] sm:p-[4pt] md:p-[7pt] p-[0.7rem] xxs:w-[25pt] xxs:h-[30pt] flex justify-center items-center"
+          >
+                     
+            <img
+              src="../../../assets/img/fullMeal.png"
+              height="108%"
+              width="108%"
+            />
+          </div>
+
+                 
+          <div
+            class="w-[170pt] h-[25pt] leading-[16pt] md:leading-[19pt] ml-[0.8rem]"
+          >
+                     
+            <p
+              class="font-roboto-black text-[#FFFFFF] text-[14pt] sm:text-[13pt] xxs:text-[10pt] md:text-[18pt]"
+            >
+              Full Thali
+            </p>
+
+                     
+            <p
+              class="text-[14pt] sm:text-[13pt] xxs:text-[10pt] md:text-[15pt] font-roboto-regular text-[#D4D4D4]"
+            >
+              ₹80
+            </p>
+
+                   
+          </div>
+
+               
+        </div>
+
+             
+        <div
+          id="box-2"
+          class="flex justify-center items-center sm:mt-[1rem] sm:w-[45%] sm:ml-[-42pt] xxs:w-[35%]"
+        >
+                 
+          <div
+            id="box-2-img"
+            class="rounded-[10pt] h-[40pt] w-[110pt] md:h-[48pt] md:w-[55pt] sm:h-[40pt] sm:w-[50pt] xxs:w-[25pt] xxs:h-[30pt] p-[3pt] sm:p-[4pt] md:p-[7pt] p-[0.7rem] flex justify-center items-center"
+          >
+                     
+            <img
+              src="../../../assets/img/Group 3121.png"
+              height="98%"
+              width="98%"
+            />
+
+                   
+          </div>
+
+                 
+          <div
+            class="w-[170pt] h-[25pt] leading-[16pt] md:leading-[19pt] ml-[0.8rem]"
+          >
+                     
+            <p
+              class="font-roboto-black text-[#FFFFFF] sm:text-[13pt] md:text-[18pt] xxs:text-[10pt] text-[14pt]"
+            >
+              Half Thali
+            </p>
+
+                     
+            <p
+              class="text-[14pt] sm:text-[13pt] md:text-[15pt] xxs:text-[10pt] font-roboto-regular text-[#D4D4D4]"
+            >
+              ₹60
+            </p>
+
+                   
+          </div>
+
+               
+        </div>
+
+           
+      </div>
+
+         
+    </div>
+    <!-- <div *ngIf="toggleHightea"
+
+      class="w-[100%] h-[200pt] border-2 border-red-700 flex justify-between flex-col p-[25px] mt-[1rem] mb-[8rem]">
+
+      <p>High-Tea Snacks</p>
+
+    </div> -->
+
+       
+    <div
+      *ngIf="toggleHightea"
+      class="h-[450pt] sm:h-[400pt] xxs:h-[360pt] md:h-[500pt] sm:ml-[10pt] md:w-[85%] sm:w-[90%] xxs:w-[80%] flex justify-between flex-col w-[90%] ml-[0.5rem] mt-[-1rem] mb-[5rem]"
+    >
+         
+      <div
+        class="w-[90%] md:ml-[1.8rem] md:w-[90%] sm:ml-[9.5rem] xxs:ml-[13.8rem] sm:w-[90%] xxs:w-[75%] md:mb-[3rem] md:mt-[2.5rem] ml-[0.7rem] mt-[1.9rem] mb-[-0.8rem]"
+      >
+             
+        <p
+          class="text-[13pt] sm:text-[13pt] md:text-[19pt] xxs:text-[10pt] text-[#D4D4D4] font-roboto-regular"
+        >
+                  High-Tea         timing:- 5:00 PM to 6:30 PM
+        </p>
+
+           
+      </div>
+
+                 
+      <div
+        id="box-3"
+        class="flex justify-center items-center sm:p-[0.8rem] sm:w-[100%] sm:mt-[-24rem] sm:ml-[0pt] xxs:ml-[79pt]"
+      >
+             
+        <div
+          id="box-3-img"
+          class="rounded-[10pt] md:ml-[1.5rem] sm:h-[45pt] sm:w-[45pt] xxs:h-[32pt] xxs:w-[32pt] xxs:p-[2pt] md:h-[55pt] md:w-[55pt] flex justify-center items-center"
+        >
+                 
+          <img
+            src="../../../assets/img/Group 3129.png"
+            height="100%"
+            width="100%"
+          />
+
+               
+        </div>
+
+             
+        <div
+          class="sm:w-[170pt] xxs:w-[130pt] md:w-[330pt] sm:h-[35pt] sm:leading-[16pt] md:leading-[22pt] sm:ml-[0.8rem] xxs:ml-[0.6rem]"
+        >
+                 
+          <p
+            class="font-roboto-black text-[#FFFFFF] sm:text-[13pt] md:text-[20pt] xxs:text-[10pt]"
+          >
+            Chapati
+          </p>
+
+                 
+          <p
+            class="sm:text-[12pt] xxs:text-[10pt] md:text-[16pt] font-roboto-regular text-[#D4D4D4]"
+          >
+            ₹20
+          </p>
+
+               
+        </div>
+
+             
+        <div class="sm:h-[3pt] sm:w-[4pt] xxs:h-[2pt] xxs:w-[3pt]">
+          <img
+            src="../../../assets/img/ellipsisLatest.svg"
+            height="90%"
+            width="90%"
+          />
+        </div>
+
+           
+      </div>
+
+         
+      <div
+        id="box-4"
+        class="flex justify-center items-center sm:p-[0.8rem] sm:w-[100%] xxs:w-[94%] sm:mt-[-26rem] md:mt-[-23rem] xxs:mt-[-1.9rem]"
+      >
+             
+        <div
+          id="box-4-img"
+          class="rounded-[10pt] md:ml-[1.5rem] sm:h-[45pt] sm:w-[45pt] md:h-[55pt] md:w-[55pt] sm:p-[0.5rem] xxs:h-[32pt] xxs:w-[32pt] xxs:p-[2pt] flex justify-center items-center sm:ml-[0pt] xxs:ml-[103.5pt]"
+        >
+                 
+          <img
+            src="../../../assets/img/Group 3121.png"
+            height="100%"
+            width="100%"
+          />
+        </div>
+
+             
+        <div
+          class="sm:w-[170pt] xxs:w-[140pt] md:w-[330pt] sm:h-[35pt] leading-[16pt] md:leading-[22pt] sm:ml-[0.8rem] xxs:ml-[0.8rem]"
+        >
+                 
+          <p
+            class="font-roboto-black text-[#FFFFFF] sm:text-[13pt] xxs:text-[10pt] md:text-[20pt]"
+          >
+            Rice
+          </p>
+
+                 
+          <p
+            class="sm:text-[12pt] md:text-[16pt] xxs:text-[10pt] font-roboto-regular text-[#D4D4D4]"
+          >
+            ₹30
+          </p>
+
+               
+        </div>
+
+             
+        <div
+          class="sm:h-[3pt] sm:w-[4pt] xxs:h-[2.4pt] xxs:w-[2.8pt] sm:ml-[0pt] xxs:ml-[-13pt]"
+        >
+          <img
+            src="../../../assets/img/ellipsisLatest.svg"
+            height="88%"
+            width="88%"
+          />
+        </div>
+
+           
+      </div>
+
+         
+      <div
+        id="box-5"
+        class="flex justify-center items-center sm:p-[0.8rem] sm:w-[100%] xxs:w-[90%] sm:mt-[-26rem] md:mt-[-23rem] md:ml-[0pt] sm:ml-[6.5pt] xxs:mt-[-1.9rem] xxs:ml-[4.9rem]"
+      >
+                     
+        <div
+          id="box-5-img"
+          class="rounded-[10pt] md:ml-[1.5rem] sm:h-[45pt] md:h-[55pt] md:w-[55pt] sm:w-[45pt] sm:p-[0.5rem] xxs:p-[0.25rem] flex justify-center sm:ml-[-12pt] sm:ml-[0pt] items-center"
+        >
+                 
+          <img
+            src="../../../assets/img/Group 3145.png"
+            height="100%"
+            width="100%"
+          />
+
+                 
+        </div>
+
+                     
+        <div
+          class="sm:w-[170pt] md:w-[330pt] sm:h-[35pt] leading-[16pt] md:leading-[22pt] sm:ml-[0.8rem] xxs:ml-[0.8rem]"
+        >
+                 
+          <p
+            class="font-roboto-black text-[#FFFFFF] sm:text-[13pt] md:text-[20pt] xxs:text-[10pt]"
+          >
+            Raita
+          </p>
+
+                 
+          <p
+            class="sm:text-[12pt] md:text-[16pt] xxs:text-[10pt] font-roboto-regular text-[#D4D4D4]"
+          >
+            ₹10
+          </p>
+
+                 
+        </div>
+
+                     
+        <div
+          class="sm:h-[3pt] sm:w-[4pt] sm:ml-[1.5pt] xxs:ml-[60pt] xxs:h-[2.8pt] xxs:w-[2.8pt] xxs:ml-[100pt]"
+        >
+          <img
+            src="../../../assets/img/ellipsisLatest.svg"
+            height="90%"
+            width="90%"
+          />
+
+                 
+        </div>
+
+                 
+      </div>
+
+                 
+      <div
+        id="box-6"
+        class="flex justify-center items-center sm:p-[0.8rem] sm:w-[100%] xxs:w-[100%] sm:mt-[-26rem] md:mt-[-23rem] xxs:mt-[-1.9rem] xxs:ml-[3.4rem] sm:ml-[0pt]"
+      >
+             
+        <div
+          id="box-6-img"
+          class="flex justify-center items-center xxs:p-[3pt] rounded-[10pt] md:ml-[1.5rem] sm:h-[45pt] sm:w-[45pt] sm:p-[0.5rem] md:h-[55pt] md:w-[55pt] xxs:h-[32pt] xxs:w-[32pt]"
+        >
+                 
+          <img
+            src="../../../assets/img/Group 3154.png"
+            class="xxs:mb-[2.5pt]"
+            height="100%"
+            width="100%"
+          />
+
+               
+        </div>
+
+             
+        <div
+          class="sm:w-[170pt] md:w-[330pt] sm:h-[35pt] leading-[16pt] md:leading-[22pt] sm:ml-[0.8rem] xxs:ml-[0.8rem]"
+        >
+                 
+          <p
+            class="font-roboto-black text-[#FFFFFF] sm:text-[13pt] md:text-[20pt] xxs:text-[10pt]"
+          >
+            Aloo Gobhi Sabji
+          </p>
+
+                 
+          <p
+            class="text-[12pt] md:text-[16pt] font-roboto-regular text-[#D4D4D4] xxs:text-[10pt]"
+          >
+            ₹10
+          </p>
+
+               
+        </div>
+
+             
+        <div
+          class="sm:h-[3pt] sm:w-[4pt] xxs:h-[2.4pt] xxs:w-[2.8pt] xxs:ml-[50pt] sm:ml-[0pt]"
+        >
+          <img
+            src="../../../assets/img/ellipsisLatest.svg"
+            height="90%"
+            width="90%"
+          />
+
+               
+        </div>
+
+           
+      </div>
+
+         
+      <div
+        id="box-7"
+        class="flex justify-center items-center sm:p-[0.8rem] sm:width[100%] sm:mt-[-26rem] md:mt-[-23rem] xxs:mt-[-1.9rem] sm:ml-[0pt] xxs:ml-[7rem]"
+      >
+             
+        <div
+          id="box-7-img"
+          class="rounded-[10pt] md:ml-[1.5rem] sm:h-[45pt] sm:w-[45pt] md:h-[55pt] md:w-[55pt] sm:p-[0.5rem] xxs:h-[32pt] xxs:w-[32pt] xxs:p-[4pt] flex justify-center items-center"
+        >
+                 
+          <img
+            src="../../../assets/img/Group 3152.png"
+            height="90%"
+            width="90%"
+          />
+        </div>
+
+             
+        <div
+          class="sm:w-[170pt] md:w-[330pt] sm:h-[35pt] leading-[16pt] md:leading-[22pt] sm:ml-[0.8rem] xxs:ml-[0.8rem]"
+        >
+                 
+          <p
+            class="font-roboto-black text-[#FFFFFF] sm:text-[13pt] xxs:text-[10pt] md:text-[20pt]"
+          >
+            Salad
+          </p>
+
+                 
+          <p
+            class="text-[12pt] md:text-[16pt] xxs:text-[10pt] font-roboto-regular text-[#D4D4D4]"
+          >
+            ₹10
+          </p>
+
+               
+        </div>
+
+             
+        <div
+          class="sm:h-[3pt] sm:w-[4pt] xxs:h-[2.4pt] xxs:w-[2.8pt] sm:ml-[0pt] xxs:ml-[100pt]"
+        >
+          <img
+            src="../../../assets/img/ellipsisLatest.svg"
+            height="90%"
+            width="90%"
+          />
+
+               
+        </div>
+
+           
+      </div>
+         
+      <div
+        class="flex sm:w-[100%] sm:p-[3pt] xxs:w-[85%] sm:justify-center md:justify-between xxs:justify-center sm:ml-[55pt] sm:items-center md:w-[120%] md:ml-[22pt] sm:mb-[25pt] sm:mt-[-25rem] md:mt-[-22rem] xxs:ml-[8.5rem] xxs:p-[5pt]"
+      >
+             
+        <div
+          id="box-1"
+          class="flex justify-center items-center sm:mt-[1rem] sm:w-[45%] xxs:w-[35%]"
+        >
+                 
+          <div
+            id="box-1-img"
+            class="rounded-[10pt] md:h-[48pt] md:w-[55pt] sm:h-[40pt] sm:w-[50pt] p-[3pt] sm:p-[4pt] md:p-[7pt] p-[0.7rem] xxs:w-[25pt] xxs:h-[30pt] flex justify-center items-center"
+          >
+                     
+            <img
+              src="../../../assets/img/fullMeal.png"
+              height="108%"
+              width="108%"
+            />
+          </div>
+
+                 
+          <div
+            class="w-[170pt] h-[25pt] leading-[16pt] md:leading-[19pt] ml-[0.8rem]"
+          >
+                     
+            <p
+              class="font-roboto-black text-[#FFFFFF] text-[14pt] sm:text-[13pt] xxs:text-[10pt] md:text-[18pt]"
+            >
+              Full Thali
+            </p>
+
+                     
+            <p
+              class="text-[14pt] sm:text-[13pt] xxs:text-[10pt] md:text-[15pt] font-roboto-regular text-[#D4D4D4]"
+            >
+              ₹80
+            </p>
+
+                   
+          </div>
+
+               
+        </div>
+
+             
+        <div
+          id="box-2"
+          class="flex justify-center items-center sm:mt-[1rem] sm:w-[45%] sm:ml-[-42pt] xxs:w-[35%]"
+        >
+                 
+          <div
+            id="box-2-img"
+            class="rounded-[10pt] h-[40pt] w-[110pt] md:h-[48pt] md:w-[55pt] sm:h-[40pt] sm:w-[50pt] xxs:w-[25pt] xxs:h-[30pt] p-[3pt] sm:p-[4pt] md:p-[7pt] p-[0.7rem] flex justify-center items-center"
+          >
+                     
+            <img
+              src="../../../assets/img/Group 3121.png"
+              height="98%"
+              width="98%"
+            />
+
+                   
+          </div>
+
+                 
+          <div
+            class="w-[170pt] h-[25pt] leading-[16pt] md:leading-[19pt] ml-[0.8rem]"
+          >
+                     
+            <p
+              class="font-roboto-black text-[#FFFFFF] sm:text-[13pt] md:text-[18pt] xxs:text-[10pt] text-[14pt]"
+            >
+              Half Thali
+            </p>
+
+                     
+            <p
+              class="text-[14pt] sm:text-[13pt] md:text-[15pt] xxs:text-[10pt] font-roboto-regular text-[#D4D4D4]"
+            >
+              ₹60
+            </p>
+
+                   
+          </div>
+
+               
+        </div>
+
+           
+      </div>
+
+         
+    </div>
+
+     
   </div>
-</div>
+
+       
+  <div *ngIf="toggleTomorrow">
+       
+    <div
+      *ngIf="toggleLunch"
+      class="w-[90%] h-[100pt] border-2 border-red-700 flex justify-between flex-col p-[25px] mt-[-1rem] mb-[5rem]"
+    >
+           
+      <p class="text-[16pt] font-roboto">There is no food for today</p>
+
+         
+    </div>
+
+       
+    <div
+      *ngIf="toggleBreakfast"
+      class="w-[90%] h-[100pt] border-2 border-red-700 flex justify-between flex-col p-[25px] mt-[1rem] mb-[5rem]"
+    >
+           
+      <p class="text-[16pt] font-roboto">There is no food for today</p>
+
+         
+    </div>
+
+       
+    <div
+      *ngIf="toggleHightea"
+      class="w-[90%] h-[100pt] border-2 border-red-700 flex justify-between flex-col p-[25px] mt-[1rem] mb-[5rem]"
+    >
+           
+      <p class="text-[16pt] font-roboto">There is no food for today</p>
+
+         
+    </div>
+
+     
+  </div>
+
   <!-- <app-food-section
     [category]="2"
     [slider]="Hslider"
@@ -179,5 +1639,4 @@
   </app-food-section> -->
 
   <!-- <app-footer></app-footer> -->
-
 </div>

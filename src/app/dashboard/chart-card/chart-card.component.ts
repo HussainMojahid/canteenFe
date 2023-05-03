@@ -23,7 +23,7 @@ export class ChartCardComponent implements OnInit {
             backgroundColor: ['rgb(	55,182,18)', 'rgb(226,25,25)'],
             hoverOffset: 40,
             borderWidth:30,
-            borderHeight:166,
+            borderHeight:200,
             borderColor:"rgb(61, 72, 75)",
             // borderRadius:"innerEnd",
             // spacing:50

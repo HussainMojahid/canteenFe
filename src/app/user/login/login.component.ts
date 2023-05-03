@@ -14,6 +14,10 @@ export class LoginComponent {
   AlertType = 'alert';
   showAlert: boolean = false;
   alertMsg = 'Please Wait! Under Process';
+  show: boolean=false;
+  passwordHide(){
+    this.show=!this.show
+  }
 
   constructor(
     private auth: AuthService,

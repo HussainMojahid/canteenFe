@@ -2,7 +2,8 @@
   [formControl]="control"
   [type]="type"
   [placeholder]="placeholder"
-  class="block w-full px-3 py-1.5 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-400 ransition duration-500 focus:outline-none rounded bg-transparent focus:border-cyan-400 text-black"
+  [disabled]="inputDisable"
+  class="block w-[97%] px-3 py-1.5 bg-[#FFFFFF] bg-clip-padding bg-no-repeat border border-solid border-[#CCCCCC] ransition duration-500 focus:outline-none rounded bg-transparent"
 />
 
 <ng-container *ngIf="control.touched && control.dirty">

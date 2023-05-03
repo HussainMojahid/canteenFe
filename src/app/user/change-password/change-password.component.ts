@@ -9,5 +9,9 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class ChangePasswordComponent {
   backArrow = faArrowLeft;
+  show: boolean=false;
+  passwordHide(){
+    this.show=!this.show
+  }
   constructor(public auth: AuthService) {}
 }

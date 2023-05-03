@@ -10,6 +10,7 @@ import {LoginComponent} from 'src/app/user/login/login.component'
 import {RegisterComponent} from 'src/app/user/register/register.component'
 import { InviteFriendComponent } from './invite-friend/invite-friend.component';
 import { AboutComponent } from './about/about.component';
+import { ProfileComponent } from './profile/profile.component';
 // import { FooterComponent } from '../footer/footer.component';
 // import {} from 'src/app/dashboard/'
 
@@ -37,6 +38,10 @@ const routes: Routes = [
       {
         path: 'about',
         component: AboutComponent,
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent,
       },
       // {
       //   path: 'Account',

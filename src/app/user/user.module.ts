@@ -17,6 +17,7 @@ import { AccountComponent } from './account/account.component';
 import { AppModule } from '../app.module';
 import { InviteFriendComponent } from './invite-friend/invite-friend.component';
 import { AboutComponent } from './about/about.component';
+import { ProfileComponent } from './profile/profile.component';
 // import { ResetPasswordComponent } from './reset-password/reset-password.component';
 // import { ProfileComponent } from './profile/profile.component';
 // import {FooterComponent} from 'src/app/footer/footer.component'
@@ -33,7 +34,8 @@ import { AboutComponent } from './about/about.component';
     EditProfileComponent,
     AccountComponent,
     InviteFriendComponent,
-    AboutComponent
+    AboutComponent,
+    ProfileComponent
     // ResetPasswordComponent,
     // FooterComponent
   ],

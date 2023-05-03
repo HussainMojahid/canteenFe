@@ -1,0 +1,90 @@
+<div class="w-[100%] sm:h-[100%] md:h-[105vh] flex flex-col items-center bg-[#3D484B]">
+  <nav class="w-[100%] sm:h-[40pt] md:h-[70pt] p-[1.8rem] flex items-center justify-between border-b-2 border-greyss bg-[#3D484B]">
+    <div class="text-blackes h-[20pt] w-[20pt]">
+      <button type="button" (click)="auth.backbutton()">
+        <fa-icon class="fa-lg" [icon]="backArrow"></fa-icon>
+      </button>
+    </div>
+    <div class="sm:w-[90%] md:w-[80%]">
+      <h3 class="sm:text-[17pt] md:text-[22pt] text-[#FFFFFF] font-roboto-black">Profile </h3>
+    </div>
+    <svg [routerLink]="['/edit']" class="sm:h-[20pt] sm:w-[20pt] md:h-[120%] sm:flex sm:justify-center sm:items-center md:w-[11%]" id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H322.8c-3.1-8.8-3.7-18.4-1.4-27.8l15-60.1c2.8-11.3 8.6-21.5 16.8-29.7l40.3-40.3c-32.1-31-75.7-50.1-123.9-50.1H178.3zm435.5-68.3c-15.6-15.6-40.9-15.6-56.6 0l-29.4 29.4 71 71 29.4-29.4c15.6-15.6 15.6-40.9 0-56.6l-14.4-14.4zM375.9 417c-4.1 4.1-7 9.2-8.4 14.9l-15 60.1c-1.4 5.5 .2 11.2 4.2 15.2s9.7 5.6 15.2 4.2l60.1-15c5.6-1.4 10.8-4.3 14.9-8.4L576.1 358.7l-71-71L375.9 417z"/></svg>
+  </nav> 
+  
+
+    <div class="h-[90pt] w-[90pt] mt-[2rem] flex relative">
+      <img
+        src="../../../assets/img/userEditprofile.svg"
+        alt="user"
+        height="100%"
+        width="100%"
+      />
+    </div>
+  
+    <form
+      [formGroup]="EditForm"
+      class="mt-[3rem] mb-[3rem] w-[100%] sm:h-[102vh] md:h-[105vh] p-[0.4rem] flex flex-col items-center"
+    >
+      <!-- Employee Id -->
+      <div class="sm:mt-[2rem] sm:w-[94%] md:w-[95%]">
+        <label
+          class="sm:text-[14pt] md:text-[20pt] text-[#D4D4D4] font-roboto-regular mb-[2rem]"
+          >Employee Id</label
+        >
+        <app-input
+          [control]="EmployeeId"
+          class="text-Greyess text-[14pt] bg-lightGreys w-[100%] sm:h-[40pt] md:h-[60pt] rounded-[4pt]"
+          type="text"
+          placeholder="Enter Employee Id"
+        ></app-input>
+      </div>
+      <!-- Name -->
+      <div class="sm:mt-[2rem] sm:w-[94%] md:w-[95%]">
+        <label
+          class="sm:text-[14pt] md:text-[20pt] text-[#D4D4D4] font-roboto-regular mb-2"
+          >Name</label
+        >
+        <app-input
+          [control]="username" 
+          
+          class="text-Greyess text-[14pt] bg-lightGreys sm:h-[40pt] md:h-[50pt] w-[100%] rounded-[4pt]"
+          placeholder="Enter Name"
+        >
+        </app-input>
+      </div>
+      <!-- Email -->
+      <div class="sm:mt-[2rem] sm:w-[94%] md:w-[95%]">
+        <label
+          class="sm:text-[14pt] md:text-[20pt] text-[#D4D4D4] font-roboto-regular mb-2"
+          >Email</label
+        >
+        <app-input
+          [control]="email"
+          class="text-Greyess text-[14pt] bg-lightGreys w-[307pt] h-[40pt] rounded-[4pt]"
+          placeholder="Enter Email"
+          [inputDisable]="true">
+        </app-input>
+      </div>
+  
+      <div class="flex flex-col sm:mt-[2rem] sm:w-[94%] md:w-[95%]">
+        <label class="sm:text-[14pt] md:text-[20pt] text-[#D4D4D4] font-roboto-regular">Organization</label>
+        <select name="Organization" class="w-[100%] h-[40pt] text-darkgreyss border-2 border-greyss rounded-[4pt] bg-white">
+          <option disabled selected value="Select Organiztion" class=" text-[14pt] w-[90%] text-[#D4D4D4] rounded-[4pt] bg-white">
+            Select Organiztion
+          </option>
+          <option *ngFor="let m of OrgList" class="text-Greyess text-[14pt] bg-white w-[90%]">
+            {{ m.attributes.OrgName }}
+          </option>
+          <option value="New Vision" class="text-Greyess text-[14pt] bg-white overflow-hidden">
+            Core Card
+          </option>
+          <option
+            value="New Vision"
+            class="text-Greyess text-[14pt] bg-white overflow-hidden"
+          >
+            GTS
+          </option>
+        </select>
+      </div>
+    </form>
+  </div>
