@@ -1,8 +1,8 @@
-
+<!-- searchbar -->
 <br />
 <br />
 <br />
-<div class="flex justify-center items-center">
+<div class="flex justify-center">
   <div class="mb-3 xl:w-96">
     <div
       class="input-group relative flex flex-wrap items-stretch w-full mb-4 rounded"
@@ -21,35 +21,36 @@
       >
       </span>
       <div class="space-between">
-       <app-add-item-button link="/addfood"></app-add-item-button>
+        <a
+          class="text-cyan-700 border border-cyan-700 hover:bg-cyan-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-centerdark:text-blue-500"
+          routerLink="/addfood"
+          ><fa-icon class="fa-sm" [icon]="plusbutton"> </fa-icon
+        ></a>
       </div>
     </div>
   </div>
 </div>
 
-
-<div class="sm:flex sm:flex-col lg:grid lg:grid-cols-3 md:grid md:grid-cols-3">
+<!-- card -->
+<div class="flex justify-center flex-col">
   <div
     class="rounded-lg shadow-lg bg-white max-w-sm m-2"
     *ngFor="let data of allFood"
   >
-    <div class="w-full h-60 object-contain overflow-hidden">
-      <img class="rounded-t-lg object-fill w-[100%] lg:h-[80%] " [src]="data.attributes.ImgUrl" alt="" />
-    </div>
-     
-    
+    <a href="#!">
+      <img class="rounded-t-lg" [src]="data.attributes.ImgUrl" alt="" />
+    </a>
     <div class="flex justify-between p-6">
       <div>
         <h5 class="text-gray-900 text-xl font-medium mb-2">
           {{ data.attributes.FoodName }}
         </h5>
-        <h5><i class="bi bi-currency-rupee"></i>{{data.attributes.Price}}</h5>
       </div>
       <div>
-        <a routerLink="/updatefood/{{data.id}}"
-        
+        <a
           class="m-2 text-cyan-700 border border-cyan-700 hover:bg-cyan-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-centerdark:text-blue-500"
-          ><fa-icon class="fa-sm"  [icon]="editbutton" > </fa-icon
+          routerLink="/addfood"
+          ><fa-icon class="fa-sm" [icon]="editbutton"> </fa-icon
         ></a>
 
         <a

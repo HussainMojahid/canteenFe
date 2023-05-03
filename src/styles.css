@@ -4,7 +4,8 @@
 @tailwind utilities;
 
 @import "~@ng-select/ng-select/themes/default.theme.css";
-/* body {
-  padding: 20px;
+/* *{
+  padding: 0;
+  margin: 0;
+  box-sizing: content-box;
 } */
-

@@ -8,5 +8,4 @@ export default interface ICurrentUser {
   createdAt: Date;
   updatedAt: Date;
   EmpId: string;
-  
 }

@@ -1,55 +1,34 @@
-<header id="header" class="w-full z-20 fixed shadow-lg">
-  <nav
-    class="w-full fixed flex justify-start items-center bg-cyan-400 py-4 px-4"
-  >
-    <a (click)="sidebar.toggleUserTab()">
-      <fa-icon class="fa-2xl text-gray-200" [icon]="userIcon"></fa-icon>
-    </a>
+<!-- Header --><!-- <header id="header" class="w-full z-20 fixed shadow-lg"> -->
+<nav class="sm:w-[100%] sm:fixed sm:top-[0rem] sm:flex xxs:bg-darkesgreys sm:bg-darkesgreys xsm:z-[999] sm:z-[999] sm:h-[7rem]  md:h-[10rem]">
+  <!-- <div class="flex items-center space-x-4">
+    <img
+      class="w-14 h-14 rounded-full"
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRuRdeXSJ1OhBp7RqQq2SJqjB9Axq9iavyHw&usqp=CAU"
+      alt=""
+    />
+    <div class="font-medium dark:text-white">
+      <div
+        class="text-lg font-light text-gray-900 md:text-xl dark:text-gray-900"
+      >
+        Jese Leos
+      </div>
 
-    <div class="flex flex-grow justify-end items-end">
-      <ul class="flex flex-row mt-1 max-sm:hidden">
-        <li class="nav-item pr-4">
-          <a
-            class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
-            routerLink=""
-            >Dashboard</a
-          >
-        </li>
-        <li class="nav-item pr-4">
-          <a
-            class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
-            routerLink="/booking"
-            >Booking</a
-          >
-        </li>
-        <li class="nav-item pr-4">
-          <a
-            class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
-            routerLink="/feedback"
-            >Feedback</a
-          >
-        </li>
-        <li class="nav-item pr-4">
-          <a
-            class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
-            routerLink="/foodInventory"
-            >Inventory</a
-          >
-        </li>
-      </ul>
-      <div class="md:hidden">
-        <div
-          [ngClass]="{ 'on-ham': sidebar.onHam }"
-          class="ham"
-          id="ham"
-          (click)="toggleHam($event)"
-        >
-          <div class="bar"></div>
-        </div>
+      <div class="text-sm text-gray-600 dark:text-gray-600">
+        Joined in August 2014{{username}}
       </div>
     </div>
-  </nav>
-</header>
+  </div> -->
 
-<app-sidebar *ngIf="sidebar.isSidebarVisible$"></app-sidebar>
-<app-user-tab *ngIf="sidebar.isUserTabVisible"></app-user-tab>
+  <div class="flex items-center justify-around w-[100%] p-[0.9rem] h-[100%]">
+    <div class="h-[64pt] w-[64pt] flex items-center justify-center rounded-[32pt]"><img src="../../../assets/img/Male User.png" height="100%" width="100%" alt="" ></div>
+    <div class="leading-[17pt] w-[180pt]"><p class="text-[18pt] font-roboto-black text-[#FFFFFF]">Hii, {{username}}</p> <p class="text-[14pt] text-[#D4D4D4] font-roboto-regular">Welcome back</p></div>
+  </div>
+
+  <!-- <a>      <fa-icon class="fa-2xl text-gray-#707070" [icon]="userIcon"></fa-icon> 
+      <fa-icon class="fa-2xl text-gray-#707070 " [icon]="userIcon"></fa-icon>
+    </a> -->
+</nav>
+<!-- </header> -->
+
+<!-- <app-sidebar *ngIf="sidebar.isSidebarVisible$"></app-sidebar>
+<app-user-tab *ngIf="sidebar.isUserTabVisible"></app-user-tab> -->

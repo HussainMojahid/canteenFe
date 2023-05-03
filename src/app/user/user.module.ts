@@ -7,17 +7,20 @@ import { RegisterComponent } from './register/register.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PleaseLoginComponent } from './please-login/please-login.component';
 import { UserTabComponent } from './user-tab/user-tab.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { UserRoutingModule } from './user.routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ResetPasswordComponent } from './reset-password/reset-password.component';
-import { ProfileComponent } from './profile/profile.component';
-import { BackButtonComponent } from '../shared/back-button/back-button.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
+import { AccountComponent } from './account/account.component';
+import { AppModule } from '../app.module';
+import { InviteFriendComponent } from './invite-friend/invite-friend.component';
+import { AboutComponent } from './about/about.component';
+// import { ResetPasswordComponent } from './reset-password/reset-password.component';
+// import { ProfileComponent } from './profile/profile.component';
+// import {FooterComponent} from 'src/app/footer/footer.component'
+
 @NgModule({
   declarations: [
     LoginComponent,
@@ -28,9 +31,11 @@ import { ToastrModule } from 'ngx-toastr';
     PleaseLoginComponent,
     UserTabComponent,
     EditProfileComponent,
-    ResetPasswordComponent,
-    ProfileComponent
-    
+    AccountComponent,
+    InviteFriendComponent,
+    AboutComponent
+    // ResetPasswordComponent,
+    // FooterComponent
   ],
   imports: [
     CommonModule,
@@ -40,14 +45,12 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     UserRoutingModule,
     FontAwesomeModule,
-    BrowserAnimationsModule, 
-    ToastrModule.forRoot({
-      positionClass: 'toast-bottom-right'
-    }),
-    
+    // AppModule
   ],
-  exports: [AuthModalComponent,PleaseLoginComponent,UserTabComponent,ForgetPasswordComponent],
+  exports: [AuthModalComponent,PleaseLoginComponent,UserTabComponent, LoginComponent,RegisterComponent],
   providers : [
+
+    //  { provide : HTTP_INTERCEPTORS, useClass : InterceptorInterceptor, multi : true}
   ]
 })
 export class UserModule {}
