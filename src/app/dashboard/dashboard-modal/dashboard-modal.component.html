@@ -268,20 +268,14 @@
 <div
   class="flex flex-col items-center overflow-hidden w-[100%] h-[100%] bg-darkesgreys mt-[2.5rem] xsm:z-[99]"
 >
-   
   <div class="w-[100%] flex justify-center">
-        <app-chart-card></app-chart-card>
-
-     
+    <app-chart-card></app-chart-card>
   </div>
 
-    <app-day-toggle-button></app-day-toggle-button>
-
-   
+  <app-day-toggle-button></app-day-toggle-button>
   <div
     class="flex w-[100%] md:w-[43rem] sm:w-[22.5rem] xxs:w-[18rem] justify-evenly mt-[1rem] p-[8px]"
   >
-       
     <button
       (click)="changeTab('BreakFast')"
       id="breakfast"
@@ -290,8 +284,6 @@
     >
       BreakFast
     </button>
-
-       
     <button
       (click)="changeTab('Lunch')"
       id="lunch"
@@ -300,47 +292,36 @@
     >
       Lunch
     </button>
-
-       
     <button
       (click)="changeTab('HighTea')"
       id="hightea"
       [ngClass]="{ orange: toggleHightea }"
       class="bg-transparent border-2 border-[#D4D4D4] xxs:w-[60pt] xxs:text-[10pt] md:w-[150pt] md:h-[40pt] sm:text-[11pt] md:text-[18pt] p-[1rem,1rem] text-[#D4D4D4] text-center sm:w-[80pt] sm:h-[25pt] rounded-[5pt]"
     >
-            High-Tea
+    High-Tea
     </button>
 
-     
   </div>
-
-     
   <div *ngIf="toggleToday">
-       
+  
     <div
       *ngIf="toggleLunch"
-      class="h-[450pt] sm:h-[400pt] xxs:h-[360pt] md:h-[500pt] sm:ml-[10pt] md:w-[85%] sm:w-[90%] xxs:w-[80%] flex justify-between flex-col w-[90%] ml-[0.5rem] mt-[-1rem] mb-[5rem]"
+      class="border-2 border-cyan-700 sm:h-[400pt] xxs:h-[360pt] md:h-[500pt] sm:ml-[10pt] md:w-[85%] sm:w-[90%] xxs:w-[80%] flex justify-between flex-col w-[90%] ml-[0.5rem] mt-[-1rem] mb-[5rem]"
     >
-           
+     
       <div
-        class="w-[90%] md:ml-[1.8rem] md:w-[90%] sm:ml-[9.5rem] xxs:ml-[13.8rem] sm:w-[90%] xxs:w-[75%] md:mb-[3rem] md:mt-[2.5rem] ml-[0.7rem] mt-[1.9rem] mb-[-0.8rem]"
+        class="w-[90%] md:w-[100%] sm:ml-[9.5rem] sm:w-[90%] xxs:w-[75%] md:mb-[3rem] md:mt-[2.5rem] ml-[0.7rem] mt-[1.9rem] mb-[-0.8rem]"
       >
-               
         <p
           class="text-[13pt] sm:text-[13pt] md:text-[19pt] xxs:text-[10pt] text-[#D4D4D4] font-roboto-regular"
         >
-                    Lunch           timing: 12:30 PM to 3:00 PM
+         Lunch timing: 12:30 PM to 3:00 PM
         </p>
-
-             
       </div>
-
-                         
       <div
         id="box-3"
         class="flex justify-center items-center sm:p-[0.8rem] sm:w-[100%] sm:mt-[-24rem] sm:ml-[0pt] xxs:ml-[79pt]"
       >
-               
         <div
           id="box-3-img"
           class="rounded-[10pt] md:ml-[1.5rem] sm:h-[45pt] sm:w-[45pt] xxs:h-[32pt] xxs:w-[32pt] xxs:p-[2pt] md:h-[55pt] md:w-[55pt] flex justify-center items-center"
@@ -359,7 +340,6 @@
         <div
           class="sm:w-[170pt] xxs:w-[130pt] md:w-[330pt] sm:h-[35pt] sm:leading-[16pt] md:leading-[22pt] sm:ml-[0.8rem] xxs:ml-[0.6rem]"
         >
-                   
           <p
             class="font-roboto-black text-[#FFFFFF] sm:text-[13pt] md:text-[20pt] xxs:text-[10pt]"
           >
