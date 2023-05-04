@@ -13,7 +13,7 @@ import { UserService } from 'src/app/services/user.service';
 export class ProfileComponent {
   backArrow = faArrowLeft;
 // Keep the input disabled by default
-isDisabled: boolean = true;
+  
 
   constructor(
     public auth: AuthService,

@@ -20,14 +20,17 @@
         width="100%"
       />
     </div>
+
+  
   
     <form
+      ng-model="all"
       [formGroup]="EditForm"
       class="mt-[3rem] mb-[3rem] w-[100%] sm:h-[102vh] md:h-[105vh] p-[0.4rem] flex flex-col items-center"
     >
       <!-- Employee Id -->
       <div class="sm:mt-[2rem] sm:w-[94%] md:w-[95%]">
-        <label
+        <label 
           class="sm:text-[14pt] md:text-[20pt] text-[#D4D4D4] font-roboto-regular mb-[2rem]"
           >Employee Id</label
         >
@@ -36,6 +39,7 @@
           class="text-Greyess text-[14pt] bg-lightGreys w-[100%] sm:h-[40pt] md:h-[60pt] rounded-[4pt]"
           type="text"
           placeholder="Enter Employee Id"
+          ng-disabled="all"
         ></app-input>
       </div>
       <!-- Name -->
