@@ -49,10 +49,7 @@ export class ChartCardComponent implements OnInit {
         }],
         type: 'doughnut',
         data: dataDoughnut,
-        
-        options: {
-          responsive: false, aspectRatio: 1
-        },
+        options: {},
       };
   
       const chartBar = new Chart(
