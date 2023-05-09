@@ -20,15 +20,14 @@ export class ChartCardComponent implements OnInit {
           {
             label: 'Canteen Space',
             data: [150 - this.count.counts, this.count.counts],
-            backgroundColor: ['rgb(	55,182,18)', 'rgb(226,25,25)'],
+            backgroundColor: ['rgb(	133,204,113)', 'rgb(253,114,114)'],
             hoverOffset: 4,
             borderWidth: 15,
-            borderHeight: 400,
-            borderColor:"rgb(61, 72, 75)",
+            borderHeight: "200%",
+            height: 100,
+            borderColor:"rgb(73, 86, 90)",
             layout: {
-              padding: {
-                  left: 200
-              }
+           
           }
             // borderRadius:"innerEnd",
             // spacing:50
@@ -41,9 +40,14 @@ export class ChartCardComponent implements OnInit {
         dataset : [{
           label : 'Status',
           data: dataDoughnut,
+          spacing: 10,
+          cutout: "50%",
+          radius: "100%",
+          rotation: 0,
+          circumference: 360,
           backgroundColor: [
-            'rgb(	55,182,18)',
-            'rgb(226,25,25)'
+            'rgb(133,204,113)',
+            'rgb(253,114,114)'
           ]
 
         }],

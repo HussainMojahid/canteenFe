@@ -51,7 +51,7 @@
   border-radius: 10pt;
 }
 
-.firstClass{
+/* .firstClass{
   width: 100%;
   height: 100%;
   display: flex;
@@ -61,15 +61,15 @@
   overflow: hidden;
   background-color: #3D484B;
   margin-top: 2.5rem;
-}
+} */
 
-.secondClass{
+/* .secondClass{
   display: flex;
   justify-content: space-evenly;
   margin-top: 1rem;
   padding: 8px;
   width: 100%;
-}
+} */
 
 .thirdClass{
   background: transparent;
@@ -87,7 +87,7 @@
   flex-direction: column;
   justify-content:space-between;
   width: 90%;
-  height: 450pt;
+  height: 480pt;
   margin-left: 0.5rem;
   margin-top: -1rem;
   margin-bottom: 5rem;
