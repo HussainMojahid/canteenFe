@@ -6,6 +6,8 @@ import { ModalComponent } from './modal/modal.component';
 import { InputComponent } from './input/input.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AlertComponent } from './alert/alert.component';
+import { EditMenuComponent } from './edit-menu/edit-menu.component';
+import { InventoryComponent } from './inventory/inventory.component';
 // import {FooterComponent} from './footer/footer.component'
 
 
@@ -17,6 +19,8 @@ import { AlertComponent } from './alert/alert.component';
     ModalComponent,
     InputComponent,
     AlertComponent,
+    EditMenuComponent,
+    InventoryComponent,
     // FooterComponent
   ],
   imports: [

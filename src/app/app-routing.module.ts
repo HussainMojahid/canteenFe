@@ -10,7 +10,7 @@ import { ForgetPasswordComponent } from './user/forget-password/forget-password.
 import {RegisterComponent } from './user/register/register.component'
 // import { FooterComponent } from './footer/footer.component';
 import { AccountComponent } from './user/account/account.component';
-
+import { EditMenuComponent } from './shared/edit-menu/edit-menu.component';
 const routes: Routes = [
   {
     path: '',
@@ -34,6 +34,10 @@ const routes: Routes = [
   {
     path: 'feedback',
     component: FeedbackComponent,
+  },
+  {
+    path: 'editMenu',
+    component: EditMenuComponent,
   },
 ];
 
