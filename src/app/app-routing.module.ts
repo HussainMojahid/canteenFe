@@ -13,6 +13,8 @@ import { AccountComponent } from './user/account/account.component';
 import { EditMenuComponent } from './shared/edit-menu/edit-menu.component';
 import { FoodInventoryComponent } from './admin-dashboard/food-inventory/food-inventory.component';
 import { AddFoodComponent } from './admin-dashboard/add-food/add-food.component';
+import { AddNewMenuComponent } from './shared/add-new-menu/add-new-menu.component';
+import { AddNewItemComponent } from './shared/add-new-item/add-new-item.component';
 
 const routes: Routes = [
   {
@@ -50,6 +52,14 @@ const routes: Routes = [
   {
     path: 'addFood',
     component: AddFoodComponent,
+  },
+  {
+    path: 'addNewMenu',
+    component: AddNewMenuComponent,
+  },
+  {
+    path: 'addNewItem',
+    component: AddNewItemComponent,
   },
   
 ];

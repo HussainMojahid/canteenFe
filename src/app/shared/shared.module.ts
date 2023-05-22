@@ -10,6 +10,8 @@ import { EditMenuComponent } from './edit-menu/edit-menu.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from '../app-routing.module';
 import { FormsModule } from '@angular/forms';
+import { AddNewMenuComponent } from './add-new-menu/add-new-menu.component';
+import { AddNewItemComponent } from './add-new-item/add-new-item.component';
 // import {FooterComponent} from './footer/footer.component'
 
 
@@ -22,6 +24,8 @@ import { FormsModule } from '@angular/forms';
     InputComponent,
     AlertComponent,
     EditMenuComponent,
+    AddNewMenuComponent,
+    AddNewItemComponent,
     // FooterComponent
   ],
   imports: [
