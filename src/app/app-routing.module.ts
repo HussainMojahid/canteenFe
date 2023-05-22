@@ -11,6 +11,9 @@ import {RegisterComponent } from './user/register/register.component'
 // import { FooterComponent } from './footer/footer.component';
 import { AccountComponent } from './user/account/account.component';
 import { EditMenuComponent } from './shared/edit-menu/edit-menu.component';
+import { FoodInventoryComponent } from './admin-dashboard/food-inventory/food-inventory.component';
+import { AddFoodComponent } from './admin-dashboard/add-food/add-food.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -39,6 +42,16 @@ const routes: Routes = [
     path: 'editMenu',
     component: EditMenuComponent,
   },
+  
+  {
+    path: 'foodInventory',
+    component: FoodInventoryComponent,
+  },
+  {
+    path: 'addFood',
+    component: AddFoodComponent,
+  },
+  
 ];
 
 @NgModule({

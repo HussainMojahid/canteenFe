@@ -1,0 +1,141 @@
+.background {
+    height: 100vh;
+    width: 100vw;
+    background-color: #3D484B;
+    display: flex;
+
+    align-items: center;
+    flex-direction: column;
+
+
+}
+
+
+.nav-class {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #8D8D8D;
+
+}
+
+.btn-cont {
+    color: #333333;
+    height: 20pt;
+    width: 20pt;
+    margin-left: 4%;
+}
+
+.input-box {
+    margin-top: 4%;
+    width: 86%;
+    height: 70pt;
+
+}
+
+.input-box-1 {
+    margin-top: 4%;
+    width: 86%;
+    height: 30pt;
+    display: flex;
+    margin-left: 1%;
+
+
+}
+
+#input-id {
+    margin-bottom: 5%;
+}
+
+.icon-box {
+    background-color: white;
+    height: 27pt;
+    width: 13%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 0.7%;
+}
+
+.menu-class {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5%;
+    font-size: 12pt;
+    margin-bottom: -6.5%;
+    margin-top: 3%;
+}
+
+.shift {
+    margin-left: 6.5%;
+}
+
+.checkbox {
+    height: 20pt;
+    width: 15pt;
+}
+
+
+.btn-class {
+    position: relative;
+    top: 29%;
+    left: 4%;
+    font-size: 11.5pt;
+}
+
+#box-3 #box-3-img {
+    background-color: #FDF6EC;
+}
+
+#box-4 #box-4-img {
+    background-color: #FFC5C4;
+}
+
+#box-5 #box-5-img {
+    background-color: #fafafa;
+}
+
+#box-6 #box-6-img {
+    background-color: #fafafa;
+}
+
+#box-7 #box-7-img {
+    background-color: #fafafa;
+}
+#box-8 #box-8-img {
+    background-color: #fafafa;
+}
+
+
+
+.zeroClass {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.boxClass {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10pt;
+    
+}
+
+.foodClass{
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    
+    
+    
+}
+
+.fa-lg {
+    filter: invert(100%);
+}

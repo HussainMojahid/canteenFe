@@ -7,7 +7,9 @@ import { InputComponent } from './input/input.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AlertComponent } from './alert/alert.component';
 import { EditMenuComponent } from './edit-menu/edit-menu.component';
-import { InventoryComponent } from './inventory/inventory.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AppRoutingModule } from '../app-routing.module';
+import { FormsModule } from '@angular/forms';
 // import {FooterComponent} from './footer/footer.component'
 
 
@@ -20,12 +22,14 @@ import { InventoryComponent } from './inventory/inventory.component';
     InputComponent,
     AlertComponent,
     EditMenuComponent,
-    InventoryComponent,
     // FooterComponent
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule,
+    AppRoutingModule,
+    FormsModule
   ],
   exports:[
     TabComponent,
