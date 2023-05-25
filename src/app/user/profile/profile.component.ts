@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faUser } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
 
@@ -31,6 +31,10 @@ export class ProfileComponent {
   organization = new FormControl('', [Validators.required]);
   EmployeeId = new FormControl(this.auth.user$.getValue()?.EmpId, [
     Validators.required,
+  ]);
+  profession = new FormControl(this.auth.user$.getValue()?.email, [
+    Validators.required,
+    Validators.email,
   ]);
   EditForm = new FormGroup({
     username: this.username,

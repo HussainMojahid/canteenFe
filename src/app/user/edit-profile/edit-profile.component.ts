@@ -6,6 +6,7 @@ import { map } from 'rxjs';
 import ICurrentUser from 'src/app/models/currentUser.modal';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
+import { SetDisabledStateOption } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-profile',
@@ -17,6 +18,7 @@ export class EditProfileComponent implements OnInit {
   backArrow = faArrowLeft;
   AlertType = 'success';
   showAlert: boolean = false;
+  disableInput = false;
   alertMsg = 'Please Wait! Under Process';
   id: number | undefined = -1;
 
@@ -60,6 +62,10 @@ export class EditProfileComponent implements OnInit {
   organization = new FormControl('', [Validators.required]);
   EmployeeId = new FormControl(this.auth.user$.getValue()?.EmpId, [
     Validators.required,
+  ]);
+  profession = new FormControl(this.auth.user$.getValue()?.email, [
+    Validators.required,
+    Validators.email,
   ]);
 
   EditForm = new FormGroup({

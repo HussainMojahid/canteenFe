@@ -66,32 +66,35 @@
 
 
 
-<div class="w-[100%] md:h-[100%] sm:h-[110%] flex flex-col items-center bg-[#3D484B]">
+<div class="w-[100%] md:h-[100%] sm:h-[100vh] flex flex-col items-center bg-[#3D484B]">
 
-  <nav class="w-[100%] sm:h-[40pt] md:h-[70pt] p-[1.8rem] flex items-center justify-between border-b-2 border-greyss bg-[#3D484B]">
-    <div class="text-blackes h-[20pt] w-[20pt]">
+  <nav class="w-[100%] sm:h-[40pt] md:h-[70pt] p-[1.8rem] flex items-center justify-between border border-greyss bg-[#3D484B]">
+    <div class="text-blackes h-[18pt] w-[20pt]">
       <button type="button" (click)="auth.backbutton()">
         <fa-icon class="fa-lg" [icon]="backArrow"></fa-icon>
       </button>
     </div>
     <div class="sm:w-[90%] md:w-[95%]">
-      <h3 class="sm:text-[17pt] md:text-[22pt] text-[#FFFFFF] font-roboto-black">Feedback</h3>
+      <h3 class="sm:text-[16pt] md:text-[22pt] text-[#FFFFFF] font-roboto-black">Feedback</h3>
     </div>
   </nav>
 
-  <form action="#" class="w-[95%] flex flex-col items-center mt-[3rem] md:h-[100vh] mb-[20%]">
+  <form action="#" class="w-[95%] sm:p-[4%] flex flex-col items-center mt-[3%] md:h-[100vh] mb-[20%]">
     <div class="w-[95%]">
-      <label for="subject" class="text-[14pt] text-[#D4D4D4] font-roboto-regular">Subject <span class="text-[#FF2F2F]">*</span> </label>
-      <input type="text" id="subject" class="p-3 w-[100%] sm:text-[14pt] md:text-[13pt] text-Greyess outline-none rounded-[4pt] h-[40pt] border-2 border-greyss " required/>
+      <label for="subject" class="text-[13pt] text-[#D4D4D4]  font-roboto-regular">Subject <span class="text-[#FF2F2F]">*</span> </label>
+      <input type="text" id="subject" class="p-3 w-[100%] sm:mt-[2%] sm:mb-[3%] sm:text-[14pt] md:text-[13pt] text-Greyess outline-none rounded-[4pt] h-[30pt] border-2 border-greyss " required/>
     </div>
     <div class="w-[95%] mt-[0.5rem]">
-      <label for="message" class="mb-2 text-[14pt] font-roboto-regular text-[#D4D4D4] ">Message <span class="text-[#FF2F2F]">*</span></label>
-      <textarea id="message" rows="10"
-        class="block outline-none  p-[0.5rem] w-[100%] text-Greyess sm:text-[13pt] rounded-[4pt] shadow-sm border-2 border-greyss    focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+      <label for="message" class="mb-2 text-[13pt] font-roboto-regular text-[#D4D4D4] ">Message <span class="text-[#FF2F2F]">*</span></label>
+      <textarea id="message" rows="12"
+        class="block outline-none sm:mt-[2%]  p-[0.5rem] w-[100%] text-Greyess sm:text-[13pt] rounded-[4pt] shadow-sm border-2 border-greyss focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
         placeholder="Leave a comment...">
       </textarea>
+      <div class="sm:mt-[2%] text-right">
+      <span class="text-[#D4D4D4] text-[11pt] ">500 Characters</span>
     </div>
-    <button class="mt-[13%] mb-[5rem] sm:h-[40pt] sm:w-[80%] xsm:h-[40pt] md:h-[4rem] md:w-[90%] rounded-[4pt] bg-orangess  flex justify-center items-center font-roboto-regular text-white outline-none">
+    </div>
+    <button class="mt-[45%] sm:h-[35pt] sm:w-[95%] xsm:h-[40pt] md:h-[4rem] md:w-[90%] rounded-[4pt] bg-orangess  flex justify-center items-center font-roboto-regular text-white outline-none">
       Send Feedback
     </button>
   </form>

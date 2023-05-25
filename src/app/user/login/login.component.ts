@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import IUser from 'src/app/models/user.model';
@@ -14,10 +15,16 @@ export class LoginComponent {
   AlertType = 'alert';
   showAlert: boolean = false;
   alertMsg = 'Please Wait! Under Process';
+  modal = false;
   show: boolean=false;
+  circleEx = faCircleExclamation;
   passwordHide(){
     this.show=!this.show
   }
+  confirmModal() {
+    this.modal = !this.modal;
+  }
+
 
   constructor(
     private auth: AuthService,
@@ -32,6 +39,8 @@ export class LoginComponent {
     email: this.email,
     password: this.password,
   };
+
+  
 
   loginForm = new FormGroup(this.credentials);
 

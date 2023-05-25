@@ -4,6 +4,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { UserService } from 'src/app/services/user.service';
 import { HttpClient } from '@angular/common/http';
+import { faShareNodes } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -13,6 +14,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class InviteFriendComponent {
   backArrow = faArrowLeft;
+  shareNodes = faShareNodes;
 
   constructor(
     public auth: AuthService,

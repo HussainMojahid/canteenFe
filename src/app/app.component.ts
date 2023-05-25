@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   showFooter: boolean = false;
   user: IUser | undefined;
 
-  constructor(public  auth: AuthService,public modal : ModalService, private router: Router){
+  constructor(public  auth: AuthService,public modal : ModalService, public router: Router){
     this.modal.toggleModal('auth');
   }
   ngOnInit(): void {

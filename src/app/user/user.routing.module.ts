@@ -11,6 +11,7 @@ import {RegisterComponent} from 'src/app/user/register/register.component'
 import { InviteFriendComponent } from './invite-friend/invite-friend.component';
 import { AboutComponent } from './about/about.component';
 import { ProfileComponent } from './profile/profile.component';
+
 // import { FooterComponent } from '../footer/footer.component';
 // import {} from 'src/app/dashboard/'
 
@@ -43,6 +44,11 @@ const routes: Routes = [
         path: 'profile',
         component: ProfileComponent,
       },
+      {
+        path: 'registerComponent',
+        component: RegisterComponent,
+      },
+
       // {
       //   path: 'Account',
       //   component: AccountComponent,

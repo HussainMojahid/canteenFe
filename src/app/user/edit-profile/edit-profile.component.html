@@ -96,21 +96,23 @@
       </div>
     </div> -->
 
-<div class="w-[100%] sm:h-[100%] md:h-[105vh] flex flex-col items-center bg-[#3D484B]">
+    
+
+<div class="w-[100%] sm:h-[100%] md:h-[105vh] flex flex-col items-center justify-center bg-[#3D484B]">
   <nav
-    class="w-[100%] h-[40pt] p-[1.8rem] flex items-center justify-between border-b-2 border-greyss bg-[#3D484B]"
+    class="w-[100%] h-[40pt] p-[1.8rem] flex items-center justify-between border border-greyss bg-[#3D484B]"
   >
-    <div class="sm:h-[20pt] sm:w-[18pt] md:h-[20pt]">
+    <div class="sm:h-[20pt] sm:w-[30pt] sm:ml-[-3%] md:h-[20pt]">
       <button type="button" (click)="auth.backbutton()">
         <fa-icon class="fa-lg" [icon]="backArrow"></fa-icon>
       </button>
     </div>
     <div class="sm:w-[90%] md:w-[95%] flex justify-between items-center">
-      <h3 class="text-[18pt] text-[#FFFFFF] font-roboto-black">Edit Profile</h3>
+      <h3 class="text-[17pt] text-[#FFFFFF] font-roboto-black">Edit Profile</h3>
     </div>
   </nav>
 
-  <div class="h-[90pt] w-[90pt] mt-[2rem] flex relative">
+  <div class="h-[70pt] w-[70pt] mt-[2rem] flex relative">
     <img
       src="../../../assets/img/userEditprofile.svg"
       alt="user"
@@ -128,29 +130,34 @@
 
   <form
     [formGroup]="EditForm"
-    class="mt-[3rem] mb-[3rem] w-[100%] sm:h-[102vh] md:h-[105vh] p-[0.4rem] flex flex-col items-center"
+    class="mt-[-0.5rem] w-[100%] sm:mb-[5%] sm:h-[100%] md:h-[105vh] p-[1.5rem] flex flex-col items-center"
   >
     <!-- Employee Id -->
     <div class="sm:mt-[2rem] sm:w-[94%] md:w-[95%]">
       <label
-        class="sm:text-[14pt] md:text-[20pt] text-[#D4D4D4] font-roboto-regular mb-[2rem]"
+        class="sm:text-[13pt] md:text-[20pt] text-[#D4D4D4] font-roboto-regular mb-[2rem]"
         >Employee Id</label
       >
       <app-input
         [control]="EmployeeId"
+        [inputDisable]="true"
+      
         class="text-Greyess text-[14pt] bg-lightGreys w-[100%] sm:h-[40pt] md:h-[60pt] rounded-[4pt]"
         type="text"
         placeholder="Enter Employee Id"
       ></app-input>
     </div>
     <!-- Name -->
-    <div class="sm:mt-[2rem] sm:w-[94%] md:w-[95%]">
+    <div class="sm:mt-[1rem] sm:w-[94%] md:w-[95%]">
       <label
-        class="sm:text-[14pt] md:text-[20pt] text-[#D4D4D4] font-roboto-regular mb-2"
+        class="sm:text-[13pt] md:text-[20pt] text-[#D4D4D4] font-roboto-regular mb-2"
         >Name</label
       >
       <app-input
-        [control]="username" 
+        [control]="username"
+        [inputDisable]="true"
+        
+      
         
         class="text-Greyess text-[14pt] bg-lightGreys sm:h-[40pt] md:h-[50pt] w-[100%] rounded-[4pt]"
         placeholder="Enter Name"
@@ -158,9 +165,9 @@
       </app-input>
     </div>
     <!-- Email -->
-    <div class="sm:mt-[2rem] sm:w-[94%] md:w-[95%]">
+    <div class="sm:mt-[1rem] sm:w-[94%] md:w-[95%]">
       <label
-        class="sm:text-[14pt] md:text-[20pt] text-[#D4D4D4] font-roboto-regular mb-2"
+        class="sm:text-[13pt] md:text-[20pt] text-[#D4D4D4] font-roboto-regular mb-2"
         >Email</label
       >
       <app-input
@@ -171,9 +178,9 @@
       </app-input>
     </div>
 
-    <div class="flex flex-col sm:mt-[2rem] sm:w-[94%] md:w-[95%]">
-      <label class="sm:text-[14pt] md:text-[20pt] text-[#D4D4D4] font-roboto-regular">Organization</label>
-      <select name="Organization" class="w-[100%] h-[40pt] text-darkgreyss border-2 border-greyss rounded-[4pt] bg-white">
+    <div class="flex flex-col sm:mt-[1rem] sm:w-[94%] md:w-[95%]">
+      <label class="sm:text-[13pt] md:text-[20pt] text-[#D4D4D4] font-roboto-regular">Organization</label>
+      <select name="Organization" class="w-[100%] h-[30pt] bg-[#2D373A] text-darkgreyss border-2 border-[#2D373A] rounded-[4pt] bg-white">
         <option disabled selected value="Select Organiztion" class=" text-[14pt] w-[90%] text-[#D4D4D4] rounded-[4pt] bg-white">
           Select Organiztion
         </option>
@@ -191,10 +198,24 @@
         </option>
       </select>
     </div>
+    <div class="sm:mt-[1rem] sm:w-[94%] md:w-[95%]">
+      <label
+        class="sm:text-[13pt] md:text-[20pt] text-[#D4D4D4] font-roboto-regular mb-2"
+        >Profession</label
+      >
+      <app-input
+        [control]="username" 
+        
+        
+        class="text-Greyess text-[14pt] bg-white sm:h-[40pt] md:h-[50pt] w-[100%] rounded-[4pt]"
+        placeholder="Enter Name"
+      >
+      </app-input>
+    </div>
     <button
       (click)="update()"
       type="submit"
-      class="sm:h-[3rem] md:h-[4rem] sm:w-[95%] md:w-[90%]  bg-orangess rounded-[4pt] sm:text-[16pt] md:text-[17pt] font-roboto-black text-white sm:mt-[8rem] md:mt-[18%]"
+      class="sm:h-[3rem] md:h-[4rem] sm:w-[85%] md:w-[90%]  bg-orangess rounded-[4pt] sm:text-[16pt] md:text-[17pt] font-roboto-black text-white sm:mt-[6rem] md:mt-[18%]"
     >
       Save
     </button>

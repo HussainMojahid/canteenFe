@@ -4,3 +4,18 @@
 /* .icone{
     filter: invert(100%);
 } */
+
+.logOut-box{
+    height: 28pt;
+    width: 240pt;
+    text-align: center;
+    background-color: #fc8019;
+    margin-left: 30%;
+    margin-top: -5%;
+    padding: 13%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #fc8019;
+    border-radius: 5px ;
+}

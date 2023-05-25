@@ -2,7 +2,10 @@
   [formControl]="control"
   [type]="type"
   [placeholder]="placeholder"
-  class="block w-full px-3 py-1.5 bg-darkgreyss bg-clip-padding bg-no-repeat border border-solid border-gray-400 transition duration-500 focus:outline-none rounded bg-transparent focus:border-cyan-400 sm:text-[12pt] md:text-[20pt] text-black sm:h-[30pt] md:h-[50pt] "/>
+  [readOnly]="inputDisable"
+  
+
+  class="block w-full px-3 py-1.5 sm:mt-[2%] bg-[#2D373A] bg-clip-padding bg-no-repeat border border-solid border-[#2D373A] transition duration-500 focus:outline-none rounded bg-transparent  sm:text-[12pt] md:text-[20pt] text-[#BBBBBB] sm:h-[30pt] md:h-[50pt]" />
 
 <ng-container *ngIf="control.touched && control.dirty">
   <p class="text-red-400" *ngIf="control.errors?.['pattern']">

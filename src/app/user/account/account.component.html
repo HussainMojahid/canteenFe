@@ -1,57 +1,135 @@
-<div class="absolute xsm:top-0 xsm:left-0 xsm-h-[70pt] sm:top-0 sm:left-0 sm:h-[65pt] md:h-[70pt] sm:w-[100%] bg-[#3D484B] opacity-[40%] z-10 overflow-hidden">
-</div>
-<div class="w-[100%] md:h-[98vh] overflow-hidden relative">
-
-    <div class="flex flex-col xsm:h-[65pt] md:h-[70pt] sm:w-[100%]  md:w-[100%]">
-        <div class="xsm:h-[100%] xsm:w-[100%] sm:h-[100pt] p-[0rem] sm:w-[100%] md:w-[110%] mt-[0rem] overflow-hidden">
-            <img src="../../../assets/img/NavbarBg2.svg" height="100%" width="100%">
-        </div>    
-    </div>
-    <div class="absolute xsm:top-[2.5rem] sm:top-[2.5rem] md:top-[3rem] flex flex-col items-center text-center w-[100%] z-20">
-        <div class="xsm:h-[70pt] xsm:w-[70pt]  sm:h-[80pt] sm:w-[80pt] flex justify-center items-center z-20"><img src="../../../assets/img/Male User.png" style="border-radius: 50%;" height="100%" width="100%" alt="" ></div>
-        <div><p class="xsm:text-[17pt] sm:text-[20pt] md:text-[28pt] text-[#FFFFFF] font-roboto-black z-20">{{username}}</p> <p class="xsm:text-[13pt] md:text-[24pt] sm:text-[16pt] text-[#FFFFFF] font-roboto-regular">Business Analyst</p></div>
-    </div>
-
-<div class="xsm:h-[100vh] sm:h-[83vh] md:h-[90vh] sm:w-[100%] sm:mt-[0rem] font-roboto-medium text-black flex flex-col items-center bg-[#3D484B]"> 
-    <div class="flex items-center justify-between xsm:w-[150pt] sm:w-[305pt] sm:p-[2rem] sm:h-[10pt] xsm:mt-[8rem] sm:mt-[9rem] md:mt-[12rem] sm:text-left md:w-[405pt] md:h-[15pt]">
-        <div class="xsm:h-[30pt] xsm:w-[30pt] xsm:flex justify-center items-center sm:h-[37pt] sm:w-[37pt] md:h-[40pt] md:w-[40pt] sm:p-[8px] bg-greyss text-mediumGreys sm:flex sm:items-center sm:justify-center rounded-[10pt]" [routerLink]="['/profile']"><img height="100%" class="icone xsm:h-[50%] xsm:w-[70%] md:h-[90%] md:w-[85%]" width="80%" src="../../../assets/img/userAccount.svg" alt="UserAccount"></div>
-        <div class="sm:h-[20pt] xsm:w-[100pt] sm:w-[194pt] md:w-[280pt]" [routerLink]="['/profile']"><p class="sm:text-[15pt] md:text-[19pt] text-[#FFFFFF] font-roboto-regular">Profile</p></div>
-        <div class="white"><img src="../../../assets/img/icon.png" [routerLink]="['/profile']" class="xsm:h-[12pt] xsm:w-[7pt] h-[14pt] w-[9pt] md:h-[18pt] md:w-[13pt]" height="14pt" width="9pt"></div>
-    </div>
-    <div class=" flex items-center justify-between xsm:w-[150pt] sm:w-[305pt] sm:p-[2rem] sm:h-[10pt] xsm:mt-[0.5rem] sm:mt-[-0.2rem] md:mt-[1rem] md:w-[405pt]">
-        <div class="xsm:h-[30pt] xsm:w-[30pt] xsm:flex xsm:justify-center xsm:items-center md:h-[40pt] md:w-[40pt] sm:h-[38pt] sm:w-[38pt] rounded-[10pt] bg-greyss flex items-center justify-center sm:p-[8px]"><img height="100%" width="75%" class="icone xsm:h-[60%] xsm:w-[70%] md:h-[90%] md:w-[85%]" src="../../../assets/img/passwordAccount.svg" alt="ChangePassword"></div>
-        <div class="sm:h-[20pt] xsm:w-[98pt] sm:w-[194pt] md:w-[280pt]"><p class="text-[#FFFFFF] font-roboto-regular sm:text-[15pt] md:text-[19pt]" [routerLink]="['/changePassword']">Change Password</p></div>
-        <div class="white"><img src="../../../assets/img/icon.png" [routerLink]="['/changePassword']" class="xsm:h-[12pt] xsm:w-[7pt] h-[14pt] w-[9pt] md:h-[18pt] md:w-[13pt]"  height="14pt" width="9pt"></div>
-    </div>
-    <div class=" flex items-center justify-between xsm:w-[150pt] sm:w-[305pt] md:w-[405pt] sm:p-[2rem] sm:h-[10pt] sm:mt-[-0.2rem] xsm:mt-[0.8rem] md:mt-[1rem]">
-        <div class="xsm:h-[30pt] xsm:w-[30pt] xsm:flex xsm:justify-center xsm:items-center md:h-[40pt] md:w-[40pt] sm:h-[38pt] sm:w-[38pt] rounded-[10pt] bg-greyss sm:p-[8px] flex items-center justify-center" [routerLink]="['/inviteFriend']"><img height="100%" class="icone xsm:h-[50%] xsm:w-[70%] md:h-[95%] md:w-[90%]" width="90%" src="../../../assets/img/invitAccount.svg" alt="InviteAccount"></div>
-        <div class="sm:h-[20pt] xsm:w-[100pt] sm:w-[194pt] md:w-[280pt]"><p class="text-[#FFFFFF] font-roboto-regular sm:text-[15pt] md:text-[19pt]" [routerLink]="['/inviteFriend']">Invite a Friend</p></div>
-        <div class="white"><img src="../../../assets/img/icon.png" class="xsm:h-[12pt] xsm:w-[7pt] h-[14pt] w-[9pt] md:h-[18pt] md:w-[13pt]"  height="14pt" width="9pt" [routerLink]="['/inviteFriend']"></div>
-    </div>
-    <div class=" flex items-center justify-between xsm:w-[150pt] xsm:mt-[0.8rem] sm:w-[305pt] sm:p-[2rem] sm:h-[10pt] sm:mt-[-0.2rem] md:w-[405pt] md:mt-[1rem]">
-        <div class="xsm:h-[30pt] xsm:w-[30pt] xsm:flex xsm:justify-center xsm:items-center sm:h-[38pt] sm:w-[38pt] rounded-[10pt] bg-greyss sm:p-[8px] flex items-center justify-center"><img class="icone xsm:p-[-5rem]" height="100%" width="120%" src="../../../assets/img/feedbackAccount.svg" alt="FeedbackAccount"></div>
-        <div class="sm:h-[20pt] xsm:w-[100pt] sm:w-[194pt] md:w-[275pt]"><p class="text-[#FFFFFF] font-roboto-regular sm:text-[15pt] md:text-[19pt]" [routerLink]="['/Feedback']">Feedback</p></div>
-        <div class="white"><img src="../../../assets/img/icon.png" [routerLink]="['/Feedback']" class="xsm:h-[12pt] xsm:w-[7pt] h-[14pt] w-[9pt] md:h-[18pt] md:w-[13pt]"  height="14pt" width="9pt"></div>
-    </div>
-    <div class=" flex items-center justify-between xsm:w-[150pt] xsm:mt-[0.8rem] xsm:rounded-[10pt] sm:w-[305pt] sm:p-[2rem] sm:h-[10pt] sm:mt-[-0.2rem] md:w-[405pt] md:mt-[1rem]">
-        <div class="xsm:h-[30pt] xsm:rounded-[8pt] xsm:w-[30pt] xsm:flex xsm:justify-center xsm:items-center sm:h-[38pt] sm:w-[38pt] sm:rounded-[10pt] bg-greyss sm:p-[8px] flex items-center justify-center" [routerLink]="['/about']"><img class="icone xsm:h-[50%] xsm:w-[70%] md:h-[95%] md:w-[80%]" height="100%" width="90%" src="../../../assets/img/aboutAccount.svg" alt="AboutAccount"></div>
-        <div class="sm:h-[20pt] xsm:w-[100pt] sm:w-[194pt] md:w-[280pt]"><p class="text-[#FFFFFF] font-roboto-regular sm:text-[15pt] md:text-[19pt]" [routerLink]="['/about']">About</p></div>
-        <div class="white"><img src="../../../assets/img/icon.png" class="xsm:h-[12pt] xsm:w-[7pt] h-[14pt] w-[9pt] md:h-[18pt] md:w-[13pt]"  height="14pt" width="9pt" [routerLink]="['/about']"></div>
-    </div>
-    <div class="xsm:w-[150pt] xsm:mt-[0.8rem] flex items-center justify-between sm:w-[305pt] sm:p-[2rem] sm:h-[10pt] sm:mb-[1rem] sm:mt-[-0.2rem] md:w-[405pt] md:mt-[1rem]">
-        <div class="xsm:h-[30pt] xsm:w-[30pt] xsm:flex xsm:justify-center xsm:items-center sm:h-[38pt] sm:w-[38pt] rounded-[10pt] bg-greyss sm:p-[8px] text-mediumGreys flex items-center justify-center"><img class="icone xsm:h-[50%] xsm:w-[70%] md:h-[90%] md:w-[85%]" height="100%" width="70%" src="../../../assets/img/logoutAccount.svg" alt="LogoutAccount"></div>
-        <div class="sm:h-[20pt] xsm:w-[100pt] sm:w-[194pt] md:w-[280pt]"><p class="text-[#FFFFFF] font-roboto-regular sm:text-[15pt] md:text-[19pt]" (click)="confirmModal()">Logout</p></div>
-        <div class="white"><img src="../../../assets/img/icon.png" class="xsm:h-[12pt] xsm:w-[7pt] h-[14pt] w-[9pt] md:h-[18pt] md:w-[13pt]"  height="14pt" width="9pt" (click)="confirmModal()"></div>
-    </div>
+<div
+    class="absolute xsm:top-0 xsm:left-0 xsm-h-[70pt] sm:top-0 sm:left-0 sm:h-[65pt] md:h-[70pt] sm:w-[100%] bg-[#3D484B] opacity-[40%] z-10 overflow-hidden">
 </div>
 
-<div *ngIf="modal" class="w-[100%] h-[100%] flex flex-col justify-center items-center bg-transparent absolute sm:top-[10%] md:top-[-10%] rounded-[8pt] z-[999]">
-    <div class="w-[275pt] sm:h-[120pt] md:h-[170pt] md:w-[350pt] sm:p-[1rem] md:p-[2rem] bg-[#475356] rounded-[8pt]">
-        <p class="sm:text-[18pt] md:text-[22pt] text-[#FFFFFF] font-roboto-black">Logout</p>
-        <p class="text-[14pt] md:text-[20pt] font-roboto-regular text-[#D4D4D4]">Are you sure you want to logout?</p>
-        <div class="flex text-orangess sm:text-[16pt] md:text-[18pt] font-roboto-regular w-[100pt] md:w-[120pt] justify-between p-[0.5rem] mt-[1rem] ml-[50%]">
-            <p  (click)="logout()">OK</p><p (click)="confirm()">Cancel</p>
+
+    <div class="w-[100%] md:h-[98vh]  overflow-hidden relative">
+
+        <div class="flex flex-col xsm:h-[65pt] md:h-[70pt] sm:w-[100%]  md:w-[100%]">
+            <div
+                class="xsm:h-[100%] xsm:w-[100%] sm:h-[100pt] p-[0rem] sm:w-[100%] md:w-[110%] mt-[0rem] overflow-hidden">
+                <img src="../../../assets/img/NavbarBg2.svg" height="100%" width="100%">
+            </div>
+        </div>
+        <div
+            class="absolute xsm:top-[2.5rem] sm:top-[2.5rem] md:top-[3rem] flex flex-col items-center text-center w-[100%] z-20">
+            <div class="xsm:h-[70pt] xsm:w-[70pt]  sm:h-[80pt] sm:w-[80pt] flex justify-center items-center z-20"><img
+                    src="../../../assets/img/Male User.png" style="border-radius: 50%;" height="100%" width="100%"
+                    alt=""></div>
+            <div>
+                <p class="xsm:text-[17pt] sm:text-[16pt] md:text-[28pt] text-[#FFFFFF] font-roboto-black z-20">
+                    {{username}}</p>
+                <p class="xsm:text-[13pt] md:text-[24pt] sm:text-[14pt] text-[#FFFFFF] font-roboto-regular">Business
+                    Analyst</p>
+            </div>
+        </div>
+
+        <div
+            class="xsm:h-[100vh] sm:h-[83vh] p-[12%] md:h-[90vh] sm:w-[100%] sm:mt-[0rem] font-roboto-medium text-black flex flex-col items-center bg-[#3D484B]">
+            <div
+                class="flex items-center justify-between xsm:w-[150pt] sm:w-[280pt] sm:p-[2rem] sm:h-[10pt] xsm:mt-[8rem] sm:mt-[9rem]  md:mt-[12rem] sm:text-left md:w-[405pt] md:h-[15pt]">
+                <div class="xsm:h-[30pt] xsm:w-[30pt] xsm:flex justify-center items-center sm:h-[28.5pt] sm:w-[28.5pt] md:h-[40pt] md:w-[40pt] sm:p-[8px] bg-[#fff]  sm:flex sm:items-center sm:justify-center rounded-[10pt]"
+                    [routerLink]="['/profile']"><img height="100%"
+                        class="icone xsm:h-[50%] xsm:w-[70%]  sm:w-[80%] sm:h-[90%] md:h-[90%] md:w-[85%]" width="80%"
+                        src="../../../assets/img/Page-1.svg" alt="UserAccount"></div>
+                <div class="sm:h-[20pt] xsm:w-[100pt] sm:w-[194pt] md:w-[280pt]" [routerLink]="['/profile']">
+                    <p class="sm:text-[13pt] md:text-[19pt] sm:ml-[8%] text-[#FFFFFF] font-roboto-regular">Profile</p>
+                </div>
+                <div class="white"><img src="../../../assets/img/icon.png" [routerLink]="['/profile']"
+                        class="xsm:h-[12pt]  xsm:w-[7pt] sm:h-[10pt] sm:w-[6pt] h-[14pt] w-[9pt] md:h-[18pt] md:w-[13pt]" height="14pt"
+                        width="9pt"></div>
+            </div>
+            <div
+                class=" flex items-center justify-between xsm:w-[150pt] sm:w-[280pt] sm:p-[2rem] sm:h-[10pt] xsm:mt-[0.5rem] sm:mt-[-0.2rem] md:mt-[1rem] md:w-[405pt]">
+                <div
+                    class="xsm:h-[30pt] xsm:w-[30pt] xsm:flex xsm:justify-center xsm:items-center md:h-[40pt] md:w-[40pt] sm:h-[28.5pt] sm:w-[28.5pt] rounded-[10pt] bg-[#FFFFFF] flex items-center justify-center sm:p-[8px]">
+                    <img height="100%" width="75%"
+                        class="icone xsm:h-[60%] xsm:w-[70%] md:h-[90%] md:w-[85%] sm:w-[80%] sm:h-[90%]"
+                        src="../../../assets/img/Icon material-security.svg" alt="ChangePassword"></div>
+                <div class="sm:h-[20pt] xsm:w-[98pt] sm:w-[194pt] md:w-[280pt]">
+                    <p class="text-[#FFFFFF] sm:ml-[8%] font-roboto-regular sm:text-[13pt] md:text-[19pt]"
+                        [routerLink]="['/changePassword']">Change Password</p>
+                </div>
+                <div class="white"><img src="../../../assets/img/icon.png" [routerLink]="['/changePassword']"
+                        class="xsm:h-[12pt] xsm:w-[7pt] sm:h-[10pt] sm:w-[6pt] h-[14pt] w-[9pt] md:h-[18pt] md:w-[13pt]" height="14pt"
+                        width="9pt"></div>
+            </div>
+            <div
+                class=" flex items-center justify-between xsm:w-[150pt] sm:w-[280pt] md:w-[405pt] sm:p-[2rem] sm:h-[10pt] sm:mt-[-0.2rem] xsm:mt-[0.8rem] md:mt-[1rem]">
+                <div class="xsm:h-[30pt] xsm:w-[30pt] xsm:flex xsm:justify-center xsm:items-center sm:h-[28.5pt] sm:w-[28.5pt] md:h-[40pt] md:w-[40pt] rounded-[10pt] bg-[#FFFFFF]  sm:p-[8px] flex items-center justify-center"
+                    [routerLink]="['/inviteFriend']"><img height="100%"
+                        class="icone xsm:h-[50%] xsm:w-[70%] md:h-[95%] md:w-[90%] sm:w-[80%] text-[#3d484b] sm:h-[90%]"
+                        width="90%" src="../../../assets/img/Group 4064.svg" alt="InviteAccount"></div>
+                <div class="sm:h-[20pt] xsm:w-[100pt] sm:w-[194pt] md:w-[280pt]">
+                    <p class="text-[#FFFFFF] sm:ml-[8%] font-roboto-regular sm:text-[13pt] md:text-[19pt]"
+                        [routerLink]="['/inviteFriend']">Invite a Friend</p>
+                </div>
+                <div class="white"><img src="../../../assets/img/icon.png"
+                        class="xsm:h-[12pt] xsm:w-[7pt] sm:h-[10pt] sm:w-[6pt] h-[14pt] w-[9pt] md:h-[18pt] md:w-[13pt]" height="14pt"
+                        width="9pt" [routerLink]="['/inviteFriend']"></div>
+            </div>
+            <div
+                class=" flex items-center justify-between xsm:w-[150pt] xsm:mt-[0.8rem] sm:w-[280pt] sm:p-[2rem] sm:h-[10pt] sm:mt-[-0.2rem] md:w-[405pt] md:mt-[1rem]">
+                <div
+                    class="xsm:h-[30pt] xsm:w-[30pt] xsm:flex xsm:justify-center xsm:items-center sm:h-[28.5pt] sm:w-[28.5pt] rounded-[10pt] bg-[#FFFFFF] sm:p-[8px] flex items-center justify-center">
+                    <img class="icone xsm:p-[-5rem] sm:w-[100%] sm:h-[100%]" height="100%" width="120%"
+                        src="../../../assets/img/Group 3181.svg" alt="FeedbackAccount"></div>
+                <div class="sm:h-[20pt] xsm:w-[100pt] sm:w-[194pt] md:w-[275pt]">
+                    <p class="text-[#FFFFFF] font-roboto-regular sm:ml-[8%] sm:text-[13pt] md:text-[19pt]"
+                        [routerLink]="['/Feedback']">Feedback</p>
+                </div>
+                <div class="white"><img src="../../../assets/img/icon.png" [routerLink]="['/Feedback']"
+                        class="xsm:h-[12pt] xsm:w-[7pt] sm:h-[10pt] sm:w-[6pt] h-[14pt] w-[9pt] md:h-[18pt] md:w-[13pt]" height="14pt"
+                        width="9pt"></div>
+            </div>
+            <div
+                class=" flex items-center justify-between xsm:w-[150pt] xsm:mt-[0.8rem] xsm:rounded-[10pt] sm:w-[280pt] sm:p-[2rem] sm:h-[10pt] sm:mt-[-0.2rem] md:w-[405pt] md:mt-[1rem]">
+                <div class="xsm:h-[30pt] xsm:rounded-[8pt] xsm:w-[30pt] xsm:flex xsm:justify-center xsm:items-center sm:h-[28.5pt] sm:w-[28.5pt] sm:rounded-[10pt] bg-[#FFFFFF] sm:p-[8px] flex items-center justify-center"
+                    [routerLink]="['/about']"><img
+                        class="icone xsm:h-[50%] xsm:w-[70%] md:h-[95%] md:w-[80%] sm:w-[80%] sm:h-[90%]" height="100%"
+                        width="90%" src="../../../assets/img/Icon ionic-md-information-circle-outline.svg"
+                        alt="AboutAccount"></div>
+                <div class="sm:h-[20pt] xsm:w-[100pt] sm:w-[194pt] md:w-[280pt]">
+                    <p class="text-[#FFFFFF] sm:ml-[8%] font-roboto-regular sm:text-[13pt] md:text-[19pt]"
+                        [routerLink]="['/about']">Help</p>
+                </div>
+                <div class="white"><img src="../../../assets/img/icon.png"
+                        class="xsm:h-[12pt] xsm:w-[7pt] sm:h-[10pt] sm:w-[6pt] h-[14pt] w-[9pt] md:h-[18pt] md:w-[13pt]" height="14pt"
+                        width="9pt" [routerLink]="['/about']"></div>
+            </div>
+            <div
+                class="xsm:w-[150pt] xsm:mt-[0.8rem] flex items-center justify-between sm:w-[280pt] sm:p-[2rem] sm:h-[10pt] sm:mb-[1rem] sm:mt-[-0.2rem] md:w-[405pt] md:mt-[1rem]">
+                <div
+                    class="xsm:h-[30pt] xsm:w-[30pt] xsm:flex xsm:justify-center xsm:items-center  rounded-[10pt] bg-[#FFFFFF] sm:p-[8px] text-mediumGreys flex items-center justify-center">
+                    <img class="icone xsm:h-[50%] xsm:w-[70%] md:h-[90%] md:w-[85%] sm:w-[80%] sm:h-[90%]" height="100%"
+                        width="70%" src="../../../assets/img/Path 11.svg" alt="LogoutAccount"></div>
+                <div class="sm:h-[20pt] xsm:w-[100pt] sm:w-[194pt] md:w-[280pt]">
+                    <p class="text-[#FFFFFF] sm:ml-[8%] font-roboto-regular sm:text-[13pt] md:text-[19pt]"
+                        (click)="confirmModal()">Logout</p>
+                </div>
+                <div class="white"><img src="../../../assets/img/icon.png"
+                        class="xsm:h-[12pt] xsm:w-[7pt] sm:h-[10pt] sm:w-[6pt] h-[14pt] w-[9pt] md:h-[18pt] md:w-[13pt]" height="14pt"
+                        width="9pt" (click)="confirmModal()"></div>
+            </div>
+        </div>
+
+        <div *ngIf="modal"
+            class="w-[100%] h-[100%] flex flex-col justify-center items-center bg-transparent absolute sm:top-[5%] md:top-[-10%] rounded-[8pt] z-[999] p-4 ">
+            <div
+                class="w-[250pt] sm:p-[6%] sm:h-[115pt] md:h-[170pt] md:w-[350pt] sm:p-[1rem] md:p-[2rem] bg-[#475356] rounded-[8pt]">
+                <p class="sm:text-[16pt] md:text-[22pt] text-[#FFFFFF] font-roboto-black">Logout</p>
+                <p class="text-[13pt] md:text-[20pt] font-roboto-regular text-[#D4D4D4]">Are you sure you want to
+                    logout?</p>
+                <div
+                    class="flex text-orangess sm:text-[16pt] md:text-[18pt] font-roboto-regular w-[100pt] md:w-[120pt] justify-between p-[1.3rem] m-[10%] mt-[0.1rem] float-right">
+                    <p class="text-[14pt]" (click)="logout()">Yes</p>
+                    <div class="logOut-box">
+                    <p class="text-white text-[14pt]" (click)="confirm()">Cancel</p>
+                </div>
+            
+                
+                </div>
+            </div>
         </div>
     </div>
-</div>
-</div>
+

@@ -10,5 +10,7 @@ export class InputComponent {
   @Input() type = 'text';
   @Input() placeholder = ''
   @Input() control : FormControl = new FormControl()
-  @Input() inputDisable = false;
+  @Input() inputDisable:boolean = false;
+        // isDisabled = false;
+
 }

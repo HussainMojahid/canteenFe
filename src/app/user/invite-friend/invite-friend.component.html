@@ -1,19 +1,19 @@
 <div class="w-[100%] sm:h-[100%] md:h-[100vh] flex flex-col items-center bg-[#3D484B]">
 
-    <nav class="w-[100%] sm:h-[40pt] md:h-[70pt] p-[1.8rem] flex items-center justify-between border-b-2 border-greyss bg-[#3D484B]">
-        <div class="text-blackes h-[20pt] w-[20pt]">
+    <nav class="w-[100%] sm:h-[40pt] md:h-[70pt] p-[1.8rem] flex items-center justify-between border border-greyss bg-[#3D484B]">
+        <div class="h-[20pt] w-[30pt] sm:ml-[-2%]">
           <button type="button" (click)="auth.backbutton()">
             <fa-icon class="fa-lg" [icon]="backArrow"></fa-icon>
           </button>
         </div>
         <div class="sm:w-[90%] md:w-[95%]">
-          <h3 class="sm:text-[17pt] md:text-[22pt] text-[#FFFFFF] font-roboto-black">Invite a Friend</h3>
+          <h3 class="sm:text-[16pt] md:text-[22pt] text-[#FFFFFF] font-roboto-black">Invite a Friend</h3>
         </div>
       </nav> 
 
-    <div class="w-[100%] text-center sm:mt-[4rem] md:mt-[5rem]">
-        <p class="text-[22pt] font-roboto-regular text-[#FFFFFF]">Send an <span class="text-orangess font-roboto-black">Invitation</span></p>
-        <p class="text-[22pt] font-roboto-regular text-[#FFFFFF]">to your <span class="text-orangess font-roboto-black">friends</span></p>
+    <div class="w-[100%] text-center sm:mt-[6%] md:mt-[5rem]">
+        <p class="text-[17.5pt] font-roboto-regular text-[#FFFFFF]">Send an <span class="text-orangess font-roboto-black">Invitation</span></p>
+        <p class="text-[17.5pt] font-roboto-regular text-[#FFFFFF]">to your <span class="text-orangess font-roboto-black">friends!</span></p>
     </div>
 
     <div class="sm:h-[246pt] md:h-[500pt] sm:w-[100%] sm:object-cover overflow-hidden object-center flex items-center mt-[4rem]">
@@ -21,9 +21,11 @@
     </div>
 
     <div class="w-[100%] text-start flex flex-col items-center mt-[4rem]">
-        <p class="text-[#D4D4D4] sm:text-[14pt] md:text-[18pt] font-roboto-regular">Please click on the button below to send <br/> the app link to your friends</p>
+        <p class="text-[#D4D4D4] sm:text-[13pt] md:text-[18pt] font-roboto-regular">Please click on the button below to send <br/> the app link to your friends</p>
     </div>
 
-    <button type="submit" class="h-[44pt] w-[95%] bg-orangess rounded-[4pt] text-[16pt] font-roboto-regular text-[#F5F5F5] mt-[3rem] mb-[3rem]">
+    <button type="submit" class="h-[44pt] w-[80%] bg-orangess rounded-[4pt] text-[14pt] font-roboto-regular text-[#F5F5F5] mt-[3rem] mb-[3rem]" >
+      <fa-icon class="fa-sm" [icon]="shareNodes"></fa-icon>
+      
         Invite Friends
      </button>
