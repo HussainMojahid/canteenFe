@@ -15,11 +15,13 @@ import { FoodInventoryComponent } from './admin-dashboard/food-inventory/food-in
 import { AddFoodComponent } from './admin-dashboard/add-food/add-food.component';
 import { AddNewMenuComponent } from './shared/add-new-menu/add-new-menu.component';
 import { AddNewItemComponent } from './shared/add-new-item/add-new-item.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: DashboardModalComponent,
+    canActivate : [AuthGuard]
   },
   {
     path: 'registerComponent',
@@ -48,6 +50,7 @@ const routes: Routes = [
   {
     path: 'foodInventory',
     component: FoodInventoryComponent,
+    canActivate : [AuthGuard]
   },
   {
     path: 'addFood',

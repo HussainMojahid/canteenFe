@@ -58,6 +58,7 @@ export class LoginComponent {
           this.showAlert = true;
           this.alertMsg = 'LogIn Successful';
           this.auth.isAuthenticated();
+          this.router.navigateByUrl('/')
         },
         error: (e) => {
           this.AlertType = 'error';
