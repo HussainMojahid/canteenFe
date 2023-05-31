@@ -1,18 +1,13 @@
-div .active{
-    background-color: #FC8019;
-
-    
+/* div .active{
+background-color: #FC8019;
 }
- fill .active{
-    color: #FC8019;
- }
 
-
-/* img .active{
-    color: #FC8019;
-    background-color: #FC8019;
-} */
 p .active{
+color: #FC8019;
+background-color: #FC8019;
+} */
+
+
+.active{
     color: #FC8019;
-    background-color: #FC8019;
 }

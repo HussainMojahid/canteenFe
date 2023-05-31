@@ -11,6 +11,7 @@ import {RegisterComponent} from 'src/app/user/register/register.component'
 import { InviteFriendComponent } from './invite-friend/invite-friend.component';
 import { AboutComponent } from './about/about.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AuthGuard } from '../services/auth.guard';
 
 // import { FooterComponent } from '../footer/footer.component';
 // import {} from 'src/app/dashboard/'
@@ -19,30 +20,43 @@ const routes: Routes = [
       {
         path: 'loginComponent',
         component: LoginComponent
+        
       },
       {
         path: 'edit',
         component: EditProfileComponent,
+        canActivate : [AuthGuard]
+        
       },
       {
         path: 'changePassword',
         component: ChangePasswordComponent,
+        canActivate : [AuthGuard]
+        
       },
       {
         path: 'forgotPassword',
         component: ForgetPasswordComponent,
+        canActivate : [AuthGuard]
+        
       },
       {
         path: 'inviteFriend',
         component: InviteFriendComponent,
+        canActivate : [AuthGuard]
+        
       },
       {
         path: 'about',
         component: AboutComponent,
+        canActivate : [AuthGuard]
+        
       },
       {
         path: 'profile',
         component: ProfileComponent,
+        canActivate : [AuthGuard]
+        
       },
       {
         path: 'registerComponent',
@@ -59,7 +73,9 @@ const routes: Routes = [
       // },
       {
         path: 'Feedback',
-        component: FeedbackComponent
+        component: FeedbackComponent,
+        canActivate : [AuthGuard]
+        
       }
   
 ];

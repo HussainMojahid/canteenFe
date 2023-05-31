@@ -28,6 +28,7 @@
     <form
       ng-model="all"
       [formGroup]="EditForm"
+      
       class="mt-[-7%] mb-[8rem]  w-[100%] sm:h-[110%] md:h-[105vh] p-[1.5rem] flex flex-col items-center"
     >
       <!-- Employee Id -->
@@ -38,6 +39,8 @@
         >
         <app-input
           [control]="EmployeeId"
+          [inputDisable]="true"
+          [isEnabled]="false"
           
           class="text-Greyess  text-[14pt] bg-lightGreys w-[100%] sm:h-[40pt] md:h-[60pt] rounded-[4pt]"
           type="text"
@@ -54,6 +57,8 @@
         >
         <app-input
           [control]="username" 
+          [inputDisable]="true"
+          [isEnabled]="false"
           
           class="text-Greyess text-[14pt] bg-lightGreys sm:h-[40pt] md:h-[50pt] w-[100%] rounded-[4pt]"
           placeholder="Enter Name"
@@ -68,6 +73,8 @@
         >
         <app-input
           [control]="email"
+          [inputDisable]="true"
+          [isEnabled]="false"
           class="text-Greyess text-[14pt] bg-lightGreys w-[307pt] h-[40pt] rounded-[4pt]"
           placeholder="Enter Email"
           [inputDisable]="true">
@@ -75,9 +82,9 @@
       </div>
   
       <div class="flex flex-col sm:mt-[1rem] sm:w-[94%] md:w-[95%]">
-        <label class="sm:text-[13pt] md:text-[20pt] text-[#D4D4D4] sm:mb-[2%] font-roboto-regular">Organization</label>
-        <select name="Organization" class="w-[100%] h-[30pt] text-[#BBBBBB]  border-2 border-[#2D373A] rounded-[4pt] bg-[#2D373A]">
-          <option disabled selected value="Select Organiztion" class=" text-[14pt] w-[90%] text-[#BBBBBB] rounded-[4pt] ">
+        <label class="sm:text-[13pt] md:text-[20pt] text-[#BBBBBB] sm:mb-[2%] font-roboto-regular">Organization</label>
+        <select name="Organization" disabled="isDisable" class="w-[100%] h-[30pt] text-[#BBBBBB]  border-2 border-[#2D373A] rounded-[4pt] bg-[#2D373A]">
+          <option disabled selected value="Select Organization" class=" text-[14pt] w-[90%] text-[#BBBBBB] rounded-[4pt] ">
             Select Organization
           </option>
           <option *ngFor="let m of OrgList" class="text-Greyess text-[14pt] bg-white w-[90%]">
@@ -107,6 +114,8 @@
         >
         <app-input
           [control]="profession"
+          [inputDisable]="true"
+          [isEnabled]="false"
           class="text-Greyess text-[14pt] bg-lightGreys w-[307pt] h-[40pt] rounded-[4pt]"
           placeholder="Enter your Profession"
           [inputDisable]="true">

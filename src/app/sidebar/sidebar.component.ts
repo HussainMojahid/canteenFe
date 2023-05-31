@@ -9,7 +9,7 @@ import { SidebarService } from '../services/sidebar.service';
 })
 export class SidebarComponent {
   constructor(public sidebar: SidebarService) {}
-  InventoryIco = faWarehouse;
+ InventoryIco = faWarehouse;
   toggle() {
     this.sidebar.toggleSidebar();
   }

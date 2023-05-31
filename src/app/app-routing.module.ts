@@ -13,18 +13,21 @@ import { AddNewMenuComponent } from './shared/add-new-menu/add-new-menu.componen
 import { AddNewItemComponent } from './shared/add-new-item/add-new-item.component';
 import { AuthGuard } from './services/auth.guard';
 
+
 const routes: Routes = [
   {
     path: '',
     component: DashboardModalComponent,
-    canActivate : [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'registerComponent',
     component: RegisterComponent
-  },{
+  },
+  {
     path: 'Account',
     component: AccountComponent,
+    canActivate : [AuthGuard]
   },
   {
     path: 'dashbord-modal',
@@ -37,28 +40,34 @@ const routes: Routes = [
   {
     path: 'feedback',
     component: FeedbackComponent,
+    canActivate : [AuthGuard]
   },
   {
     path: 'editMenu',
     component: EditMenuComponent,
+    canActivate : [AuthGuard]
   },
   
   {
     path: 'foodInventory',
     component: FoodInventoryComponent,
     canActivate : [AuthGuard]
+    
   },
   {
     path: 'addFood',
     component: AddFoodComponent,
+    canActivate : [AuthGuard]
   },
   {
     path: 'addNewMenu',
     component: AddNewMenuComponent,
+    canActivate : [AuthGuard]
   },
   {
     path: 'addNewItem',
     component: AddNewItemComponent,
+    canActivate : [AuthGuard]
   },
   
 ];

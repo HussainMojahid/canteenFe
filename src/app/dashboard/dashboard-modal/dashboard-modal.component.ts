@@ -4,7 +4,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FoodService } from 'src/app/services/food.service';
 import { SidebarService } from 'src/app/services/sidebar.service';
 import { AuthService } from 'src/app/services/auth.service';
-
+import { FooterComponent } from 'src/app/shared/footer/footer.component';
 @Component({
   selector: 'app-dashboard-modal',
   templateUrl: './dashboard-modal.component.html',
@@ -223,3 +223,5 @@ export class DashboardModalComponent implements OnInit {
   //   if (this.Hslider) this.Hslider.destroy();
   // }
 }
+
+

@@ -25,6 +25,12 @@ export class ChangePasswordComponent {
   confirmModal() {
     this.modal = !this.modal;
   }
+  closeModal() {
+    this.modal = false;
+  }
+
+
+
 
   viewpass(){
     this.visible = !this.visible;

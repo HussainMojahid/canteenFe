@@ -11,7 +11,7 @@ export class AccountComponent implements OnInit{
   
   userIcon = faCircleUser;
   username = JSON.parse(localStorage.getItem('_username_canteen_app') || '');
-  modal = false
+  modal = false;
 constructor(public auth: AuthService){}
   ngOnInit(): void {
   }
@@ -19,11 +19,10 @@ constructor(public auth: AuthService){}
   confirmModal() {
     this.modal = !this.modal;
   }
-  logout() {
-    this.auth.logout();
-    // this.auth.isAuthenticated();
-    // window.location.reload();
-  }
+  // logout() {
+  //   this.auth.logoutUser();
+  //   // this.auth.isAuthenticated();
+  // }
   confirm(){
     this.modal = !this.modal;
   }
