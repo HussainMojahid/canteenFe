@@ -59,11 +59,14 @@
         <p class="text-left text-[16pt] sm:text-[11.5pt] md:text-[18pt] text-orangess font-roboto-regular p-[2pt] mt-[5pt] float-right" (click)="confirmModal()">Forgot Your Password?</p>
 
         <div *ngIf="modal"
-      class="w-[100%] h-[100%] flex flex-col justify-center items-center bg-transparent absolute sm:top-[-2%] md:top-[-10%] rounded-[8pt] sm:ml-[-12%] z-[999] p-4 ">
+      class="w-[100%] h-[100%] flex flex-col justify-center items-center bg-transparent absolute sm:top-[-2%] md:top-[-10%] rounded-[8pt] sm:ml-[-12%] sm:mt-[-3%] z-[999] p-4 ">
       <div
         class="w-[250pt] sm:p-[6%] sm:h-[250pt] md:h-[170pt] md:w-[350pt] sm:p-[1rem] md:p-[2rem] bg-[#475356] rounded-[8pt]">
-        <div class="flex flex-col items-center">
-          <fa-icon class="fa-lg" [icon]="circleEx"></fa-icon>
+        <div class="flex flex-col items-center sm:mt-[-3%]">
+          <!-- <fa-icon class="fa-lg" [icon]="circleEx"></fa-icon> -->
+          <img class="m-[4%]" src="../../../assets/img/forgot-password-icon.svg" alt="" height="10%" width="10%">
+
+          <button class="modal-close-button" (click)="closeModal()">&#x2716;</button>
 
           <p class="sm:text-[14pt] md:text-[22pt] text-[#FFFFFF] font-roboto-black">Forgot Password</p>
           <pre class="text-[13pt] sm:mt-[5%] md:text-[20pt] font-roboto-regular text-[#D4D4D4]">Enter your email and we'll send you 

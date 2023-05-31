@@ -6,6 +6,7 @@ import IUser from '../models/user.model';
 import { FormGroup } from '@angular/forms';
 import { Location } from '@angular/common';
 import ICurrentUser from '../models/currentUser.modal';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root',
 })
@@ -15,7 +16,7 @@ export class AuthService {
   user$ = new BehaviorSubject<ICurrentUser | null>(null);
   baseUrl = environment.apiUrl;
 
-  constructor(private http: HttpClient, public location: Location) {}
+  constructor(private http: HttpClient, public location: Location, public router:Router) {}
 
   isAuthenticated() {
     if (null !== localStorage.getItem('_token_canteen_app')) {
@@ -80,6 +81,8 @@ export class AuthService {
     localStorage.removeItem('_token_canteen_app');
     localStorage.removeItem('_email_canteen_app');
     localStorage.removeItem('_username_canteen_app');
+    window.location.reload()
+    this.router.navigateByUrl('loginComponent');
   }
 
   feedback(model: any) {

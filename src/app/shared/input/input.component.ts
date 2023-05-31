@@ -11,6 +11,9 @@ export class InputComponent {
   @Input() placeholder = ''
   @Input() control : FormControl = new FormControl()
   @Input() inputDisable:boolean = false;
+  @Input() isEnabled = true;
         // isDisabled = false;
+
+
 
 }

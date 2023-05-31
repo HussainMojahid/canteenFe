@@ -18,7 +18,8 @@ export class EditProfileComponent implements OnInit {
   backArrow = faArrowLeft;
   AlertType = 'success';
   showAlert: boolean = false;
-  disableInput = false;
+  isDisable = false;
+  inputDisable= false;
   alertMsg = 'Please Wait! Under Process';
   id: number | undefined = -1;
 

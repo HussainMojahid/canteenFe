@@ -13,7 +13,9 @@ import { InterceptorInterceptor } from './interceptor/interceptor.interceptor';
 import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
 // import { ProfileComponent } from './user/profile/profile.component';
 import { SharedModule } from "./shared/shared.module";
-import { FooterComponent } from './footer/footer.component';
+
+// import { FooterComponent } from './shared/footer/footer.component';
+
 // import { AccountComponent } from './user/account/account.component';
 import {DatePipe} from '@angular/common'
 import { UserModule } from './user/user.module';
@@ -31,7 +33,6 @@ import { RegisterComponent } from './user/register/register.component';
         // ProfileComponent,
         // AccountComponent,
         // LoginComponent,
-        FooterComponent
     ],
     imports: [
         BrowserModule,
@@ -42,7 +43,7 @@ import { RegisterComponent } from './user/register/register.component';
         HttpClientModule,
         AdminDashboardModule,
         AppRoutingModule,
-        SharedModule,
+        SharedModule
         // FootersModule
     ],exports:[],
     providers: [

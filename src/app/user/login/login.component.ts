@@ -24,6 +24,9 @@ export class LoginComponent {
   confirmModal() {
     this.modal = !this.modal;
   }
+  closeModal() {
+    this.modal = false;
+  }
 
 
   constructor(
@@ -58,6 +61,7 @@ export class LoginComponent {
           this.showAlert = true;
           this.alertMsg = 'LogIn Successful';
           this.auth.isAuthenticated();
+          this.router.navigateByUrl('/')
         },
         error: (e) => {
           this.AlertType = 'error';
@@ -65,6 +69,7 @@ export class LoginComponent {
           // this.alertMsg = e.error.error.message;
         },
       });
+
     return;
   }
 
@@ -90,5 +95,6 @@ export class LoginComponent {
     // }
       
   }
+
   
 }

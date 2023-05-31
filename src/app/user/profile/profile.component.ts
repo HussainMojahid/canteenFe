@@ -4,6 +4,7 @@ import { faArrowLeft, faUser } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
 
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -12,6 +13,8 @@ import { UserService } from 'src/app/services/user.service';
 
 export class ProfileComponent {
   backArrow = faArrowLeft;
+  isDisable = false;
+  inputDisable= false;
 // Keep the input disabled by default
   
 
