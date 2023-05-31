@@ -53,7 +53,11 @@ export class ChartCardComponent implements OnInit {
         }],
         type: 'doughnut',
         data: dataDoughnut,
-        options: {},
+        options: {
+          cutoutPercentage:67,
+          width:50
+          
+        },
       };
   
       const chartBar = new Chart(

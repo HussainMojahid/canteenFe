@@ -12,8 +12,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { AddNewMenuComponent } from './add-new-menu/add-new-menu.component';
 import { AddNewItemComponent } from './add-new-item/add-new-item.component';
-// import {FooterComponent} from './footer/footer.component'
-
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -26,7 +25,7 @@ import { AddNewItemComponent } from './add-new-item/add-new-item.component';
     EditMenuComponent,
     AddNewMenuComponent,
     AddNewItemComponent,
-    // FooterComponent
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -41,7 +40,7 @@ import { AddNewItemComponent } from './add-new-item/add-new-item.component';
     ModalComponent,
     InputComponent,
     AlertComponent,
-    // FooterComponent
+    FooterComponent
   ]
 })
 export class SharedModule { }

@@ -21,7 +21,8 @@ constructor(public auth: AuthService){}
   }
   logout() {
     this.auth.logout();
-    this.auth.isAuthenticated();
+    // this.auth.isAuthenticated();
+    // window.location.reload();
   }
   confirm(){
     this.modal = !this.modal;

@@ -77,9 +77,12 @@ export class AuthService {
   }
 
   logout() {
-    localStorage.removeItem('_token_canteen_app');
-    localStorage.removeItem('_email_canteen_app');
-    localStorage.removeItem('_username_canteen_app');
+    localStorage.clear();
+    this.isAuthenticated();
+    setTimeout(() => {
+    window.location.reload();
+      
+    }, 1000);
   }
 
   feedback(model: any) {

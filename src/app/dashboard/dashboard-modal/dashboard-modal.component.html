@@ -3,6 +3,8 @@
   <br />
   <br />
   <br />
+  
+
   <!-- <app-day-toggle-button></app-day-toggle-button>
     <app-chart-card></app-chart-card> -->
   <app-nav *ngIf="auth.isAuthenticated$ | async"></app-nav>
@@ -13,13 +15,13 @@
     </div>
     <app-day-toggle-button></app-day-toggle-button>
     <div class="flex justify-evenly mt-[1rem] p-[8px] w-[100%] md:w-[43rem] sm:w-[22.5rem] xsm:w-[18rem]">
-      <button (click)="changeTab('BreakFast')" id="breakfast" [ngClass]="{'orange' : toggleBreakfast}"
-        class="bg-transparent border-2 border-[#D4D4D4] sm:text-[11pt] xsm:text-[9.5pt] md:text-[18pt] p-[1rem,1rem]  text-[#D4D4D4] text-center xsm:w-[60pt] sm:w-[80pt] md:w-[150pt] sm:h-[25pt] md:h-[40pt] rounded-[5pt]">BreakFast</button>
+      <button (click)="changeTab('Breakfast')" id="breakfast" [ngClass]="{'orange' : toggleBreakfast}"
+        class="bg-transparent border-2 border-[#D4D4D4] sm:text-[11pt] xsm:text-[9.5pt] md:text-[18pt] p-[1rem,1rem]  text-[#D4D4D4] text-center xsm:w-[60pt] sm:w-[80pt] md:w-[150pt] sm:h-[25pt] md:h-[40pt] rounded-[5pt]">Breakfast</button>
       <button (click)="changeTab('Lunch')" id="lunch" [ngClass]="{'orange' : toggleLunch}"
         class="bg-transparent border-2 border-[#D4D4D4] sm:text-[11pt] xsm:text-[10pt] xsm:w-[60pt] md:text-[18pt] md:w-[150pt] md:h-[40pt] text-[#D4D4D4] text-center p-[1rem,1rem] sm:w-[80pt] sm:h-[25pt] rounded-[5pt]">Lunch</button>
-      <button (click)="changeTab('HighTea')" id="hightea" [ngClass]="{'orange' : toggleHightea}"
+      <button (click)="changeTab('Snacks')" id="hightea" [ngClass]="{'orange' : toggleHightea}"
         class="bg-transparent border-2 border-[#D4D4D4] xsm:w-[60pt] xsm:text-[10pt] md:w-[150pt] md:h-[40pt] sm:text-[11pt] md:text-[18pt] p-[1rem,1rem] text-[#D4D4D4] text-center sm:w-[80pt] sm:h-[25pt] rounded-[5pt]">
-        High-Tea</button>
+        Snacks</button>
     </div>
   
     
@@ -507,6 +509,6 @@
       </div>
     </app-food-section> -->
   
-    <!-- <app-footer></app-footer> -->
   
   </div>
+  <app-footer></app-footer>

@@ -6,7 +6,11 @@ const routes: Routes = [
   {
     path: 'addfood/:id',
     component: FoodPostComponent,
+   
   },
+  {
+    
+  }
 ];
 
 @NgModule({

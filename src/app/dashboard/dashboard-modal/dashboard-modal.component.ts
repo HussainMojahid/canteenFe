@@ -4,6 +4,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { FoodService } from 'src/app/services/food.service';
 import { SidebarService } from 'src/app/services/sidebar.service';
 import { AuthService } from 'src/app/services/auth.service';
+
 @Component({
   selector: 'app-dashboard-modal',
   templateUrl: './dashboard-modal.component.html',
@@ -18,6 +19,7 @@ export class DashboardModalComponent implements OnInit {
   toggleTomorrow= false;
   id: any;
   // tabName: string | undefined;
+  
 
   constructor(
     public  auth: AuthService,
