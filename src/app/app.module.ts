@@ -23,6 +23,7 @@ import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
 // import {FootersModule} from './footer/footers.module'
 
+
 @NgModule({
     declarations: [
         AppComponent,

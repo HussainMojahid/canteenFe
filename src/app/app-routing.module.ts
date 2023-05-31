@@ -16,7 +16,7 @@ import { AddFoodComponent } from './admin-dashboard/add-food/add-food.component'
 import { AddNewMenuComponent } from './shared/add-new-menu/add-new-menu.component';
 import { AddNewItemComponent } from './shared/add-new-item/add-new-item.component';
 import { AuthGuard } from './services/auth.guard';
-import { AuthGuard } from './services/auth.guard';
+
 
 const routes: Routes = [
   {
@@ -56,7 +56,7 @@ const routes: Routes = [
     path: 'foodInventory',
     component: FoodInventoryComponent,
     canActivate : [AuthGuard]
-    canActivate : [AuthGuard]
+    
   },
   {
     path: 'addFood',
