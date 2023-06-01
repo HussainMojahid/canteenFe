@@ -59,6 +59,7 @@ export class AuthService {
         username: registerForm.value.username,
         email: registerForm.value.email,
         password: registerForm.value.password,
+        EmpId : registerForm.value.EmployeeId
       })
 
       .pipe(

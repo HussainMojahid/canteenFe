@@ -7,6 +7,7 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -32,7 +33,7 @@ export class RegisterComponent {
       orgName: 'NewVision',
     },
   ];
-  constructor(private auth: AuthService, private http: HttpClient) {}
+  constructor(private auth: AuthService, private http: HttpClient,private router: Router) {}
 
   username = new FormControl('', [Validators.required, Validators.min(3)]);
   email = new FormControl('', [Validators.required, Validators.email]);
@@ -66,6 +67,7 @@ export class RegisterComponent {
           this.showAlert = true;
           this.alertMsg = 'Account Created';
           this.auth.isAuthenticated();
+          this.router.navigateByUrl('/')
         },
 
         error: (e) => {
