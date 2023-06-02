@@ -9,12 +9,12 @@
     <app-chart-card></app-chart-card> -->
   <app-nav *ngIf="auth.isAuthenticated$ | async"></app-nav>
   <div
-    class="w-[-100%] h-[100%] flex justify-center overflow-hidden items-center flex-col bg-[#3D484B] mt-[2.5rem] sm:z-[99]">
+    class="w-[-100%] h-[100%] flex justify-center overflow-hidden items-center flex-col bg-[#3D484B] mt-[1rem] sm:z-[99]">
     <div class="w-[100%] flex justify-center">
       <app-chart-card></app-chart-card>
     </div>
     <app-day-toggle-button></app-day-toggle-button>
-    <div class="flex justify-evenly mt-[1rem] p-[8px] w-[100%] md:w-[43rem] sm:w-[22.5rem] xsm:w-[18rem]">
+    <div class="flex justify-evenly mt-[0rem] p-[8px] w-[100%] md:w-[43rem] sm:w-[22.5rem] xsm:w-[18rem]">
       <button (click)="changeTab('Breakfast')" id="breakfast" [ngClass]="{'orange' : toggleBreakfast}"
         class="bg-transparent border-2 border-[#D4D4D4] sm:text-[11pt] xsm:text-[9.5pt] md:text-[18pt] p-[1rem,1rem]  text-[#D4D4D4] text-center xsm:w-[60pt] sm:w-[80pt] md:w-[150pt] sm:h-[25pt] md:h-[40pt] rounded-[5pt]">Breakfast</button>
       <button (click)="changeTab('Lunch')" id="lunch" [ngClass]="{'orange' : toggleLunch}"
@@ -31,8 +31,8 @@
       class="fourthClass sm:h-[400pt] xsm:h-[360pt] md:h-[500pt] sm:ml-[10pt]  md:w-[85%] sm:w-[90%] xsm:w-[80%">
   
       <div
-        class="w-[90%] md:ml-[1.8rem] md:w-[90%] sm:ml-[9.5rem] xsm:ml-[13.8rem] sm:w-[90%] xsm:w-[75%]  md:mb-[3rem] md:mt-[2.5rem] ml-[0.7rem] mt-[1.9rem] mb-[-0.8rem]">
-        <p class="text-[13pt] sm:text-[13pt] md:text-[19pt] xsm:text-[10pt] text-[#D4D4D4] font-roboto-regular">
+        class="w-[90%] md:ml-[1.8rem] md:w-[90%] sm:ml-[9.5rem] xsm:ml-[13.8rem] sm:w-[90%] xsm:w-[75%]  md:mb-[3rem] md:mt-[2.5rem] ml-[0.7rem] mt-[1.4rem] mb-[-0.8rem]">
+        <p class="text-[12pt] sm:text-[12pt] md:text-[19pt] xsm:text-[10pt] text-[#D4D4D4] font-roboto-regular">
           Lunch
           timing:- 12:30 PM to 3:00 PM</p>
       </div>
@@ -42,7 +42,7 @@
       <div id="box-3"
         class="zeroClass sm:p-[0.8rem] sm:w-[100%] sm:mt-[-24rem] sm:ml-[0pt] xsm:ml-[79pt]">
         <div id="box-3-img"
-          class="boxClass md:ml-[1.5rem] sm:h-[45pt] sm:w-[45pt] xsm:h-[32pt] xsm:w-[32pt] xsm:p-[2pt] md:h-[55pt] md:w-[55pt] ">
+          class="boxClass md:ml-[1.5rem] sm:h-[40pt] sm:w-[43pt] xsm:h-[32pt] xsm:w-[32pt] xsm:p-[2pt] md:h-[55pt] md:w-[55pt] ">
           <img src="../../../assets/img/Group 3129.png" height="100%" width="100%">
         </div>
         <div
@@ -56,7 +56,7 @@
       <div id="box-4"
         class="zeroClass sm:p-[0.8rem] sm:w-[100%] xsm:w-[94%] sm:mt-[-26rem] md:mt-[-23rem] xsm:mt-[-1.9rem] ">
         <div id="box-4-img"
-          class="md:ml-[1.5rem] sm:h-[45pt] sm:w-[45pt] md:h-[55pt] md:w-[55pt]  sm:p-[0.5rem] xsm:h-[32pt] xsm:w-[32pt] xsm:p-[2pt] boxClass sm:ml-[0pt] xsm:ml-[103.5pt]">
+          class="md:ml-[1.5rem] sm:h-[40pt] sm:w-[43pt] md:h-[55pt] md:w-[55pt]  sm:p-[0.5rem] xsm:h-[32pt] xsm:w-[32pt] xsm:p-[2pt] boxClass sm:ml-[0pt] xsm:ml-[103.5pt]">
           <img src="../../../assets/img/Group 3121.png" height="100%" width="100%"></div>
         <div
           class="sm:w-[170pt] xsm:w-[140pt] md:w-[330pt] sm:h-[35pt] leading-[16pt] md:leading-[22pt] sm:ml-[0.8rem] xsm:ml-[0.8rem]">
@@ -71,7 +71,7 @@
         class="zeroClass sm:p-[0.8rem] sm:w-[100%] xsm:w-[90%] sm:mt-[-26rem] md:mt-[-23rem] md:ml-[0pt] sm:ml-[6.5pt] xsm:mt-[-1.9rem] xsm:ml-[4.9rem]">
         
           <div id="box-5-img"
-          class="boxClass md:ml-[1.5rem] sm:h-[45pt] md:h-[55pt] md:w-[55pt] sm:w-[45pt] sm:p-[0.5rem] xsm:p-[0.25rem] sm:ml-[-12pt] ">
+          class="boxClass md:ml-[1.5rem] sm:h-[40pt] md:h-[55pt] md:w-[55pt] sm:w-[43pt] sm:p-[0.5rem] xsm:p-[0.25rem] sm:ml-[-12pt] ">
           <img src="../../../assets/img/Group 3145.png" height="100%" width="100%">
          </div>
         
@@ -91,7 +91,7 @@
       <div id="box-6"
         class="zeroClass sm:p-[0.8rem] sm:w-[100%] xsm:w-[100%] sm:mt-[-26rem] md:mt-[-23rem] xsm:mt-[-1.9rem] xsm:ml-[3.4rem] sm:ml-[0pt]">
         <div id="box-6-img"
-          class="boxClass xsm:p-[3pt] md:ml-[1.5rem] sm:h-[45pt] sm:w-[45pt] sm:p-[0.5rem] md:h-[55pt] md:w-[55pt]   xsm:h-[32pt] xsm:w-[32pt]">
+          class="boxClass xsm:p-[3pt] md:ml-[1.5rem] sm:h-[40pt] sm:w-[43pt] sm:p-[0.5rem] md:h-[55pt] md:w-[55pt]   xsm:h-[32pt] xsm:w-[32pt]">
           <img src="../../../assets/img/Group 3154.png" class="xsm:mb-[2.5pt]"  height="100%" width="100%">
         </div>
   
@@ -105,7 +105,7 @@
       <div id="box-7"
         class="zeroClass sm:p-[0.8rem] sm:width[100%] sm:mt-[-26rem] md:mt-[-23rem] xsm:mt-[-1.9rem] sm:ml-[0pt] xsm:ml-[7rem]">
         <div id="box-7-img"
-          class=" md:ml-[1.5rem] sm:h-[45pt] sm:w-[45pt] md:h-[55pt] md:w-[55pt] sm:p-[0.5rem] xsm:h-[32pt] xsm:w-[32pt] xsm:p-[4pt] boxClass">
+          class=" md:ml-[1.5rem] sm:h-[40pt] sm:w-[43pt] md:h-[55pt] md:w-[55pt] sm:p-[0.5rem] xsm:h-[32pt] xsm:w-[32pt] xsm:p-[4pt] boxClass">
           <img src="../../../assets/img/Group 3152.png" height="90%" width="90%"></div>
         <div class="sm:w-[170pt] md:w-[330pt] sm:h-[35pt] leading-[16pt] md:leading-[22pt] sm:ml-[0.8rem] xsm:ml-[0.8rem]">
           <p class="font-roboto-black text-[#FFFFFF] sm:text-[13pt] xsm:text-[10pt] md:text-[20pt]">Salad</p>
@@ -119,9 +119,9 @@
   
   
       <div
-        class="flex sm:w-[100%] sm:p-[3pt] xsm:w-[85%] sm:justify-center md:justify-between xsm:justify-center sm:ml-[55pt] sm:items-center md:w-[120%] md:ml-[22pt]  sm:mb-[25pt] sm:mt-[-25rem] md:mt-[-22rem] xsm:ml-[8.5rem] xsm:p-[5pt] ">
+        class="flex sm:w-[100%] sm:p-[3pt] xsm:w-[85%] sm:justify-center md:justify-between xsm:justify-center sm:ml-[55pt] sm:items-center md:w-[120%] md:ml-[22pt]  sm:mb-[32pt] sm:mt-[-14rem] md:mt-[-22rem] xsm:ml-[8.5rem] xsm:p-[5pt] ">
   
-        <div id="box-1" class="zeroClass sm:mt-[1rem] sm:w-[45%] xsm:w-[35%]" >
+        <div id="box-1" class="zeroClass sm:mt-[-18rem] sm:w-[45%] xsm:w-[35%]" >
           <div id="box-1-img"
             class=" md:h-[48pt] md:w-[55pt] sm:h-[40pt] sm:w-[50pt] p-[3pt] sm:p-[4pt] md:p-[7pt] xsm:w-[25pt] xsm:h-[30pt] boxClass">
             <img src="../../../assets/img/fullMeal.png"  height="108%" width="108%"></div>
@@ -131,7 +131,7 @@
           </div>
   
         </div>
-        <div id="box-2" class="zeroClass sm:mt-[1rem] sm:w-[45%] sm:ml-[-42pt] xsm:w-[35%]">
+        <div id="box-2" class="zeroClass sm:mt-[-18rem] sm:w-[45%] sm:ml-[-46pt] xsm:w-[35%]">
           <div id="box-2-img"
             class=" h-[40pt] w-[110pt] md:h-[48pt] md:w-[55pt] sm:h-[40pt] sm:w-[50pt]  xsm:w-[25pt] xsm:h-[30pt] p-[3pt] sm:p-[4pt] md:p-[7pt] boxClass">
             <img src="../../../assets/img/Group 3121.png" height="98%" width="98%">
