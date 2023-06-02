@@ -1,3 +1,7 @@
 .fa-lg{
     filter: invert(100%);
 }
+
+.feedback-class{
+    text-indent: 0px;
+}
