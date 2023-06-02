@@ -57,47 +57,48 @@
         <app-input [control]="password" type="password" placeholder="Password"
           class="h-[40pt] md:h-[100pt] w-[100%] bg-white" ></app-input>
         <p class="text-left text-[16pt] sm:text-[11.5pt] md:text-[18pt] text-orangess font-roboto-regular p-[2pt] mt-[5pt] float-right" (click)="confirmModal()">Forgot Your Password?</p>
-        <div *ngIf="modal" class="w-[100%] h-[100%] flex flex-col justify-center items-center bg-transparent absolute sm:top-[-2%] md:top-[-10%] rounded-[8pt] sm:ml-[-12%] z-[999] p-4 ">
-          <div class="relative w-[250pt] sm:p-[6%] sm:h-[250pt] md:h-[170pt] md:w-[350pt] sm:p-[1rem] md:p-[2rem] bg-[#475356] rounded-[8pt]">
-            <!-- Close Button -->
-            <button type="button" class="absolute top-0 right-0 m-2 text-gray-500 hover:text-gray-900 focus:text-gray-900" (click)="closeModal()">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-              </svg>
-            </button>
-      
-            <!-- Modal content goes here -->
-            <div class="flex flex-col items-center">
-              <fa-icon class="fa-lg" [icon]="circleEx"></fa-icon>
-    
-              <p class="sm:text-[14pt] md:text-[22pt] text-[#FFFFFF] font-roboto-black">Forgot Password</p>
-              <!--Title-->
-              <div class="flex justify-between items-center pb-4">
-                <!-- Content of the modal goes here -->
-                <p class="text-[13pt] sm:mt-[5%] md:text-[20pt] font-roboto-regular text-[#D4D4D4]">Enter your email and we'll send you a link to reset your password.</p>
-              </div>
-              <form>
-                <!-- Email -->
-                <div class="w-[95%] sm:mt-[6%]">
-                  <label for="subject" class="text-[13pt] text-[#D4D4D4]  font-roboto-regular">Email<span
-                    class="text-[#FF2F2F]">*</span></label>
-                  <input type="email" id="subject" class="p-3 w-[100%] sm:mt-[2%] sm:mb-[3%] sm:text-[14pt] md:text-[13pt] text-Greyess outline-none rounded-[4pt] h-[30pt] border-2 border-greyss " required>
-                </div>
-                <button type="submit" class="sm:h-[35pt] xsm:h-[30pt] md:h-[80pt] sm:w-[95%] xsm:mt-[50%] xsm:w-[97%] md:w-[90%] md:p-[0.1rem] bg-orangess rounded-[4pt] sm:text-[14.5pt] md:text-[17pt] font-roboto-regular sm:mt-[4%] text-white md:mt-[22rem]">
-                  Reset Password
-                </button>
-              </form>
-            </div>
-          </div>
-          </div>
-        
+
+
+
+
+         <div *ngIf="modal"
+         class="disable-scroll w-[100%] h-[100vh] flex flex-col justify-center items-center bg-transparent absolute sm:top-[-2%] md:top-[-10%] sm:right-[-1%] rounded-[8pt] z-[999] p-4">
+         
+         <div
+           class="w-[250pt] sm:p-[6%] sm:h-[250pt] md:h-[170pt] md:w-[350pt] sm:p-[1rem] md:p-[2rem] bg-[#475356] rounded-[8pt] sm:mb-[10%] ">
+           <div class="flex flex-col items-center sm:mt-[-3%]">
+             <!-- <fa-icon class="fa-lg" [icon]="circleEx"></fa-icon> -->
+             <img class="m-[4%]" src="../../../assets/img/forgot-password-icon.svg" alt="" height="10%" width="10%">
+             <button class="modal-close-button" (click)="closeModal()">&#x2716;</button>
+   
+             <p class="sm:text-[14pt] md:text-[22pt] text-[#FFFFFF] font-roboto-black">Forgot Password</p>
+             <pre class="text-[13pt] sm:mt-[5%] md:text-[20pt] font-roboto-regular text-[#D4D4D4]">Enter your email and we'll send you 
+       a link  to reset your password</pre>
+             <div class="w-[90%] sm:mt-[6%]">
+               <label for="subject" class="text-[13pt] text-[#D4D4D4]  font-roboto-regular">Email <span
+                   class="text-[#FF2F2F]">*</span> </label>
+               <input type="text" id="subject"
+                 class="p-3 w-[100%] sm:mt-[2%] sm:mb-[3%] sm:text-[14pt] md:text-[13pt] text-Greyess outline-none rounded-[4pt] h-[30pt] border-2 border-greyss "
+                 required />
+             </div>
+             <button type="submit"
+               class="sm:h-[35pt] xsm:h-[30pt] md:h-[80pt] sm:w-[90%] xsm:mt-[50%] xsm:w-[97%] md:w-[90%] md:p-[0.1rem] bg-orangess rounded-[4pt] sm:text-[14pt] md:text-[17pt] font-roboto-regular sm:mt-[4%] text-white md:mt-[22rem] sm:mb-[10%]">
+               Reset Password
+             </button>
+   
+   
+           </div>
+   
+   
+         </div>
+       </div>
         
 
       </div>
     
       <!-- [routerLink]="['/forgotPassword']" -->
       <button type="submit"
-        class="block mt-[50%] md:mt-[20%] sm:text-[13pt] md:text-[22pt] z-20 w-[95%] sm:w-[80%] bg-orangess text-white py-1 px-3 rounded transition hover:bg-orange-500 font-roboto-regular text-[16pt]">
+        class="block mt-[50%] md:mt-[20%] sm:text-[13pt] md:text-[22pt] z-20 w-[95%] sm:w-[100%] bg-orangess text-white py-1 px-3 rounded transition hover:bg-orange-500 font-roboto-regular text-[16pt]">
         Login
       </button>
     </form>

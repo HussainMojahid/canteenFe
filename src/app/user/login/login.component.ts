@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import IUser from 'src/app/models/user.model';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -18,6 +19,7 @@ export class LoginComponent implements OnInit {
   modal = false;
   show: boolean = false;
   circleEx = faCircleExclamation;
+  
 
   email = new FormControl('', [Validators.required]);
   password = new FormControl('', [Validators.required]);
@@ -32,7 +34,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private auth: AuthService,
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    
   ) {}
 
   ngOnInit(): void {
@@ -88,6 +91,7 @@ export class LoginComponent implements OnInit {
   closeModal() {
     this.modal = false;
   }
+  
 }
 
 
