@@ -84,13 +84,16 @@ export class LoginComponent implements OnInit {
     this.show = !this.show;
   }
 
-  confirmModal() {
-    this.modal = !this.modal;
+  isModalOpen = false;
+
+  openModal() {
+    this.isModalOpen = true;
   }
 
   closeModal() {
-    this.modal = false;
+    this.isModalOpen = false;
   }
+  
   
 }
 

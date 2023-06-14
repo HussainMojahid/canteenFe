@@ -1,28 +1,97 @@
-<div class="w-[100%] sm:h-[93vh] md:h-[98vh] flex flex-col bg-[#3D484B]">
+<div class="w-[100%] sm:h-[130vh] md:h-[98vh] flex flex-col bg-[#3D484B] p-[1%]" >
 
-  <nav class="w-[100%] sm:h-[40pt] md:h-[70pt] p-[1.8rem] flex items-center justify-between border-b-2 border-greyss bg-[#3D484B]">
+  <nav
+    class="w-[100%] sm:h-[40pt] md:h-[70pt] p-[1.8rem] flex items-center justify-between border-b-2 border-greyss bg-[#3D484B]">
     <div class="text-blackes h-[20pt] w-[20pt]">
       <button type="button" (click)="auth.backbutton()">
-        <fa-icon class="fa-lg" [icon]="backArrow"></fa-icon>
+        <fa-icon class="fa fa-lg" [icon]="backArrow"></fa-icon>
       </button>
     </div>
     <div class="sm:w-[90%] md:w-[95%]">
       <h3 class="sm:text-[17pt] md:text-[22pt] text-[#FFFFFF] font-roboto-black">Help</h3>
     </div>
   </nav>
-
-  <div class="p-[2rem] w-[100%] sm:h-[95vh] md:h-[98vh]">
-    <h3 class="font-roboto-black sm:text-[18pt] md:text-[27pt] text-[#FFFFFF]">About App</h3>
-    <p class="text-[#D4D4D4] sm:text-[14pt] sm:mb-[2rem] md:text-[22pt] font-roboto-regular text-left sm:mt-[1rem] sm:leading-[17pt] md:leading-[27pt]">
-      The canteen app is a comprehensive solution designed to enhance the
-      overall dining experience by streamlining the process of accessing canteen
-      services. It offers a user-friendly interface that enables users to view
-      the time of breakfast, lunch, and snacks, along with the menu and pricing
-      for each food item. <br> <br>
-      In addition to providing menu information, the app
-      allows users to send feedback on the food they have purchased, which can
-      be used to improve the quality of the food and the overall dining
-      experience for all users.
-    </p>
+  
+  <div>
+  <app-accordion [headerText]="'What is a Companies Cafeteria App?'">
+    <div class="text-[13pt] p-[3%] text-[#D4D4D4] mt-[-1.5%] ml-[1%]">
+   <p>
+A Companies Cafeteria App is a mobile
+application specifically designed for <br>
+employees of a company to access and <br>
+interact with the cafeteria services
+provided <br> by the company. It enables employees to <br>
+view the cafeteria menu and provide <br>
+feedback, all through their mobile devices.
+</p>
   </div>
+    
+  </app-accordion>
+  <hr>
+  <app-accordion  [headerText]="'How does a Cafeteria App work?'">
+    <div class="text-[13pt] p-[3%] text-[#D4D4D4] mt-[-1.5%] ml-[1%]">
+   <p>
+    A Companies Cafeteria App typically allows employees to create an account using their company email address or employee ID. Once registered, they can log in to the app and access features such as viewing the daily menu, viewing item prices and receiving related notifications. 
+</p>
+  </div>
+    
+  </app-accordion>
+  <hr>
+  <app-accordion  [headerText]="'What are the benefits of using a Companies Cafeteria App?'">
+    <div class="text-[13pt] p-[3%] text-[#D4D4D4] mt-[-1.5%] ml-[1%]">
+   <p>
+    There are several benefits of using a Companies Cafeteria App. It offers convenience and efficiency by allowing employees to quickly view the menu, avoid long queues, and to provide feedback.  
+</p>
+  </div>
+    
+  </app-accordion>
+  <hr>
+  <app-accordion  [headerText]="'Can provide feedback or suggestions through Cafeteria App? '">
+    <div class="text-[13pt] p-[3%] text-[#D4D4D4] mt-[-1.5%] ml-[1%]">
+   <p>
+    Yes, Cafeteria Aps include a feature that allows employees to provide feedback or suggestions regarding the cafeteria services. This feedback can be related to food quality, menu options, service improvements, or any other aspect of the cafeteria experience. The app may provide a feedback form, rating system, or a direct channel for communication with the cafeteria management or staff. 
+</p>
+  </div>
+    
+  </app-accordion>
+  <hr>
+  <app-accordion  [headerText]="'Can a Cafeteria App offer pre-ordering or scheduling options? '">
+    <div class="text-[13pt] p-[3%] text-[#D4D4D4] mt-[-1.5%] ml-[1%]">
+   <p>
+    No, currently such options are not available. 
+</p>
+  </div>
+    
+  </app-accordion>
+  <hr>
+  <app-accordion  [headerText]="' How do I access the Cafeteria Application?'">
+    <div class="text-[13pt] p-[3%] text-[#D4D4D4] mt-[-1.5%] ml-[1%]">
+   <p>
+    You can access the Corporate Company's Cafeteria Application by downloading it from the app store or play store, depending on your device. 
+</p>
+  </div>
+    
+  </app-accordion>
+  <hr>
+  <app-accordion  [headerText]="'How do I create an account? '">
+    <div class="text-[13pt] p-[3%] text-[#D4D4D4] mt-[-1.5%] ml-[1%]">
+   <p>
+    To create an account, open the app and click on the "Sign Up" button. Follow the prompts to input your information, and you're all set! 
+</p>
+  </div>
+    
+  </app-accordion>
+  <hr>
+  <app-accordion  [headerText]="'Others'">
+    <div class="text-[13pt] p-[3%] text-[#D4D4D4] mt-[-1.5%] ml-[1%]">
+   <p>
+    Welcome to our Contact Us page! If you have any questions or need more information, our friendly and knowledgeable support team is here to assist you. You can reach us by filling out the contact form below, and we'll respond promptly. Additionally, you can find a comprehensive list of frequently asked questions (FAQs) on this page to help address your concerns. We value your feedback and are committed to providing exceptional customer service. Thank you for choosing us as your trusted resource. <br> <br> Contact Details: <br><br>
+    Email: support@example.com <br><br> We look forward to hearing from you and providing the answers you need.
+</p>
+  </div>
+    
+  </app-accordion>
+  
+  </div>
+  
 </div>

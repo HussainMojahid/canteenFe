@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FoodService } from 'src/app/services/food.service';
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-day-toggle-button',
   templateUrl: './day-toggle-button.component.html',
@@ -9,6 +11,9 @@ export class DayToggleButtonComponent {
   
   toggleToday= true;
   toggleTomorrow=false;
+  left = faChevronLeft;
+  right = faChevronRight;
+  isTomorrowActive = false;
 
   constructor(public foodService: FoodService) {}
   toggleDay(tabname:string) {
@@ -22,6 +27,7 @@ export class DayToggleButtonComponent {
       this.toggleToday=false;
       this.toggleTomorrow=true;
       this.foodService.tommorowFood();
+      this.isTomorrowActive = !this.isTomorrowActive;
     }
   }
 }

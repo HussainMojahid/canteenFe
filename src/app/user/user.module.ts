@@ -14,6 +14,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { UserRoutingModule } from './user.routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AccountComponent } from './account/account.component';
+import { AccordionComponent } from '../shared/accordion/accordion.component';
 import { AppModule } from '../app.module';
 import { InviteFriendComponent } from './invite-friend/invite-friend.component';
 import { AboutComponent } from './about/about.component';
@@ -35,7 +36,7 @@ import { ProfileComponent } from './profile/profile.component';
     AccountComponent,
     InviteFriendComponent,
     AboutComponent,
-    ProfileComponent
+    ProfileComponent,
     // ResetPasswordComponent,
     // FooterComponent
   ],

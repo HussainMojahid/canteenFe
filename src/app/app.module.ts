@@ -12,6 +12,12 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { InterceptorInterceptor } from './interceptor/interceptor.interceptor';
 import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
 // import { ProfileComponent } from './user/profile/profile.component';
+import { FormsModule } from '@angular/forms';
+import { NgxOtpInputModule } from 'ngx-otp-input';
+import { RouterModule, Routes } from '@angular/router';
+import { AccordionComponent } from './shared/accordion/accordion.component';
+
+
 import { SharedModule } from "./shared/shared.module";
 
 // import { FooterComponent } from './shared/footer/footer.component';
@@ -43,9 +49,12 @@ import { FooterComponent } from './shared/footer/footer.component';
         FontAwesomeModule,
         // DashboardModule,
         HttpClientModule,
+        RouterModule,
         AdminDashboardModule,
         AppRoutingModule,
-        SharedModule
+        FormsModule,
+        NgxOtpInputModule,
+        SharedModule,
         // FootersModule
     ],exports:[],
     providers: [

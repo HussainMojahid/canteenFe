@@ -4,18 +4,27 @@
 </div> -->
 <div class="w-[100%] flex flex-col items-center">
 
-  <div class="h-[35pt]  w-[100%] md:w-[112%] xxs:w-[110%] flex items-center justify-evenly sm:ml-[0.3rem] mt-[1rem] sm:mt-[-2rem] ml-[0.1rem]">
-    <p class="xxs:mt-[-4pt] sm:text-[14pt] xxs:text-[11pt] md:text-[23pt] font-roboto-regular text-[#FFFFFF]"><span class="font-roboto-black text-[#FFFFFF]"> Today's Menu, </span> 4 April 2023</p>
+  <div
+    class="h-[35pt]  w-[100%] md:w-[112%] xxs:w-[110%] flex items-center justify-evenly sm:ml-[0.3rem] mt-[1rem] sm:mt-[-2rem] ml-[0.1rem]">
+    <p class="xxs:mt-[-4pt] sm:text-[14pt] xxs:text-[11pt] md:text-[23pt] font-roboto-regular text-[#FFFFFF]"><span
+        class="font-roboto-black text-[#FFFFFF]"> Today's Menu, </span> 4 April 2023</p>
     <div class="w-[60pt] sm:w-[60pt] md:w-[70pt] xxs:w-[50pt] h-[30pt] flex justify-between ml-[0.4rem]">
-      <div class="sm:h-[25pt] xxs:h-[22pt] xxs:w-[22pt] md:h-[30pt] sm:w-[25pt] md:w-[30pt] border-2 border-greyss flex justify-center items-center p-[4pt] rounded-[4pt]" id="today-icon" (click)="toggleDay('Today')" [ngClass]="{'orange' : toggleToday}">
-        <svg  style=" height: 100%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
-        
+      <div
+        class="sm:h-[25pt] xxs:h-[22pt] xxs:w-[22pt] md:h-[30pt] sm:w-[25pt] md:w-[30pt] border-2 border-greyss flex justify-center items-center p-[4pt] rounded-[4pt]"
+        id="today-icon" (click)="toggleDay('Today')" [ngClass]="{'white' : toggleToday}">
+
+        <fa-icon class="fa-sm text-white" [icon]="left"></fa-icon>
+
         <!-- <img src="../../../assets/img/Group 4056.svg" alt="" height="100%" width="100%" > -->
       </div>
-      <div class="sm:h-[25pt] sm:w-[25pt] xxs:h-[22pt] xxs:w-[22pt] md:h-[30pt] w-[25pt] md:w-[30pt] border-2 border-greyss flex justify-center items-center p-[4pt] rounded-[4pt]" id="tomorrow-icon" (click)="toggleDay('Tomorrow')" [ngClass]="{'orange' : toggleTomorrow}" ><svg style=" height: 100%;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></div>
+      <div
+        class="sm:h-[25pt] sm:w-[25pt] xxs:h-[22pt] xxs:w-[22pt] md:h-[30pt] w-[25pt] md:w-[30pt] border-2 border-greyss flex justify-center items-center p-[4pt] rounded-[4pt]"
+        id="tomorrow-icon" (click)="toggleDay('Tomorrow')" [ngClass]="{'orange' : toggleTomorrow}">
+        <fa-icon class="fa-sm text-white" [icon]="right" [ngClass]="{'bg-orange': isTomorrowActive}"></fa-icon>
+      </div>
     </div>
   </div>
-  
+
 </div>
 <!-- <div class="flex justify-end mt-[5rem] mx-1 my-1 border-2 border-red-600">
   <span class="mr-2 text-sm font-medium text-gray-900">Today</span>
@@ -31,8 +40,8 @@
     <div
       class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"
     ></div> -->
-    <!-- <span class="ml-2 mr-2 text-sm font-medium text-gray-900">Tomorrow</span> -->
+<!-- <span class="ml-2 mr-2 text-sm font-medium text-gray-900">Tomorrow</span> -->
 
-  <!-- </label>
+<!-- </label>
   <span class="ml-2 mr-2 text-sm font-medium text-gray-900">Tomorrow</span>
 </div> -->
