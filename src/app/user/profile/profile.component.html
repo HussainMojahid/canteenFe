@@ -14,8 +14,8 @@
   </nav> 
   
 
-    <div class="h-[95pt] w-[95pt] sm:ml-[7%] mt-[1rem] flex relative">
-      <img
+    <div class="h-[95pt] w-[95pt] sm:ml-[7%] mt-[15%] flex relative">
+      <img class="sm:mt-[-75%]"
         src="../../../assets/img/userEditprofile.svg"
         alt="user"
         height="75%"
@@ -29,10 +29,10 @@
       ng-model="all"
       [formGroup]="EditForm"
       
-      class="mt-[-7%] mb-[8rem]  w-[100%] sm:h-[110%] md:h-[105vh] p-[1.5rem] flex flex-col items-center"
+      class="mt-[-15%] mb-[8rem]  w-[100%] sm:h-[65vh] md:h-[105vh] p-[1.5rem] flex flex-col items-center"
     >
       <!-- Employee Id -->
-      <div class="sm:mt-[2rem] sm:w-[94%] md:w-[95%]">
+      <div class=" sm:w-[94%] md:w-[95%]">
         <label 
           class="sm:text-[13pt] sm:ml-[0.6%] md:text-[20pt] text-[#D4D4D4] font-roboto-regular mb-[2rem]" 
           >Employee Id</label
@@ -42,7 +42,7 @@
           [inputDisable]="true"
           [isEnabled]="false"
           
-          class="text-Greyess  text-[14pt] bg-lightGreys w-[100%] sm:h-[40pt] md:h-[60pt] rounded-[4pt]"
+          class="text-Greyess text-[14pt] bg-lightGreys w-[100%] sm:h-[40pt] md:h-[60pt] rounded-[4pt]"
           type="text"
           placeholder="Enter Employee Id"
           

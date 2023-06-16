@@ -52,6 +52,7 @@ export class RegisterComponent {
     organization: this.organization,
     EmployeeId: this.EmployeeId,
     confirm_password: this.confirm_password,
+    
   });
 
   registeration() {
@@ -79,6 +80,11 @@ export class RegisterComponent {
 
     return;
   }
+
+  checkFormValidity(): boolean {
+    return this.registerForm.valid && this.registerForm.dirty;
+  }
+  
   matchValues(matchTo: string): ValidatorFn {
     return (control: AbstractControl) => {
       return control.value === control.parent?.get(matchTo)?.value

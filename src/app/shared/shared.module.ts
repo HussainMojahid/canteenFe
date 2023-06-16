@@ -14,6 +14,9 @@ import { AddNewMenuComponent } from './add-new-menu/add-new-menu.component';
 import { AddNewItemComponent } from './add-new-item/add-new-item.component';
 // import {FooterComponent} from './footer/footer.component'
 import { FooterComponent } from './footer/footer.component';
+import { FooterService } from '../services/footer.service';
+import { AccordionComponent } from './accordion/accordion.component';
+import { OutOfStockComponent } from './out-of-stock/out-of-stock.component';
 
 
 
@@ -28,6 +31,8 @@ import { FooterComponent } from './footer/footer.component';
     AddNewMenuComponent,
     AddNewItemComponent,
     FooterComponent,
+    AccordionComponent,
+    OutOfStockComponent,
   ],
   imports: [
     CommonModule,
@@ -42,7 +47,9 @@ import { FooterComponent } from './footer/footer.component';
     ModalComponent,
     InputComponent,
     AlertComponent,
-    FooterComponent
+    FooterComponent,
+    AccordionComponent,
+    OutOfStockComponent
   ]
 })
 export class SharedModule { }

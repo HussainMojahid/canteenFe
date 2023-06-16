@@ -5,16 +5,12 @@
     outline: none;
 }
 
-.modal-close-button {
-    position: absolute;
-    /* top: 10px; */
-    right: 13%;
-    font-size: 20px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    color: white;
-  }
+
+
+.hide-button {
+  background: transparent;
+}
+
 
   .disable-scroll{
     position: fixed;

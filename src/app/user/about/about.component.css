@@ -3,3 +3,11 @@
     /* height: 20rem;
     width: 80rem; */
 }
+
+.disable-scroll{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }

@@ -27,89 +27,61 @@
 
 
 <!-- new updated design of loginForm -->
-   <div class="absolute bottom-0 left-0 h-[100%] sm:h-[100vh] sm:w-[100vw] w-[100%] md:h-[100%] md:w-[100%] bg-gradient-to-b from-[#3D484B38] from-20% via-[#424344e6] via-20% to-[#3D484B] to-60% opacity-[100%] z-10">
+<div
+  class="absolute bottom-0 left-0 h-[100%] sm:h-[100vh] sm:w-[100vw] w-[100%] md:h-[100%] md:w-[100%] bg-gradient-to-b from-[#3D484B38] from-20% via-[#424344e6] via-20% to-[#3D484B] to-60% opacity-[100%] z-10">
 
-   </div>
-  <div class="w-[100%]  sm:h-[100%] sm:w-[100%] md:w-[100%] md:h-[100%] md:mt-[2pt] sm:mt-[0pt] flex flex-col justify-center items-center  bg-[107%,100%] bg-no-repeat bg-center"
-    style="background-image: url('../../../assets/img/bg-img.svg'); background-size: 110%; overflow: hidden; height: 100vh ;" >
+</div>
+<div
+  class="w-[100%]  sm:h-[100%] sm:w-[100%] md:w-[100%] md:h-[100%] md:mt-[2pt] sm:mt-[0pt] flex flex-col justify-center items-center  bg-[107%,100%] bg-no-repeat bg-center"
+  style="background-image: url('../../../assets/img/bg-img.svg'); background-size: 110%; overflow: hidden; height: 100vh ;">
+  <div
+    class="h-[100pt] w-[80%] md:h-[-100%] md:m-[1rem] sm:m-[4rem] md:mt-[15%] mt-[0rem] relative flex flex-col items-center justify-center object-cover">
+    <!-- <img src="../../../assets/img/navbarBg.svg" height="100%" width="100%" alt=""> -->
     <div
-      class="h-[100pt] w-[80%] md:h-[-100%] md:m-[1rem] sm:m-[4rem] md:mt-[15%] mt-[0rem] relative flex flex-col items-center justify-center object-cover">
-      <!-- <img src="../../../assets/img/navbarBg.svg" height="100%" width="100%" alt=""> -->
-      <div class="absolute h-[70pt] w-[80%] top-[3rem] md:w-[68%] md:h-[68%] sm:w-[180pt] md:m-[12%] sm:h-[30%] flex p-[0.5rem] items-center justify-center z-20">
-        <img src="../../../assets/img/canteenApp.png" height="100%" width="100%" alt="">
-      </div>
-    </div>
-    
-    <div id="heading part" class="w-[100%]  mb-[1rem] sm:mt-[10%] md:mt-[30%] p-[2rem] sm:mb-[-2rem] ml-[15.5pt] z-20">
-      <p class="text-[16pt] md:text-[27pt] font-roboto-black text-[#FFFFFF]">Login</p>
-      <p class="text-[12pt] sm:text-[11.5pt] md:text-[16.5pt]  text-[#D4D4D4] font-roboto-regular">Enter your Credentials to Continue.</p>
-    </div>
-     
-    <form [formGroup]="loginForm" (ngSubmit)="authenticate()" class="flex flex-col items-center sm:h-[100%] w-[100%] h-[100%] p-[2.5rem] pb-[0rem]">
-
-      <div class="mb-3 w-[100%] z-20" id="email">
-        <label class="inline-block mb-2 sm:text-[12pt] md:text-[20pt] text-[#D4D4D4] p-[1.5pt] font-roboto-regular">Email</label>
-        <app-input [control]="email" type="text" placeholder="Enter your Email" class="h-[40pt] md:h-[60pt] w-[100%]"></app-input>
-      </div>
-
-      <div class="mb-3 w-[100%] z-20">
-        <label class="inline-block mb-2 text-[14pt] md:text-[20pt] sm:text-[12pt] text-[#D4D4D4] font-roboto-regular">Password</label>
-        <app-input [control]="password" type="password" placeholder="Password"
-          class="h-[40pt] md:h-[100pt] w-[100%] bg-white" ></app-input>
-        <p class="text-left text-[16pt] sm:text-[11.5pt] md:text-[18pt] text-orangess font-roboto-regular p-[2pt] mt-[5pt] float-right" (click)="confirmModal()">Forgot Your Password?</p>
-
-
-
-
-         <div *ngIf="modal"
-         class="disable-scroll w-[100%] h-[100vh] flex flex-col justify-center items-center bg-transparent absolute sm:top-[-2%] md:top-[-10%] sm:right-[-1%] rounded-[8pt] z-[999] p-4">
-         
-         <div
-           class="w-[250pt] sm:p-[6%] sm:h-[250pt] md:h-[170pt] md:w-[350pt] sm:p-[1rem] md:p-[2rem] bg-[#475356] rounded-[8pt] sm:mb-[10%] ">
-           <div class="flex flex-col items-center sm:mt-[-3%]">
-             <!-- <fa-icon class="fa-lg" [icon]="circleEx"></fa-icon> -->
-             <img class="m-[4%]" src="../../../assets/img/forgot-password-icon.svg" alt="" height="10%" width="10%">
-             <button class="modal-close-button" (click)="closeModal()">&#x2716;</button>
-   
-             <p class="sm:text-[14pt] md:text-[22pt] text-[#FFFFFF] font-roboto-black">Forgot Password</p>
-             <pre class="text-[13pt] sm:mt-[5%] md:text-[20pt] font-roboto-regular text-[#D4D4D4]">Enter your email and we'll send you 
-       a link  to reset your password</pre>
-             <div class="w-[90%] sm:mt-[6%]">
-               <label for="subject" class="text-[13pt] text-[#D4D4D4]  font-roboto-regular">Email <span
-                   class="text-[#FF2F2F]">*</span> </label>
-               <input type="text" id="subject"
-                 class="p-3 w-[100%] sm:mt-[2%] sm:mb-[3%] sm:text-[14pt] md:text-[13pt] text-Greyess outline-none rounded-[4pt] h-[30pt] border-2 border-greyss "
-                 required />
-             </div>
-             <button type="submit"
-               class="sm:h-[35pt] xsm:h-[30pt] md:h-[80pt] sm:w-[90%] xsm:mt-[50%] xsm:w-[97%] md:w-[90%] md:p-[0.1rem] bg-orangess rounded-[4pt] sm:text-[14pt] md:text-[17pt] font-roboto-regular sm:mt-[4%] text-white md:mt-[22rem] sm:mb-[10%]">
-               Reset Password
-             </button>
-   
-   
-           </div>
-   
-   
-         </div>
-       </div>
-        
-
-      </div>
-    
-      <!-- [routerLink]="['/forgotPassword']" -->
-      <button type="submit"
-        class="block mt-[50%] md:mt-[20%] sm:text-[13pt] md:text-[22pt] z-20 w-[95%] sm:w-[100%] bg-orangess text-white py-1 px-3 rounded transition hover:bg-orange-500 font-roboto-regular text-[16pt]">
-        Login
-      </button>
-    </form>
-
-    <div class="mt-[3%] sm:mb-[25%] md:mt-[1%] z-20 ">
-      <p class="text-[14pt] sm:text-[12pt] md:text-[20pt]  font-roboto-regular text-white">Haven't Registered? <span class="text-orangess"
-        [routerLink]="['/registerComponent']">Register Here</span></p>
+      class="absolute h-[70pt] w-[80%] top-[3rem] md:w-[68%] md:h-[68%] sm:w-[180pt] md:m-[12%] sm:h-[30%] flex p-[0.5rem] items-center justify-center z-20">
+      <img src="../../../assets/img/canteenApp.png" height="100%" width="100%" alt="">
     </div>
   </div>
 
+  <div id="heading part" class="w-[100%]  mb-[1rem] sm:mt-[10%] md:mt-[30%] p-[2rem] sm:mb-[-2rem] ml-[15.5pt] z-20">
+    <p class="text-[16pt] md:text-[27pt] font-roboto-black text-[#FFFFFF]">Login</p>
+    <p class="text-[12pt] sm:text-[11.5pt] md:text-[16.5pt]  text-[#D4D4D4] font-roboto-regular">Enter your credentials
+      to continue.</p>
+  </div>
+
+  <form [formGroup]="loginForm" (ngSubmit)="authenticate()"
+    class="flex flex-col items-center sm:h-[100%] w-[100%] h-[100%] p-[2.5rem] pb-[0rem]">
+
+    <div class="mb-3 w-[100%] z-20" id="email">
+      <label
+        class="inline-block mb-2 sm:text-[12pt] md:text-[20pt] text-[#D4D4D4] p-[1.5pt] font-roboto-regular">Username</label>
+      <app-input [control]="email" type="text" placeholder="Enter your Email"
+        class="h-[40pt] md:h-[60pt] w-[100%]"></app-input>
+    </div>
+
+    <div class="mb-3 w-[100%] z-20">
+      <label
+        class="inline-block mb-2 text-[14pt] md:text-[20pt] sm:text-[12pt] text-[#D4D4D4] font-roboto-regular">Password</label>
+      <app-input [control]="password" type="password" placeholder="Password"
+        class="h-[40pt] md:h-[100pt] w-[100%] bg-white"></app-input>
+      <p class="text-left text-[16pt] sm:text-[11.5pt] md:text-[18pt] text-orangess font-roboto-regular p-[2pt] mt-[5pt] float-right"
+        (click)="openModal()">Forgot Your Password?</p>
+
+        
+        <app-forget-password *ngIf="isModalOpen" (modalClosed)="closeModal()"></app-forget-password>
 
 
+    </div>
 
-  
+    <!-- [routerLink]="['/forgotPassword']" -->
+    <button type="submit" [ngStyle]="{'z-index': isModalOpen? 9 :99}"
+      class="block mt-[50%] md:mt-[20%] sm:text-[13pt] md:text-[22pt] z-20 w-[95%] sm:w-[100%] bg-orangess text-white py-1 px-3 rounded transition hover:bg-orange-500 font-roboto-regular text-[16pt] z-99 login-button">
+      Login
+    </button>
+  </form>
+
+  <div class="mt-[3%] sm:mb-[25%] md:mt-[1%] z-20" [ngStyle]="{'z-index': isModalOpen? 2 :20}">
+    <p class="text-[14pt] sm:text-[12pt] md:text-[20pt]  font-roboto-regular text-white">Haven't Registered? <span
+        class="text-orangess" [routerLink]="['/registerComponent']">Register Here</span></p>
+  </div>
+</div>
