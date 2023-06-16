@@ -12,11 +12,12 @@
     border: 2px solid #FC8019;
     color: #FC8019;
   }
+
   .grey-arrow{
     filter:greyscale(100%);
   }
 
 .bg-orange {
   color: #FC8019;
-  /* border-color: #FC8019; */
+  
 }

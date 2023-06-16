@@ -17,6 +17,7 @@ export class DashboardModalComponent implements OnInit {
   toggleHightea = false;
   toggleToday= true;
   toggleTomorrow= false;
+
   id: any;
   // tabName: string | undefined;
   
@@ -33,6 +34,15 @@ export class DashboardModalComponent implements OnInit {
     } else {
       this.food.tommorowFood();
     }
+  }
+  isModalOpen = false;
+
+  openModal() {
+    this.isModalOpen = true;
+  }
+
+  closeModal() {
+    this.isModalOpen = false;
   }
 
   changeTab(tabName: string) {
