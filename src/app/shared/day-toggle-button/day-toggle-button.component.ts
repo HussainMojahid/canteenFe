@@ -8,12 +8,12 @@ import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./day-toggle-button.component.css'],
 })
 export class DayToggleButtonComponent {
-  
   toggleToday= true;
   toggleTomorrow=false;
   left = faChevronLeft;
   right = faChevronRight;
   isTomorrowActive = false;
+  isTodayActive = false;
 
   constructor(public foodService: FoodService) {}
   toggleDay(tabname:string) {
@@ -22,6 +22,7 @@ export class DayToggleButtonComponent {
       this.toggleToday=true;
       this.toggleTomorrow=false;
       this.foodService.todayFood();
+      this.isTodayActive = !this.isTodayActive;
     }
     if(tabname==="Tomorrow"){
       this.toggleToday=false;

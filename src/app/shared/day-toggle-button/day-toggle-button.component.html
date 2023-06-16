@@ -11,9 +11,9 @@
     <div class="w-[60pt] sm:w-[60pt] md:w-[70pt] xxs:w-[50pt] h-[30pt] flex justify-between ml-[0.4rem]">
       <div
         class="sm:h-[25pt] xxs:h-[22pt] xxs:w-[22pt] md:h-[30pt] sm:w-[25pt] md:w-[30pt] border-2 border-greyss flex justify-center items-center p-[4pt] rounded-[4pt]"
-        id="today-icon" (click)="toggleDay('Today')" [ngClass]="{'white' : toggleToday}">
+        id="today-icon" (click)="toggleDay('Today')" [ngClass]="{'orange' : toggleToday}">
 
-        <fa-icon class="fa-sm text-white" [icon]="left"></fa-icon>
+        <fa-icon class="fa-sm text-white" [icon]="left" [ngClass]="{'bg-orange': isTodayActive}"></fa-icon>
 
         <!-- <img src="../../../assets/img/Group 4056.svg" alt="" height="100%" width="100%" > -->
       </div>
