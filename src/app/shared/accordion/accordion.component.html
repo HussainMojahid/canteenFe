@@ -5,8 +5,8 @@
           {{headerText}}
         </div>
         <div>
-          <fa-icon *ngIf="isAccordionOpen" class="fa-sm" [icon]="chevronDown" (click)="isAccordionOpen=false"  ></fa-icon>
-          <fa-icon *ngIf="!isAccordionOpen" class="fa-sm" [icon]="chevronUp" (click)="isAccordionOpen= true"></fa-icon>
+          <fa-icon *ngIf="isAccordionOpen" class="fa-sm" [icon]="chevronUp" (click)="isAccordionOpen=false"  ></fa-icon>
+          <fa-icon *ngIf="!isAccordionOpen" class="fa-sm" [icon]="chevronDown" (click)="isAccordionOpen= true"></fa-icon>
         </div>
       </div>
     </div>
