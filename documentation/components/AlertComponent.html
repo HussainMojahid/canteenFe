@@ -1,0 +1,381 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>canteen-fe documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">canteen-fe documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  AlertComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/shared/alert/alert.component.ts</code>
+</p>
+
+
+
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-alert</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./alert.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./alert.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#AlertType" >AlertType</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="AlertType"></a>
+                        <b>AlertType</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;success&#x27;</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/shared/alert/alert.component.ts:11</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input } from &#x27;@angular/core&#x27;;
+
+@Component({
+  selector: &#x27;app-alert&#x27;,
+  templateUrl: &#x27;./alert.component.html&#x27;,
+  styleUrls: [&#x27;./alert.component.css&#x27;]
+})
+export class AlertComponent {
+
+
+  @Input() AlertType &#x3D; &#x27;success&#x27;;
+
+ 
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div
+  class&#x3D;&quot;rounded-lg py-5 px-6 mb-3 text-base inline-flex items-center w-full&quot;
+  role&#x3D;&quot;alert&quot;
+  [ngClass]&#x3D;&quot;{
+    &#x27;text-red-700 bg-red-100&#x27;: AlertType &#x3D;&#x3D;&#x3D; &#x27;error&#x27;,
+    &#x27;text-green-700 bg-green-100&#x27;: AlertType &#x3D;&#x3D;&#x3D; &#x27;success&#x27;,
+    &#x27;text-blue-700 bg-blue-100&#x27;: AlertType &#x3D;&#x3D;&#x3D; &#x27;alert&#x27;
+  }&quot;
+&gt;
+  &lt;svg
+    *ngIf&#x3D;&quot;AlertType &#x3D;&#x3D;&#x3D; &#x27;alert&#x27;&quot;
+    aria-hidden&#x3D;&quot;true&quot;
+    focusable&#x3D;&quot;false&quot;
+    data-prefix&#x3D;&quot;fas&quot;
+    data-icon&#x3D;&quot;info-circle&quot;
+    class&#x3D;&quot;w-4 h-4 mr-2 fill-current&quot;
+    role&#x3D;&quot;img&quot;
+    xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;
+    viewBox&#x3D;&quot;0 0 512 512&quot;
+  &gt;
+    &lt;path
+      fill&#x3D;&quot;currentColor&quot;
+      d&#x3D;&quot;M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z&quot;
+    &gt;&lt;/path&gt;
+  &lt;/svg&gt;
+
+  &lt;svg
+    *ngIf&#x3D;&quot;AlertType &#x3D;&#x3D;&#x3D; &#x27;success&#x27;&quot;
+    aria-hidden&#x3D;&quot;true&quot;
+    focusable&#x3D;&quot;false&quot;
+    data-prefix&#x3D;&quot;fas&quot;
+    data-icon&#x3D;&quot;check-circle&quot;
+    class&#x3D;&quot;w-4 h-4 mr-2 fill-current&quot;
+    role&#x3D;&quot;img&quot;
+    xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;
+    viewBox&#x3D;&quot;0 0 512 512&quot;
+  &gt;
+    &lt;path
+      fill&#x3D;&quot;currentColor&quot;
+      d&#x3D;&quot;M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z&quot;
+    &gt;&lt;/path&gt;
+  &lt;/svg&gt;
+
+  &lt;svg
+
+  *ngIf&#x3D;&quot;AlertType &#x3D;&#x3D;&#x3D; &#x27;error&#x27;&quot;
+    aria-hidden&#x3D;&quot;true&quot;
+    focusable&#x3D;&quot;false&quot;
+    data-prefix&#x3D;&quot;fas&quot;
+    data-icon&#x3D;&quot;times-circle&quot;
+    class&#x3D;&quot;w-4 h-4 mr-2 fill-current&quot;
+    role&#x3D;&quot;img&quot;
+    xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot;
+    viewBox&#x3D;&quot;0 0 512 512&quot;
+  &gt;
+    &lt;path
+      fill&#x3D;&quot;currentColor&quot;
+      d&#x3D;&quot;M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z&quot;
+    &gt;&lt;/path&gt;
+  &lt;/svg&gt;
+  &lt;ng-content&gt;&lt;/ng-content&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./alert.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div  class="rounded-lg py-5 px-6 mb-3 text-base inline-flex items-center w-full"  role="alert"  [ngClass]="{    \'text-red-700 bg-red-100\': AlertType === \'error\',    \'text-green-700 bg-green-100\': AlertType === \'success\',    \'text-blue-700 bg-blue-100\': AlertType === \'alert\'  }">  <svg    *ngIf="AlertType === \'alert\'"    aria-hidden="true"    focusable="false"    data-prefix="fas"    data-icon="info-circle"    class="w-4 h-4 mr-2 fill-current"    role="img"    xmlns="http://www.w3.org/2000/svg"    viewBox="0 0 512 512"  >    <path      fill="currentColor"      d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"    ></path>  </svg>  <svg    *ngIf="AlertType === \'success\'"    aria-hidden="true"    focusable="false"    data-prefix="fas"    data-icon="check-circle"    class="w-4 h-4 mr-2 fill-current"    role="img"    xmlns="http://www.w3.org/2000/svg"    viewBox="0 0 512 512"  >    <path      fill="currentColor"      d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"    ></path>  </svg>  <svg  *ngIf="AlertType === \'error\'"    aria-hidden="true"    focusable="false"    data-prefix="fas"    data-icon="times-circle"    class="w-4 h-4 mr-2 fill-current"    role="img"    xmlns="http://www.w3.org/2000/svg"    viewBox="0 0 512 512"  >    <path      fill="currentColor"      d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"    ></path>  </svg>  <ng-content></ng-content></div></div>'
+    var COMPONENTS = [{'name': 'AlertComponent', 'selector': 'app-alert'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthModalComponent', 'selector': 'app-auth-modal'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChartCardComponent', 'selector': 'app-chart-card'},{'name': 'DashboardModalComponent', 'selector': 'app-dashboard-modal'},{'name': 'FoodCardComponent', 'selector': 'app-food-card'},{'name': 'FoodSectionComponent', 'selector': 'app-food-section'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'TabComponent', 'selector': 'app-tab'},{'name': 'TabsContainerComponent', 'selector': 'app-tabs-container'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AlertComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AlertComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

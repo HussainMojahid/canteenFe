@@ -1,0 +1,6 @@
+.fa-lg{
+    filter: invert(100%);
+}
+#svg{
+    filter: invert(100%);
+}

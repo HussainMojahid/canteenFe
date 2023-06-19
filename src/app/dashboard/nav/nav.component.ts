@@ -9,11 +9,10 @@ import { SidebarService } from '../../services/sidebar.service';
 })
 export class NavComponent {
   userIcon = faUserCircle;
-
-  constructor(public sidebar: SidebarService) {}
+  username = JSON.parse(localStorage.getItem('_username_canteen_app') || '');
+  constructor(public sidebar: SidebarService ) {}
   toggleHam($event: Event) {
     this.sidebar.toggleSidebar();
-
     $event.preventDefault();
   }
 }

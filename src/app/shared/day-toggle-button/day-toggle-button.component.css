@@ -1,0 +1,23 @@
+.grey {
+    /* background-color: #CCCCCC; */
+    border: 2px solid #CCCCCC;
+    color: #CCCCCC;
+  }
+  
+  #today-icon svg{
+    color: #FC8019;
+  }
+  .orange {
+    /* background-color: #FC8019; */
+    border: 2px solid #FC8019;
+    color: #FC8019;
+  }
+
+  .grey-arrow{
+    filter:greyscale(100%);
+  }
+
+.bg-orange {
+  color: #FC8019;
+  
+}

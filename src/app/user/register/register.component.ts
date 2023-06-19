@@ -7,6 +7,7 @@ import {
   ValidatorFn,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -18,7 +19,6 @@ export class RegisterComponent {
   AlertType = 'success';
   showAlert: boolean = false;
   alertMsg = 'Please Wait! Under Process';
-  validationError : string[] |undefined
   OrgList: any[] = [
     {
       id: '1',
@@ -33,7 +33,7 @@ export class RegisterComponent {
       orgName: 'NewVision',
     },
   ];
-  constructor(private auth: AuthService, private http: HttpClient) {}
+  constructor(private auth: AuthService, private http: HttpClient,private router: Router) {}
 
   username = new FormControl('', [Validators.required, Validators.min(3)]);
   email = new FormControl('', [Validators.required, Validators.email]);
@@ -52,6 +52,7 @@ export class RegisterComponent {
     organization: this.organization,
     EmployeeId: this.EmployeeId,
     confirm_password: this.confirm_password,
+    
   });
 
   registeration() {
@@ -67,18 +68,23 @@ export class RegisterComponent {
           this.showAlert = true;
           this.alertMsg = 'Account Created';
           this.auth.isAuthenticated();
+          this.router.navigateByUrl('/')
         },
 
         error: (e) => {
           this.AlertType = 'error';
           this.showAlert = true;
           this.alertMsg = e.error.error.message;
-          this.validationError = e;
         },
       });
 
     return;
   }
+
+  checkFormValidity(): boolean {
+    return this.registerForm.valid && this.registerForm.dirty;
+  }
+  
   matchValues(matchTo: string): ValidatorFn {
     return (control: AbstractControl) => {
       return control.value === control.parent?.get(matchTo)?.value

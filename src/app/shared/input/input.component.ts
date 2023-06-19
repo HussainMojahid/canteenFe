@@ -7,8 +7,13 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent {
-
   @Input() type = 'text';
   @Input() placeholder = ''
   @Input() control : FormControl = new FormControl()
+  @Input() inputDisable:boolean = false;
+  @Input() isEnabled=true;
+        // isDisabled = false;
+
+
+
 }

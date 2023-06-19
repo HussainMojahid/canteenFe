@@ -1,46 +1,125 @@
-  <br><br><br>
+<div class="w-[100%] sm:h-[80%] md:h-[105vh] flex flex-col  items-center bg-[#3D484B]">
+  <nav class="w-[100%] sm:h-[40pt] md:h-[70pt] p-[1.8rem] flex items-center justify-between border border-greyss bg-[#3D484B]">
+    <div class="text-blackes h-[20pt] w-[18pt]">
+      <button type="button" (click)="auth.backbutton()">
+        <fa-icon class="fa-lg" [icon]="backArrow"></fa-icon>
+      </button>
+    </div>
+    <div class="sm:w-[90%] md:w-[80%]">
+      <h3 class="sm:text-[16pt] md:text-[22pt] sm:ml-[5%] text-[#FFFFFF] font-roboto-black">Profile </h3>
+    </div>
+    <!-- <svg [routerLink]="['/edit']" class="sm:h-[20pt] sm:w-[20pt] md:h-[120%] sm:flex sm:justify-center sm:items-center md:w-[11%]" id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H322.8c-3.1-8.8-3.7-18.4-1.4-27.8l15-60.1c2.8-11.3 8.6-21.5 16.8-29.7l40.3-40.3c-32.1-31-75.7-50.1-123.9-50.1H178.3zm435.5-68.3c-15.6-15.6-40.9-15.6-56.6 0l-29.4 29.4 71 71 29.4-29.4c15.6-15.6 15.6-40.9 0-56.6l-14.4-14.4zM375.9 417c-4.1 4.1-7 9.2-8.4 14.9l-15 60.1c-1.4 5.5 .2 11.2 4.2 15.2s9.7 5.6 15.2 4.2l60.1-15c5.6-1.4 10.8-4.3 14.9-8.4L576.1 358.7l-71-71L375.9 417z"/></svg> -->
+    <img [routerLink]="['/edit']" src="../../../assets/img/manage_accounts_FILL0_wght400_GRAD0_opsz48.svg" alt="" height="8%" width="8%">
 
-  <div class="lg:mr-[95%] md:pt-16 md:mr-[95%] flex justify-end self-end m-1 mr-5">
-    <app-back-button></app-back-button>
-  </div>
+  </nav> 
+  
 
-  <div class="max-w-4xl mt-8 flex items-center h-auto lg:h-screen flex-wrap mx-auto sm:my-32 lg:my-0">
-    
-    <!--Main Col-->
-    <div id="profile" class="w-full border-2 border-cyan-700 lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
-    
-      <div class="p-4 md:p-12 text-center lg:text-left">
-        <!-- Image for mobile view-->
-        <div class="block rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center" style="background-image: url('{{url}}')"></div>
+    <div class="h-[95pt] w-[95pt] sm:ml-[7%] mt-[15%] flex relative">
+      <img class="sm:mt-[-75%]"
+        src="../../../assets/img/userEditprofile.svg"
+        alt="user"
+        height="75%"
+        width="75%"
+      />
+    </div>
 
-        <h1 class="text-3xl font-bold pt-8 lg:pt-0">{{ userName }}</h1>
-        <div class="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-cyan-600 opacity-25"></div>
-        <p class="pt-4 text-lg font-sans font-bold flex items-center justify-center lg:justify-start"><svg class="h-4 fill-current text-cyan-500 pr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9 12H1v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6h-8v2H9v-2zm0-1H0V5c0-1.1.9-2 2-2h4V2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1h4a2 2 0 0 1 2 2v6h-9V9H9v2zm3-8V2H8v1h4z"/></svg> {{ organization }}</p>
-        <p class="pt-2 text-lg font-sans font-bold text-gray-900 lg:text-sm flex items-center justify-center lg:justify-start"><svg class="h-4 fill-current text-cyan-500 pr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 20a10 10 0 1 1 0-20 10 10 0 0 1 0 20zm7.75-8a8.01 8.01 0 0 0 0-4h-3.82a28.81 28.81 0 0 1 0 4h3.82zm-.82 2h-3.22a14.44 14.44 0 0 1-.95 3.51A8.03 8.03 0 0 0 16.93 14zm-8.85-2h3.84a24.61 24.61 0 0 0 0-4H8.08a24.61 24.61 0 0 0 0 4zm.25 2c.41 2.4 1.13 4 1.67 4s1.26-1.6 1.67-4H8.33zm-6.08-2h3.82a28.81 28.81 0 0 1 0-4H2.25a8.01 8.01 0 0 0 0 4zm.82 2a8.03 8.03 0 0 0 4.17 3.51c-.42-.96-.74-2.16-.95-3.51H3.07zm13.86-8a8.03 8.03 0 0 0-4.17-3.51c.42.96.74 2.16.95 3.51h3.22zm-8.6 0h3.34c-.41-2.4-1.13-4-1.67-4S8.74 3.6 8.33 6zM3.07 6h3.22c.2-1.35.53-2.55.95-3.51A8.03 8.03 0 0 0 3.07 6z"/></svg> {{ email }}</p>
-        <p class="pt-8 text-lg font-sans font-bold">Welcome {{ userName }} !</p>
-
-        <!-- <div class="flex w-full mt-3 items-center justify-center">
-          <label class="w-64 flex flex-col items-center px-4 py-2 bg-white text-black shadow-lg tracking-wide uppercase border-2 border-cyan-500 cursor-pointer hover:bg-blue hover:text-black">
-              <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                  <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z" />
-              </svg>
-              <span class="mt-2 text-base leading-normal">Upload Photo</span>
-              <input type='file' class="hidden" (change)="onSelectFile($event)" />
-          </label>
-        </div>
-   -->
-        <div class="pt-12 pb-8">
-          <button routerLink="/edit" class="bg-cyan-600 hover:bg-cyan-700 text-white font-bold w-full py-2 px-4 mr-3 mb-3">
-            Edit Profile
-          </button> 
-          <button routerLink="/changePassword" class="bg-cyan-600 hover:bg-cyan-700 text-white font-bold w-full py-2 px-4 mr-3 mb-3">
-            Change Password
-          </button> 
-          <button routerLink="/setting" class="bg-cyan-600 hover:bg-cyan-700 text-white font-bold w-full py-2 px-4 mr-3 mb-3">
-            Settings
-          </button> 
-        </div>
-
+  
+  
+    <form
+      ng-model="all"
+      [formGroup]="EditForm"
+      
+      class="mt-[-15%] mb-[8rem]  w-[100%] sm:h-[65vh] md:h-[105vh] p-[1.5rem] flex flex-col items-center"
+    >
+      <!-- Employee Id -->
+      <div class=" sm:w-[94%] md:w-[95%]">
+        <label 
+          class="sm:text-[13pt] sm:ml-[0.6%] md:text-[20pt] text-[#D4D4D4] font-roboto-regular mb-[2rem]" 
+          >Employee Id</label
+        >
+        <app-input
+          [control]="EmployeeId"
+          [inputDisable]="true"
+          [isEnabled]="false"
+          
+          class="text-Greyess text-[14pt] bg-lightGreys w-[100%] sm:h-[40pt] md:h-[60pt] rounded-[4pt]"
+          type="text"
+          placeholder="Enter Employee Id"
+          
+          
+        ></app-input>
+      </div>
+      <!-- Name -->
+      <div class="sm:mt-[1rem] sm:w-[94%] md:w-[95%]">
+        <label
+          class="sm:text-[13pt] sm:ml-[0.6%] md:text-[20pt] text-[#D4D4D4] font-roboto-regular mb-2"
+          >Name</label
+        >
+        <app-input
+          [control]="username" 
+          [inputDisable]="true"
+          [isEnabled]="false"
+          
+          class="text-Greyess text-[14pt] bg-lightGreys sm:h-[40pt] md:h-[50pt] w-[100%] rounded-[4pt]"
+          placeholder="Enter Name"
+        >
+        </app-input>
+      </div>
+      <!-- Email -->
+      <div class="sm:mt-[1rem] sm:w-[94%] md:w-[95%]">
+        <label
+          class="sm:text-[13pt] sm:ml-[0.6%] md:text-[20pt] text-[#D4D4D4] font-roboto-regular mb-2"
+          >Email</label
+        >
+        <app-input
+          [control]="email"
+          [inputDisable]="true"
+          [isEnabled]="false"
+          class="text-Greyess text-[14pt] bg-lightGreys w-[307pt] h-[40pt] rounded-[4pt]"
+          placeholder="Enter Email"
+          [inputDisable]="true">
+        </app-input>
       </div>
   
-    </div>
+      <div class="flex flex-col sm:mt-[1rem] sm:w-[94%] md:w-[95%]">
+        <label class="sm:text-[13pt] md:text-[20pt] text-[#BBBBBB] sm:mb-[2%] font-roboto-regular">Organization</label>
+        <select name="Organization" disabled="isDisable" class="w-[100%] h-[30pt] text-[#BBBBBB]  border-2 border-[#2D373A] rounded-[4pt] bg-[#2D373A]">
+          <option disabled selected value="Select Organization" class=" text-[14pt] w-[90%] text-[#BBBBBB] rounded-[4pt] ">
+            Select Organization
+          </option>
+          <option *ngFor="let m of OrgList" class="text-Greyess text-[14pt] bg-white w-[90%]">
+            {{ m.attributes.OrgName }}
+          </option>
+          <option value="New Vision" class="text-Greyess text-[14pt] bg-white overflow-hidden">
+            Core Card
+          </option>
+          <option
+            value="New Vision"
+            class="text-Greyess text-[14pt] bg-white overflow-hidden"
+          >
+            GTS
+          </option>
+          <option
+            value="New Vision"
+            class="text-Greyess text-[14pt] bg-white overflow-hidden"
+          >
+            New Vision
+          </option>
+        </select>
+      </div>
+      <div class="sm:mt-[1rem] sm:w-[94%] md:w-[95%]">
+        <label
+          class="sm:text-[13pt] sm:ml-[0.6%] md:text-[20pt] text-[#D4D4D4] font-roboto-regular mb-2"
+          >Profession</label
+        >
+        <app-input
+          [control]="profession"
+          [inputDisable]="true"
+          [isEnabled]="false"
+          class="text-Greyess text-[14pt] bg-lightGreys w-[307pt] h-[40pt] rounded-[4pt]"
+          placeholder="Enter your Profession"
+          [inputDisable]="true">
+        </app-input>
+      </div>
+    </form>
+  </div>

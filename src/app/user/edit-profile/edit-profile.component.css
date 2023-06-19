@@ -1,0 +1,7 @@
+.fa-lg{
+    filter: invert(100%);
+}
+
+.enabled {
+    background-color: white;
+  }

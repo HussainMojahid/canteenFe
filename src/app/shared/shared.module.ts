@@ -6,13 +6,19 @@ import { ModalComponent } from './modal/modal.component';
 import { InputComponent } from './input/input.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AlertComponent } from './alert/alert.component';
-import { BackButtonComponent } from './back-button/back-button.component';
+import { EditMenuComponent } from './edit-menu/edit-menu.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { DayToggleButtonComponent } from './day-toggle-button/day-toggle-button.component';
-import { AddItemButtonComponent } from './add-item-button/add-item-button.component';
-import { DashboardRoutingModule } from '../dashboard/dashboard.routing.module';
-import { LeftArrowButtonComponent } from './arrowButtons/left-arrow-button/left-arrow-button.component';
-import { RightArrowButtonComponent } from './arrowButtons/right-arrow-button/right-arrow-button.component';
+import { AppRoutingModule } from '../app-routing.module';
+import { FormsModule } from '@angular/forms';
+import { AddNewMenuComponent } from './add-new-menu/add-new-menu.component';
+import { AddNewItemComponent } from './add-new-item/add-new-item.component';
+// import {FooterComponent} from './footer/footer.component'
+import { FooterComponent } from './footer/footer.component';
+import { FooterService } from '../services/footer.service';
+import { AccordionComponent } from './accordion/accordion.component';
+import { OutOfStockComponent } from './out-of-stock/out-of-stock.component';
+
+
 
 @NgModule({
   declarations: [
@@ -21,29 +27,29 @@ import { RightArrowButtonComponent } from './arrowButtons/right-arrow-button/rig
     ModalComponent,
     InputComponent,
     AlertComponent,
-    BackButtonComponent,
-    DayToggleButtonComponent,
-    AddItemButtonComponent,
-    LeftArrowButtonComponent,
-    RightArrowButtonComponent,
+    EditMenuComponent,
+    AddNewMenuComponent,
+    AddNewItemComponent,
+    FooterComponent,
+    AccordionComponent,
+    OutOfStockComponent,
   ],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     FontAwesomeModule,
-    DashboardRoutingModule,
+    AppRoutingModule,
+    FormsModule
   ],
-  exports: [
+  exports:[
     TabComponent,
     TabsContainerComponent,
     ModalComponent,
     InputComponent,
     AlertComponent,
-    BackButtonComponent,
-    DayToggleButtonComponent,
-    AddItemButtonComponent,
-    LeftArrowButtonComponent,
-    RightArrowButtonComponent,
-  ],
+    FooterComponent,
+    AccordionComponent,
+    OutOfStockComponent
+  ]
 })
-export class SharedModule {}
+export class SharedModule { }

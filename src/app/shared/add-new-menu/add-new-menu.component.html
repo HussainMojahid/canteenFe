@@ -1,0 +1,165 @@
+<div class="w-[100%] sm:h-[100%] md:h-[105vh] flex flex-col items-center bg-[#3D484B]" style="overflow: hidden;">
+    <nav class="w-[100%] h-[40pt] p-[1.8rem] flex items-center justify-between border border-greyss bg-[#3D484B]">
+      <div class="sm:h-[18pt] sm:w-[18pt] md:h-[20pt]">
+        <button type="button" (click)="auth.backbutton()">
+          <fa-icon class="fa-lg" [icon]="backArrow"></fa-icon>
+        </button>
+      </div>
+      <div class="sm:w-[90%] md:w-[95%] flex justify-between items-center">
+        <h3 class="text-[14pt] text-[#FFFFFF] font-roboto-black">Add New Menu</h3>
+      </div>
+    </nav>
+    <div class="h-[90vh] w-[100%] flex items-center flex-col p-1">
+      <div class="input-box">
+        <div id="input-id" class="height-[50pt]">
+          <input type="text" id="date" placeholder="Calender"
+            class="bg-[white] p-3 w-[100%] h-[34.5pt] sm:text-[11pt] md:text-[13pt] outline-none rounded-[4pt] border-2 border-[#606161]">
+            <fa-icon class="fa fa-sm btn-class-1" [icon]="calArrow"> </fa-icon>
+        </div>
+        <div>
+          <!-- <input type="text" placeholder="Lunch" id="title"
+            class="p-3 bg-[white] w-[100%] sm:text-[11pt] md:text-[13pt] outline-none rounded-[4pt] h-[34.5pt] border-2 border-[#606161] " /> -->
+            <select id="title" class=" bg-[white] w-[100%] sm:text-[11pt] md:text-[13pt] outline-none rounded-[4pt] h-[34.5pt] text-[#FC8019] border-2 border-[#606161]">
+              <option class="p-2" value="Lunch">Lunch</option>
+              <option value="Breakfast">Breakfast</option>
+              <option value="Snacks">Snacks</option>
+
+            </select>
+        </div>
+      </div>
+  
+      <div class="menu-class">
+        <div class="text-[white] font-roboto-black ">
+          <h4>Menu</h4>
+        </div>
+        <div class="font-roboto-black text-orangess">
+          <a [routerLink]="['/addNewItem']">+Add Item</a>
+        </div>
+      </div>
+      <div class="input-box-1">
+        <div class="icon-box">
+          <fa-icon class="fa fa-sm btn-class" [icon]="magbutton"> </fa-icon>
+        </div>
+        <div class="w-[100%] h-[100%]">
+          <input type="text" placeholder="Search For Food Item" id="title"
+            class=" p-3 bg-[white] h-[100%] w-[100%] sm:text-[11pt] md:text-[13pt] text-Greyess outline-none rounded-[4pt] h-[40pt] border-2 border-[#606161] " />
+        </div>
+      </div>
+    </div>
+  
+    <!-- menu part -->
+  
+    <div class="totalMenu" >
+      <div id="box-6" class="zeroClass  sm:mt-[-200%] sm:ml-[0pt] xsm:ml-[79pt]">
+        <div class="h-[21pt] w-[30pt]">
+          <input class="checkbox" type="checkbox" />
+        </div>
+        <div id="box-6-img"
+          class="boxClass md:ml-[1.5rem] sm:h-[33pt] sm:w-[33pt] xsm:h-[32pt] xsm:w-[32pt] xsm:p-[2pt] md:h-[55pt] md:w-[55pt] ">
+          <img src="../../../assets/img/Group 3154.png" height="75%" width="75%">
+        </div>
+        <div
+          class="sm:w-[150pt] xsm:w-[130pt] md:w-[330pt] sm:h-[30pt] sm:leading-[16pt] md:leading-[22pt] sm:ml-[0.8rem] xsm:ml-[0.6rem]">
+          <p class="font-roboto-black text-[#FFFFFF] sm:text-[12pt] md:text-[20pt] xsm:text-[10pt] ml-[0.8rem]">Aloo Gobhi
+            Sabji
+          </p>
+          <p class="sm:text-[11pt] xsm:text-[10pt] md:text-[16pt] ml-[0.8rem] font-roboto-regular text-[#D4D4D4]">₹10</p>
+        </div>
+        <div class="sm:h-[2pt] sm:w-[4pt] xsm:h-[2pt] xsm:w-[3pt]"><img src="../../../assets/img/ellipsisLatest.svg"
+            height="85%" width="85%"></div>
+      </div>
+      <div id="box-3" class="zeroClass  sm:mt-[1rem] sm:ml-[0pt] xsm:ml-[79pt]">
+        <div class="h-[21pt] w-[30pt]">
+          <input class="checkbox" type="checkbox">
+        </div>
+        <div id="box-3-img"
+          class="boxClass md:ml-[1.5rem] sm:h-[33pt] sm:w-[33pt] xsm:h-[32pt] xsm:w-[32pt] xsm:p-[2pt] md:h-[55pt] md:w-[55pt] ">
+          <img src="../../../assets/img/Group 3129.png" height="75%" width="75%">
+        </div>
+        <div
+          class="sm:w-[150pt] xsm:w-[130pt] md:w-[330pt] sm:h-[30pt] sm:leading-[16pt] md:leading-[22pt] sm:ml-[0.8rem] xsm:ml-[0.6rem]">
+          <p class="font-roboto-black text-[#FFFFFF] sm:text-[12pt] md:text-[20pt] xsm:text-[10pt] ml-[0.8rem]">Chapati
+          </p>
+          <p class="sm:text-[11pt] xsm:text-[10pt] md:text-[16pt] ml-[0.8rem] font-roboto-regular text-[#D4D4D4]">₹20</p>
+        </div>
+        <div class="sm:h-[2pt] sm:w-[4pt] xsm:h-[2pt] xsm:w-[3pt]"><img src="../../../assets/img/ellipsisLatest.svg"
+            height="85%" width="85%"></div>
+      </div>
+      <div id="box-5" class="zeroClass  sm:mt-[1rem] sm:ml-[0pt] xsm:ml-[79pt]">
+        <div class="h-[21pt] w-[30pt]">
+          <input class="checkbox" type="checkbox">
+        </div>
+        <div id="box-5-img"
+          class="boxClass md:ml-[1.5rem] sm:h-[33pt] sm:w-[33pt] xsm:h-[32pt] xsm:w-[32pt] xsm:p-[2pt] md:h-[55pt] md:w-[55pt] ">
+          <img src="../../../assets/img/Group 3145.png" height="75%" width="75%">
+        </div>
+        <div
+          class="sm:w-[150pt] xsm:w-[130pt] md:w-[330pt] sm:h-[30pt] sm:leading-[16pt] md:leading-[22pt] sm:ml-[0.8rem] xsm:ml-[0.6rem]">
+          <p class="font-roboto-black text-[#FFFFFF] sm:text-[12pt] md:text-[20pt] xsm:text-[10pt] ml-[0.8rem]">Raita
+          </p>
+          <p class="sm:text-[11pt] xsm:text-[10pt] md:text-[16pt] ml-[0.8rem] font-roboto-regular text-[#D4D4D4]">₹10</p>
+        </div>
+        <div class="sm:h-[2pt] sm:w-[4pt] xsm:h-[2pt] xsm:w-[3pt]"><img src="../../../assets/img/ellipsisLatest.svg"
+            height="85%" width="85%"></div>
+      </div>
+      <div id="box-4" class="zeroClass  sm:mt-[1rem] sm:ml-[0pt] xsm:ml-[79pt]">
+        <div class="h-[21pt] w-[30pt]">
+          <input class="checkbox" type="checkbox">
+        </div>
+        <div id="box-4-img"
+          class="boxClass md:ml-[1.5rem] sm:h-[33pt] sm:w-[33pt] xsm:h-[32pt] xsm:w-[32pt] xsm:p-[2pt] md:h-[55pt] md:w-[55pt] ">
+          <img src="../../../assets/img/Group 3146.svg" height="75%" width="75%">
+        </div>
+        <div
+          class="sm:w-[150pt] xsm:w-[130pt] md:w-[330pt] sm:h-[30pt] sm:leading-[16pt] md:leading-[22pt] sm:ml-[0.8rem] xsm:ml-[0.6rem]">
+          <p class="font-roboto-black text-[#FFFFFF] sm:text-[12pt] md:text-[20pt] xsm:text-[10pt] ml-[0.8rem]">Rice
+          </p>
+          <p class="sm:text-[11pt] xsm:text-[10pt] md:text-[16pt] ml-[0.8rem] font-roboto-regular text-[#D4D4D4]">₹30</p>
+        </div>
+        <div class="sm:h-[2pt] sm:w-[4pt] xsm:h-[2pt] xsm:w-[3pt]"><img src="../../../assets/img/ellipsisLatest.svg"
+            height="85%" width="85%"></div>
+      </div>
+      <div id="box-7" class="zeroClass  sm:mt-[1rem] sm:ml-[0pt] xsm:ml-[79pt]">
+        <div class="h-[21pt] w-[30pt]">
+          <input class="checkbox" type="checkbox">
+        </div>
+        <div id="box-7-img"
+          class="boxClass md:ml-[1.5rem] sm:h-[33pt] sm:w-[33pt] xsm:h-[32pt] xsm:w-[32pt] xsm:p-[2pt] md:h-[55pt] md:w-[55pt] ">
+          <img src="../../../assets/img/Group 3152.png" height="75%" width="75%">
+        </div>
+        <div
+          class="sm:w-[150pt] xsm:w-[130pt] md:w-[330pt] sm:h-[30pt] sm:leading-[16pt] md:leading-[22pt] sm:ml-[0.8rem] xsm:ml-[0.6rem]">
+          <p class="font-roboto-black text-[#FFFFFF] sm:text-[12pt] md:text-[20pt] xsm:text-[10pt] ml-[0.8rem]">Salad
+          </p>
+          <p class="sm:text-[11pt] xsm:text-[10pt] md:text-[16pt] ml-[0.8rem] font-roboto-regular text-[#D4D4D4]">₹10</p>
+        </div>
+        <div class="sm:h-[2pt] sm:w-[4pt] xsm:h-[2pt] xsm:w-[3pt]"><img src="../../../assets/img/ellipsisLatest.svg"
+            height="85%" width="85%"></div>
+      </div>
+      <div id="box-8" class="zeroClass  sm:mt-[1rem] sm:ml-[0pt] xsm:ml-[79pt]">
+        <div class="h-[21pt] w-[30pt]">
+          <input class="checkbox" type="checkbox">
+        </div>
+        <div id="box-8-img"
+          class="boxClass md:ml-[1.5rem] sm:h-[33pt] sm:w-[33pt] xsm:h-[32pt] xsm:w-[32pt] xsm:p-[2pt] md:h-[55pt] md:w-[55pt] ">
+          <img src="../../../assets/img/Group 3150.svg" height="75%" width="75%">
+        </div>
+        <div
+          class="sm:w-[150pt] xsm:w-[130pt] md:w-[330pt] sm:h-[30pt] sm:leading-[16pt] md:leading-[22pt] sm:ml-[0.8rem] xsm:ml-[0.6rem]">
+          <p class="font-roboto-black text-[#FFFFFF] sm:text-[12pt] md:text-[20pt] xsm:text-[10pt] ml-[0.8rem]">Dal Fry
+          </p>
+          <p class="sm:text-[11pt] xsm:text-[10pt] md:text-[16pt] ml-[0.8rem] font-roboto-regular text-[#D4D4D4]">₹10</p>
+        </div>
+        <div class="sm:h-[2pt] sm:w-[4pt] xsm:h-[2pt] xsm:w-[3pt]"><img src="../../../assets/img/ellipsisLatest.svg"
+            height="85%" width="85%"></div>
+      </div>
+      <div>
+        <button type="submit"
+          class=" sm:mt-[25%]  h-[33pt] md:mt-[20%] sm:text-[12pt] md:text-[22pt] w-[95%] sm:w-[100%] bg-orangess text-white rounded transition hover:bg-orange-500 font-roboto-regular text-[16pt]">
+          Save Menu
+        </button>
+  
+      </div>
+    </div>
+  
+  </div>

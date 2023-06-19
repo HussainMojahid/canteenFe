@@ -2,27 +2,56 @@
   {{ alertMsg }}
 </app-alert>
 
-<div class="fixed inset-0 overflow-y-auto" id="modal">
-  <div
-    class="flex flex-col items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
-  >
-    <div class="pt-16 lg:mr-[95%] md:pt-16 md:mr-[95%] self-end m-1 mr-5">
-      <app-back-button> </app-back-button>
-    </div>
+<!-- Auth Modal -->
 
-    <div
-      class="border-2 border-cyan-700 lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white inline-block align-bottom bg-secondary text-left overflow-hidden transform transition-all sm:my-4 sm:align-middle sm:max-w-lg sm:w-full"
+<!-- <div class="self-end m-1 mr-5">
+      2nd div class class="flex flex-col items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
+      <button
+        type="button"
+        class="text-cyan-700 border border-cyan-700 hover:bg-cyan-500 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-centerdark:text-blue-500"
+        (click)="auth.backbutton()"
+      >
+        <fa-icon class="fa-lg" [icon]="backArrow"></fa-icon>
+        <span class="sr-only">Icon description</span>
+      </button>
+    </div> -->
+<!-- <ul class="flex flex-wrap">
+      <li class="flex-auto text-center">
+        <a
+          class="block rounded py-3 px-4 mx-2 transition hover:text-white text-white bg-cyan-400"
+          routerLink="/changePassword"
+          >Change Password</a
+        >
+      </li>
+      <li class="flex-auto text-center">
+        <a
+          class="block rounded py-3 px-4 transition hover:text-white text-white bg-cyan-400"
+          routerLink="/forgotPassword"
+          >Forgot Password</a
+        >
+      </li>
+    </ul>
+
+<!-- rounded tab shadow -->
+<!-- <div
+      class="inline-block align-bottom bg-secondary rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-4 sm:align-middle sm:max-w-lg sm:w-full bg-white"
     >
-      <div class="py-4 text-left px-12 bg-gray-100">
+      Add margin if you want to see some of the overlay behind the modal
+      <div class="py-4 text-left px-12 bg-gray-100 mt-2">
         <p class="text-2xl font-bold text-center">Edit Profile</p>
-        <div class="flex justify-between items-center pb-4"></div>
+        Title
+        <div class="flex justify-between items-center pb-4">
+          Modal Close Button
+        </div>
 
         <form [formGroup]="EditForm">
+          Name
           <div class="mb-3">
             <label class="inline-block mb-2">Name</label>
             <app-input [control]="username" placeholder="Enter Name">
             </app-input>
           </div>
+          Email
           <div class="mb-3">
             <label class="inline-block mb-2">Email</label>
             <app-input [control]="email" placeholder="Enter Email"> </app-input>
@@ -41,14 +70,16 @@
               <option *ngFor="let m of OrgList">
                 {{ m.attributes.OrgName }}
               </option>
+              <option value="New Vision">Core Card</option>
+            <option value="New Vision">GTS</option>
             </select>
           </div>
-
+          Employee Id
           <div class="mb-3">
             <label class="inline-block mb-2">Employee Id</label>
             <app-input
               [control]="EmployeeId"
-              type="number"
+              type="text"
               placeholder="Enter Employee Id"
             >
             </app-input>
@@ -63,6 +94,136 @@
           </button>
         </form>
       </div>
+    </div> -->
+
+    
+
+<div class="w-[100%] sm:h-[100vh] md:h-[105vh] flex flex-col items-center justify-center bg-[#3D484B]">
+  <nav
+    class="w-[100%] h-[40pt] p-[1.8rem] flex items-center justify-between border border-greyss bg-[#3D484B]"
+  >
+    <div class="sm:h-[20pt] sm:w-[30pt] sm:ml-[-3%] md:h-[20pt]">
+      <button type="button" (click)="auth.backbutton()">
+        <fa-icon class="fa-lg" [icon]="backArrow"></fa-icon>
+      </button>
     </div>
+    <div class="sm:w-[90%] md:w-[95%] flex justify-between items-center">
+      <h3 class="text-[17pt] text-[#FFFFFF] font-roboto-black">Edit Profile</h3>
+    </div>
+  </nav>
+
+  <div class="h-[70pt] w-[70pt] mt-[3%] flex relative">
+    <img
+      src="../../../assets/img/userEditprofile.svg"
+      alt="user"
+      height="100%"
+      width="100%"
+    />
+    <img
+      src="../../../assets/img/editProfil icon.svg"
+      alt=""
+      height="27pt"
+      width="27pt"
+      class="absolute bottom-[0.2rem] right-[0.3rem]"
+    />
   </div>
+
+  <form
+    [formGroup]="EditForm"
+    class="mt-[-0.5rem] w-[100%] sm:mb-[5%] sm:h-[100%] md:h-[105vh] p-[1.5rem] flex flex-col items-center"
+  >
+    <!-- Employee Id -->
+    <div class="sm:mt-[1rem] sm:w-[94%] md:w-[95%]">
+      <label
+        class="sm:text-[13pt] md:text-[20pt] text-[#D4D4D4] font-roboto-regular mb-[2rem]"
+        >Employee Id</label
+      >
+      <app-input
+        [control]="EmployeeId"
+        [inputDisable]="true"
+        [isEnabled]="false"
+      
+        class="text-Greyess text-[14pt] bg-lightGreys w-[100%] sm:h-[40pt] md:h-[60pt] rounded-[4pt]"
+        type="text"
+        placeholder="Enter Employee Id"
+      ></app-input>
+    </div>
+    <!-- Name -->
+    <div class="sm:mt-[1rem] sm:w-[94%] md:w-[95%]">
+      <label
+        class="sm:text-[13pt] md:text-[20pt] text-[#D4D4D4] font-roboto-regular mb-2"
+        >Name</label
+      >
+      <app-input
+      
+        [control]="username"
+        [inputDisable]="false"
+        [isEnabled]="true"
+        
+      
+        
+        class="text-Greyess text-[14pt] bg-lightGreys sm:h-[40pt] md:h-[50pt] w-[100%] rounded-[4pt]"
+        placeholder="Enter Name"
+      >
+      </app-input>
+    </div>
+    <!-- Email -->
+    <div class="sm:mt-[1rem] sm:w-[94%] md:w-[95%]">
+      <label
+        class="sm:text-[13pt] md:text-[20pt] text-[#D4D4D4] font-roboto-regular mb-2"
+        >Email</label
+      >
+      <app-input
+        [control]="email"
+        [inputDisable]="true"
+        [isEnabled]="false"
+        class="text-black text-[14pt] bg-lightGreys w-[307pt] h-[40pt] rounded-[4pt]"
+        placeholder="Enter Email"
+      >
+      </app-input>
+    </div>
+
+    <div class="flex flex-col sm:mt-[1rem] sm:w-[94%] md:w-[95%]">
+      <label class="sm:text-[13pt] md:text-[20pt] text-[#D4D4D4] font-roboto-regular">Organization</label>
+      <select name="Organization" disabled="isDisable" class="w-[100%] h-[30pt] bg-[#2D373A] text-[#BBBBBB] border-2 border-[#2D373A] rounded-[4pt] bg-white">
+        <option selected value="Select Organization" class=" text-[14pt] w-[60%] text-[#BBBBBB] rounded-[4pt] bg-white" >
+          Select Organization
+        </option>
+        <option *ngFor="let m of OrgList" class="text-Greyess text-[14pt] bg-white w-[90%]">
+          {{ m.attributes.OrgName }}
+        </option>
+        <option value="New Vision" class="text-Greyess text-[14pt] bg-white overflow-hidden">
+          Core Card
+        </option>
+        <option
+          value="New Vision"
+          class="text-Greyess text-[14pt] bg-white overflow-hidden"
+        >
+          GTS
+        </option>
+      </select>
+    </div>
+    <div class="sm:mt-[1rem] sm:w-[94%] md:w-[95%]">
+      <label
+        class="sm:text-[13pt] md:text-[20pt] text-[#D4D4D4] font-roboto-regular mb-2"
+        >Profession</label
+      >
+      <app-input
+        [control]="profession"
+        [inputDisable]="false"
+        
+        
+        class="text-Greyess text-[14pt] bg-white sm:h-[40pt] md:h-[50pt] w-[100%] rounded-[4pt]"
+        placeholder="Enter Name"
+      >
+      </app-input>
+    </div>
+    <button
+      (click)="update()"
+      type="submit"
+      class="sm:h-[3rem] md:h-[4rem] sm:w-[95%] md:w-[90%]  bg-orangess rounded-[4pt] sm:text-[15pt] md:text-[17pt] font-roboto-black text-white sm:mt-[20%] md:mt-[18%]"
+    >
+      Save
+    </button>
+  </form>
 </div>
