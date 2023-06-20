@@ -81,8 +81,16 @@
 
   <form action="#" class="w-[95%] sm:p-[4%] flex flex-col items-center mt-[3%] md:h-[100vh] mb-[20%]">
     <div class="w-[95%] sm:mt-[-2%]">
-      <label for="subject" class="text-[13pt] text-[#D4D4D4]  font-roboto-regular">Subject <span class="text-[#FF2F2F]">*</span> </label>
-      <input type="text" id="subject" class="p-3 w-[100%] sm:mt-[2%] sm:mb-[3%] sm:text-[14pt] md:text-[13pt] text-Greyess outline-none rounded-[4pt] h-[30pt] border-2 border-greyss " required/>
+      <label for="subject" class="text-[13pt] text-[#D4D4D4]  font-roboto-regular">Issue <span class="text-[#FF2F2F]">*</span> </label>
+      <!-- <input type="text" id="subject" class="p-3 w-[100%] sm:mt-[2%] sm:mb-[3%] sm:text-[14pt] md:text-[13pt] text-Greyess outline-none rounded-[4pt] h-[30pt] border-2 border-greyss " required/> -->
+      
+      <select id="subject" class="p-0 w-[100%] sm:mt-[2%] sm:mb-[3%] sm:text-[14pt] md:text-[11pt] text-Greyess outline-none rounded-[4pt] h-[30pt] border-2 border-greyss " required>
+        <option value="" disabled selected>Select an option</option>
+        <option value="option1">Food</option>
+        <option value="option2">Technical glitch</option>
+        <option value="option3">Staff misconduct</option>
+        <option value="option4">Hygiene</option>
+      </select>
     </div>
     <div class="w-[95%] mt-[0.5rem]">
       <label for="message" class="mb-2 text-[13pt] font-roboto-regular text-[#D4D4D4] ">Message <span class="text-[#FF2F2F]">*</span></label>

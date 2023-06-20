@@ -1,6 +1,6 @@
-<app-alert *ngIf="showAlert" [AlertType]="AlertType">
+<!-- <app-alert *ngIf="showAlert" [AlertType]="AlertType">
   {{ alertMsg }}
-</app-alert>
+</app-alert> -->
 <!-- <form [formGroup]="registerForm" (ngSubmit)="registeration()">
   
   <div class="mb-3"  id="Name">
@@ -101,7 +101,7 @@
     <app-input type="password" [control]="confirm_password" placeholder="Enter Confirm Password" class="h-[40pt] w-[95%] rounded-[4pt] font-roboto-regular outline-none text-[12pt] text-Greyess"></app-input>
   </div>
 
-  <button type="submit" [disabled]="!checkFormValidity()" class="mt-[20%] z-20 block w-full bg-orangess text-white text-[16pt] font-roboto-regular py-1.5 px-3 rounded transition mt-[2rem]">
+  <button type="submit" class="mt-[20%] z-20 block w-full bg-orangess text-white text-[16pt] font-roboto-regular py-1.5 px-3 rounded transition mt-[2rem]">
     Sign up
   </button>
   

@@ -12,12 +12,17 @@ import { AddFoodComponent } from './admin-dashboard/add-food/add-food.component'
 import { AddNewMenuComponent } from './shared/add-new-menu/add-new-menu.component';
 import { AddNewItemComponent } from './shared/add-new-item/add-new-item.component';
 import { AuthGuard } from './services/auth.guard';
-
+import { FeedbackHistoryComponent } from './feedback-history/feedback-history.component';
 
 const routes: Routes = [
   {
     path: '',
     component: DashboardModalComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'feedback-history',
+    component: FeedbackHistoryComponent,
     canActivate: [AuthGuard]
   },
   {

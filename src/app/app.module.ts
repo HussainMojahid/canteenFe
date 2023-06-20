@@ -28,6 +28,7 @@ import { UserModule } from './user/user.module';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { FeedbackHistoryComponent } from './feedback-history/feedback-history.component';
 //  import {FootersModule} from './footer/footers.module'
 
 
@@ -38,6 +39,7 @@ import { FooterComponent } from './shared/footer/footer.component';
         SidebarComponent,
         BookingComponent,
         FeedbackComponent,
+        FeedbackHistoryComponent,
         // ProfileComponent,
         // AccountComponent,
         // LoginComponent,
