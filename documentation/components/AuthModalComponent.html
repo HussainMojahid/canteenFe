@@ -13,7 +13,7 @@
     </head>
     <body>
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
             <a href="../" class="navbar-brand">canteen-fe documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
@@ -35,32 +35,37 @@
 
 
 <ol class="breadcrumb">
-  <li>Components</li>
-  <li
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
   >
   AuthModalComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
         </li>
-        <li >
-            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
         </li>
-        <li >
-            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
-        <li >
-            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -72,10 +77,11 @@
 
 
 
-<section>
+<section data-compodoc="block-metadata">
     <h3>Metadata</h3>
     <table class="table table-sm table-hover metadata">
         <tbody>
+
 
 
 
@@ -91,6 +97,8 @@
                 <td class="col-md-3">selector</td>
                 <td class="col-md-9"><code>app-auth-modal</code></td>
             </tr>
+
+
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
@@ -126,7 +134,7 @@
 </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
+    <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
 
 @Component({
@@ -140,30 +148,36 @@ export class AuthModalComponent {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-templateData">
+    <div class="tab-pane fade " id="templateData">
         <pre class="line-numbers"><code class="language-html">
-&lt;app-modal modalID&#x3D;&quot;auth&quot;&gt;
-  &lt;p class&#x3D;&quot;text-2xl font-bold&quot; heading&gt;Your Account&lt;/p&gt;
+
+&lt;!-- &lt;app-modal modalID&#x3D;&quot;auth&quot;&gt;
+  
   &lt;app-tabs-container&gt;
-    &lt;app-tab tabTitle&#x3D;&quot;Login&quot;&gt;
-      &lt;app-login&gt;&lt;/app-login&gt;
+    
+    &lt;app-tab tabTitle&#x3D;&quot;dashbord-modal&quot;&gt;
+      &lt;app-footer&gt;&lt;/app-footer&gt;
     &lt;/app-tab&gt;
-    &lt;app-tab tabTitle&#x3D;&quot;Register&quot;&gt;
-      &lt;app-register&gt; &lt;/app-register&gt;
+
+    &lt;app-tab tabTitle&#x3D;&quot;Account&quot;&gt;
+      &lt;app-footer&gt;&lt;/app-footer&gt;  
     &lt;/app-tab&gt;
+
   &lt;/app-tabs-container&gt;
-&lt;/app-modal&gt;
+
+&lt;/app-modal&gt;  --&gt;
+
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-styleData">
+    <div class="tab-pane fade " id="styleData">
                 <p class="comment">
                     <code>./auth-modal.component.css</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss"></code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-tree">
+    <div class="tab-pane fade " id="tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
             <div class="title">
@@ -188,8 +202,8 @@ export class AuthModalComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-modal modalID="auth">  <p class="text-2xl font-bold" heading>Your Account</p>  <app-tabs-container>    <app-tab tabTitle="Login">      <app-login></app-login>    </app-tab>    <app-tab tabTitle="Register">      <app-register> </app-register>    </app-tab>  </app-tabs-container></app-modal></div>'
-    var COMPONENTS = [{'name': 'AlertComponent', 'selector': 'app-alert'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthModalComponent', 'selector': 'app-auth-modal'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChartCardComponent', 'selector': 'app-chart-card'},{'name': 'DashboardModalComponent', 'selector': 'app-dashboard-modal'},{'name': 'FoodCardComponent', 'selector': 'app-food-card'},{'name': 'FoodSectionComponent', 'selector': 'app-food-section'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'TabComponent', 'selector': 'app-tab'},{'name': 'TabsContainerComponent', 'selector': 'app-tabs-container'}];
+        var COMPONENT_TEMPLATE = '<div><!-- <app-modal modalID="auth">    <app-tabs-container>        <app-tab tabTitle="dashbord-modal">      <app-footer></app-footer>    </app-tab>    <app-tab tabTitle="Account">      <app-footer></app-footer>      </app-tab>  </app-tabs-container></app-modal>  --></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AccordionComponent', 'selector': 'app-accordion'},{'name': 'AccountComponent', 'selector': 'app-account'},{'name': 'AddFoodComponent', 'selector': 'app-add-food'},{'name': 'AddItemButtonComponent', 'selector': 'app-add-item-button'},{'name': 'AddNewItemComponent', 'selector': 'app-add-new-item'},{'name': 'AddNewMenuComponent', 'selector': 'app-add-new-menu'},{'name': 'AlertComponent', 'selector': 'app-alert'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthModalComponent', 'selector': 'app-auth-modal'},{'name': 'BackButtonComponent', 'selector': 'app-back-button'},{'name': 'BookingComponent', 'selector': 'app-booking'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChartCardComponent', 'selector': 'app-chart-card'},{'name': 'DashboardModalComponent', 'selector': 'app-dashboard-modal'},{'name': 'DayToggleButtonComponent', 'selector': 'app-day-toggle-button'},{'name': 'DeleteFoodComponent', 'selector': 'app-delete-food'},{'name': 'EditMenuComponent', 'selector': 'app-edit-menu'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FeedbackComponent', 'selector': 'app-feedback'},{'name': 'FeedbackHistoryComponent', 'selector': 'app-feedback-history'},{'name': 'FoodCardComponent', 'selector': 'app-food-card'},{'name': 'FoodInventoryComponent', 'selector': 'app-food-inventory'},{'name': 'FoodPostComponent', 'selector': 'app-food-post'},{'name': 'FoodSectionComponent', 'selector': 'app-food-section'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InviteFriendComponent', 'selector': 'app-invite-friend'},{'name': 'LeftArrowButtonComponent', 'selector': 'app-left-arrow-button'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PleaseLoginComponent', 'selector': 'app-please-login'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'RightArrowButtonComponent', 'selector': 'app-right-arrow-button'},{'name': 'ServerErrorComponent', 'selector': 'app-server-error'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'TabComponent', 'selector': 'app-tab'},{'name': 'TabsContainerComponent', 'selector': 'app-tabs-container'},{'name': 'TestErrorComponent', 'selector': 'app-test-error'},{'name': 'UpdateFoodComponent', 'selector': 'app-update-food'},{'name': 'UserTabComponent', 'selector': 'app-user-tab'},{'name': 'WelcomeCardComponent', 'selector': 'app-welcome-card'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AuthModalComponent'};
 </script>

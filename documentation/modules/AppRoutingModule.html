@@ -13,7 +13,7 @@
     </head>
     <body>
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
             <a href="../" class="navbar-brand">canteen-fe documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
@@ -34,22 +34,28 @@
 
 
 <ol class="breadcrumb">
-    <li>Modules</li>
-    <li >AppRoutingModule</li>
+    <li class="breadcrumb-item">Modules</li>
+    <li class="breadcrumb-item" >AppRoutingModule</li>
 </ol>
 
 
 <ul class="nav nav-tabs" role="tablist">
-    <li  class="active" >
-        <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+    <li class="nav-item">
+        <a href="#info" 
+            class="nav-link"
+            class="nav-link active"
+            role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
     </li>
-    <li >
-        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    <li class="nav-item">
+        <a href="#source" 
+            class="nav-link"
+            
+            role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
     </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info">
+    <div class="tab-pane fade active in" id="info">
 
         <p class="comment">
             <h3>File</h3>
@@ -71,17 +77,84 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
+    <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
+import { BookingComponent } from &#x27;./booking/booking.component&#x27;;
 import { DashboardModalComponent } from &#x27;./dashboard/dashboard-modal/dashboard-modal.component&#x27;;
+import { FeedbackComponent } from &#x27;./feedback/feedback.component&#x27;;
+import { RegisterComponent } from &#x27;./user/register/register.component&#x27;;
+// import { FooterComponent } from &#x27;./footer/footer.component&#x27;;
+import { AccountComponent } from &#x27;./user/account/account.component&#x27;;
+import { EditMenuComponent } from &#x27;./shared/edit-menu/edit-menu.component&#x27;;
+import { FoodInventoryComponent } from &#x27;./admin-dashboard/food-inventory/food-inventory.component&#x27;;
+import { AddFoodComponent } from &#x27;./admin-dashboard/add-food/add-food.component&#x27;;
+import { AddNewMenuComponent } from &#x27;./shared/add-new-menu/add-new-menu.component&#x27;;
+import { AddNewItemComponent } from &#x27;./shared/add-new-item/add-new-item.component&#x27;;
 import { AuthGuard } from &#x27;./services/auth.guard&#x27;;
+import { FeedbackHistoryComponent } from &#x27;./feedback-history/feedback-history.component&#x27;;
 
 const routes: Routes &#x3D; [
   {
     path: &#x27;&#x27;,
     component: DashboardModalComponent,
+    canActivate: [AuthGuard]
   },
+  {
+    path: &#x27;feedback-history&#x27;,
+    component: FeedbackHistoryComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: &#x27;registerComponent&#x27;,
+    component: RegisterComponent
+  },
+  {
+    path: &#x27;Account&#x27;,
+    component: AccountComponent,
+    canActivate : [AuthGuard]
+  },
+  {
+    path: &#x27;dashbord-modal&#x27;,
+    component: DashboardModalComponent
+  },
+  {
+    path: &#x27;booking&#x27;,
+    component: BookingComponent,
+  },
+  {
+    path: &#x27;feedback&#x27;,
+    component: FeedbackComponent,
+    canActivate : [AuthGuard]
+  },
+  {
+    path: &#x27;editMenu&#x27;,
+    component: EditMenuComponent,
+    canActivate : [AuthGuard]
+  },
+  
+  {
+    path: &#x27;foodInventory&#x27;,
+    component: FoodInventoryComponent,
+    canActivate : [AuthGuard]
+    
+  },
+  {
+    path: &#x27;addFood&#x27;,
+    component: AddFoodComponent,
+    canActivate : [AuthGuard]
+  },
+  {
+    path: &#x27;addNewMenu&#x27;,
+    component: AddNewMenuComponent,
+    canActivate : [AuthGuard]
+  },
+  {
+    path: &#x27;addNewItem&#x27;,
+    component: AddNewItemComponent,
+    canActivate : [AuthGuard]
+  },
+  
 ];
 
 @NgModule({

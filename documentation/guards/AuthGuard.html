@@ -13,7 +13,7 @@
     </head>
     <body>
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
             <a href="../" class="navbar-brand">canteen-fe documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
@@ -41,21 +41,27 @@
 
 
 <ol class="breadcrumb">
-    <li>Guards</li>
-    <li >AuthGuard</li>
+    <li class="breadcrumb-item">Guards</li>
+    <li class="breadcrumb-item" >AuthGuard</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
         </li>
 </ul>
 
 <div class="tab-content">
-        <div class="tab-pane fade active in" id="c-info">
+        <div class="tab-pane fade active in" id="info">
             <p class="comment">
             <h3>File</h3>
             </p>
@@ -68,7 +74,7 @@
 
 
 
-                <section>
+                <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -96,18 +102,18 @@
     </table>
 </section>
 
-                <section>
+                <section data-compodoc="block-constructor">
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, auth: <a href="../injectables/AuthService.html" target="_self">AuthService</a>)</code>
+<code>constructor(router: Router, auth: <a href="../injectables/AuthService.html" target="_self">AuthService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/services/auth.guard.ts:9</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/services/auth.guard.ts:16</a></div>
                             </td>
                         </tr>
 
@@ -128,7 +134,7 @@
                                                         <td>router</td>
                                                   
                                                         <td>
-                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                                    <code>Router</code>
                                                         </td>
                                                   
                                                     <td>
@@ -157,7 +163,7 @@
         </table>
 </section>
 
-                <section>
+                <section data-compodoc="block-methods">
     
     <h3 id="methods">
         Methods
@@ -175,15 +181,15 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>canActivate(route: <a href="https://angular.io/api/router/ActivatedRouteSnapshot" target="_blank">ActivatedRouteSnapshot</a>, state: <a href="https://angular.io/api/router/RouterStateSnapshot" target="_blank">RouterStateSnapshot</a>)</code>
+<code>canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="13"
-                            class="link-to-prism">src/app/services/auth.guard.ts:13</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/services/auth.guard.ts:20</a></div>
                 </td>
             </tr>
 
@@ -206,7 +212,7 @@
                                 <tr>
                                     <td>route</td>
                                     <td>
-                                                <code><a href="https://angular.io/api/router/ActivatedRouteSnapshot" target="_blank" >ActivatedRouteSnapshot</a></code>
+                                            <code>ActivatedRouteSnapshot</code>
                                     </td>
 
                                     <td>
@@ -218,7 +224,7 @@
                                 <tr>
                                     <td>state</td>
                                     <td>
-                                                <code><a href="https://angular.io/api/router/RouterStateSnapshot" target="_blank" >RouterStateSnapshot</a></code>
+                                            <code>RouterStateSnapshot</code>
                                     </td>
 
                                     <td>
@@ -247,31 +253,57 @@
         </div>
 
 
-        <div class="tab-pane fade  tab-source-code" id="c-source">
+        <div class="tab-pane fade  tab-source-code" id="source">
             <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from &#x27;@angular/router&#x27;;
-import { Observable } from &#x27;rxjs&#x27;;
+import {
+  ActivatedRouteSnapshot,
+  CanActivate,
+  Router,
+  RouterStateSnapshot,
+  UrlTree,
+} from &#x27;@angular/router&#x27;;
+import { Observable, from } from &#x27;rxjs&#x27;;
 import { AuthService } from &#x27;./auth.service&#x27;;
 
 @Injectable({
-  providedIn: &#x27;root&#x27;
+  providedIn: &#x27;root&#x27;,
 })
+
 export class AuthGuard implements CanActivate {
-  constructor(private router: Router,private auth :AuthService){
 
-  }
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable&lt;boolean | UrlTree&gt; | Promise&lt;boolean | UrlTree&gt; | boolean | UrlTree {
+ constructor(private router: Router, private auth: AuthService) {}
 
-      var isAuthenticated &#x3D;  this.auth.isAuthenticated$;
-      if(isAuthenticated){
-        this.router.navigate([&#x27;/dashboard&#x27;])
-      }
-    return true;
-  }
-  
+canActivate(
+
+route: ActivatedRouteSnapshot,
+
+state: RouterStateSnapshot
+
+):
+| Observable&lt;boolean | UrlTree&gt;
+| Promise&lt;boolean | UrlTree&gt;
+ | boolean
+ | UrlTree {
+
+var isAuthenticated &#x3D; this.auth.isAuthenticated$;
+
+if (isAuthenticated.getValue()) {
+
+return true;
+
 }
+
+this.router.navigateByUrl(&#x27;loginComponent&#x27;);
+
+return false;
+ }
+
+}
+
+
+
+
+
 </code></pre>
         </div>
 </div>
