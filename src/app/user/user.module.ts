@@ -55,8 +55,11 @@ import { ErrorInterceptor } from '../interceptor/error.interceptor';
     // AppModule
     BrowserAnimationsModule,
     ToastrModule.forRoot({
+
       positionClass: 'toast-bottom-right',
+
     }),
+    
   ],
   exports: [
     AuthModalComponent,
@@ -64,6 +67,7 @@ import { ErrorInterceptor } from '../interceptor/error.interceptor';
     UserTabComponent,
     LoginComponent,
     RegisterComponent,
+
   ],
   providers: [
     {
