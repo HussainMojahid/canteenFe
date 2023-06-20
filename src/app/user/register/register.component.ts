@@ -9,7 +9,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -33,7 +33,7 @@ export class RegisterComponent {
       orgName: 'NewVision',
     },
   ];
-  constructor(private auth: AuthService, private http: HttpClient,private router: Router) {}
+  constructor(private auth: AuthService, private http: HttpClient,private router: Router,private toastr: ToastrService) {}
 
   username = new FormControl('', [Validators.required, Validators.min(3)]);
   email = new FormControl('', [Validators.required, Validators.email]);
@@ -69,6 +69,7 @@ export class RegisterComponent {
           this.alertMsg = 'Account Created';
           this.auth.isAuthenticated();
           this.router.navigateByUrl('/')
+          this.toastr.success("Account Created Successfully")
         },
 
         error: (e) => {

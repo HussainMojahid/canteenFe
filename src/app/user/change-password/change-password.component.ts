@@ -4,7 +4,10 @@ import { AuthService } from 'src/app/services/auth.service';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
-
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-change-password',
   templateUrl: './change-password.component.html',
@@ -47,12 +50,20 @@ export class ChangePasswordComponent {
   viewpass(index: number) {
     this.visibleFields[index] = !this.visibleFields[index];
   }
-  closeModal() {
-    this.modal = false;
-  }
+  
 
 
 
-
-  constructor(public auth: AuthService) {}
+  constructor(public auth: AuthService,
+    private http: HttpClient,
+    private router: Router,
+    private toastr: ToastrService) {}
+    isModalOpen = false;
+    openModal() {
+      this.isModalOpen = true;
+    }
+    
+    closeModal() {
+      this.isModalOpen = false;
+    }
 }

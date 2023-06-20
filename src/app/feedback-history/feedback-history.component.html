@@ -1,0 +1,74 @@
+<div class="w-[100%] md:h-[100%] sm:h-[100vh] flex flex-col items-center bg-[#3D484B]">
+
+    <nav class="w-[100%] sm:h-[40pt] md:h-[70pt] p-[1.8rem] flex items-center justify-between border border-greyss bg-[#3D484B]">
+      <div class="text-blackes h-[18pt] w-[20pt]">
+        <button type="button" (click)="auth.backbutton()">
+          <fa-icon class="fa-lg" [icon]="backArrow"></fa-icon>
+        </button>
+      </div>
+      <div class="sm:w-[90%] md:w-[95%]">
+        <h3 class="sm:text-[16pt] md:text-[22pt] text-[#FFFFFF] font-roboto-black">Feedback</h3>
+      </div>
+    </nav>
+  
+    <form action="#" class="w-[95%] sm:p-[4%] flex flex-col items-center mt-[3%] md:h-[100vh] mb-[20%]">
+      <!-- <div class="w-[95%] sm:mt-[-2%]">
+        <label for="subject" class="text-[13pt] text-[#D4D4D4]  font-roboto-regular">Subject <span class="text-[#FF2F2F]">*</span> </label>
+      
+        
+        <select id="subject" class="p-0 w-[100%] sm:mt-[2%] sm:mb-[3%] sm:text-[14pt] md:text-[11pt] text-Greyess outline-none rounded-[4pt] h-[30pt] border-2 border-greyss " required>
+          <option value="" disabled selected>Select an option</option>
+          <option value="option1">Food</option>
+          <option value="option2">Technical glitch</option>
+          <option value="option3">Staff misconduct</option>
+          <option value="option4">Hygiene</option>
+        </select>
+      </div> -->
+      <!-- <div class="w-[95%] mt-[0.5rem]">
+        <label for="message" class="mb-2 text-[13pt] font-roboto-regular text-[#D4D4D4] ">Message <span class="text-[#FF2F2F]">*</span></label>
+        
+        <textarea id="message" rows="12" 
+        class="block feedback-class outline-none sm:mt-[2%] p-[0.5rem] w-[100%] text-Greyess sm:text-[13pt] rounded-[4pt] shadow-sm border-2 border-greyss focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 " placeholder="Leave a comment..."></textarea>
+        <div class="sm:mt-[2%] text-right">
+        <span class="text-[#D4D4D4] text-[11pt] ">500 Characters</span>
+      </div>
+      </div> -->
+      <!-- <button class="mt-[30%] sm:h-[35pt] sm:w-[95%] xsm:h-[40pt] md:h-[4rem] md:w-[90%] rounded-[4pt] bg-orangess  flex justify-center items-center font-roboto-regular text-white outline-none">
+        Send Feedback
+      </button> -->
+      <div class="feedback-history">
+        <h3 class="page-title">Feedback History</h3>
+      
+        <div class="feedback-list">
+          <div class="feedback-item">
+            <div class="feedback-header">
+              <h4 class="subject">Subject: Food</h4>
+            </div>
+            <div class="feedback-body">
+              <p class="message">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor
+                sapien ut mi consequat, at tincidunt mauris hendrerit. Duis eu
+                imperdiet nulla. Donec convallis purus sit amet orci tristique
+                laoreet. Morbi sit amet ex in elit semper pellentesque. Donec non
+                gravida ligula. Donec sodales consectetur enim vel blandit.
+              </p>
+            </div>
+            <div class="feedback-reply">
+              <h4 class="reply-author">Reply from Admin:</h4>
+              <p class="reply-message">
+                Thank you for your feedback. We apologize for any inconvenience
+                caused. We are working on improving our food quality.
+              </p>
+            </div>
+          </div>
+      
+          <!-- Add more feedback items here -->
+        </div>
+        <div class="show-more-container flex justify-start mt-8">
+          <button class="mt-[30%] sm:h-[35pt] sm:w-[95%] xsm:h-[40pt] md:h-[4rem] md:w-[90%] rounded-[4pt] bg-orangess  flex justify-center items-center font-roboto-regular px-4 py-2 text-base font-bold rounded">Show More</button>
+        </div>
+      </div>
+    </form>
+  
+  </div>
+  

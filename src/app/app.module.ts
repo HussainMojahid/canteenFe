@@ -28,8 +28,11 @@ import { UserModule } from './user/user.module';
 import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { FeedbackHistoryComponent } from './feedback-history/feedback-history.component';
 //  import {FootersModule} from './footer/footers.module'
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { ErrorInterceptor } from './interceptor/error.interceptor';
 
 @NgModule({
     declarations: [
@@ -38,6 +41,7 @@ import { FooterComponent } from './shared/footer/footer.component';
         SidebarComponent,
         BookingComponent,
         FeedbackComponent,
+        FeedbackHistoryComponent,
         // ProfileComponent,
         // AccountComponent,
         // LoginComponent,
@@ -56,6 +60,8 @@ import { FooterComponent } from './shared/footer/footer.component';
         NgxOtpInputModule,
         SharedModule,
         // FootersModule
+        BrowserAnimationsModule,
+       
     ],exports:[],
     providers: [
         {
@@ -63,7 +69,11 @@ import { FooterComponent } from './shared/footer/footer.component';
             useClass: InterceptorInterceptor,
             multi: true,
             
-        },DatePipe
+        }, {
+            provide: HTTP_INTERCEPTORS,
+            useClass: ErrorInterceptor,
+            multi: true,
+          },DatePipe
     ],
     bootstrap: [AppComponent],
 })
