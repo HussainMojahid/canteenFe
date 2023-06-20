@@ -24,26 +24,38 @@ export class ErrorInterceptor implements HttpInterceptor {
         if (error) {
           switch (error.status) {
             case 400:
-              if (error.error.errors) {
+              if (error.error.error.details.errors) {
+                console.log(error.error.error.details.errors);
+                
                 const modelStateErrors = [];
-                for (const key in error.error.errors) {
-                  if (error.error.errors[key]) {
-                    modelStateErrors.push(error.error.errors[key]);
+                for (const key in error.error.error.details.errors) {
+                  console.log("Im here");
+                  
+                  if (error.error.error.details.errors[key]) {
+                    console.log(error.error.error.details.errors[key]);
+                    
+                    this.toastr.error(
+                      error.error.error.details.errors[key].message,
+                      // error.status.toString()
+                    );
+                    
+                    
+                    modelStateErrors.push(error.error.error.details.errors[key]);
                   }
                 }
                 throw modelStateErrors.flat();
               } else {
                 this.toastr.error(
                   error.error.error.message,
-                  error.status.toString()
+                  // error.status.toString()
                 );
               }
               break;
             case 401:
-              this.toastr.error('Unauthorised', error.status.toString());
+              this.toastr.error('Unauthorised');
               break;
             case 403:
-              this.toastr.error('Forbidden', error.status.toString());
+              this.toastr.error('Forbidden');
               break;
             case 404:
               this.router.navigateByUrl('/not-found');
@@ -51,6 +63,9 @@ export class ErrorInterceptor implements HttpInterceptor {
             case 500:
               this.toastr.error('Internal Server Error');
 
+              break;
+            case 429:
+              this.toastr.error("Too Many Requests")
               break;
             default:
               this.toastr.error('Something unexpected went wrong');

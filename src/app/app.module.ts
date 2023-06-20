@@ -30,7 +30,9 @@ import { RegisterComponent } from './user/register/register.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { FeedbackHistoryComponent } from './feedback-history/feedback-history.component';
 //  import {FootersModule} from './footer/footers.module'
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { ErrorInterceptor } from './interceptor/error.interceptor';
 
 @NgModule({
     declarations: [
@@ -58,6 +60,8 @@ import { FeedbackHistoryComponent } from './feedback-history/feedback-history.co
         NgxOtpInputModule,
         SharedModule,
         // FootersModule
+        BrowserAnimationsModule,
+       
     ],exports:[],
     providers: [
         {
@@ -65,7 +69,11 @@ import { FeedbackHistoryComponent } from './feedback-history/feedback-history.co
             useClass: InterceptorInterceptor,
             multi: true,
             
-        },DatePipe
+        }, {
+            provide: HTTP_INTERCEPTORS,
+            useClass: ErrorInterceptor,
+            multi: true,
+          },DatePipe
     ],
     bootstrap: [AppComponent],
 })
