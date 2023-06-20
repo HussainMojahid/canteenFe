@@ -10,7 +10,7 @@ import {
 import { catchError, Observable } from 'rxjs';
 import { NavigationExtras, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-const { toast, snackbar } = require('tailwind-toast');
+// const { toast, snackbar } = require('tailwind-toast');
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {

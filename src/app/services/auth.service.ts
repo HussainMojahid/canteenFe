@@ -95,6 +95,13 @@ export class AuthService {
       })
     );
   }
+  forgotPassword(data: FormGroup) {
+    return this.http.post(this.baseUrl + 'auth/forgot-password', {
+      email:data.value.email
+    }).pipe(
+    
+    );
+  }
   setCurrentUser(user: IUser) {
     localStorage.setItem('user', JSON.stringify(user));
   }

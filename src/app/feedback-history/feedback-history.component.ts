@@ -1,0 +1,50 @@
+
+
+import { Component, OnInit } from '@angular/core';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
+@Component({
+  selector: 'app-feedback-history',
+  templateUrl: './feedback-history.component.html',
+  styleUrls: ['./feedback-history.component.css'],
+})
+export class FeedbackHistoryComponent implements OnInit {
+  registerForm: FormGroup = new FormGroup({});
+  backArrow = faArrowLeft;
+  constructor(
+    public auth: AuthService,
+    private fb: FormBuilder,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    this.initializeForm();
+  }
+
+  initializeForm() {
+    this.registerForm = this.fb.group({
+      email: ['', Validators.required],
+      subject: ['', Validators.required],
+    });
+  }
+
+  feedback() {
+    const values = { ...this.registerForm.value };
+    this.auth.feedback(values).subscribe({
+      next: () => {
+        this.router.navigateByUrl('/members');
+      },
+      error: () => {
+        console.log('error');
+      },
+    });
+  }
+}

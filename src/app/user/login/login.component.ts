@@ -5,6 +5,7 @@ import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import IUser from 'src/app/models/user.model';
+import { ToastrService } from 'ngx-toastr';  
 
 
 @Component({
@@ -35,7 +36,7 @@ export class LoginComponent implements OnInit {
     private auth: AuthService,
     private http: HttpClient,
     private router: Router,
-    
+    private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {

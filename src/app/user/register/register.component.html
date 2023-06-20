@@ -1,6 +1,6 @@
-<app-alert *ngIf="showAlert" [AlertType]="AlertType">
+<!-- <app-alert *ngIf="showAlert" [AlertType]="AlertType">
   {{ alertMsg }}
-</app-alert>
+</app-alert> -->
 <!-- <form [formGroup]="registerForm" (ngSubmit)="registeration()">
   
   <div class="mb-3"  id="Name">
@@ -57,12 +57,12 @@
 
 
 <!-- new updated design of register form or signup form -->
-<div class="absolute  left-0 h-[100%] sm:h-[100vh] md:h-[100vh] sm:w-[100vw] w-[100%] md:h-[100%] md:w-[100%] bg-gradient-to-b from-[#3D484B38] from-20% via-[#424344e6] via-20% to-[#3D484B] to-60% opacity-[100%] z-10">
+<div class="fixed left-0  h-[100%] sm:h-[100vh] md:h-[100vh] sm:w-[100vw] w-[100%] md:h-[100%] md:w-[100%] bg-gradient-to-b from-[#3D484B38] from-20% via-[#424344e6] via-20% to-[#3D484B] to-60% opacity-[100%] z-10">
 </div>
 
-<div class="w-[100%]  flex flex-col items-center  sm:h-[100%] md:h-[100%] bg-no-repeat bg-center bg-cover overflow-hidden" style="background-image: url('../../../assets/img/login_background.svg'); width: 100vw; height: 100%; background-size: 110%; overflow: hidden;">
+<div class=" w-[100%]  flex flex-col items-center  sm:h-[100%] md:h-[100%] bg-no-repeat bg-center bg-cover overflow-hidden" style="background-image: url('../../../assets/img/login_background.svg'); width: 100vw; height: 100%; background-size: 110%; overflow: hidden;">
 
-  <div class="h-[7rem] w-[100%] mt-[0rem] overflow-hidden relative flex flex-col justify-center items-center object-cover ">
+  <div class=" h-[7rem] w-[100%] mt-[-0.5rem] overflow-hidden relative flex flex-col justify-center items-center object-cover ">
     <!-- <img src="../../../assets/img/navbarBg.svg" height="100%" width="100%" alt=""> -->
     <div class="absolute h-[70pt] w-[87%]  flex p-[4rem] items-center justify-center z-20">
       <img src="../../../assets/img/canteenApp.png"  height="100%" width="100%" alt="">
@@ -74,7 +74,7 @@
     <p class="text-[12pt]  text-[#D4D4D4]">Please provide your details below to register</p>
   </div>
 
-<form [formGroup]="registerForm" (ngSubmit)="registeration()" class="w-[100%] flex flex-col items-center p-[2rem] mt-[-10%] z-20">
+<form [formGroup]="registerForm" (ngSubmit)="registeration()" class=" w-[100%] flex flex-col items-center p-[2rem] mt-[-10%] z-20">
 
   <div class="w-[100%] mb-3" id="EmployeeId">
     <label class="inline-block mb-2 text-[12pt] font-roboto-regular text-[#D4D4D4]">Employee Id <span class="text-[#FF2F2F]">*</span></label>
