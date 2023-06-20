@@ -69,6 +69,7 @@ export class RegisterComponent {
           this.alertMsg = 'Account Created';
           this.auth.isAuthenticated();
           this.router.navigateByUrl('/')
+          this.toastr.success("Account Created Successfully")
         },
 
         error: (e) => {
