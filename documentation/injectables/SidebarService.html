@@ -13,7 +13,7 @@
     </head>
     <body>
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
             <a href="../" class="navbar-brand">canteen-fe documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
@@ -39,21 +39,27 @@
 
 
 <ol class="breadcrumb">
-  <li>Injectables</li>
-  <li >SidebarService</li>
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >SidebarService</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
         </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info">
+    <div class="tab-pane fade active in" id="info">
         <p class="comment">
             <h3>File</h3>
         </p>
@@ -65,7 +71,7 @@
 
 
 
-            <section>
+            <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -79,6 +85,9 @@
                         <ul class="index-list">
                             <li>
                                 <a href="#isSidebarVisible$" >isSidebarVisible$</a>
+                            </li>
+                            <li>
+                                <a href="#isUserTabVisible" >isUserTabVisible</a>
                             </li>
                             <li>
                                 <a href="#onHam" >onHam</a>
@@ -98,6 +107,9 @@
                             <li>
                                 <a href="#toggleSidebar" >toggleSidebar</a>
                             </li>
+                            <li>
+                                <a href="#toggleUserTab" >toggleUserTab</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -110,7 +122,7 @@
     </table>
 </section>
 
-            <section>
+            <section data-compodoc="block-constructor">
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
@@ -121,7 +133,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/services/sidebar.service.ts:8</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/app/services/sidebar.service.ts:7</a></div>
                             </td>
                         </tr>
 
@@ -159,7 +171,7 @@
         </table>
 </section>
 
-            <section>
+            <section data-compodoc="block-methods">
     
     <h3 id="methods">
         Methods
@@ -201,8 +213,45 @@
             </tr>
         </tbody>
     </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="toggleUserTab"></a>
+                    <span class="name">
+                        <span ><b>toggleUserTab</b></span>
+                        <a href="#toggleUserTab"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>toggleUserTab()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="18"
+                            class="link-to-prism">src/app/services/sidebar.service.ts:18</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </section>
-            <section>
+            <section data-compodoc="block-properties">
     
     <h3 id="inputs">
         Properties
@@ -215,6 +264,31 @@
                     <span class="name">
                         <span ><b>isSidebarVisible$</b></span>
                         <a href="#isSidebarVisible$"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/services/sidebar.service.ts:10</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isUserTabVisible"></a>
+                    <span class="name">
+                        <span ><b>isUserTabVisible</b></span>
+                        <a href="#isUserTabVisible"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
@@ -262,9 +336,8 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
+    <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
-import { BehaviorSubject } from &#x27;rxjs&#x27;;
 import { AuthService } from &#x27;./auth.service&#x27;;
 
 @Injectable({
@@ -274,11 +347,15 @@ export class SidebarService {
   constructor(private auth: AuthService) {}
 
   isSidebarVisible$ &#x3D; false;
+  isUserTabVisible &#x3D; false;
   onHam &#x3D; false;
 
   toggleSidebar() {
     this.isSidebarVisible$ &#x3D; !this.isSidebarVisible$;
     this.onHam &#x3D; !this.onHam;
+  }
+  toggleUserTab() {
+    this.isUserTabVisible &#x3D; !this.isUserTabVisible;
   }
 }
 </code></pre>

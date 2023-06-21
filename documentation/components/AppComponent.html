@@ -13,7 +13,7 @@
     </head>
     <body>
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
             <a href="../" class="navbar-brand">canteen-fe documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
@@ -35,32 +35,37 @@
 
 
 <ol class="breadcrumb">
-  <li>Components</li>
-  <li
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
   >
   AppComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
         </li>
-        <li >
-            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
         </li>
-        <li >
-            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
-        <li >
-            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -74,14 +79,15 @@
         <h3>Implements</h3>
     </p>
     <p class="comment">
-                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                <code>OnInit</code>
     </p>
 
 
-<section>
+<section data-compodoc="block-metadata">
     <h3>Metadata</h3>
     <table class="table table-sm table-hover metadata">
         <tbody>
+
 
 
 
@@ -97,6 +103,8 @@
                 <td class="col-md-3">selector</td>
                 <td class="col-md-9"><code>app-root</code></td>
             </tr>
+
+
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
@@ -121,7 +129,7 @@
     </table>
 </section>
 
-    <section>
+    <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -142,7 +150,17 @@
                                 <a href="#modal" >modal</a>
                             </li>
                             <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#router" >router</a>
+                            </li>
+                            <li>
+                                <a href="#showFooter" >showFooter</a>
+                            </li>
+                            <li>
                                 <a href="#title" >title</a>
+                            </li>
+                            <li>
+                                <a href="#user" >user</a>
                             </li>
                         </ul>
                     </td>
@@ -171,18 +189,18 @@
     </table>
 </section>
 
-    <section>
+    <section data-compodoc="block-constructor">
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(auth: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, modal: <a href="../injectables/ModalService.html" target="_self">ModalService</a>)</code>
+<code>constructor(auth: <a href="../injectables/AuthService.html" target="_self">AuthService</a>, modal: <a href="../injectables/ModalService.html" target="_self">ModalService</a>, router: Router)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/app.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/app.component.ts:15</a></div>
                             </td>
                         </tr>
 
@@ -223,6 +241,18 @@
                                                     </td>
                                                     
                                                 </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
                                         </tbody>
                                     </table>
                             </div>
@@ -236,7 +266,7 @@
 
 
 
-    <section>
+    <section data-compodoc="block-methods">
     
     <h3 id="methods">
         Methods
@@ -261,8 +291,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="17"
-                            class="link-to-prism">src/app/app.component.ts:17</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="20"
+                            class="link-to-prism">src/app/app.component.ts:20</a></div>
                 </td>
             </tr>
 
@@ -279,7 +309,7 @@
         </tbody>
     </table>
 </section>
-    <section>
+    <section data-compodoc="block-properties">
     
     <h3 id="inputs">
         Properties
@@ -304,7 +334,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/app.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/app.component.ts:17</a></div>
                         </td>
                     </tr>
 
@@ -331,7 +361,65 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/app.component.ts:13</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/app.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="router"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                        <span ><b>router</b></span>
+                        <a href="#router"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Router</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/app.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showFooter"></a>
+                    <span class="name">
+                        <span ><b>showFooter</b></span>
+                        <a href="#showFooter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/app.component.ts:14</a></div>
                         </td>
                     </tr>
 
@@ -362,7 +450,33 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/app.component.ts:22</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/app.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="user"></a>
+                    <span class="name">
+                        <span ><b>user</b></span>
+                        <a href="#user"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/IUser.html" target="_self" >IUser | undefined</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/app.component.ts:15</a></div>
                         </td>
                     </tr>
 
@@ -374,11 +488,12 @@
 </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
+    <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import { faIceCream } from &#x27;@fortawesome/free-solid-svg-icons&#x27;;
 import { AuthService } from &#x27;./services/auth.service&#x27;;
 import { ModalService } from &#x27;./services/modal.service&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
+import IUser from &#x27;./models/user.model&#x27;;
 
 @Component({
   selector: &#x27;app-root&#x27;,
@@ -386,44 +501,37 @@ import { ModalService } from &#x27;./services/modal.service&#x27;;
   styleUrls: [&#x27;./app.component.css&#x27;]
 })
 export class AppComponent implements OnInit {
+  
+  showFooter: boolean &#x3D; false;
+  user: IUser | undefined;
 
-  constructor(public  auth: AuthService,public modal : ModalService){
+  constructor(public  auth: AuthService,public modal : ModalService, public router: Router){
     this.modal.toggleModal(&#x27;auth&#x27;);
-
   }
   ngOnInit(): void {
-    this.auth.isAuthenticated()
-    
+    this.auth.isAuthenticated();
   }
-
   title &#x3D; &#x27;canteen-fe&#x27;;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">
+&lt;router-outlet&gt;&lt;/router-outlet&gt;
 
 
-  
 
-}
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;app-nav&gt;&lt;/app-nav&gt;
-
-&lt;router-outlet *ngIf&#x3D;&quot;auth.isAuthenticated$ | async&quot;&gt;&lt;/router-outlet&gt;
-
-&lt;app-auth-modal
-  *ngIf&#x3D;&quot;!(auth.isAuthenticatedWithDelay | async)&quot;
-&gt;&lt;/app-auth-modal&gt;
-</code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-styleData">
+    <div class="tab-pane fade " id="styleData">
                 <p class="comment">
                     <code>./app.component.css</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss"></code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-tree">
+    <div class="tab-pane fade " id="tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
             <div class="title">
@@ -448,8 +556,8 @@ export class AppComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-nav></app-nav><router-outlet *ngIf="auth.isAuthenticated$ | async"></router-outlet><app-auth-modal  *ngIf="!(auth.isAuthenticatedWithDelay | async)"></app-auth-modal></div>'
-    var COMPONENTS = [{'name': 'AlertComponent', 'selector': 'app-alert'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthModalComponent', 'selector': 'app-auth-modal'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChartCardComponent', 'selector': 'app-chart-card'},{'name': 'DashboardModalComponent', 'selector': 'app-dashboard-modal'},{'name': 'FoodCardComponent', 'selector': 'app-food-card'},{'name': 'FoodSectionComponent', 'selector': 'app-food-section'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'TabComponent', 'selector': 'app-tab'},{'name': 'TabsContainerComponent', 'selector': 'app-tabs-container'}];
+        var COMPONENT_TEMPLATE = '<div><router-outlet></router-outlet></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AccordionComponent', 'selector': 'app-accordion'},{'name': 'AccountComponent', 'selector': 'app-account'},{'name': 'AddFoodComponent', 'selector': 'app-add-food'},{'name': 'AddItemButtonComponent', 'selector': 'app-add-item-button'},{'name': 'AddNewItemComponent', 'selector': 'app-add-new-item'},{'name': 'AddNewMenuComponent', 'selector': 'app-add-new-menu'},{'name': 'AlertComponent', 'selector': 'app-alert'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthModalComponent', 'selector': 'app-auth-modal'},{'name': 'BackButtonComponent', 'selector': 'app-back-button'},{'name': 'BookingComponent', 'selector': 'app-booking'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChartCardComponent', 'selector': 'app-chart-card'},{'name': 'DashboardModalComponent', 'selector': 'app-dashboard-modal'},{'name': 'DayToggleButtonComponent', 'selector': 'app-day-toggle-button'},{'name': 'DeleteFoodComponent', 'selector': 'app-delete-food'},{'name': 'EditMenuComponent', 'selector': 'app-edit-menu'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FeedbackComponent', 'selector': 'app-feedback'},{'name': 'FeedbackHistoryComponent', 'selector': 'app-feedback-history'},{'name': 'FoodCardComponent', 'selector': 'app-food-card'},{'name': 'FoodInventoryComponent', 'selector': 'app-food-inventory'},{'name': 'FoodPostComponent', 'selector': 'app-food-post'},{'name': 'FoodSectionComponent', 'selector': 'app-food-section'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InviteFriendComponent', 'selector': 'app-invite-friend'},{'name': 'LeftArrowButtonComponent', 'selector': 'app-left-arrow-button'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PleaseLoginComponent', 'selector': 'app-please-login'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'RightArrowButtonComponent', 'selector': 'app-right-arrow-button'},{'name': 'ServerErrorComponent', 'selector': 'app-server-error'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'TabComponent', 'selector': 'app-tab'},{'name': 'TabsContainerComponent', 'selector': 'app-tabs-container'},{'name': 'TestErrorComponent', 'selector': 'app-test-error'},{'name': 'UpdateFoodComponent', 'selector': 'app-update-food'},{'name': 'UserTabComponent', 'selector': 'app-user-tab'},{'name': 'WelcomeCardComponent', 'selector': 'app-welcome-card'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
 </script>

@@ -13,7 +13,7 @@
     </head>
     <body>
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
             <a href="../" class="navbar-brand">canteen-fe documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
@@ -44,23 +44,29 @@
 
 
 <ol class="breadcrumb">
-  <li>Interfaces</li>
-  <li
+  <li class="breadcrumb-item">Interfaces</li>
+  <li class="breadcrumb-item"
   >
   IFoodCard</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
         </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info">
+    <div class="tab-pane fade active in" id="info">
         <p class="comment">
             <h3>File</h3>
         </p>
@@ -71,7 +77,7 @@
 
 
 
-        <section>
+        <section data-compodoc="block-index">
             <h3 id="index">Index</h3>
             <table class="table table-sm table-bordered index-table">
                 <tbody>
@@ -104,7 +110,7 @@
 
 
 
-            <section>
+            <section data-compodoc="block-properties">
                 <h3 id="inputs">Properties</h3>
                     <table class="table table-sm table-bordered">
                         <tbody>
@@ -176,12 +182,13 @@
     </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
+    <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { Injectable } from &#x27;@angular/core&#x27;;
-import { map } from &#x27;rxjs&#x27;;
+import { map, Observable } from &#x27;rxjs&#x27;;
 import { environment } from &#x27;src/environments/environment&#x27;;
 import IFoodItem from &#x27;../models/food.model&#x27;;
+import { DatePipe } from &#x27;@angular/common&#x27;;
 
 interface IFoodCard {
   id: string;
@@ -192,17 +199,79 @@ interface IFoodCard {
   providedIn: &#x27;root&#x27;,
 })
 export class FoodService {
-  constructor(private http: HttpClient) {}
+  selectedDay: boolean &#x3D; true;
+
+  foodItemBreakFast: any[] &#x3D; [];
+
+  foodItemLunch: any[] &#x3D; [];
+
+  foodItemSnacks: any[] &#x3D; [];
+  fooditem: any[] &#x3D; [];
+
+  formatDate(date: Date) {
+    var d &#x3D; new Date(date),
+      month &#x3D; &#x27;&#x27; + (d.getMonth() + 1),
+      day &#x3D; &#x27;&#x27; + d.getDate(),
+      year &#x3D; d.getFullYear();
+
+    if (month.length &lt; 2) month &#x3D; &#x27;0&#x27; + month;
+    if (day.length &lt; 2) day &#x3D; &#x27;0&#x27; + day;
+
+    return [year, month, day].join(&#x27;-&#x27;);
+  }
+  constructor(private http: HttpClient) {
+    this.getFoodInventory().subscribe({
+      next: (response) &#x3D;&gt; {
+        response.forEach((e: any) &#x3D;&gt; {
+          this.fooditem.push(e.attributes);
+          console.log(e.attributes);
+        });
+      },
+    });
+  }
+
+  toggleDay() {
+    this.selectedDay &#x3D; !this.selectedDay;
+    if (this.selectedDay) {
+      this.todayFood();
+    } else {
+      this.tommorowFood();
+    }
+  }
 
   getFood() {
     return this.http
-      .get&lt;any&gt;(&#x60;${environment.apiUrl}food-inventories&#x60;)
-
+      .get&lt;any&gt;(&#x60;${environment.apiUrl}food-mains?populate&#x3D;*&#x60;)
       .pipe(
         map((foodItem) &#x3D;&gt; {
           return foodItem.data;
         })
       );
+  }
+
+  postFood(food: IFoodItem): Observable&lt;IFoodItem&gt; {
+    return this.http.post&lt;IFoodItem&gt;(
+      &#x60;${environment.apiUrl}food-mains?populate&#x3D;*&#x60;,
+      food
+    );
+  }
+
+  getFoodInventory() {
+    return this.http.get&lt;any&gt;(&#x60;${environment.apiUrl}food-inventories&#x60;).pipe(
+      map((item) &#x3D;&gt; {
+        return item.data;
+      })
+    );
+  }
+
+  getDemo() {
+    this.getFoodInventory().subscribe({
+      next: (response) &#x3D;&gt; {
+        response.forEach((e: any) &#x3D;&gt; {
+          this.fooditem.push(e.attributes);
+        });
+      },
+    });
   }
 
   public BCurrentIndex &#x3D; 0;
@@ -227,6 +296,10 @@ export class FoodService {
     }
   }
 
+  foodCardPop(id: string, cards: IFoodCard[]) {
+    cards &#x3D; cards.filter((element) &#x3D;&gt; element.id !&#x3D;&#x3D; id);
+  }
+
   register(id: string, category: number) {
     switch (category) {
       case 0: // Brekfast
@@ -245,9 +318,24 @@ export class FoodService {
     }
   }
 
-  // unregister(id: string) {
-  //   this.cards &#x3D; this.cards.filter((element) &#x3D;&gt; element.id !&#x3D;&#x3D; id);
-  // }
+  unregister(id: string, category: number) {
+    // this.cards &#x3D; this.cards.filter((element) &#x3D;&gt; element.id !&#x3D;&#x3D; id);
+    switch (category) {
+      case 0: // Brekfast
+        this.foodCardPop(id, this.Bcards);
+
+        break;
+
+      case 1: // Lunch
+        this.foodCardPop(id, this.Lcards);
+
+        break;
+      case 2: // High Tea
+        this.foodCardPop(id, this.Hcards);
+
+        break;
+    }
+  }
 
   isCardOpen(id: string, category: number): boolean {
     if (category &#x3D;&#x3D;&#x3D; 0) {
@@ -322,6 +410,130 @@ export class FoodService {
       // High Tea
       this.toggleFood(action, category, this.Hcards);
     }
+  }
+
+  todayFood() {
+    console.log(
+      this.foodItemBreakFast.length,
+      this.foodItemLunch.length,
+      this.foodItemSnacks.length
+    );
+    if (this.foodItemBreakFast.length &gt; 0) {
+      this.foodItemBreakFast &#x3D; [];
+      this.Bcards &#x3D; [];
+    }
+    if (this.foodItemLunch.length &gt; 0) {
+      this.foodItemLunch &#x3D; [];
+      this.Lcards &#x3D; [];
+    }
+    if (this.foodItemSnacks.length &gt; 0) {
+      this.foodItemSnacks &#x3D; [];
+      this.Hcards &#x3D; [];
+    }
+
+    var day &#x3D; new Date();
+    // var nextDay &#x3D; new Date(day);
+    // day.setDate(day.getDate());
+    console.log(this.formatDate(day));
+
+    this.getFood().subscribe({
+      next: async (value) &#x3D;&gt; {
+        value.forEach((element: any) &#x3D;&gt; {
+          if (
+            element.attributes.food_catagory.data.attributes.catType &#x3D;&#x3D;&#x3D;
+              &#x27;BreakFast&#x27; &amp;&amp;
+            element.attributes.Date &#x3D;&#x3D;&#x3D; this.formatDate(new Date())
+          ) {
+            this.foodItemBreakFast.push(
+              element.attributes.food_inventory.data.attributes
+            );
+            console.log(this.foodItemBreakFast);
+          }
+          if (
+            element.attributes.food_catagory.data.attributes.catType &#x3D;&#x3D;&#x3D;
+              &#x27;Lunch&#x27; &amp;&amp;
+            element.attributes.Date &#x3D;&#x3D;&#x3D; this.formatDate(new Date())
+          ) {
+            this.foodItemLunch.push(
+              element.attributes.food_inventory.data.attributes
+            );
+            console.log(this.foodItemLunch);
+          }
+          if (
+            element.attributes.food_catagory.data.attributes.catType &#x3D;&#x3D;&#x3D;
+              &#x27;HighTea&#x27; &amp;&amp;
+            element.attributes.Date &#x3D;&#x3D;&#x3D; this.formatDate(new Date())
+          ) {
+            this.foodItemSnacks.push(
+              element.attributes.food_inventory.data.attributes
+            );
+            console.log(this.foodItemSnacks);
+          }
+        });
+      },
+    });
+  }
+
+  tommorowFood() {
+    console.log(
+      this.foodItemBreakFast.length,
+      this.foodItemLunch.length,
+      this.foodItemSnacks.length
+    );
+    if (this.foodItemBreakFast.length &gt; 0) {
+      this.foodItemBreakFast &#x3D; [];
+      this.Bcards &#x3D; [];
+    }
+    if (this.foodItemLunch.length &gt; 0) {
+      this.foodItemLunch &#x3D; [];
+      this.Lcards &#x3D; [];
+    }
+    if (this.foodItemSnacks.length &gt; 0) {
+      this.foodItemSnacks &#x3D; [];
+      this.Hcards &#x3D; [];
+    }
+    var day &#x3D; new Date();
+    var nextDay &#x3D; new Date(day);
+    nextDay.setDate(day.getDate() + 1);
+
+    console.log(this.formatDate(nextDay));
+
+    this.getFood().subscribe({
+      next: async (value) &#x3D;&gt; {
+        value.forEach((element: any) &#x3D;&gt; {
+          if (
+            element.attributes.food_catagory.data.attributes.catType &#x3D;&#x3D;&#x3D;
+              &#x27;BreakFast&#x27; &amp;&amp;
+            element.attributes.Date &#x3D;&#x3D;&#x3D; this.formatDate(nextDay)
+          ) {
+            this.foodItemBreakFast.push(
+              element.attributes.food_inventory.data.attributes
+            );
+            console.log(this.foodItemBreakFast);
+          }
+          if (
+            element.attributes.food_catagory.data.attributes.catType &#x3D;&#x3D;&#x3D;
+              &#x27;Lunch&#x27; &amp;&amp;
+            element.attributes.Date &#x3D;&#x3D;&#x3D; this.formatDate(nextDay)
+          ) {
+            this.foodItemLunch.push(
+              element.attributes.food_inventory.data.attributes
+            );
+            console.log(this.foodItemLunch);
+          }
+          if (
+            element.attributes.food_catagory.data.attributes.catType &#x3D;&#x3D;&#x3D;
+              &#x27;HighTea&#x27; &amp;&amp;
+            element.attributes.Date &#x3D;&#x3D;&#x3D; this.formatDate(nextDay)
+          ) {
+            this.foodItemSnacks.push(
+              element.attributes.food_inventory.data.attributes
+            );
+            console.log(this.foodItemSnacks);
+          }
+        });
+      },
+    });
   }
 }
 </code></pre>

@@ -1,0 +1,345 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>canteen-fe documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">canteen-fe documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  BookingComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/booking/booking.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-booking</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./booking.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./booking.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+
+@Component({
+  selector: &#x27;app-booking&#x27;,
+  templateUrl: &#x27;./booking.component.html&#x27;,
+  styleUrls: [&#x27;./booking.component.css&#x27;]
+})
+export class BookingComponent {
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;flex  items-center justify-center p-12 pt-20&quot;&gt;
+    
+
+    &lt;div class&#x3D;&quot;mx-auto w-full max-w-[550px]&quot;&gt;
+    &lt;h2 class&#x3D;&quot;text-center text-3xl pb-4 &quot; &gt;Emergency Booking&lt;/h2&gt;
+
+      &lt;form action&#x3D;&quot;https://formbold.com/s/FORM_ID&quot; method&#x3D;&quot;POST&quot;&gt;
+        &lt;div class&#x3D;&quot;-mx-3 flex flex-wrap&quot;&gt;
+            
+         
+          
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;-mx-3 flex flex-wrap&quot;&gt;
+          &lt;div class&#x3D;&quot;w-full px-3 sm:w-1/2&quot;&gt;
+            &lt;div class&#x3D;&quot;mb-5&quot;&gt;
+              &lt;label
+                for&#x3D;&quot;date&quot;
+                class&#x3D;&quot;mb-3 block text-base font-medium text-[#07074D]&quot;
+              &gt;
+                Date
+              &lt;/label&gt;
+              &lt;input
+                type&#x3D;&quot;date&quot;
+                name&#x3D;&quot;date&quot;
+                id&#x3D;&quot;date&quot;
+                class&#x3D;&quot;w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md&quot;
+              /&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;w-full px-3 sm:w-1/2&quot;&gt;
+            &lt;div class&#x3D;&quot;mb-5&quot;&gt;
+              &lt;label
+                for&#x3D;&quot;time&quot;
+                class&#x3D;&quot;mb-3 block text-base font-medium text-[#07074D]&quot;
+              &gt;
+                Time
+              &lt;/label&gt;
+              &lt;input
+                type&#x3D;&quot;time&quot;
+                name&#x3D;&quot;time&quot;
+                id&#x3D;&quot;time&quot;
+                class&#x3D;&quot;w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md&quot;
+              /&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+  
+        &lt;div class&#x3D;&quot;mb-5&quot;&gt;
+      
+          &lt;div class&#x3D;&quot;flex items-center space-x-6&quot;&gt;
+            &lt;div class&#x3D;&quot;flex items-center&quot;&gt;
+              &lt;input
+                type&#x3D;&quot;checkbox&quot;
+                name&#x3D;&quot;radio1&quot;
+                id&#x3D;&quot;radioButton1&quot;
+                class&#x3D;&quot;h-5 w-5&quot;
+              /&gt;
+              &lt;label
+                for&#x3D;&quot;radioButton1&quot;
+                class&#x3D;&quot;pl-3 text-base font-medium text-[#07074D]&quot;
+              &gt;
+              Are you sure you want to book?
+              &lt;/label&gt;
+            &lt;/div&gt;
+           
+          &lt;/div&gt;
+        &lt;/div&gt;
+  
+        &lt;div&gt;
+          &lt;button
+            class&#x3D;&quot;hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none&quot;
+          &gt;
+            Submit
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./booking.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss"></code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="flex  items-center justify-center p-12 pt-20">        <div class="mx-auto w-full max-w-[550px]">    <h2 class="text-center text-3xl pb-4 " >Emergency Booking</h2>      <form action="https://formbold.com/s/FORM_ID" method="POST">        <div class="-mx-3 flex flex-wrap">                                       </div>        <div class="-mx-3 flex flex-wrap">          <div class="w-full px-3 sm:w-1/2">            <div class="mb-5">              <label                for="date"                class="mb-3 block text-base font-medium text-[#07074D]"              >                Date              </label>              <input                type="date"                name="date"                id="date"                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"              />            </div>          </div>          <div class="w-full px-3 sm:w-1/2">            <div class="mb-5">              <label                for="time"                class="mb-3 block text-base font-medium text-[#07074D]"              >                Time              </label>              <input                type="time"                name="time"                id="time"                class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"              />            </div>          </div>        </div>          <div class="mb-5">                <div class="flex items-center space-x-6">            <div class="flex items-center">              <input                type="checkbox"                name="radio1"                id="radioButton1"                class="h-5 w-5"              />              <label                for="radioButton1"                class="pl-3 text-base font-medium text-[#07074D]"              >              Are you sure you want to book?              </label>            </div>                     </div>        </div>          <div>          <button            class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 text-center text-base font-semibold text-white outline-none"          >            Submit          </button>        </div>      </form>    </div>  </div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AccordionComponent', 'selector': 'app-accordion'},{'name': 'AccountComponent', 'selector': 'app-account'},{'name': 'AddFoodComponent', 'selector': 'app-add-food'},{'name': 'AddItemButtonComponent', 'selector': 'app-add-item-button'},{'name': 'AddNewItemComponent', 'selector': 'app-add-new-item'},{'name': 'AddNewMenuComponent', 'selector': 'app-add-new-menu'},{'name': 'AlertComponent', 'selector': 'app-alert'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthModalComponent', 'selector': 'app-auth-modal'},{'name': 'BackButtonComponent', 'selector': 'app-back-button'},{'name': 'BookingComponent', 'selector': 'app-booking'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChartCardComponent', 'selector': 'app-chart-card'},{'name': 'DashboardModalComponent', 'selector': 'app-dashboard-modal'},{'name': 'DayToggleButtonComponent', 'selector': 'app-day-toggle-button'},{'name': 'DeleteFoodComponent', 'selector': 'app-delete-food'},{'name': 'EditMenuComponent', 'selector': 'app-edit-menu'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FeedbackComponent', 'selector': 'app-feedback'},{'name': 'FeedbackHistoryComponent', 'selector': 'app-feedback-history'},{'name': 'FoodCardComponent', 'selector': 'app-food-card'},{'name': 'FoodInventoryComponent', 'selector': 'app-food-inventory'},{'name': 'FoodPostComponent', 'selector': 'app-food-post'},{'name': 'FoodSectionComponent', 'selector': 'app-food-section'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InviteFriendComponent', 'selector': 'app-invite-friend'},{'name': 'LeftArrowButtonComponent', 'selector': 'app-left-arrow-button'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PleaseLoginComponent', 'selector': 'app-please-login'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'RightArrowButtonComponent', 'selector': 'app-right-arrow-button'},{'name': 'ServerErrorComponent', 'selector': 'app-server-error'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'TabComponent', 'selector': 'app-tab'},{'name': 'TabsContainerComponent', 'selector': 'app-tabs-container'},{'name': 'TestErrorComponent', 'selector': 'app-test-error'},{'name': 'UpdateFoodComponent', 'selector': 'app-update-food'},{'name': 'UserTabComponent', 'selector': 'app-user-tab'},{'name': 'WelcomeCardComponent', 'selector': 'app-welcome-card'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'BookingComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'BookingComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

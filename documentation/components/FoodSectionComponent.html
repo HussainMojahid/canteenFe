@@ -13,7 +13,7 @@
     </head>
     <body>
 
-        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
             <a href="../" class="navbar-brand">canteen-fe documentation</a>
             <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
         </div>
@@ -35,32 +35,37 @@
 
 
 <ol class="breadcrumb">
-  <li>Components</li>
-  <li
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
   >
   FoodSectionComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
-        <li class="active">
-            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
         </li>
-        <li >
-            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
         </li>
-        <li >
-            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
         </li>
-        <li >
-            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
         </li>
-        <li >
-            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -72,10 +77,11 @@
 
 
 
-<section>
+<section data-compodoc="block-metadata">
     <h3>Metadata</h3>
     <table class="table table-sm table-hover metadata">
         <tbody>
+
 
 
 
@@ -91,6 +97,8 @@
                 <td class="col-md-3">selector</td>
                 <td class="col-md-9"><code>app-food-section</code></td>
             </tr>
+
+
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
@@ -115,7 +123,7 @@
     </table>
 </section>
 
-    <section>
+    <section data-compodoc="block-index">
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -172,7 +180,7 @@
     </table>
 </section>
 
-    <section>
+    <section data-compodoc="block-constructor">
     <h3 id="constructor">Constructor</h3>
         <table class="table table-sm table-bordered">
             <tbody>
@@ -221,7 +229,7 @@
         </table>
 </section>
 
-    <section>
+    <section data-compodoc="block-inputs">
     <h3 id="inputs">Inputs</h3>
         <table class="table table-sm table-bordered">
             <tbody>
@@ -244,7 +252,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/dashboard/food-section/food-section.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/dashboard/food-section/food-section.component.ts:11</a></div>
                             </td>
                         </tr>
             </tbody>
@@ -253,7 +261,7 @@
 
 
 
-    <section>
+    <section data-compodoc="block-methods">
     
     <h3 id="methods">
         Methods
@@ -271,15 +279,15 @@
             </tr>
             <tr>
                 <td class="col-md-4">
-<code>changeCard(action: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, $event: <a href="https://angular.io/api/router/Event" target="_blank">Event</a>)</code>
+<code>changeCard(action: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, $event: Event)</code>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="13"
-                            class="link-to-prism">src/app/dashboard/food-section/food-section.component.ts:13</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="12"
+                            class="link-to-prism">src/app/dashboard/food-section/food-section.component.ts:12</a></div>
                 </td>
             </tr>
 
@@ -314,7 +322,7 @@
                                 <tr>
                                     <td>$event</td>
                                     <td>
-                                                <code><a href="https://angular.io/api/router/Event" target="_blank" >Event</a></code>
+                                            <code>Event</code>
                                     </td>
 
                                     <td>
@@ -340,7 +348,7 @@
         </tbody>
     </table>
 </section>
-    <section>
+    <section data-compodoc="block-properties">
     
     <h3 id="inputs">
         Properties
@@ -365,7 +373,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/dashboard/food-section/food-section.component.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/app/dashboard/food-section/food-section.component.ts:9</a></div>
                         </td>
                     </tr>
 
@@ -377,31 +385,29 @@
 </div>
 
 
-    <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input } from &#x27;@angular/core&#x27;;  
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Input } from &#x27;@angular/core&#x27;;
 import { FoodService } from &#x27;src/app/services/food.service&#x27;;
 @Component({
   selector: &#x27;app-food-section&#x27;,
   templateUrl: &#x27;./food-section.component.html&#x27;,
   styleUrls: [&#x27;./food-section.component.css&#x27;],
 })
-export class FoodSectionComponent {  
-
+export class FoodSectionComponent {
   constructor(public card: FoodService) {}
 
-  @Input() category : number &#x3D; -1;
-  changeCard(action: string,$event: Event) {
-   
+  @Input() category: number &#x3D; -1;
+  changeCard(action: string, $event: Event) {
     console.log($event);
-    
-      this.card.toggleCard(action,this.category)
-      $event.preventDefault()
-    }
+
+    this.card.toggleCard(action, this.category);
+    $event.preventDefault();
+  }
 }
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-templateData">
+    <div class="tab-pane fade " id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;div
   id&#x3D;&quot;foodsectionCrousel&quot;
   class&#x3D;&quot;carousel slide carousel-fade relative mx-2 my-2&quot;
@@ -445,7 +451,7 @@ export class FoodSectionComponent {
   &lt;button
     *ngIf&#x3D;&quot;
       (category &#x3D;&#x3D;&#x3D; 0 &amp;&amp; card.BCurrentIndex !&#x3D;&#x3D; card.Bcards.length - 1) ||
-      (category &#x3D;&#x3D;&#x3D; 1 &amp;&amp; card.LCurrentIndex !&#x3D;&#x3D; card.Bcards.length - 1) ||
+      (category &#x3D;&#x3D;&#x3D; 1 &amp;&amp; card.LCurrentIndex !&#x3D;&#x3D; card.Lcards.length - 1) ||
       (category &#x3D;&#x3D;&#x3D; 2 &amp;&amp; card.HCurrentIndex !&#x3D;&#x3D; card.Hcards.length - 1)
     &quot;
     (click)&#x3D;&quot;changeCard(&#x27;next&#x27;, $event)&quot;
@@ -477,14 +483,14 @@ export class FoodSectionComponent {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-styleData">
+    <div class="tab-pane fade " id="styleData">
                 <p class="comment">
                     <code>./food-section.component.css</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss"></code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-tree">
+    <div class="tab-pane fade " id="tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
             <div class="title">
@@ -509,8 +515,8 @@ export class FoodSectionComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div  id="foodsectionCrousel"  class="carousel slide carousel-fade relative mx-2 my-2">  <div class="carousel-inner relative w-full overflow-hidden">    <ng-content> </ng-content>  </div>  <button    *ngIf="      (category === 0 && card.BCurrentIndex !== 0) ||      (category === 1 && card.LCurrentIndex !== 0) ||      (category === 2 && card.HCurrentIndex !== 0)    "    (click)="changeCard(\'prev\', $event)"    type="button"    class="carousel-control-prev absolute top-0 left-0 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"    data-carousel-prev  >    <span      class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-cyan-400 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none"    >      <svg        aria-hidden="true"        class="w-5 h-5 text-white sm:w-6 sm:h-6"        fill="none"        stroke="currentColor"        viewBox="0 0 24 24"        xmlns="http://www.w3.org/2000/svg"      >        <path          stroke-linecap="round"          stroke-linejoin="round"          stroke-width="2"          d="M15 19l-7-7 7-7"        ></path>      </svg>      <span class="sr-only">Previous</span>    </span>  </button>  <button    *ngIf="      (category === 0 && card.BCurrentIndex !== card.Bcards.length - 1) ||      (category === 1 && card.LCurrentIndex !== card.Bcards.length - 1) ||      (category === 2 && card.HCurrentIndex !== card.Hcards.length - 1)    "    (click)="changeCard(\'next\', $event)"    type="button"    class="carousel-control-next absolute top-0 right-0 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"  >    <span      class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-cyan-400 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none"    >      <svg        aria-hidden="true"        class="w-5 h-5 text-white sm:w-6 sm:h-6"        fill="none"        stroke="currentColor"        viewBox="0 0 24 24"        xmlns="http://www.w3.org/2000/svg"      >        <path          stroke-linecap="round"          stroke-linejoin="round"          stroke-width="2"          d="M9 5l7 7-7 7"        ></path>      </svg>      <span class="sr-only">Next</span>    </span>  </button></div></div>'
-    var COMPONENTS = [{'name': 'AlertComponent', 'selector': 'app-alert'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthModalComponent', 'selector': 'app-auth-modal'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChartCardComponent', 'selector': 'app-chart-card'},{'name': 'DashboardModalComponent', 'selector': 'app-dashboard-modal'},{'name': 'FoodCardComponent', 'selector': 'app-food-card'},{'name': 'FoodSectionComponent', 'selector': 'app-food-section'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'TabComponent', 'selector': 'app-tab'},{'name': 'TabsContainerComponent', 'selector': 'app-tabs-container'}];
+        var COMPONENT_TEMPLATE = '<div><div  id="foodsectionCrousel"  class="carousel slide carousel-fade relative mx-2 my-2">  <div class="carousel-inner relative w-full overflow-hidden">    <ng-content> </ng-content>  </div>  <button    *ngIf="      (category === 0 && card.BCurrentIndex !== 0) ||      (category === 1 && card.LCurrentIndex !== 0) ||      (category === 2 && card.HCurrentIndex !== 0)    "    (click)="changeCard(\'prev\', $event)"    type="button"    class="carousel-control-prev absolute top-0 left-0 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"    data-carousel-prev  >    <span      class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-cyan-400 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none"    >      <svg        aria-hidden="true"        class="w-5 h-5 text-white sm:w-6 sm:h-6"        fill="none"        stroke="currentColor"        viewBox="0 0 24 24"        xmlns="http://www.w3.org/2000/svg"      >        <path          stroke-linecap="round"          stroke-linejoin="round"          stroke-width="2"          d="M15 19l-7-7 7-7"        ></path>      </svg>      <span class="sr-only">Previous</span>    </span>  </button>  <button    *ngIf="      (category === 0 && card.BCurrentIndex !== card.Bcards.length - 1) ||      (category === 1 && card.LCurrentIndex !== card.Lcards.length - 1) ||      (category === 2 && card.HCurrentIndex !== card.Hcards.length - 1)    "    (click)="changeCard(\'next\', $event)"    type="button"    class="carousel-control-next absolute top-0 right-0 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"  >    <span      class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-cyan-400 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none"    >      <svg        aria-hidden="true"        class="w-5 h-5 text-white sm:w-6 sm:h-6"        fill="none"        stroke="currentColor"        viewBox="0 0 24 24"        xmlns="http://www.w3.org/2000/svg"      >        <path          stroke-linecap="round"          stroke-linejoin="round"          stroke-width="2"          d="M9 5l7 7-7 7"        ></path>      </svg>      <span class="sr-only">Next</span>    </span>  </button></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AccordionComponent', 'selector': 'app-accordion'},{'name': 'AccountComponent', 'selector': 'app-account'},{'name': 'AddFoodComponent', 'selector': 'app-add-food'},{'name': 'AddItemButtonComponent', 'selector': 'app-add-item-button'},{'name': 'AddNewItemComponent', 'selector': 'app-add-new-item'},{'name': 'AddNewMenuComponent', 'selector': 'app-add-new-menu'},{'name': 'AlertComponent', 'selector': 'app-alert'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AuthModalComponent', 'selector': 'app-auth-modal'},{'name': 'BackButtonComponent', 'selector': 'app-back-button'},{'name': 'BookingComponent', 'selector': 'app-booking'},{'name': 'ChangePasswordComponent', 'selector': 'app-change-password'},{'name': 'ChartCardComponent', 'selector': 'app-chart-card'},{'name': 'DashboardModalComponent', 'selector': 'app-dashboard-modal'},{'name': 'DayToggleButtonComponent', 'selector': 'app-day-toggle-button'},{'name': 'DeleteFoodComponent', 'selector': 'app-delete-food'},{'name': 'EditMenuComponent', 'selector': 'app-edit-menu'},{'name': 'EditProfileComponent', 'selector': 'app-edit-profile'},{'name': 'FeedbackComponent', 'selector': 'app-feedback'},{'name': 'FeedbackHistoryComponent', 'selector': 'app-feedback-history'},{'name': 'FoodCardComponent', 'selector': 'app-food-card'},{'name': 'FoodInventoryComponent', 'selector': 'app-food-inventory'},{'name': 'FoodPostComponent', 'selector': 'app-food-post'},{'name': 'FoodSectionComponent', 'selector': 'app-food-section'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ForgetPasswordComponent', 'selector': 'app-forget-password'},{'name': 'InputComponent', 'selector': 'app-input'},{'name': 'InviteFriendComponent', 'selector': 'app-invite-friend'},{'name': 'LeftArrowButtonComponent', 'selector': 'app-left-arrow-button'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'NavComponent', 'selector': 'app-nav'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'PleaseLoginComponent', 'selector': 'app-please-login'},{'name': 'ProfileComponent', 'selector': 'app-profile'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ResetPasswordComponent', 'selector': 'app-reset-password'},{'name': 'RightArrowButtonComponent', 'selector': 'app-right-arrow-button'},{'name': 'ServerErrorComponent', 'selector': 'app-server-error'},{'name': 'SidebarComponent', 'selector': 'app-sidebar'},{'name': 'TabComponent', 'selector': 'app-tab'},{'name': 'TabsContainerComponent', 'selector': 'app-tabs-container'},{'name': 'TestErrorComponent', 'selector': 'app-test-error'},{'name': 'UpdateFoodComponent', 'selector': 'app-update-food'},{'name': 'UserTabComponent', 'selector': 'app-user-tab'},{'name': 'WelcomeCardComponent', 'selector': 'app-welcome-card'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'FoodSectionComponent'};
 </script>
