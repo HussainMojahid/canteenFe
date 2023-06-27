@@ -67,7 +67,7 @@ export class LoginComponent implements OnInit {
         next: (v) => {
           this.AlertType = 'success';
           this.showAlert = true;
-          this.alertMsg = 'Login Successful';
+          this.alertMsg = 'LogIn Successful';
           this.auth.isAuthenticated();
           this.router.navigateByUrl('/');
         },
