@@ -19,3 +19,14 @@
     left: 0;
     bottom: 0;
   }
+  .blurry-button {
+    background-color: orange-500;
+    filter: blur(2px);
+    cursor: not-allowed;
+  }
+  
+  .clear-button {
+    background-color: orange-500; /* Replace with your desired color */
+    /* filter: none; */
+    cursor: pointer;
+  }

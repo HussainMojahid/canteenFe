@@ -13,7 +13,8 @@ import { AddNewMenuComponent } from './shared/add-new-menu/add-new-menu.componen
 import { AddNewItemComponent } from './shared/add-new-item/add-new-item.component';
 import { AuthGuard } from './services/auth.guard';
 import { FeedbackHistoryComponent } from './feedback-history/feedback-history.component';
-
+import { ReportComponent } from './shared/report/report.component';
+import { AddNewItemSecondComponent } from './shared/add-new-item-second/add-new-item-second.component';
 const routes: Routes = [
   {
     path: '',
@@ -23,6 +24,16 @@ const routes: Routes = [
   {
     path: 'feedback-history',
     component: FeedbackHistoryComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'addNewItemSecond',
+    component: AddNewItemSecondComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'report',
+    component: ReportComponent,
     canActivate: [AuthGuard]
   },
   {

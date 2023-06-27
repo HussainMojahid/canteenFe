@@ -1,0 +1,61 @@
+
+<div class="w-[100%] sm:h-[100%] md:h-[105vh] flex flex-col items-center bg-[#3D484B] ">
+    <nav class="w-[100%] h-[40pt] p-[1.8rem] flex items-center justify-between border border-greyss bg-[#3D484B]">
+      <div class="sm:h-[18pt] sm:w-[18pt] md:h-[20pt]">
+        <button type="button" class="text-white" (click)="auth.backbutton()">
+          <fa-icon class="fa-lg" [icon]="backArrow"></fa-icon>
+        </button>
+      </div>
+      <div class="sm:w-[90%] md:w-[95%] flex justify-between items-center">
+        <h3 class="text-[14pt] text-[#FFFFFF] font-roboto-black">Add New Item</h3>
+      </div>
+    </nav>
+    <div class="h-[88vh] w-[100%] flex items-center flex-col m-[3%] ">
+      <div class="input-box">
+        <div>
+          <label class="sm:text-[12.5pt] md:text-[20pt] text-[#D4D4D4] font-roboto-regular mb-[2rem]">Name</label>
+          <input type="text" placeholder="Crispy Corn" id="title"
+            class="p-3 bg-[white] h-[35pt] w-[100%] text-[#fc8019] sm:text-[11pt] md:text-[13pt] outline-none rounded-[4pt] border-2 border-[#606161] mb-[4%]  ">
+        </div>
+  
+  
+        <div class="input-box-1">
+          <div>
+            <label class="sm:text-[12.5pt] md:text-[20pt] text-[#D4D4D4] font-roboto-regular">Price
+            </label>
+          </div>
+          <div class="flex">
+            <div class="icon-box">
+              <fa-icon class="fa fa-sm btn-class" [icon]="rupeeSign"> </fa-icon>
+            </div>
+            <div class="w-[100%] h-[100%]">
+              <input type="text" placeholder="30" id="title"
+                class=" p-3 bg-[white] h-[100%] w-[100%] sm:text-[11pt] md:text-[13pt] text-Greyess outline-none rounded-[4pt] h-[30pt] border-2 border-[#606161]" />
+            </div>
+          </div>
+        </div>
+        <div class="mt-[12%]">
+          <label class="sm:text-[12.5pt] mt-[-3%] md:text-[20pt] text-[#D4D4D4] font-roboto-regular mb-[2rem]">Select
+            Icon</label>
+          <select id="title"
+            class="p-2.5 bg-[white] h-[42pt] w-[100%] text-[#fc8019] sm:text-[11pt] md:text-[13pt] outline-none rounded-[4pt] border-2 border-[#606161] mt-[1%]  ">
+            
+          </select>
+        </div>
+      </div>
+  
+  
+  
+    </div>
+  
+    <!-- menu part -->
+  
+    <div class="mt-[-30%] mb-[25%]">
+      <button type="submit"
+        class=" h-[34pt] md:mt-[20%] sm:text-[14pt] md:text-[22pt] w-[100pt] sm:w-[250pt] bg-orangess text-white rounded transition hover:bg-orange-500 font-roboto-regular text-[18pt]">
+        Save
+      </button>
+  
+    </div>
+  
+  </div>
