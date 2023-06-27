@@ -1,62 +1,4 @@
-<!-- <app-alert *ngIf="showAlert" [AlertType]="AlertType">
-  {{ alertMsg }}
-</app-alert> -->
-<!-- <form [formGroup]="registerForm" (ngSubmit)="registeration()">
-  
-  <div class="mb-3"  id="Name">
-    <label class="inline-block mb-2">Name</label>
-    <app-input [control]="username" placeholder="Enter Name"> </app-input>
-  </div>
 
-  <div class="mb-3"  id="Email">
-    <label class="inline-block mb-2">Email</label>
-    <app-input [control]="email" placeholder="Enter Email"> </app-input>
-  </div>
-
-  <div class="mb-3" id="Selecting Organization">
-    <label class="inline-block mb-2">Organization</label>
-    <select
-      name="Organization"
-      id=""
-      class="form-select-lg mb-3 block w-full px-3 py-1.5 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-400 transition duration-500 focus:outline-none rounded bg-transparent focus:border-cyan-400 text-black"
-    >
-      <option disabled selected value="Select Organiztion">
-        Select Organiztion
-      </option>
-      <option *ngFor="let m of OrgList">{{ m.orgName }}</option>
-    </select>
-  </div>
-
-  <div class="mb-3" id="EmployeeId">
-    <label class="inline-block mb-2">Employee Id</label>
-    <app-input [control]="EmployeeId" type="text" placeholder="Enter Employee Id"></app-input>
-  </div>
-
-  <div class="mb-3" id="Password">
-    <label class="inline-block mb-2">Password</label>
-    <app-input
-      type="password"
-      [control]="password"
-      placeholder="Enter Password"
-    >
-    </app-input>
-  </div>
-
-  <div class="mb-3" id="Confirm Password">
-    <label class="inline-block mb-2">Confirm Password</label>
-    <app-input type="password" [control]="confirm_password" placeholder="Enter Confirm Password"></app-input>
-  </div>
-
-  <button type="submit" class="block w-full bg-cyan-400 text-white py-1.5 px-3 rounded transition hover:bg-cyan-500">
-    Register
-  </button>
-</form> -->
-
-
-
-
-
-<!-- new updated design of register form or signup form -->
 <div class="fixed left-0  h-[100%] sm:h-[100vh] md:h-[100vh] sm:w-[100vw] w-[100%] md:h-[100%] md:w-[100%] bg-gradient-to-b from-[#3D484B38] from-20% via-[#424344e6] via-20% to-[#3D484B] to-60% opacity-[100%] z-10">
 </div>
 
@@ -74,11 +16,11 @@
     <p class="text-[12pt]  text-[#D4D4D4]">Please provide your details below to register</p>
   </div>
 
-<form [formGroup]="registerForm" (ngSubmit)="registeration()" class=" w-[100%] flex flex-col items-center p-[2rem] mt-[-10%] z-20">
+<form [formGroup]="registerForm" (ngSubmit)="registration()" class=" w-[100%] flex flex-col items-center p-[2rem] mt-[-10%] z-20">
 
   <div class="w-[100%] mb-3" id="EmployeeId">
     <label class="inline-block mb-2 text-[12pt] font-roboto-regular text-[#D4D4D4]">Employee Id <span class="text-[#FF2F2F]">*</span></label>
-    <app-input [control]="EmployeeId" [isEnabled]="true " type="text" placeholder="Enter Employee Id" class=" h-[40pt] w-[95%] rounded-[4pt]  outline-none"></app-input>
+    <app-input [control]="EmployeeId" [isEnabled]="true " type="text" placeholder="Enter Employee Id" class=" h-[40pt] w-[95%] rounded-[4pt]  outline-none" required></app-input>
   </div>
   
   <div class="w-[100%] mb-3"  id="Name">
@@ -101,7 +43,7 @@
     <app-input type="password" [control]="confirm_password" placeholder="Enter Confirm Password" class="h-[40pt] w-[95%] rounded-[4pt] font-roboto-regular outline-none text-[12pt] text-Greyess"></app-input>
   </div>
 
-  <button type="submit" class="mt-[20%] z-20 block w-full bg-orangess text-white text-[16pt] font-roboto-regular py-1.5 px-3 rounded transition mt-[2rem]">
+  <button type="submit" class="mt-[20%] z-20 block w-full bg-orangess text-white text-[16pt] font-roboto-regular py-1.5 px-3 rounded transition mt-[2rem]" [disabled]="!registerForm.valid"  >
     Sign up
   </button>
   

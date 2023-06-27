@@ -20,16 +20,16 @@ export class LoginComponent implements OnInit {
   modal = false;
   show: boolean = false;
   circleEx = faCircleExclamation;
-  
+  passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
   email = new FormControl('', [Validators.required]);
-  password = new FormControl('', [Validators.required]);
-
+  // password = new FormControl('', [Validators.required]);
+  password = new FormControl('', [Validators.required, Validators.pattern(this.passwordPattern)]);
   credentials = {
     email: this.email,
     password: this.password,
   };
-
+ 
   loginForm = new FormGroup(this.credentials);
 
   constructor(
@@ -67,7 +67,7 @@ export class LoginComponent implements OnInit {
         next: (v) => {
           this.AlertType = 'success';
           this.showAlert = true;
-          this.alertMsg = 'Login Successful';
+          this.alertMsg = 'LogIn Successful';
           this.auth.isAuthenticated();
           this.router.navigateByUrl('/');
         },
@@ -75,6 +75,8 @@ export class LoginComponent implements OnInit {
           this.AlertType = 'error';
           this.showAlert = true;
           // this.alertMsg = e.error.error.message;
+          
+          // this.toastr.error; 
         },
       });
 

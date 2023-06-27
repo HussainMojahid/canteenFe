@@ -74,7 +74,8 @@
     </div>
 
     <!-- [routerLink]="['/forgotPassword']" -->
-    <button type="submit" [ngStyle]="{'z-index': isModalOpen? 9 :99}"
+    <button type="submit" [ngStyle]="{'z-index': isModalOpen? 9 :99}"  [disabled]="!loginForm.valid || !loginForm.dirty"  
+    
       class="block mt-[50%] md:mt-[20%] sm:text-[13pt] md:text-[22pt] z-20 w-[95%] sm:w-[100%] bg-orangess text-white py-1 px-3 rounded transition hover:bg-orange-500 font-roboto-regular text-[16pt] z-99 login-button">
       Login
     </button>

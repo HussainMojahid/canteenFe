@@ -16,8 +16,8 @@ import { AddNewItemComponent } from './add-new-item/add-new-item.component';
 import { FooterComponent } from './footer/footer.component';
 import { FooterService } from '../services/footer.service';
 import { AccordionComponent } from './accordion/accordion.component';
-import { AddNewItemFirstComponent } from './add-new-item-first/add-new-item-first.component';
-import { EmployeeFeedbackComponent } from './employee-feedback/employee-feedback.component';
+import { ReportComponent } from './report/report.component';
+import { AddNewItemSecondComponent } from './add-new-item-second/add-new-item-second.component';
 // 
 
 
@@ -34,8 +34,8 @@ import { EmployeeFeedbackComponent } from './employee-feedback/employee-feedback
     AddNewItemComponent,
     FooterComponent,
     AccordionComponent,
-    AddNewItemFirstComponent,
-    EmployeeFeedbackComponent,
+    ReportComponent,
+    AddNewItemSecondComponent,
   
   ],
   imports: [
@@ -53,8 +53,6 @@ import { EmployeeFeedbackComponent } from './employee-feedback/employee-feedback
     AlertComponent,
     FooterComponent,
     AccordionComponent,
-    AddNewItemFirstComponent,
-    EmployeeFeedbackComponent
  
   ]
 })

@@ -12,10 +12,6 @@ import { InviteFriendComponent } from './invite-friend/invite-friend.component';
 import { AboutComponent } from './about/about.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthGuard } from '../services/auth.guard';
-import { AddNewItemFirstComponent } from '../shared/add-new-item-first/add-new-item-first.component';
-import { EmployeeFeedbackComponent } from '../shared/employee-feedback/employee-feedback.component';
-
-
 
 // import { FooterComponent } from '../footer/footer.component';
 // import {} from 'src/app/dashboard/'
@@ -80,18 +76,7 @@ const routes: Routes = [
         component: FeedbackComponent,
         canActivate : [AuthGuard]
         
-      },
-      {
-        path: 'addNewItemFirst',
-        component: AddNewItemFirstComponent,
-        canActivate : [AuthGuard]
-      },
-      {
-        path: 'employeeFeedback',
-        component: EmployeeFeedbackComponent,
-        canActivate : [AuthGuard]
       }
-       
   
 ];
 

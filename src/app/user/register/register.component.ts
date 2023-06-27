@@ -34,28 +34,26 @@ export class RegisterComponent {
     },
   ];
   constructor(private auth: AuthService, private http: HttpClient,private router: Router,private toastr: ToastrService) {}
-
-  username = new FormControl('', [Validators.required, Validators.min(3)]);
-  email = new FormControl('', [Validators.required, Validators.email]);
-  password = new FormControl('', [Validators.required]);
-  confirm_password = new FormControl('', [
-    Validators.required,
-    this.matchValues('password'),
-  ]);
-  organization = new FormControl('', [Validators.required]);
+  passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+  // 
   EmployeeId = new FormControl('', [Validators.required]);
+username = new FormControl('', [Validators.required, Validators.minLength(3)]);
+email = new FormControl('', [Validators.required, Validators.email]);
+password = new FormControl('', [Validators.required, Validators.pattern(this.passwordPattern)]);
+confirm_password = new FormControl('', [
+  Validators.required,
+  this.matchValues('password'),
+]);
 
-  registerForm = new FormGroup({
-    username: this.username,
-    email: this.email,
-    password: this.password,
-    organization: this.organization,
-    EmployeeId: this.EmployeeId,
-    confirm_password: this.confirm_password,
-    
-  });
+registerForm = new FormGroup({
+  EmployeeId: this.EmployeeId, // Update the name to "EmployeeId"
+  username: this.username, // Update the name to "username"
+  email: this.email, // Update the name to "email"
+  password: this.password,
+  confirm_password: this.confirm_password,
+});
 
-  registeration() {
+  registration() {
     this.AlertType = 'alert';
     this.showAlert = true;
 
