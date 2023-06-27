@@ -1,0 +1,9 @@
+.heading{
+font-weight: bolder;
+letter-spacing: 1pt;
+font-size: 14pt;
+}
+hr{
+    width: 90%;
+    height: 2pt;
+}

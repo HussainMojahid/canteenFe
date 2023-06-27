@@ -33,6 +33,7 @@ import { FeedbackHistoryComponent } from './feedback-history/feedback-history.co
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ErrorInterceptor } from './interceptor/error.interceptor';
+import { EmployeeFeedbackComponent } from './shared/employee-feedback/employee-feedback.component';
 
 @NgModule({
     declarations: [
@@ -61,6 +62,7 @@ import { ErrorInterceptor } from './interceptor/error.interceptor';
         SharedModule,
         // FootersModule
         BrowserAnimationsModule,
+        
        
     ],exports:[],
     providers: [
