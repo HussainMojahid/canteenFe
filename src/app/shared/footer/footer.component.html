@@ -13,7 +13,7 @@
 
 
 <div class="h-[52pt] w-[100%] fixed bottom-[0rem] items-center justify-evenly flex bg-darkesgreys border border-[#CCCCCC]">
-  <div class="first" [routerLink]="'/'" (click)="setActive('dashboard')" [class.active]="isActive('dashboard')">
+  <div class="first" [routerLink]="'/'" (click)="setActive('dashboard') " [class.active]="isActive('dashboard')">
     <img class="img" [src]="isActive('dashboard') ? '../../assets/img/Home-removebg-preview.png' : '../../assets/img/Group 4049.svg'" height="30pt" width="30pt" alt="">
     <p  [class.active]="isActive('dashboard')" [ngClass]="isActive('dashboard') ? 'text-[#FC8019]': 'text-mediumGreys'" class="tracking-wide para text-mediumGreys font-roboto-black text-[13pt] ml-[2%] items-center">Dashboard</p>
   </div>

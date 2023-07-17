@@ -1,23 +1,74 @@
-<div class=" leading-normal w:[90%] sm:w-[85%] sm:ml-[9%] sm:mr-[3%] sm:mt-[1%] md:mt-[15%] sm:p-[3pt] md:w-[480pt] md:h-[300pt] h-[215pt] bg-#3d484b font-roboto rounded-[4pt] flex flex-col items-center">
-
-
-  <div class=" leading-normal flex justify-between rounded-lg bg-[#49565a] w-[98%]  sm:mr-[6%] p-[22px] md:h-[250pt]">
-
-    <div class="rounded-[4pt] w-[160pt] h-[160pt] relative flex flex-col items-center justify-center font-roboto sm:mt-[-5%] md:mt-[3%] md:ml-[5%]">
-      <canvas style="height:221px; width:172px;" class="flex h-[100vh] justify-center items-center" id="chartDoughnut"></canvas>
-       <p class="absolute text-white text-[11pt] font-roboto top-[25%] flex flex-col justify-center p-[1.7rem] items-center">Total Capacity <span class="text-#f5f5f5 text-[18pt]">150</span></p> 
+<div
+  class="leading-normal w:[90%] sm:w-[85%] sm:ml-[9%] sm:mr-[3%] sm:mt-[1%] md:mt-[15%] sm:p-[3pt] md:w-[480pt] md:h-[300pt] h-[215pt] bg-#3d484b font-roboto rounded-[4pt] flex flex-col items-center"
+>
+  <div
+    class="leading-normal flex justify-between rounded-lg bg-[#49565a] w-[98%] sm:mr-[6%] p-[22px] md:h-[250pt]"
+  >
+    <div
+      class="rounded-[4pt] w-[160pt] h-[160pt] relative flex flex-col items-center justify-center font-roboto sm:mt-[-5%] md:mt-[3%] md:ml-[5%]"
+    >
+      <canvas
+        style="height: 221px; width: 172px"
+        class="flex h-[100vh] justify-center items-center"
+        id="chartDoughnut"
+      ></canvas>
+      <p
+        class="absolute text-white text-[11pt] font-roboto top-[25%] flex flex-col justify-center p-[1.7rem] items-center"
+      >
+        Total Capacity <span class="text-#f5f5f5 text-[18pt]">150</span>
+      </p>
     </div>
-    
-    <div class="w-[50%] h-[170pt] sm:w-[60%] sm:h-[160pt] font-roboto flex flex-col justify-between p-[20px] sm:p-[30px] md:p-[15px] md:ml-[100pt] items-center font-roboto sm:mt-[-5%] md:mt-[4%]">
-      <div class="h-[60pt] w-[80pt] sm:h-[50pt] md:h-[70pt] md:w-[90pt] sm:mt-[-10%] sm:w-[70pt] bg-white text-[#85cc71] text-center rounded"> <p class="text-[14pt] sm:text-[12pt] md:text-[16pt] font-roboto-regular mt-[5pt]">Vacant </p> <span class="font-extrabold text-[22pt] sm:text-[17pt] md:text-[24pt]">{{150 - count.counts}}</span></div>
-      <div class="h-[60pt] w-[80pt] sm:h-[50pt] sm:w-[70pt] md:h-[70pt] md:w-[90pt] sm:mt-[6pt] bg-white flex flex-col justify-center items-center  text-[#fd7272] font-medium text-center rounded sm:mt-[-8%]"> <p class="text-[14pt] md:text-[16pt] sm:text-[12pt] text-[#fd7272]">Occupied</p> <span class="font-extrabold text-[22pt] sm:text-[17pt] md:text-[24pt]">{{this.count.counts}}</span> </div>
+
+    <div
+      class="w-[50%] h-[170pt] sm:w-[60%] sm:h-[160pt] font-roboto flex flex-col justify-between p-[20px] sm:p-[30px] md:p-[15px] md:ml-[100pt] items-center font-roboto sm:mt-[-5%] md:mt-[4%]"
+    >
+      <div
+        class="h-[60pt] w-[80pt] sm:h-[50pt] md:h-[70pt] md:w-[90pt] sm:mt-[-10%] sm:w-[70pt] bg-white text-[#85cc71] text-center rounded"
+      >
+        <p
+          class="text-[14pt] sm:text-[12pt] md:text-[16pt] font-roboto-regular mt-[5pt]"
+        >
+          Vacant
+        </p>
+        <span
+          class="font-extrabold text-[22pt] sm:text-[17pt] md:text-[24pt]"
+          >{{ 150 - count.counts }}</span
+        >
+      </div>
+      <div
+        class="h-[60pt] w-[80pt] sm:h-[50pt] sm:w-[70pt] md:h-[70pt] md:w-[90pt] sm:mt-[6pt] bg-white flex flex-col justify-center items-center text-[#fd7272] font-medium text-center rounded sm:mt-[-8%]"
+      >
+        <p class="text-[14pt] md:text-[16pt] sm:text-[12pt] text-[#fd7272]">
+          Occupied
+        </p>
+        <span
+          class="font-extrabold text-[22pt] sm:text-[17pt] md:text-[24pt]"
+          >{{ this.count.counts }}</span
+        >
+      </div>
     </div>
-  
   </div>
-    
-    <div class="flex justify-between items-center w-[100%] sm:mt-[-14%] md:mt-[-13%]  h-[20%] p-[18px] sm:p-[18px] md:p-[50px]">
-      <div> <p class="text-[#D4D4D4] sm:text-[12pt] md:text-[16pt] font-roboto-regular"><span class="font-roboto-black text-[#D4D4D4]"> Last updated: </span> 13 min ago</p> </div>
-      <div class="font-roboto-regular flex text-orangess justify-between items-center w-[90pt] p-[24px] h-[17pt] md:h-[20rem] font-roboto "> <a href="/"><img src="../../../assets/img/refresh2.svg" height="" width="90%" alt=""></a><a href="/"><p class="text-[18pt] sm:text-[11pt] md:text-[20pt]">Refresh</p></a></div>
+
+  <div
+    class="flex justify-between items-center w-[100%] sm:mt-[-14%] md:mt-[-13%] h-[20%] p-[18px] sm:p-[18px] md:p-[50px]"
+  >
+    <div>
+      <p
+        class="text-[#D4D4D4] sm:text-[12pt] md:text-[16pt] font-roboto-regular"
+      >
+        <span class="font-roboto-black text-[#D4D4D4]"> Last updated: </span> 13
+        min ago
+      </p>
     </div>
-     
+    <div
+      class="font-roboto-regular flex text-orangess justify-between items-center w-[90pt] p-[24px] h-[17pt] md:h-[20rem] font-roboto"
+    >
+    <button (click)="fetchPeopleCount()">
+      <img src="../../../assets/img/refresh2.svg" height="" width="90%" alt="">
+    </button>
+    <a (click)="fetchPeopleCount()">
+      <p class="text-[18pt] sm:text-[11pt] md:text-[20pt]">Refresh</p>
+    </a>
+    </div>
+  </div>
 </div>

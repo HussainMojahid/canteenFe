@@ -7,7 +7,7 @@
   <div
     class="h-[35pt]  w-[100%] md:w-[112%] xxs:w-[110%] flex items-center justify-evenly sm:ml-[0.3rem] mt-[1rem] sm:mt-[-2rem] ml-[0.1rem]">
     <p class="xxs:mt-[-4pt] sm:text-[14pt] xxs:text-[11pt] md:text-[23pt] font-roboto-regular text-[#FFFFFF]"><span
-        class="font-roboto-black text-[#FFFFFF]"> Today's Menu, </span> 4 April 2023</p>
+        class="font-roboto-black text-[#FFFFFF]"> Today's Menu, </span> {{Date | async | date : 'd MMM y'}}</p>
     <div class="w-[60pt] sm:w-[60pt] md:w-[70pt] xxs:w-[50pt] h-[30pt] flex justify-between ml-[0.4rem]">
       <div
         class="sm:h-[25pt] xxs:h-[22pt] xxs:w-[22pt] md:h-[30pt] sm:w-[25pt] md:w-[30pt] border-2 border-greyss flex justify-center items-center p-[4pt] rounded-[4pt]"

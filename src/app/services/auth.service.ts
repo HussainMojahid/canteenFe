@@ -7,6 +7,12 @@ import { FormGroup } from '@angular/forms';
 import { Location } from '@angular/common';
 import ICurrentUser from '../models/currentUser.modal';
 import { Router } from '@angular/router';
+import jwt_decode from 'jwt-decode';
+import { EventEmitter } from '@angular/core';
+
+interface Role {
+  role: string;
+}
 @Injectable({
   providedIn: 'root',
 })
@@ -15,8 +21,22 @@ export class AuthService {
   isAuthenticatedWithDelay = new Observable<boolean>();
   user$ = new BehaviorSubject<ICurrentUser | null>(null);
   baseUrl = environment.apiUrl;
+  UserID = -1;
+  userRole = new EventEmitter<string>();
+
 
   constructor(private http: HttpClient, public location: Location, public router:Router) {}
+  isAdmin(): boolean {
+    let temp : any;
+    const role_token = localStorage.getItem('_role_canteen_app');
+    if (role_token != null) {
+       temp = jwt_decode<Role>(role_token);
+    }
+    if (temp != null) {
+      if ('canteenAdmin' === temp.role) return true;
+    }
+    return false;
+  }
 
   isAuthenticated() {
     if (null !== localStorage.getItem('_token_canteen_app')) {
@@ -87,11 +107,13 @@ export class AuthService {
   }
 
   feedback(model: any) {
-    return this.http.post(this.baseUrl + '/feedback', model).pipe(
+    let feedback = {data : {
+      "users_permissions_user": this.getID(),
+      "message": model.message,
+      "Issue": model.subject
+    }}
+    return this.http.post(this.baseUrl + 'feedbacks', feedback).pipe(
       map((user) => {
-        if (user) {
-          // this.setCurrentUser(user);
-        }
       })
     );
   }
@@ -102,6 +124,7 @@ export class AuthService {
     
     );
   }
+  
   setCurrentUser(user: IUser) {
     localStorage.setItem('user', JSON.stringify(user));
   }
@@ -150,5 +173,28 @@ export class AuthService {
 
   getCurrentUser() {
     return this.http.get<any>(`${environment.apiUrl}users/me`);
+  }
+  getID(): number {
+    const token = this.getCurrentUserToken();
+    if (token !== null) {
+      let a: any = jwt_decode(token);
+      return a.id as number;
+    }
+    return -1;
+  }
+  getRole() {
+    const token = this.getCurrentUserToken();
+    if (token !== null) {
+      let a: any = jwt_decode(token);
+      return this.http
+        .get<any>(`${environment.apiUrl}users/${a.id}?populate=*`)
+        .pipe(
+          map((data) => {
+            this.userRole.emit(data.role.name)
+            return data.role.name;
+          })
+        );
+    }
+    return;
   }
 }

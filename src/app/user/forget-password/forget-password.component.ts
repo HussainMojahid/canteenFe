@@ -19,6 +19,7 @@ export class ForgetPasswordComponent {
   forgotpasswordForm = new FormGroup({
   email:this.email
   });
+  
   close() {
     this.modalClosed.emit(true);
   }

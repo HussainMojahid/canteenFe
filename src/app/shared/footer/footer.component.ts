@@ -1,4 +1,7 @@
+
+
 // import { Component } from '@angular/core';
+// import { FooterService } from 'src/app/services/footer.service';
 
 // @Component({
 //   selector: 'app-footer',
@@ -6,20 +9,20 @@
 //   styleUrls: ['./footer.component.css']
 // })
 // export class FooterComponent {
+//   constructor(private footerService: FooterService) {}
 
-//   // getDiv(){
-//   //   this.router.navigate(['/Account'])
-//   // }
+//   setActive(section: string): void {
+//     this.footerService.setActive(section);
+//   }
 
-//   isActive: boolean = false;
-
-//   toggleActive(): void {
-//     this.isActive = !this.isActive;
+//   isActive(section: string): boolean {
+//     return this.footerService.isActive(section);
 //   }
 // }
 
 
 import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 import { FooterService } from 'src/app/services/footer.service';
 
 @Component({
@@ -28,7 +31,19 @@ import { FooterService } from 'src/app/services/footer.service';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
-  constructor(private footerService: FooterService) {}
+  constructor(private router: Router, private footerService: FooterService) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        const currentRoute = event.urlAfterRedirects;
+        if (currentRoute === '/') {
+          this.footerService.setActive('dashboard');
+        }
+        if (currentRoute === '/Account') {
+          this.footerService.setActive('account');
+        }
+      }
+    });
+  }
 
   setActive(section: string): void {
     this.footerService.setActive(section);
@@ -38,5 +53,3 @@ export class FooterComponent {
     return this.footerService.isActive(section);
   }
 }
-
-

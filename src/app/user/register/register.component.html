@@ -26,21 +26,37 @@
   <div class="w-[100%] mb-3"  id="Name">
     <label class="inline-block mb-2 text-[12pt] font-roboto-regular text-[#D4D4D4]">Name <span class="text-[#FF2F2F]">*</span></label>
     <app-input [control]="username" placeholder="Enter Name" class="h-[40pt] w-[95%] rounded-[4pt] font-roboto-regular outline-none text-[12pt] text-Greyess"> </app-input>
+    <div *ngIf="username.invalid && (username.dirty || username.touched)">
+      <div *ngIf="username.errors?.['required']" class="text-red-400">Name is required.</div>
+      <div *ngIf="username.errors?.['minlength']" class="text-red-400">Name should be at least 3 characters long.</div>
+      <div *ngIf="username.errors?.['maxlength']" class="text-red-400">Name should be less than 18 characters long.</div>
+      <div *ngIf="username.errors?.['invalidName']" class="text-red-400">Name can contain numbers (0-9), alphabets (upper and lower case), and underscore (_) only.</div>
+    </div>
   </div>
 
   <div class="w-[100%] mb-3"  id="Email">
     <label class="inline-block mb-2 text-[12pt] font-roboto-regular text-[#D4D4D4]">Email <span class="text-[#FF2F2F]">*</span></label>
     <app-input [control]="email" placeholder="Enter Email" class="h-[40pt] w-[95%] rounded-[4pt] font-roboto-regular outline-none text-[12pt] text-Greyess"> </app-input>
+    <div *ngIf="email.invalid && (email.dirty || email.touched)">
+      <!-- <div *ngIf="email.errors?.['required']" class="text-[#FF2F2F]">Email is required.</div> -->
+      <div *ngIf="email.errors?.['email']" class="text-red-400">Invalid email format.</div>
+      <div *ngIf="email.errors?.['invalidDomain']" class="text-red-400">Email should end with newvision-software.com.</div>
+    </div>
   </div>
 
   <div class="w-[100%] mb-3" id="Password">
     <label class="inline-block mb-2 text-[12pt] font-roboto-regular text-[#D4D4D4]">Password <span class="text-[#FF2F2F]">*</span></label>
-    <app-input type="password" [control]="password" placeholder="Enter Password" class="h-[40pt] w-[95%] rounded-[4pt] font-roboto-regular outline-none text-[12pt] text-Greyess"></app-input>
+    <app-input  type="{{ visibleFields[1] ? 'text' : 'password' }}"
+     [control]="password" placeholder="Enter Password" class="h-[40pt] w-[95%] rounded-[4pt] font-roboto-regular outline-none text-[12pt] text-Greyess"><span class="eyeIcon sm:mt-[-30px] sm:mr-[10px]" (click)="viewpass(1)"><i  [ngClass]="visibleFields[1] ? 'fa fa-eye' : 'fa fa-eye-slash'"></i></span></app-input>
   </div>
+
+  <!-- <app-input [control]="password"  type="{{ visibleFields[1] ? 'text' : 'password' }}"
+  id="newPassword" placeholder="Password"
+    class="h-[40pt] md:h-[100pt] w-[100%] bg-white"> <span class="eyeIcon sm:mt-[-30px] sm:mr-[10px]" (click)="viewpass(1)"><i  [ngClass]="visibleFields[1] ? 'fa fa-eye' : 'fa fa-eye-slash'"></i></span></app-input> -->
 
   <div class="w-[100%] mb-3" id="Confirm Password">
     <label class="inline-block mb-2 text-[12pt] font-roboto-regular text-[#D4D4D4]">Confirm Password <span class="text-[#FF2F2F]">*</span></label>
-    <app-input type="password" [control]="confirm_password" placeholder="Enter Confirm Password" class="h-[40pt] w-[95%] rounded-[4pt] font-roboto-regular outline-none text-[12pt] text-Greyess"></app-input>
+    <app-input type="{{ visibleFields[2] ? 'text' : 'password' }}" [control]="confirm_password" placeholder="Enter Confirm Password" class="h-[40pt] w-[95%] rounded-[4pt] font-roboto-regular outline-none text-[12pt] text-Greyess"><span class="eyeIcon sm:mt-[-30px] sm:mr-[10px]" (click)="viewpass(2)"><i  [ngClass]="visibleFields[2] ? 'fa fa-eye' : 'fa fa-eye-slash'"></i></span></app-input>
   </div>
 
   <button type="submit" class="mt-[20%] z-20 block w-full bg-orangess text-white text-[16pt] font-roboto-regular py-1.5 px-3 rounded transition mt-[2rem]" [disabled]="!registerForm.valid"  >

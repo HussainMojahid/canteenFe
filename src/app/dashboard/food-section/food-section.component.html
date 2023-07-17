@@ -1,72 +1,17 @@
 <div
-  id="foodsectionCrousel"
-  class="carousel slide carousel-fade relative mx-2 my-2"
->
-  <div class="carousel-inner relative w-full overflow-hidden">
-    <ng-content> </ng-content>
-  </div>
+class="fourthClass sm:h-[400pt] xsm:h-[360pt] md:h-[500pt] sm:ml-[-26pt]  md:w-[85%] sm:w-[100%] xsm:w-[80%">
 
-  <button
-    *ngIf="
-      (category === 0 && card.BCurrentIndex !== 0) ||
-      (category === 1 && card.LCurrentIndex !== 0) ||
-      (category === 2 && card.HCurrentIndex !== 0)
-    "
-    (click)="changeCard('prev', $event)"
-    type="button"
-    class="carousel-control-prev absolute top-0 left-0 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-    data-carousel-prev
-  >
-    <span
-      class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-cyan-400 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none"
-    >
-      <svg
-        aria-hidden="true"
-        class="w-5 h-5 text-white sm:w-6 sm:h-6"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M15 19l-7-7 7-7"
-        ></path>
-      </svg>
-      <span class="sr-only">Previous</span>
-    </span>
-  </button>
-  <button
-    *ngIf="
-      (category === 0 && card.BCurrentIndex !== card.Bcards.length - 1) ||
-      (category === 1 && card.LCurrentIndex !== card.Lcards.length - 1) ||
-      (category === 2 && card.HCurrentIndex !== card.Hcards.length - 1)
-    "
-    (click)="changeCard('next', $event)"
-    type="button"
-    class="carousel-control-next absolute top-0 right-0 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-  >
-    <span
-      class="inline-flex items-center justify-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-cyan-400 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none"
-    >
-      <svg
-        aria-hidden="true"
-        class="w-5 h-5 text-white sm:w-6 sm:h-6"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M9 5l7 7-7 7"
-        ></path>
-      </svg>
-      <span class="sr-only">Next</span>
-    </span>
-  </button>
+
+
+<app-food-card  [name]="i.FoodName" [category]="i.category" [price]="i.Price"  *ngFor="let i of  FoodList " id="box"
+class=" box zeroClass sm:p-[0.8rem] sm:w-[100%] sm:mt-[-24rem] sm:ml-[0pt] xsm:ml-[79pt]"></app-food-card> 
+
 </div>
+
+
+
+
+
+
+
+ 

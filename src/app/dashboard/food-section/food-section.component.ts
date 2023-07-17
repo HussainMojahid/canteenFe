@@ -8,11 +8,5 @@ import { FoodService } from 'src/app/services/food.service';
 export class FoodSectionComponent {
   constructor(public card: FoodService) {}
 
-  @Input() category: number = -1;
-  changeCard(action: string, $event: Event) {
-    console.log($event);
-
-    this.card.toggleCard(action, this.category);
-    $event.preventDefault();
-  }
+  @Input() FoodList: any[] = [];
 }

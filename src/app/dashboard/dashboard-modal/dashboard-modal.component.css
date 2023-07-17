@@ -10,7 +10,7 @@
   color: white;
   border: none;
 }
-#box-1 #box-1-img{
+.box #bread{
   background-color: #ffe17d93;
 }
 #box-2 #box-2-img{
@@ -93,10 +93,10 @@
   flex-direction: column;
   justify-content:space-between;
   width: 90%;
-  height: 480pt;
-  margin-left: 0.5rem;
-  margin-top: -1rem;
-  margin-bottom: 5rem;
+ 
+  margin-left: 1rem;
+  /* margin-top: -1rem;
+  margin-bottom: 5rem;  */
 }
 
 
