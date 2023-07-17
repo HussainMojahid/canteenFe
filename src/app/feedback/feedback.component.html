@@ -14,7 +14,7 @@
     </div>
   </nav>
 
-  <form action="#" class="w-[95%] sm:p-[4%] flex flex-col items-center mt-[3%] md:h-[100vh] mb-[20%]">
+  <form (ngSubmit)="feedback()" class="w-[95%] sm:p-[4%] flex flex-col items-center mt-[3%] md:h-[100vh] mb-[20%]">
     <div class="w-[95%] sm:mt-[-2%]">
       <label for="subject" class="text-[13pt] text-[#D4D4D4]  font-roboto-regular">Issue <span class="text-[#FF2F2F]">*</span> </label>
       <!-- <input type="text" id="subject" class="p-3 w-[100%] sm:mt-[2%] sm:mb-[3%] sm:text-[14pt] md:text-[13pt] text-Greyess outline-none rounded-[4pt] h-[30pt] border-2 border-greyss " required/> -->
@@ -38,7 +38,7 @@
       <span class="text-[#D4D4D4] text-[11pt] ">500 Characters</span>
     </div>
     </div>
-    <button class="mt-[30%] sm:h-[35pt] sm:w-[95%] xsm:h-[40pt] md:h-[4rem] md:w-[90%] rounded-[4pt] bg-orangess  flex justify-center items-center font-roboto-regular text-white outline-none">
+    <button type="submit" class="mt-[30%] sm:h-[35pt] sm:w-[95%] xsm:h-[40pt] md:h-[4rem] md:w-[90%] rounded-[4pt] bg-orangess  flex justify-center items-center font-roboto-regular text-white outline-none">
       Send Feedback
     </button>
   </form>

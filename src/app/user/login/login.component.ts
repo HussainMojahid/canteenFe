@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
@@ -21,9 +21,15 @@ export class LoginComponent implements OnInit {
   show: boolean = false;
   circleEx = faCircleExclamation;
   passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-
-  email = new FormControl('', [Validators.required]);
+  visibleFields: boolean[] = [false, false, false]; // [currentPassword, newPassword, confirmPassword]
+  email = new FormControl('', [
+    Validators.required,
+    Validators.minLength(3),
+    Validators.maxLength(18),
+    this.namePatternValidator(),
+  ]);
   // password = new FormControl('', [Validators.required]);
+  
   password = new FormControl('', [Validators.required, Validators.pattern(this.passwordPattern)]);
   credentials = {
     email: this.email,
@@ -31,6 +37,10 @@ export class LoginComponent implements OnInit {
   };
  
   loginForm = new FormGroup(this.credentials);
+
+  viewpass(index: number) {
+    this.visibleFields[index] = !this.visibleFields[index];
+  }
 
   constructor(
     private auth: AuthService,
@@ -96,7 +106,17 @@ export class LoginComponent implements OnInit {
   closeModal() {
     this.isModalOpen = false;
   }
-  
+  namePatternValidator(): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } | null => {
+      const name: string = control.value;
+
+      if (/^[a-zA-Z0-9_]+$/.test(name) && name.length >= 3 && name.length <= 18) {
+        return null; // Valid name
+      } else {
+        return { invalidName: true }; // Invalid name
+      }
+    };
+  }
   
 }
 

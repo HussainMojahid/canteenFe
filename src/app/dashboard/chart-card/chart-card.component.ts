@@ -12,29 +12,50 @@ export class ChartCardComponent implements OnInit {
   constructor(public count: PeopleCountService) {}
   data:any;
   ngOnInit() {
-    this.count.getPeopleCount().subscribe((val) => {
-      this.count.counts = val.data[0].attributes.rcounting;     
-      const dataDoughnut = {
-        // labels: ['Vacant', 'Occupied'],
-        datasets: [
-          {
-            label: 'Canteen Space',
-            data: [150 - this.count.counts, this.count.counts],
-            backgroundColor: ['rgb(	133,204,113)', 'rgb(253,114,114)'],
-            hoverOffset: 4,
-            borderWidth: 15,
-            borderHeight: "200%",
-            height: 100,
-            borderColor:"rgb(73, 86, 90)",
-            layout: {
+    this.fetchPeopleCount();
+
+    
+  }
+  // ngOnInit() {
+  //   this.count.getPeopleCount().subscribe((val) => {
+  //     this.count.counts = val.data[0].attributes.rcounting;     
+  //     const dataDoughnut = {
+  //       // labels: ['Vacant', 'Occupied'],
+  //       datasets: [
+  //         {
+  //           label: 'Canteen Space',
+  //           data: [150 - this.count.counts, this.count.counts],
+  //           backgroundColor: ['rgb(	133,204,113)', 'rgb(253,114,114)'],
+  //           hoverOffset: 4,
+  //           borderWidth: 15,
+  //           borderHeight: "200%",
+  //           height: 100,
+  //           borderColor:"rgb(73, 86, 90)",
+  //           layout: {
            
-          }
-            // borderRadius:"innerEnd",
-            // spacing:50
-          },
+  //         }
+  //           // borderRadius:"innerEnd",
+  //           // spacing:50
+  //         },
          
-        ],
-      };
+  //       ],
+  //     };
+      fetchPeopleCount() {
+        this.count.getPeopleCount().subscribe((val) => {
+          this.count.counts = val.data[0].attributes.rcounting;
+    
+          const dataDoughnut = {
+            datasets: [
+              {
+                data: [150 - this.count.counts, this.count.counts],
+                backgroundColor: ['rgb(133,204,113)', 'rgb(253,114,114)'],
+                hoverOffset: 4,
+                borderWidth: 15,
+                borderColor: 'rgb(73, 86, 90)',
+              },
+            ],
+          };
+    
       const configDoughnut = {
         labels: ['Reserved','Vacant'],
         dataset : [{

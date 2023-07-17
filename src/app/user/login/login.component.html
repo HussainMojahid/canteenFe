@@ -1,32 +1,3 @@
-<!-- <app-alert *ngIf="showAlert" [AlertType]="AlertType">
-  {{ alertMsg }}
-</app-alert> -->
-<!-- Login Form -->
-<!-- <form [formGroup]="loginForm" (ngSubmit)="authenticate()">
-
-  <div class="mb-3" id="email">
-    <label class="inline-block mb-2">Email</label>
-    <app-input [control]="email" type="text" placeholder="Enter Email">
-    </app-input>
-  </div>
-  
-  <div class="mb-3">
-    <label class="inline-block mb-2">Password</label>
-    <app-input [control]="password" type="password" placeholder="Password">
-    </app-input>
-  </div>
-
-  <button type="submit" 
-    class="block w-full bg-cyan-400 text-white py-1.5 px-3 rounded transition hover:bg-cyan-500 disabled:opacity-50 disabled:bg-cyan-400">
-    Submit
-  </button>
-
-</form> -->
-
-
-
-
-<!-- new updated design of loginForm -->
 <div
   class="absolute bottom-0 left-0 h-[100%] sm:h-[100vh] sm:w-[100vw] w-[100%] md:h-[100%] md:w-[100%] bg-gradient-to-b from-[#3D484B38] from-20% via-[#424344e6] via-20% to-[#3D484B] to-60% opacity-[100%] z-10">
 
@@ -55,15 +26,22 @@
     <div class="mb-3 w-[100%] z-20" id="email">
       <label
         class="inline-block mb-2 sm:text-[12pt] md:text-[20pt] text-[#D4D4D4] p-[1.5pt] font-roboto-regular">Username</label>
-      <app-input [control]="email" type="text" placeholder="Enter your Email"
+      <app-input [control]="email" type="text" placeholder="Enter your username"
         class="h-[40pt] md:h-[60pt] w-[100%]"></app-input>
+        <div *ngIf="email.invalid && (email.dirty || email.touched)">
+          <!-- <div *ngIf="username.errors?.['required']" class="text-[#FF2F2F]">Name is required.</div> -->
+          <div *ngIf="email.errors?.['minlength']" class="text-red-400">Name should be at least 3 characters long.</div>
+          <div *ngIf="email.errors?.['maxlength']" class="text-red-400">Name should be less than 18 characters long.</div>
+          <div *ngIf="email.errors?.['invalidName']" class="text-red-400">Name can contain numbers (0-9), alphabets (upper and lower case), and underscore (_) only.</div>
+        </div>
     </div>
 
     <div class="mb-3 w-[100%] z-20">
       <label
         class="inline-block mb-2 text-[14pt] md:text-[20pt] sm:text-[12pt] text-[#D4D4D4] font-roboto-regular">Password</label>
-      <app-input [control]="password" type="password" placeholder="Password"
-        class="h-[40pt] md:h-[100pt] w-[100%] bg-white"></app-input>
+      <app-input [control]="password"  type="{{ visibleFields[1] ? 'text' : 'password' }}"
+      id="newPassword" placeholder="Password"
+        class="h-[40pt] md:h-[100pt] w-[100%] bg-white"> <span class="eyeIcon sm:mt-[-30px] sm:mr-[10px]" (click)="viewpass(1)"><i  [ngClass]="visibleFields[1] ? 'fa fa-eye' : 'fa fa-eye-slash'"></i></span></app-input>
       <p class="text-left text-[16pt] sm:text-[11.5pt] md:text-[18pt] text-orangess font-roboto-regular p-[2pt] mt-[5pt] float-right"
         (click)="openModal()">Forgot Your Password?</p>
 

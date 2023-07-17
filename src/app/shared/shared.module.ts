@@ -18,6 +18,7 @@ import { FooterService } from '../services/footer.service';
 import { AccordionComponent } from './accordion/accordion.component';
 import { ReportComponent } from './report/report.component';
 import { AddNewItemSecondComponent } from './add-new-item-second/add-new-item-second.component';
+import { FoodCategoryComponent } from './food-category/food-category.component';
 // 
 
 
@@ -36,6 +37,7 @@ import { AddNewItemSecondComponent } from './add-new-item-second/add-new-item-se
     AccordionComponent,
     ReportComponent,
     AddNewItemSecondComponent,
+    FoodCategoryComponent,
   
   ],
   imports: [

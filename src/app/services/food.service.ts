@@ -14,6 +14,8 @@ interface IFoodCard {
   providedIn: 'root',
 })
 export class FoodService {
+
+
   selectedDay: boolean = true;
 
   foodItemBreakFast: any[] = [];
@@ -39,20 +41,61 @@ export class FoodService {
       next: (response) => {
         response.forEach((e: any) => {
           this.fooditem.push(e.attributes);
-          console.log(e.attributes);
+          // console.log(e.attributes);
+
         });
       },
     });
   }
 
-  toggleDay() {
-    this.selectedDay = !this.selectedDay;
-    if (this.selectedDay) {
-      this.todayFood();
-    } else {
-      this.tommorowFood();
-    }
+  // toggleDay() {
+  //   this.selectedDay = !this.selectedDay;
+  //   if (this.selectedDay) {
+  //     this.todayFood();
+  //   } else {
+  //     this.tommorowFood();
+  //   }
+  // }
+
+
+    
+  // getFoodByDateAndCategory(date: Date, category: string) {
+  //   const formattedDate = this.formatDate(date);
+
+  //   return this.getFood().pipe(
+  //     map((foodItems) => {
+  //       return foodItems.filter((item: any) => {
+  //         const foodCategory = item.attributes.food_catagory.data.attributes.catType;
+  //         const foodDate = item.attributes.Date;
+
+  //         if (foodCategory === category && foodDate === formattedDate) {
+  //           return item.attributes.food_inventory.data.attributes;
+  //         }
+  //       });
+  //     })
+  //   );
+  // }
+foodItem: any[]=[];
+  getFoodByCategoryAndDate(category: string, date: Date): Observable<any[]> {
+    this.foodItem = []
+    const formattedDate = this.formatDate(date);
+
+    return this.getFood().pipe(
+      map((foodItems) => {
+        return foodItems.filter((item: any) => {
+          const foodCategory = item.attributes.food_catagory.data.attributes.catType;
+          const foodDate = item.attributes.Date;
+
+          if (foodCategory === category && foodDate === formattedDate) {
+            console.log(item.attributes.food_inventory.data.attributes);
+            
+           this.foodItem.push(item.attributes.food_inventory.data.attributes);
+          }
+        });
+      })
+    );
   }
+
 
   getFood() {
     return this.http
@@ -227,127 +270,128 @@ export class FoodService {
     }
   }
 
-  todayFood() {
-    console.log(
-      this.foodItemBreakFast.length,
-      this.foodItemLunch.length,
-      this.foodItemSnacks.length
-    );
-    if (this.foodItemBreakFast.length > 0) {
-      this.foodItemBreakFast = [];
-      this.Bcards = [];
-    }
-    if (this.foodItemLunch.length > 0) {
-      this.foodItemLunch = [];
-      this.Lcards = [];
-    }
-    if (this.foodItemSnacks.length > 0) {
-      this.foodItemSnacks = [];
-      this.Hcards = [];
-    }
+  // todayFood() {
+  //   console.log(
+  //     this.foodItemBreakFast.length,
+  //     this.foodItemLunch.length,
+  //     this.foodItemSnacks.length
+  //   );
+  //   if (this.foodItemBreakFast.length > 0) {
+  //     this.foodItemBreakFast = [];
+  //     this.Bcards = [];
+  //   }
+  //   if (this.foodItemLunch.length > 0) {
+  //     this.foodItemLunch = [];
+  //     this.Lcards = [];
+  //   }
+  //   if (this.foodItemSnacks.length > 0) {
+  //     this.foodItemSnacks = [];
+  //     this.Hcards = [];
+  //   }
 
-    var day = new Date();
-    // var nextDay = new Date(day);
-    // day.setDate(day.getDate());
-    console.log(this.formatDate(day));
+  //   var day = new Date();
+  //   // var nextDay = new Date(day);
+  //   // day.setDate(day.getDate());
+  //   console.log(this.formatDate(day));
 
-    this.getFood().subscribe({
-      next: async (value) => {
-        value.forEach((element: any) => {
-          if (
-            element.attributes.food_catagory.data.attributes.catType ===
-              'BreakFast' &&
-            element.attributes.Date === this.formatDate(new Date())
-          ) {
-            this.foodItemBreakFast.push(
-              element.attributes.food_inventory.data.attributes
-            );
-            console.log(this.foodItemBreakFast);
-          }
-          if (
-            element.attributes.food_catagory.data.attributes.catType ===
-              'Lunch' &&
-            element.attributes.Date === this.formatDate(new Date())
-          ) {
-            this.foodItemLunch.push(
-              element.attributes.food_inventory.data.attributes
-            );
-            console.log(this.foodItemLunch);
-          }
-          if (
-            element.attributes.food_catagory.data.attributes.catType ===
-              'HighTea' &&
-            element.attributes.Date === this.formatDate(new Date())
-          ) {
-            this.foodItemSnacks.push(
-              element.attributes.food_inventory.data.attributes
-            );
-            console.log(this.foodItemSnacks);
-          }
-        });
-      },
-    });
-  }
+  //   this.getFood().subscribe({
+  //     next: async (value) => {
+  //       value.forEach((element: any) => {
+  //         if (
+  //           element.attributes.food_catagory.data.attributes.catType ===
+  //             'BreakFast' &&
+  //           element.attributes.Date === this.formatDate(new Date())
+  //         ) {
+  //           this.foodItemBreakFast.push(
+  //             element.attributes.food_inventory.data.attributes
+  //           );
+  //           console.log(this.foodItemBreakFast);
+  //         }
+  //         if (
+  //           element.attributes.food_catagory.data.attributes.catType ===
+  //             'Lunch' &&
+  //           element.attributes.Date === this.formatDate(new Date())
+  //         ) {
+  //           this.foodItemLunch.push(
+  //             element.attributes.food_inventory.data.attributes
+  //           );
+  //           console.log(this.foodItemLunch);
+  //         }
+  //         if (
+  //           element.attributes.food_catagory.data.attributes.catType ===
+  //             'HighTea' &&
+  //           element.attributes.Date === this.formatDate(new Date())
+  //         ) {
+  //           this.foodItemSnacks.push(
+  //             element.attributes.food_inventory.data.attributes
+  //           );
+  //           console.log(this.foodItemSnacks);
+  //         }
+  //       });
+  //     },
+  //   });
+  // }
+  
 
-  tommorowFood() {
-    console.log(
-      this.foodItemBreakFast.length,
-      this.foodItemLunch.length,
-      this.foodItemSnacks.length
-    );
-    if (this.foodItemBreakFast.length > 0) {
-      this.foodItemBreakFast = [];
-      this.Bcards = [];
-    }
-    if (this.foodItemLunch.length > 0) {
-      this.foodItemLunch = [];
-      this.Lcards = [];
-    }
-    if (this.foodItemSnacks.length > 0) {
-      this.foodItemSnacks = [];
-      this.Hcards = [];
-    }
-    var day = new Date();
-    var nextDay = new Date(day);
-    nextDay.setDate(day.getDate() + 1);
+  // tommorowFood() {
+  //   console.log(
+  //     this.foodItemBreakFast.length,
+  //     this.foodItemLunch.length,
+  //     this.foodItemSnacks.length
+  //   );
+  //   if (this.foodItemBreakFast.length > 0) {
+  //     this.foodItemBreakFast = [];
+  //     this.Bcards = [];
+  //   }
+  //   if (this.foodItemLunch.length > 0) {
+  //     this.foodItemLunch = [];
+  //     this.Lcards = [];
+  //   }
+  //   if (this.foodItemSnacks.length > 0) {
+  //     this.foodItemSnacks = [];
+  //     this.Hcards = [];
+  //   }
+  //   var day = new Date();
+  //   var nextDay = new Date(day);
+  //   nextDay.setDate(day.getDate() + 1);
 
-    console.log(this.formatDate(nextDay));
+  //   console.log(this.formatDate(nextDay));
 
-    this.getFood().subscribe({
-      next: async (value) => {
-        value.forEach((element: any) => {
-          if (
-            element.attributes.food_catagory.data.attributes.catType ===
-              'BreakFast' &&
-            element.attributes.Date === this.formatDate(nextDay)
-          ) {
-            this.foodItemBreakFast.push(
-              element.attributes.food_inventory.data.attributes
-            );
-            console.log(this.foodItemBreakFast);
-          }
-          if (
-            element.attributes.food_catagory.data.attributes.catType ===
-              'Lunch' &&
-            element.attributes.Date === this.formatDate(nextDay)
-          ) {
-            this.foodItemLunch.push(
-              element.attributes.food_inventory.data.attributes
-            );
-            console.log(this.foodItemLunch);
-          }
-          if (
-            element.attributes.food_catagory.data.attributes.catType ===
-              'HighTea' &&
-            element.attributes.Date === this.formatDate(nextDay)
-          ) {
-            this.foodItemSnacks.push(
-              element.attributes.food_inventory.data.attributes
-            );
-            console.log(this.foodItemSnacks);
-          }
-        });
-      },
-    });
-  }
+  //   this.getFood().subscribe({
+  //     next: async (value) => {
+  //       value.forEach((element: any) => {
+  //         if (
+  //           element.attributes.food_catagory.data.attributes.catType ===
+  //             'BreakFast' &&
+  //           element.attributes.Date === this.formatDate(nextDay)
+  //         ) {
+  //           this.foodItemBreakFast.push(
+  //             element.attributes.food_inventory.data.attributes
+  //           );
+  //           console.log(this.foodItemBreakFast);
+  //         }
+  //         if (
+  //           element.attributes.food_catagory.data.attributes.catType ===
+  //             'Lunch' &&
+  //           element.attributes.Date === this.formatDate(nextDay)
+  //         ) {
+  //           this.foodItemLunch.push(
+  //             element.attributes.food_inventory.data.attributes
+  //           );
+  //           console.log(this.foodItemLunch);
+  //         }
+  //         if (
+  //           element.attributes.food_catagory.data.attributes.catType ===
+  //             'HighTea' &&
+  //           element.attributes.Date === this.formatDate(nextDay)
+  //         ) {
+  //           this.foodItemSnacks.push(
+  //             element.attributes.food_inventory.data.attributes
+  //           );
+  //           console.log(this.foodItemSnacks);
+  //         }
+  //       });
+  //     },
+  //   });
+  // }
 }

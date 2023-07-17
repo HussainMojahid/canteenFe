@@ -15,6 +15,8 @@ import { AuthGuard } from './services/auth.guard';
 import { FeedbackHistoryComponent } from './feedback-history/feedback-history.component';
 import { ReportComponent } from './shared/report/report.component';
 import { AddNewItemSecondComponent } from './shared/add-new-item-second/add-new-item-second.component';
+import { FoodCategoryComponent } from './shared/food-category/food-category.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -48,6 +50,10 @@ const routes: Routes = [
   {
     path: 'dashbord-modal',
     component: DashboardModalComponent
+  },
+  {
+    path: 'food-category',
+    component:FoodCategoryComponent
   },
   {
     path: 'booking',
