@@ -38,7 +38,7 @@ import { ErrorInterceptor } from '../interceptor/error.interceptor';
     UserTabComponent,
     EditProfileComponent,
     AccountComponent,
-    InviteFriendComponent,
+   
     AboutComponent,
     ProfileComponent,
     // ResetPasswordComponent,

@@ -17,6 +17,7 @@ import { FeedbackHistoryComponent } from './feedback-history/feedback-history.co
 import { ReportComponent } from './shared/report/report.component';
 import { AddNewItemSecondComponent } from './shared/add-new-item-second/add-new-item-second.component';
 import { FoodCategoryComponent } from './shared/food-category/food-category.component';
+import { InvitePopupComponent } from './invite-pop-up/invite-pop-up.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,11 @@ const routes: Routes = [
   {
     path: 'registerComponent',
     component: RegisterComponent
+  },
+  {
+    path: 'invite-pop-up',
+    component: InvitePopupComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: 'Account',

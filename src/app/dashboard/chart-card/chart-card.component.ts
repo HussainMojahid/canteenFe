@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Chart } from 'chart.js';
+
 import { map } from 'rxjs';
 import { PeopleCountService } from 'src/app/services/people-count.service';
 

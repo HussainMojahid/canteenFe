@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { NgxOtpInputModule } from 'ngx-otp-input';
 import { RouterModule, Routes } from '@angular/router';
 import { AccordionComponent } from './shared/accordion/accordion.component';
+import { InvitePopupComponent } from './invite-pop-up/invite-pop-up.component';
 
 
 import { SharedModule } from "./shared/shared.module";
@@ -42,13 +43,14 @@ import { ErrorInterceptor } from './interceptor/error.interceptor';
         BookingComponent,
         FeedbackComponent,
         FeedbackHistoryComponent,
+        // InvitePopUpComponent,
         // ProfileComponent,
         // AccountComponent,
         // LoginComponent,
     ],
     imports: [
         BrowserModule,
-        UserModule,
+        
         // LoginComponent,
         FontAwesomeModule,
         // DashboardModule,
